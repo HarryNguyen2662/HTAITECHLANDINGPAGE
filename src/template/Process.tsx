@@ -39,7 +39,7 @@ export const Process = () => {
             </div>
 
             <div className="flex-1">
-              <div className="absolute left-1/2 h-full w-1 bg-gradient-to-b from-blue-200 to-purple-200 transform -translate-x-1/2"></div>
+              <div className="absolute left-1/2 h-5/6 w-1 bg-gradient-to-b from-blue-200 to-purple-200 transform -translate-x-1/2"></div>
 
               {/* Feature Cards with staggered animation */}
               <div className="space-y-12">
@@ -71,9 +71,9 @@ export const Process = () => {
           </div>
         </Section>
 
-        <div className="mt-20 text-center">
+        <div className="mt-10 text-center">
           <button className="rounded-xl bg-gradient-to-br from-blue-600 to-purple-600 px-10 py-4 text-xl font-semibold text-white transition-all hover:scale-105 hover:shadow-lg">
-            Sign Up Now to Experience the H&T AI TECH Advantage
+            Contact us now to Experience the H&T AI TECH Advantage
           </button>
         </div>
       </div>
