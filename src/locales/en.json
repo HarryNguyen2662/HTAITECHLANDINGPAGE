@@ -19,6 +19,13 @@
     "primary_button": "Learn more",
     "secondary_button": "Contact"
   },
+  "HeroService": {
+    "follow_twitter": "Crafting Excellence in Every Solution",
+    "title": "Crafting Excellence in Every <important>Solution</important>",
+    "description": "At H&T AI TECH, we excel in delivering a versatile portfolio of innovative services tailored to the distinct challenges of our clients. Our seasoned team of experts is committed to designing premium solutions that spark innovation and fuel sustainable business advancement. Dive into our expansive range of offerings below:",
+    "primary_button": "Learn more",
+    "secondary_button": "Contact"
+  },
   "Sponsors": {
     "title": "Sponsored by"
   },
@@ -38,6 +45,35 @@
     "step5_description": "We deploy the solution and provide ongoing support.",
     "step6_title": "Step 6: Review",
     "step6_description": "We review the results and make any necessary adjustments."
+  },
+  "Servicesforpage": {
+    "section_subtitle": "",
+    "section_title": "",
+    "section_description": "",
+    "step1_title": "Artificial Intelligence & Machine Learning Solutions",
+    "step1_description": "MVP Product Development Services",
+    "step2_title": "Full-Service Development Teams",
+    "step2_description": "Accelerate your product journey from ideation to launch. We specialize in rapidly transforming concepts into market-ready MVPs for startups and enterprises.",
+    "step3_title": "QA Testing & Automation Solutions",
+    "step3_description": "Ensure flawless software performance with end-to-end quality assurance and cutting-edge test automation frameworks.",
+    "step4_title": "Business Intelligence Services",
+    "step4_description": "Convert raw data into strategic assets with powerful BI tools and dashboards that drive informed, competitive decision-making.",
+    "step5_title": "Data Science Solutions",
+    "step5_description": "Unlock hidden potential in your data through advanced analytics, predictive modeling, and machine learning-driven insights.",
+    "step6_title": "iOS App Development Services",
+    "step6_description": "Craft premium, user-centric iOS applications that combine elegant design with high-performance functionality to elevate brand experiences.",
+    "step7_title": "UX/UI Design Services",
+    "step7_description": "Shape memorable digital experiences with human-centered design solutions that prioritize usability, aesthetics, and conversion-driven interfaces.",
+    "step8_title": "Android App Development",
+    "step8_description": "Expand your reach with scalable Android applications engineered for diverse devices, user needs, and business objectives.",
+    "step9_title": "Machine Learning Services",
+    "step9_description": "Optimize operations and uncover growth opportunities through custom ML implementations tailored to your unique workflows.",
+    "step10_title": "Data Engineering Solutions",
+    "step10_description": "Build robust data infrastructure that streamlines collection, processing, and analysis at scale for enterprise-grade insights.",
+    "step11_title": "Front-End Development Services",
+    "step11_description": "Deliver captivating web experiences with responsive, pixel-perfect interfaces that balance form and function across all devices.",
+    "step12_title": "DevOps Services",
+    "step12_description": "Implement DevOps practices to enhance team collaboration, automate workflows, and accelerate software delivery cycles."
   },
   "Features": {
     "section_subtitle": "Features",
