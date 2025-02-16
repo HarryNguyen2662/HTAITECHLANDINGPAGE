@@ -2,7 +2,13 @@ import React from 'react';
 import Image from 'next/image';
 import { Section } from '@/features/landing/Section';
 
-const FeatureCard = ({ number, title, children }) => (
+interface FeatureCardProps {
+  number: number;
+  title: string;
+  children: React.ReactNode;
+}
+
+const FeatureCard: React.FC<FeatureCardProps> = ({ number, title, children }) => (
   <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-8 transition-all hover:shadow-xl hover:scale-105">
     <div className="flex items-start gap-6">
       <span className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-purple-600 text-lg font-bold text-white shadow-lg">
@@ -44,25 +50,25 @@ export const Process = () => {
               {/* Feature Cards with staggered animation */}
               <div className="space-y-12">
                 <div className="animate-fade-in-up opacity-0 translate-y-10 animation-delay-100">
-                  <FeatureCard number="1" title="Discovery">
+                  <FeatureCard number={1} title="Discovery">
                     In this stage, we thoroughly explore your project’s needs, objectives, and vision. We examine every detail to fully understand your requirements, enabling us to design a solution that fits your goals perfectly.
                   </FeatureCard>
                 </div>
 
                 <div className="animate-fade-in-up opacity-0 translate-y-10 animation-delay-200">
-                  <FeatureCard number="2" title="Evaluation">
+                  <FeatureCard number={2} title="Evaluation">
                     Using the knowledge gained during discovery, we carefully analyze different strategies and methods to identify the best way forward. Our focus is on aligning our work with your targets to deliver outstanding results.
                   </FeatureCard>
                 </div>
 
                 <div className="animate-fade-in-up opacity-0 translate-y-10 animation-delay-300">
-                  <FeatureCard number="3" title="Assemble Team">
+                  <FeatureCard number={3} title="Assemble Team">
                     Whether you select our pre-assembled team or handpick experts from our vast talent pool, you can be confident in our capabilities. Our team members are experienced, dedicated, and eager to bring your ideas to life.
                   </FeatureCard>
                 </div>
 
                 <div className="animate-fade-in-up opacity-0 translate-y-10 animation-delay-400">
-                  <FeatureCard number="4" title="Operate">
+                  <FeatureCard number={4} title="Operate">
                     With your team ready, we begin the development process, closely monitoring progress and ensuring clear, open communication throughout. At H&T AI Tech, you’ll always stay informed and involved at every stage.
                   </FeatureCard>
                 </div>

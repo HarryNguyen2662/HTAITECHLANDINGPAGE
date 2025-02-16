@@ -5,21 +5,9 @@ import { Check } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
-const FeatureCard = ({ number, title, children }) => (
-  <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-8 transition-all hover:shadow-xl hover:scale-105">
-    <div className="flex items-start gap-6">
-      <span className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-purple-600 text-lg font-bold text-white shadow-lg">
-        {number}
-      </span>
-      <div className="flex-1">
-        <h3 className="mb-3 text-2xl font-bold text-gray-900">{title}</h3>
-        <p className="text-gray-600 leading-relaxed">{children}</p>
-      </div>
-    </div>
-  </div>
-);
+// Removed unused FeatureCard component
 
-const CheckItem = ({ children }) => (
+const CheckItem: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   <div className="flex items-center gap-3 mb-4">
     <div className="flex h-6 w-6 items-center justify-center rounded-full bg-green-500">
       <Check className="h-4 w-4 text-white" />
