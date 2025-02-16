@@ -41,7 +41,7 @@ export const Navbar = () => {
         </li>
 
         <li>
-          <Link href="/">{t("Contact")}</Link>
+          <Link href="/contacts">{t("Contact")}</Link>
         </li>
       </CenteredMenu>
     </Section>

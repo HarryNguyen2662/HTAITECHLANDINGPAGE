@@ -49,7 +49,7 @@ export const Hero = () => {
                   group
                 `,
 							})}
-							href="https://github.com/ixartz/SaaS-Boilerplate"
+							href="/services"
 						>
 							<span className="relative z-10 font-semibold tracking-wide group-hover:drop-shadow-[0_0_12px_rgba(165,180,252,0.8)] transition-all">
 								{t("primary_button")}
@@ -76,7 +76,7 @@ export const Hero = () => {
                   group
                 `,
 							})}
-							href="https://github.com/ixartz/SaaS-Boilerplate"
+							href="/contacts"
 						>
 							<span className="text-indigo-400 group-hover:text-white transition-colors duration-300 font-medium">
 								{t("secondary_button")}

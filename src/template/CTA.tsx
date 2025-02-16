@@ -69,7 +69,7 @@ export const CTA = () => {
 						  group
 						`,
 					  })}
-					  href="/contact"
+					  href="/contacts"
 					  style={{
 						backgroundImage:
 						  'linear-gradient(45deg, #6366f1, #3b82f6, #60a5fa)',
