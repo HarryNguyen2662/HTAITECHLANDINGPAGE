@@ -7,49 +7,6 @@ import React from 'react';
 
 import { Section } from '@/features/landing/Section';
 
-type FeatureCardProps = {
-  number: number;
-  title: string;
-  children: React.ReactNode;
-  index: number;
-};
-
-const FeatureCard: React.FC<FeatureCardProps> = ({
-  number,
-  title,
-  children,
-  index,
-}) => (
-  <motion.div
-    initial={{ opacity: 0, y: 50 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: '-20% 0px' }}
-    transition={{ delay: index * 0.2, type: 'spring', stiffness: 100 }}
-    className="group relative rounded-2xl border border-gray-200 bg-white p-8 transition-all hover:-translate-y-2 hover:border-transparent hover:shadow-2xl"
-    style={{
-      background:
-				'linear-gradient(white, white) padding-box, linear-gradient(to right, #4F46E5, #EC4899) border-box',
-      border: '2px solid transparent',
-    }}
-  >
-    <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-purple-600/5 opacity-0 transition-opacity group-hover:opacity-100" />
-    <div className="relative z-10 flex items-start gap-6">
-      <motion.span
-        className="flex size-12 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-purple-600 text-lg font-bold text-white shadow-lg"
-        whileHover={{ scale: 1.1 }}
-        transition={{ type: 'spring', stiffness: 300 }}
-      >
-        {number}
-      </motion.span>
-      <div className="flex-1">
-        <h3 className="mb-3 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-2xl font-bold text-transparent">
-          {title}
-        </h3>
-        <p className="leading-relaxed text-gray-600">{children}</p>
-      </div>
-    </div>
-  </motion.div>
-);
 
 const processSteps = [
   {
