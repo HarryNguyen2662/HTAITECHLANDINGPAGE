@@ -26,6 +26,13 @@
     "primary_button": "Learn more",
     "secondary_button": "Contact"
   },
+  "HowweworkService": {
+    "follow_twitter": "How we work",
+    "title": "How we <important>Work</important>",
+    "description": "At H&T AI TECH, we champion a collaborative software development approach that delivers superior results through efficiency, transparency, and client-centered value. Our refined methodology ensures precision and excellence at every stage—from initial concept to final delivery.",
+    "primary_button": "Learn more",
+    "secondary_button": "Contact"
+  },
   "Sponsors": {
     "title": "Sponsored by"
   },
