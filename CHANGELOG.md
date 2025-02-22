@@ -1,3 +1,10 @@
+# 1.0.0 (2025-02-22)
+
+
+### Features
+
+* **about:** update about us page ([a7039d2](https://github.com/HarryNguyen2662/HTAITECHLANDINGPAGE/commit/a7039d2632b53a128e1ac5e2073e0882b0679a68))
+
 ## [1.7.4](https://github.com/ixartz/SaaS-Boilerplate/compare/v1.7.3...v1.7.4) (2024-12-20)
 
 
