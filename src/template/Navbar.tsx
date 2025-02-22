@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 
 import { LocaleSwitcher } from '@/components/LocaleSwitcher';
-//import { buttonVariants } from '@/components/ui/buttonVariants';
+// import { buttonVariants } from '@/components/ui/buttonVariants';
 import { CenteredMenu } from '@/features/landing/CenteredMenu';
 import { Section } from '@/features/landing/Section';
 
@@ -25,23 +25,23 @@ export const Navbar = () => {
         )}
       >
         <li>
-          <Link href="/howwework">{t("How_We_Work")}</Link>
+          <Link href="/howwework">{t('How_We_Work')}</Link>
         </li>
 
         <li>
-          <Link href="/services">{t("Services")}</Link>
+          <Link href="/services">{t('Services')}</Link>
         </li>
 
         <li>
-          <Link href="/">{t("Our_Projects")}</Link>
+          <Link href="/">{t('Our_Projects')}</Link>
         </li>
 
         <li>
-          <Link href="/">{t("About_Us")}</Link>
+          <Link href="/aboutus">{t('About_Us')}</Link>
         </li>
 
         <li>
-          <Link href="/contacts">{t("Contact")}</Link>
+          <Link href="/contacts">{t('Contact')}</Link>
         </li>
       </CenteredMenu>
     </Section>
