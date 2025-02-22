@@ -1,7 +1,6 @@
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import { AboutUs } from '@/template/aboutuspage';
-import { CTA } from '@/template/CTA';
 import { Footer } from '@/template/Footer';
 import { Navbar } from '@/template/Navbar';
 
@@ -24,7 +23,6 @@ const ServicesPage = (props: { params: { locale: string } }) => {
     <>
       <Navbar />
       <AboutUs />
-      <CTA />
       <Footer />
     </>
   );
