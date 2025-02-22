@@ -71,7 +71,7 @@ export const AboutUs = () => {
     },
     {
       name: 'Dr. Le Quang Chien',
-      role: 'Founder, A4 Team Lead, AI & IoT Expert',
+      role: 'Founder, AI Team Lead, AI & IoT Expert',
       bio: 'Founder and leader of the AI Team, specializing in AI and IoT. Contributor to enterprise automation and innovative technology solutions in Vietnam.',
       links: [],
       image: '/assets/images/chuchien.png',
