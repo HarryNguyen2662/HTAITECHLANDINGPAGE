@@ -33,7 +33,7 @@ export const Navbar = () => {
         </li>
 
         <li>
-          <Link href="/">{t('Our_Projects')}</Link>
+          <Link href="/project">{t('Our_Projects')}</Link>
         </li>
 
         <li>
@@ -57,4 +57,11 @@ export const Navbar = () => {
                 {t('sign_up')}
               </Link>
             </li>
+
+                              images: [
+                    '/assets/images/helmet1.png',
+                    '/assets/images/helmet2.png',
+                    '/assets/images/helmet3.png',
+                    '/assets/images/helmet1.png',
+                  ],
 */

@@ -40,6 +40,9 @@ const config = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
+        backdropBlur: {
+          md: '10px',
+        },
       },
       borderRadius: {
         lg: 'var(--radius)',
