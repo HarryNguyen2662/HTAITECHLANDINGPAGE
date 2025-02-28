@@ -8,7 +8,7 @@ import 'swiper/css/autoplay';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { memo, useEffect, useRef, useState } from 'react';
+import React, { memo, useRef, useState } from 'react';
 import { FaAngleRight, FaBalanceScale, FaCar, FaChartLine, FaCheck, FaChevronLeft, FaChevronRight, FaClock, FaCrosshairs, FaExclamationCircle, FaExclamationTriangle, FaExternalLinkAlt, FaMagic, FaMicrochip, FaRobot, FaRuler, FaSpinner, FaSyncAlt, FaTimes, FaTrophy, FaVideo } from 'react-icons/fa';
 import {
   FaApple,
@@ -27,7 +27,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Badge } from '@/components/ui/badge';
 
 const PLACEHOLDER_BLUR_DATA_URL = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjJmMmYyIi8+PC9zdmc+';
-
+/*
 const ImageWithFallback = memo(({ src, alt, ...props }) => {
   const [imgSrc, setImgSrc] = useState(src);
   const [loading, setLoading] = useState(true);
@@ -67,11 +67,92 @@ const ImageWithFallback = memo(({ src, alt, ...props }) => {
     </div>
   );
 });
+*/
+// Helper components
+type AppStoreButtonProps = {
+  url: string;
+  platform: 'android' | 'ios' | 'macos';
+  fullWidth?: boolean;
+  theme?: 'purple' | 'blue';
+};
 
-const VideoPlayer = memo(({ url, autoPlay = true }) => {
+const AppStoreButton = ({ url, platform, fullWidth, theme }: AppStoreButtonProps) => {
+  const themeColors = {
+    purple: 'from-purple-600 to-pink-600',
+    blue: 'from-blue-600 to-cyan-600',
+  };
+
+  const platformData = {
+    android: {
+      color: theme ? themeColors[theme] : 'from-green-600 to-green-700',
+      icon: <FaGooglePlay className="text-lg" />,
+      text: 'Google Play',
+    },
+    ios: {
+      color: theme ? themeColors[theme] : 'from-blue-500 to-blue-600',
+      icon: <FaApple className="text-lg" />,
+      text: 'App Store',
+    },
+    macos: {
+      color: theme ? themeColors[theme] : 'from-gray-800 to-gray-900',
+      icon: <FaApple className="text-lg" />,
+      text: 'Mac App Store',
+    },
+  };
+
+  return (
+    <motion.a
+      whileHover={{ y: -2 }}
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`${fullWidth ? 'w-full' : ''} group relative overflow-hidden rounded-xl bg-gradient-to-r ${platformData[platform].color} p-px shadow-lg transition-all hover:shadow-xl`}
+    >
+      <div className="flex items-center justify-center gap-2 rounded-[11px] bg-white/90 px-6 py-3.5 backdrop-blur-sm transition-all group-hover:bg-white/95">
+        {platformData[platform].icon}
+        <span className="font-semibold text-gray-900">
+          {platformData[platform].text}
+        </span>
+      </div>
+    </motion.a>
+  );
+};
+
+type VideoDemoButtonProps = {
+  url: string;
+  color?: 'purple' | 'blue';
+};
+
+const VideoDemoButton = ({ url, color = 'purple' }: VideoDemoButtonProps) => {
+  const colors = {
+    purple:
+        'bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700',
+    blue: 'bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700',
+  };
+
+  return (
+    <motion.a
+      whileHover={{ scale: 1.05 }}
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-white shadow-lg transition-all ${colors[color]}`}
+    >
+      <FaYoutube className="text-xl" />
+      <span className="font-semibold">Watch Demo</span>
+    </motion.a>
+  );
+};
+
+type VideoPlayerProps = {
+  url: string;
+  autoPlay?: boolean;
+};
+
+const VideoPlayer = memo(({ url, autoPlay = true }: VideoPlayerProps) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const playerRef = useRef(null);
+  const playerRef = useRef<ReactPlayer | null>(null);
 
   return (
     <motion.div
@@ -88,6 +169,7 @@ const VideoPlayer = memo(({ url, autoPlay = true }) => {
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/10">
           <div className="mb-2 text-red-500">Failed to load video</div>
           <button
+            type="button"
             onClick={() => {
               setError(false);
               setLoading(true);
@@ -230,7 +312,7 @@ export const ProjectsShowcase = memo(() => {
     },
   ];
 
-  const handleSlideChange = (swiperRef, direction) => {
+  const handleSlideChange = (swiperRef: React.RefObject<any>, direction: 'prev' | 'next') => {
     if (!swiperRef || !swiperRef.current) {
       return;
     }
@@ -319,10 +401,14 @@ export const ProjectsShowcase = memo(() => {
                     <AppStoreButton
                       url="https://play.google.com/store/apps/details?id=com.HuuTai.TicTacToe_AI"
                       platform="android"
+                      fullWidth={undefined}
+                      theme={undefined}
                     />
                     <AppStoreButton
                       url="https://apps.apple.com/us/app/tic-tac-toe-ai-5-in-a-row/id1449597124"
                       platform="ios"
+                      fullWidth={undefined}
+                      theme={undefined}
                     />
                   </div>
                 </div>
@@ -486,20 +572,17 @@ export const ProjectsShowcase = memo(() => {
                           >
                             {item.type === 'video'
                               ? (
-                                  <VideoPlayer url={item.url} />
+                                  <VideoPlayer url={item.url!} />
                                 )
                               : (
                                   <div key={idx} className="relative size-full">
                                     <Image
-                                      src={item.src}
+                                      src={item.src!}
                                       alt={`Helmet detection sample ${idx + 1}`}
                                       fill
                                       className="object-contain"
                                       sizes="(max-width: 800px) 100vw, (max-width: 1200px) 80vw, 800px"
                                       unoptimized={item.unoptimized || false}
-                                      onError={(e) => {
-                                        e.target.src = '/api/placeholder/700/394';
-                                      }}
                                     />
                                   </div>
                                 )}
@@ -676,7 +759,7 @@ export const ProjectsShowcase = memo(() => {
                           >
                             <div className="relative size-full">
                               <Image
-                                src={imgPath.src}
+                                src={imgPath.src!}
                                 alt={`Container inspection example ${idx + 1}`}
                                 fill
                                 className="object-contain"
@@ -684,9 +767,6 @@ export const ProjectsShowcase = memo(() => {
                                 placeholder="blur"
                                 blurDataURL={PLACEHOLDER_BLUR_DATA_URL}
                                 unoptimized
-                                onError={(e) => {
-                                  e.target.src = '/api/placeholder/800/450';
-                                }}
                                 style={{
                                   padding: '1rem',
                                   objectPosition: 'center center',
@@ -864,12 +944,12 @@ export const ProjectsShowcase = memo(() => {
                           >
                             {item.type === 'video'
                               ? (
-                                  <VideoPlayer url={item.url} />
+                                  <VideoPlayer url={item.url!} />
                                 )
                               : (
                                   <div className="relative size-full">
                                     <Image
-                                      src={item.src}
+                                      src={item.src!}
                                       alt={`Traffic violation example ${idx + 1}`}
                                       fill
                                       className="object-contain"
@@ -877,9 +957,6 @@ export const ProjectsShowcase = memo(() => {
                                       placeholder="blur"
                                       blurDataURL={PLACEHOLDER_BLUR_DATA_URL}
                                       unoptimized
-                                      onError={(e) => {
-                                        e.target.src = '/api/placeholder/800/450';
-                                      }}
                                       style={{
                                         padding: '1rem',
                                         objectPosition: 'center center',
@@ -1032,69 +1109,5 @@ export const ProjectsShowcase = memo(() => {
     </div>
   );
 });
-
-// Helper components
-const AppStoreButton = ({ url, platform, fullWidth, theme }) => {
-  const themeColors = {
-    purple: 'from-purple-600 to-pink-600',
-    blue: 'from-blue-600 to-cyan-600',
-  };
-
-  const platformData = {
-    android: {
-      color: theme ? themeColors[theme] : 'from-green-600 to-green-700',
-      icon: <FaGooglePlay className="text-lg" />,
-      text: 'Google Play',
-    },
-    ios: {
-      color: theme ? themeColors[theme] : 'from-blue-500 to-blue-600',
-      icon: <FaApple className="text-lg" />,
-      text: 'App Store',
-    },
-    macos: {
-      color: theme ? themeColors[theme] : 'from-gray-800 to-gray-900',
-      icon: <FaApple className="text-lg" />,
-      text: 'Mac App Store',
-    },
-  };
-
-  return (
-    <motion.a
-      whileHover={{ y: -2 }}
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`${fullWidth ? 'w-full' : ''} group relative overflow-hidden rounded-xl bg-gradient-to-r ${platformData[platform].color} p-px shadow-lg transition-all hover:shadow-xl`}
-    >
-      <div className="flex items-center justify-center gap-2 rounded-[11px] bg-white/90 px-6 py-3.5 backdrop-blur-sm transition-all group-hover:bg-white/95">
-        {platformData[platform].icon}
-        <span className="font-semibold text-gray-900">
-          {platformData[platform].text}
-        </span>
-      </div>
-    </motion.a>
-  );
-};
-
-const VideoDemoButton = ({ url, color = 'purple' }) => {
-  const colors = {
-    purple:
-        'bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700',
-    blue: 'bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700',
-  };
-
-  return (
-    <motion.a
-      whileHover={{ scale: 1.05 }}
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-white shadow-lg transition-all ${colors[color]}`}
-    >
-      <FaYoutube className="text-xl" />
-      <span className="font-semibold">Watch Demo</span>
-    </motion.a>
-  );
-};
 
 export default ProjectsShowcase;
