@@ -1,6 +1,5 @@
 'use client';
 
-// Import Swiper styles - fixed to use proper import statement
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -9,8 +8,8 @@ import 'swiper/css/autoplay';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useEffect, useRef, useState } from 'react';
-import { FaChartLine, FaChevronLeft, FaChevronRight, FaMicrochip, FaSpinner, FaTrophy, FaVideo } from 'react-icons/fa';
+import React, { memo, useEffect, useRef, useState } from 'react';
+import { FaAngleRight, FaBalanceScale, FaCar, FaChartLine, FaCheck, FaChevronLeft, FaChevronRight, FaClock, FaCrosshairs, FaExclamationCircle, FaExclamationTriangle, FaExternalLinkAlt, FaMagic, FaMicrochip, FaRobot, FaRuler, FaSpinner, FaSyncAlt, FaTimes, FaTrophy, FaVideo } from 'react-icons/fa';
 import {
   FaApple,
   FaCity,
@@ -27,11 +26,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { Badge } from '@/components/ui/badge';
 
-// Define proper placeholder blur data URL
 const PLACEHOLDER_BLUR_DATA_URL = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjJmMmYyIi8+PC9zdmc+';
 
-// Add a component to handle image errors
-const ImageWithFallback = ({ src, alt, ...props }) => {
+const ImageWithFallback = memo(({ src, alt, ...props }) => {
   const [imgSrc, setImgSrc] = useState(src);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -69,10 +66,9 @@ const ImageWithFallback = ({ src, alt, ...props }) => {
       />
     </div>
   );
-};
+});
 
-// VideoPlayer component with improved error handling
-const VideoPlayer = ({ url, autoPlay = true }) => {
+const VideoPlayer = memo(({ url, autoPlay = true }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const playerRef = useRef(null);
@@ -82,14 +78,12 @@ const VideoPlayer = ({ url, autoPlay = true }) => {
       className="relative aspect-video overflow-hidden rounded-xl border-4 border-white shadow-lg"
       whileHover={{ scale: 1.02 }}
     >
-      {/* Loading Spinner */}
       {loading && !error && (
         <div className="absolute inset-0 flex items-center justify-center bg-black/20">
           <FaSpinner className="animate-spin text-4xl text-white" />
         </div>
       )}
 
-      {/* Error Fallback */}
       {error && (
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/10">
           <div className="mb-2 text-red-500">Failed to load video</div>
@@ -108,7 +102,6 @@ const VideoPlayer = ({ url, autoPlay = true }) => {
         </div>
       )}
 
-      {/* Video Player */}
       <div className="aspect-video">
         <ReactPlayer
           ref={playerRef}
@@ -116,6 +109,7 @@ const VideoPlayer = ({ url, autoPlay = true }) => {
           playing={autoPlay}
           width="100%"
           height="100%"
+          loop
           onReady={() => setLoading(false)}
           onError={() => {
             setLoading(false);
@@ -128,25 +122,23 @@ const VideoPlayer = ({ url, autoPlay = true }) => {
                 modestbranding: 1,
                 rel: 0,
                 showinfo: 0,
-                mute: 1, // Mute to bypass autoplay policy
+                mute: 1,
               },
             },
           }}
         />
       </div>
 
-      {/* Gradient Overlay */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-blue-600/20 to-purple-600/20" />
     </motion.div>
   );
-};
+});
 
-export const ProjectsShowcase = () => {
-  // Swiper instance refs
+export const ProjectsShowcase = memo(() => {
   const helmetSwiperRef = useRef(null);
   const containerSwiperRef = useRef(null);
+  const trafficSwiperRef = useRef(null);
 
-  // Create navigation classes for multiple swipers
   const navClasses = {
     helmetNav: {
       prev: 'helmet-swiper-prev',
@@ -156,44 +148,88 @@ export const ProjectsShowcase = () => {
       prev: 'container-swiper-prev',
       next: 'container-swiper-next',
     },
+    trafficNav: {
+      prev: 'container-swiper-prev',
+      next: 'container-swiper-next',
+    },
   };
 
-  // Use the unoptimized prop for problematic images
-  // Fixed - Added checking if images exist and graceful fallback
   const media = [
     {
       type: 'image',
       src: '/assets/images/helmet1.png',
       aspectRatio: '16/9',
-      unoptimized: true, // Add unoptimized prop for this problematic image
+      unoptimized: true,
     },
     {
       type: 'image',
       src: '/assets/images/helmet2.png',
       aspectRatio: '16/9',
-      unoptimized: true, // Add unoptimized prop for this problematic image
+      unoptimized: true,
     },
     {
       type: 'image',
       src: '/assets/images/helmet3.png',
       aspectRatio: '16/9',
+      unoptimized: true,
     },
     {
       type: 'video',
-      url: 'https://www.youtube.com/watch?v=UqmzedIvqfI', // Changed to YouTube URL for compatibility
+      url: 'https://youtu.be/CG7nGs6s_Cs',
       aspectRatio: '16/9',
     },
   ];
 
-  // Container for Smart Container AI showcase - fixed to have valid paths
   const containerImages = [
-    '/assets/images/container-ai-1.jpg',
-    '/assets/images/container-ai-2.jpg',
-    '/assets/images/container-ai-3.jpg',
-    '/assets/images/container-ai-4.jpg',
+    {
+      type: 'image',
+      src: '/assets/images/container1.png',
+      aspectRatio: '16/9',
+      unoptimized: true,
+    },
+    {
+      type: 'image',
+      src: '/assets/images/container2.png',
+      aspectRatio: '16/9',
+      unoptimized: true,
+    },
+    {
+      type: 'image',
+      src: '/assets/images/container3.png',
+    },
+    {
+      type: 'image',
+      url: '/assets/images/container4.png',
+      aspectRatio: '16/9',
+    },
   ];
 
-  // Function to navigate through slides manually
+  const trafficImages = [
+    {
+      type: 'image',
+      src: '/assets/images/vehical1.png',
+      aspectRatio: '16/9',
+      unoptimized: true,
+    },
+    {
+      type: 'image',
+      src: '/assets/images/vehical2.png',
+      aspectRatio: '16/9',
+      unoptimized: true,
+    },
+    {
+      type: 'image',
+      src: '/assets/images/vehical3.png',
+      aspectRatio: '16/9',
+      unoptimized: true,
+    },
+    {
+      type: 'video',
+      url: 'https://www.youtube.com/watch?v=Z79WH3ehkZA',
+      aspectRatio: '16/9',
+    },
+  ];
+
   const handleSlideChange = (swiperRef, direction) => {
     if (!swiperRef || !swiperRef.current) {
       return;
@@ -300,7 +336,7 @@ export const ProjectsShowcase = () => {
                     placeholder="blur"
                     blurDataURL={PLACEHOLDER_BLUR_DATA_URL}
                     sizes="(max-width: 768px) 100vw, 400px"
-                    unoptimized={true} // Use unoptimized for problematic images
+                    unoptimized={true}
                   />
                 </div>
               </div>
@@ -381,11 +417,11 @@ export const ProjectsShowcase = () => {
                   <div className="inline-flex items-center rounded-2xl bg-orange-100/80 px-6 py-4 backdrop-blur-sm">
                     <FaHelmetSafety className="mr-3 text-4xl text-orange-600" />
                     <h2 className="text-4xl font-bold text-gray-900">
-                      Helmet Detection AI
+                      AI Helmet Detection System
                     </h2>
                   </div>
                   <p className="text-2xl text-gray-600">
-                    Real-time safety monitoring system using deep learning
+                    Advanced safety monitoring using YOLOv8 with 92% accuracy
                   </p>
                 </div>
 
@@ -432,18 +468,9 @@ export const ProjectsShowcase = () => {
                         nextEl: `.${navClasses.helmetNav.next}`,
                       }}
                       breakpoints={{
-                        640: {
-                          slidesPerView: 1.1,
-                          spaceBetween: 20,
-                        },
-                        1024: {
-                          slidesPerView: 1.3,
-                          spaceBetween: 30,
-                        },
-                        1280: {
-                          slidesPerView: 1.4,
-                          spaceBetween: 40,
-                        },
+                        640: { slidesPerView: 1.1, spaceBetween: 20 },
+                        1024: { slidesPerView: 1.3, spaceBetween: 30 },
+                        1280: { slidesPerView: 1.4, spaceBetween: 40 },
                       }}
                       className="!overflow-visible"
                     >
@@ -457,25 +484,25 @@ export const ProjectsShowcase = () => {
                               margin: '0 auto',
                             }}
                           >
-                            {item.type === 'video' ? (
-                              <VideoPlayer url={item.url} />
-                            ) : (
-                              <div key={idx} className="relative size-full">
-                                {/* Direct Image component usage with unoptimized option for problematic images */}
-                                <Image
-                                  src={item.src}
-                                  alt={`Helmet detection sample ${idx + 1}`}
-                                  fill
-                                  className="object-contain"
-                                  sizes="(max-width: 800px) 100vw, (max-width: 1200px) 80vw, 800px"
-                                  unoptimized={item.unoptimized || false} // Use unoptimized if specified
-                                  onError={(e) => {
-                                    // Fallback to a placeholder if image fails to load
-                                    e.target.src = '/api/placeholder/700/394'; // Using aspect ratio 16:9
-                                  }}
-                                />
-                              </div>
-                            )}
+                            {item.type === 'video'
+                              ? (
+                                  <VideoPlayer url={item.url} />
+                                )
+                              : (
+                                  <div key={idx} className="relative size-full">
+                                    <Image
+                                      src={item.src}
+                                      alt={`Helmet detection sample ${idx + 1}`}
+                                      fill
+                                      className="object-contain"
+                                      sizes="(max-width: 800px) 100vw, (max-width: 1200px) 80vw, 800px"
+                                      unoptimized={item.unoptimized || false}
+                                      onError={(e) => {
+                                        e.target.src = '/api/placeholder/700/394';
+                                      }}
+                                    />
+                                  </div>
+                                )}
 
                             {/* Overlay */}
                             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent" />
@@ -497,13 +524,15 @@ export const ProjectsShowcase = () => {
                   <div className="space-y-6">
                     <h3 className="flex items-center text-2xl font-bold text-orange-600">
                       <FaMicrochip className="mr-2" />
-                      Key Technologies 🔥
+                      Model Training Details
                     </h3>
                     <ul className="space-y-4 text-lg">
                       {[
-                        'Custom YOLOv8 model with 98.7% mAP',
-                        '30 FPS processing on NVIDIA Jetson',
-                        'Multi-camera streaming with RTSP',
+                        'Trained on 525 images (10% of Hard Hat Workers Dataset)',
+                        'Re-labeled training set: 314 Head, 1124 Helmet labels',
+                        'Test set: 1766 images with 1803 Head, 4863 Helmet labels',
+                        'YOLOv8 medium model, 100 epochs training',
+                        'Data augmentation: 10x increase in training samples',
                       ].map((item, idx) => (
                         <motion.li
                           key={idx}
@@ -517,18 +546,18 @@ export const ProjectsShowcase = () => {
                     </ul>
                   </div>
 
-                  {/* Achievements */}
+                  {/* Performance Metrics */}
                   <div className="space-y-6">
                     <h3 className="flex items-center text-2xl font-bold text-orange-600">
                       <FaTrophy className="mr-2" />
-                      Achievements 🏆
+                      Model Performance
                     </h3>
                     <div className="grid grid-cols-2 gap-4">
                       {[
-                        { value: '15K+', label: 'Safe Hours' },
-                        { value: '99.2%', label: 'Accuracy' },
-                        { value: '24/7', label: 'Monitoring' },
-                        { value: '50+', label: 'Deployed Cameras' },
+                        { value: '92%', label: 'Head Detection Accuracy' },
+                        { value: '87%', label: 'Helmet Detection Accuracy' },
+                        { value: '30 FPS', label: 'Processing Speed' },
+                        { value: '98.7%', label: 'mAP Score' },
                       ].map((stat, idx) => (
                         <motion.div
                           key={idx}
@@ -544,29 +573,51 @@ export const ProjectsShowcase = () => {
                     </div>
                   </div>
                 </div>
+
+                {/* Additional Information Section */}
+                <div className="space-y-6">
+                  <h3 className="flex items-center text-2xl font-bold text-orange-600">
+                    <FaChartLine className="mr-2" />
+                    Future Improvements
+                  </h3>
+                  <div className="rounded-xl bg-orange-50/50 p-6 backdrop-blur-sm">
+                    <p className="text-lg text-gray-700">
+                      With expanded training data (100% of Hard Hat Workers Dataset) and additional sources,
+                      model accuracy is expected to improve significantly. Current results are impressive
+                      considering the limited training data (only 10% of available dataset).
+                    </p>
+                    <div className="mt-4 flex items-center space-x-2 text-sm text-orange-600">
+                      <FaExternalLinkAlt />
+                      <a href="#" className="hover:underline">
+                        View detailed evaluation results
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
             {/* Project 2 - Container Evaluation */}
-            <div className="overflow-hidden rounded-[2rem] border-2 border-white/20 bg-white shadow-2xl backdrop-blur-xl">
+            <div className="overflow-hidden rounded-[2rem] border-2 border-white/20 bg-gradient-to-br from-gray-50 to-blue-50 shadow-2xl backdrop-blur-xl">
               <div className="grid grid-cols-1 gap-8 p-10">
                 {/* Title Section */}
                 <div className="space-y-4">
-                  <div className="inline-flex rounded-2xl bg-green-100 px-6 py-4">
-                    <FaDocker className="mr-3 text-4xl text-green-600" />
-                    <h2 className="text-4xl font-bold text-gray-900">
-                      Smart Container AI
-                      <span className="ml-3 text-3xl">🚢📦</span>
-                    </h2>
+                  <div className="inline-flex items-center rounded-2xl bg-gradient-to-r from-blue-600 to-green-600 px-8 py-5 shadow-lg">
+                    <FaRobot className="mr-4 text-5xl text-white" />
+                    <div>
+                      <h2 className="text-4xl font-bold text-white">
+                        AI Container Damage Detection
+                      </h2>
+                      <p className="mt-2 text-xl text-white/90">
+                        Overcoming Inspection Challenges with Computer Vision & 3D AI
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-2xl text-gray-600">
-                    Automated container inspection system with 3D scanning
-                  </p>
                 </div>
 
-                {/* Container Image Showcase with Swiper */}
-                <div className="relative">
-                  {/* Custom Navigation Arrows */}
+                {/* Enhanced Gallery Section - Original Structure Maintained */}
+                <div className="group/gallery relative">
+                  {/* Navigation Arrows */}
                   <div className="absolute inset-y-0 z-20 flex w-full items-center justify-between px-4">
                     <button
                       onClick={() => handleSlideChange(containerSwiperRef, 'prev')}
@@ -584,103 +635,369 @@ export const ProjectsShowcase = () => {
                     </button>
                   </div>
 
-                  <Swiper
-                    ref={containerSwiperRef}
-                    modules={[Navigation, Pagination, Autoplay]}
-                    slidesPerView={1}
-                    centeredSlides
-                    loop
-                    autoplay={{
-                      delay: 4000,
-                      disableOnInteraction: false,
-                    }}
-                    pagination={{
-                      clickable: true,
-                      dynamicBullets: true,
-                    }}
-                    navigation={{
-                      prevEl: `.${navClasses.containerNav.prev}`,
-                      nextEl: `.${navClasses.containerNav.next}`,
-                    }}
-                    breakpoints={{
-                      640: { slidesPerView: 1 },
-                      1024: { slidesPerView: 1.2, spaceBetween: 20 },
-                    }}
-                    className="container-swiper"
-                  >
-                    {containerImages.map((imgPath, idx) => (
-                      <SwiperSlide key={idx}>
-                        <div className="relative mx-auto h-[400px] w-full overflow-hidden rounded-3xl shadow-xl">
-                          <Image
-                            src={imgPath}
-                            alt={`Container inspection example ${idx + 1}`}
-                            fill
-                            className="object-cover"
-                            sizes="(max-width: 768px) 100vw, 800px"
-                            placeholder="blur"
-                            blurDataURL={PLACEHOLDER_BLUR_DATA_URL}
-                            unoptimized={true} // Add unoptimized prop for container images as well
-                            onError={(e) => {
-                              // Fallback to a placeholder if image fails to load
-                              e.target.src = '/api/placeholder/800/400';
+                  {/* Swiper Container */}
+                  <div className="relative isolate overflow-hidden bg-gray-100 py-8">
+                    <Swiper
+                      ref={containerSwiperRef}
+                      modules={[Navigation, Autoplay, Pagination]}
+                      slidesPerView={1}
+                      centeredSlides
+                      loop
+                      speed={800}
+                      autoplay={{
+                        delay: 5000,
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: true,
+                      }}
+                      pagination={{
+                        clickable: true,
+                        dynamicBullets: true,
+                      }}
+                      navigation={{
+                        prevEl: `.${navClasses.containerNav.prev}`,
+                        nextEl: `.${navClasses.containerNav.next}`,
+                      }}
+                      breakpoints={{
+                        640: { slidesPerView: 1.1, spaceBetween: 20 },
+                        1024: { slidesPerView: 1.3, spaceBetween: 30 },
+                        1280: { slidesPerView: 1.4, spaceBetween: 40 },
+                      }}
+                      className="!overflow-visible"
+                    >
+                      {containerImages.map((imgPath, idx) => (
+                        <SwiperSlide key={idx}>
+                          <div
+                            className="relative mx-auto overflow-hidden rounded-xl shadow-2xl"
+                            style={{
+                              aspectRatio: '16/9',
+                              maxWidth: '800px',
+                              maxHeight: '450px',
                             }}
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent" />
-                          <div className="absolute bottom-4 left-4 rounded-lg bg-black/50 px-3 py-1.5 text-sm text-white backdrop-blur-sm">
-                            Container scan
-                            {' '}
-                            {idx + 1}
+                          >
+                            <div className="relative size-full">
+                              <Image
+                                src={imgPath.src}
+                                alt={`Container inspection example ${idx + 1}`}
+                                fill
+                                className="object-contain"
+                                sizes="(max-width: 800px) 100vw, 800px"
+                                placeholder="blur"
+                                blurDataURL={PLACEHOLDER_BLUR_DATA_URL}
+                                unoptimized
+                                onError={(e) => {
+                                  e.target.src = '/api/placeholder/800/450';
+                                }}
+                                style={{
+                                  padding: '1rem',
+                                  objectPosition: 'center center',
+                                }}
+                              />
+                            </div>
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent" />
+                            <span className="absolute bottom-4 right-4 z-10 rounded-full bg-black/30 px-3 py-1.5 text-sm font-medium text-white backdrop-blur-sm">
+                              Scan
+                              {' '}
+                              {idx + 1}
+                            </span>
                           </div>
-                        </div>
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
+                        </SwiperSlide>
+                      ))}
+                    </Swiper>
+                  </div>
                 </div>
 
-                {/* Project Details */}
-                <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-                  {/* Tech Specs */}
-                  <div className="space-y-6">
-                    <h3 className="text-2xl font-bold text-green-600">Breakthrough Technology 🚀</h3>
-                    <ul className="space-y-4 text-lg">
+                {/* New Challenge/Solution Section */}
+                <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+                  <div className="rounded-xl bg-red-50/80 p-8 backdrop-blur-sm">
+                    <h3 className="mb-6 flex items-center text-2xl font-bold text-red-600">
+                      <FaExclamationTriangle className="mr-2" />
+                      Inspection Challenges
+                    </h3>
+                    <ul className="space-y-4">
                       {[
-                        'LiDAR + Camera Fusion',
-                        'AI damage detection at 2mm+',
-                        'IoT Gateway Integration',
-                        '3D Container Modeling',
-                        'Self-healing network infrastructure',
+                        '15-20 day container wait times',
+                        'Subjective manual inspections',
+                        'High storage costs ($1/day)',
+                        'Safety risks at height',
                       ].map((item, idx) => (
                         <motion.li
                           key={idx}
-                          className="flex items-center rounded-lg bg-green-50/50 p-4 backdrop-blur-sm"
-                          whileHover={{ scale: 1.02 }}
+                          className="flex items-center rounded-lg bg-white p-4 shadow-sm"
+                          whileHover={{ x: 10 }}
                         >
-                          <div className="mr-3 size-2 rounded-full bg-green-600" />
+                          <FaTimes className="mr-3 text-red-500" />
                           {item}
                         </motion.li>
                       ))}
                     </ul>
                   </div>
 
-                  {/* Achievements */}
+                  <div className="rounded-xl bg-green-50/80 p-8 backdrop-blur-sm">
+                    <h3 className="mb-6 flex items-center text-2xl font-bold text-green-600">
+                      <FaMagic className="mr-2" />
+                      AI Solutions
+                    </h3>
+                    <ul className="space-y-4">
+                      {[
+                        '2mm precision 3D scanning',
+                        'Automated damage classification',
+                        'Real-time EIR generation',
+                        'Mobile field deployment',
+                      ].map((item, idx) => (
+                        <motion.li
+                          key={idx}
+                          className="flex items-center rounded-lg bg-white p-4 shadow-sm"
+                          whileHover={{ x: 10 }}
+                        >
+                          <FaCheck className="mr-3 text-green-500" />
+                          {item}
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Performance Metrics */}
+                <div className="space-y-6">
+                  <h3 className="flex items-center text-2xl font-bold text-purple-600">
+                    <FaTrophy className="mr-2" />
+                    Performance Leadership
+                  </h3>
+                  <div className="grid grid-cols-2 gap-4">
+                    {[
+                      { value: '-70%', label: 'Inspection Time', icon: FaClock },
+                      { value: '24/7', label: 'Operation', icon: FaSyncAlt },
+                      { value: '99.8%', label: 'Accuracy', icon: FaCrosshairs },
+                      { value: '2mm', label: 'Detection Precision', icon: FaRuler },
+                    ].map((stat, idx) => (
+                      <motion.div
+                        key={idx}
+                        className="rounded-xl bg-purple-50/80 p-6 backdrop-blur-sm"
+                        whileHover={{ y: -5 }}
+                      >
+                        <stat.icon className="mb-3 text-3xl text-purple-600" />
+                        <div className="text-3xl font-bold text-purple-600">
+                          {stat.value}
+                        </div>
+                        <div className="text-gray-600">{stat.label}</div>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Project 3 - Traffic Monitoring */}
+            <div className="overflow-hidden rounded-[2rem] border-2 border-white/20 bg-white shadow-2xl backdrop-blur-xl">
+              <div className="grid grid-cols-1 gap-8 p-10">
+                {/* Title Section */}
+                <div className="space-y-4">
+                  <div className="inline-flex items-center rounded-2xl bg-gradient-to-r from-red-600 to-yellow-500 px-6 py-4 backdrop-blur-sm">
+                    <FaCar className="mr-3 text-4xl text-white" />
+                    <h2 className="text-4xl font-bold text-white">
+                      AI Traffic Violation Detection
+                    </h2>
+                  </div>
+                  <p className="text-2xl text-gray-600">
+                    Real-time traffic law enforcement system with Vietnamese data-trained models
+                  </p>
+                </div>
+
+                {/* Enhanced Gallery Section */}
+                <div className="group/gallery relative">
+                  {/* Navigation Arrows */}
+                  <div className="absolute inset-y-0 z-20 flex w-full items-center justify-between px-4">
+                    <button
+                      onClick={() => handleSlideChange(trafficSwiperRef, 'prev')}
+                      className={`${navClasses.trafficNav.prev} rounded-full bg-black/30 p-3 backdrop-blur-lg transition duration-200 hover:scale-110 hover:bg-black/50`}
+                      aria-label="Previous traffic image"
+                    >
+                      <FaChevronLeft className="size-6 text-white" />
+                    </button>
+                    <button
+                      onClick={() => handleSlideChange(trafficSwiperRef, 'next')}
+                      className={`${navClasses.trafficNav.next} rounded-full bg-black/30 p-3 backdrop-blur-lg transition duration-200 hover:scale-110 hover:bg-black/50`}
+                      aria-label="Next traffic image"
+                    >
+                      <FaChevronRight className="size-6 text-white" />
+                    </button>
+                  </div>
+
+                  {/* Swiper Container */}
+                  <div className="relative isolate overflow-hidden bg-gray-100 py-8">
+                    <Swiper
+                      ref={trafficSwiperRef}
+                      modules={[Navigation, Autoplay, Pagination]}
+                      slidesPerView={1}
+                      centeredSlides
+                      loop
+                      speed={800}
+                      autoplay={{
+                        delay: 5000,
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: true,
+                      }}
+                      pagination={{
+                        clickable: true,
+                        dynamicBullets: true,
+                      }}
+                      navigation={{
+                        prevEl: `.${navClasses.trafficNav.prev}`,
+                        nextEl: `.${navClasses.trafficNav.next}`,
+                      }}
+                      breakpoints={{
+                        640: { slidesPerView: 1.1, spaceBetween: 20 },
+                        1024: { slidesPerView: 1.3, spaceBetween: 30 },
+                        1280: { slidesPerView: 1.4, spaceBetween: 40 },
+                      }}
+                      className="!overflow-visible"
+                    >
+                      {trafficImages.map((item, idx) => (
+                        <SwiperSlide key={idx}>
+                          <div
+                            className="relative mx-auto overflow-hidden rounded-xl shadow-2xl"
+                            style={{
+                              aspectRatio: '16/9',
+                              maxWidth: '800px',
+                              maxHeight: '450px',
+                            }}
+                          >
+                            {item.type === 'video'
+                              ? (
+                                  <VideoPlayer url={item.url} />
+                                )
+                              : (
+                                  <div className="relative size-full">
+                                    <Image
+                                      src={item.src}
+                                      alt={`Traffic violation example ${idx + 1}`}
+                                      fill
+                                      className="object-contain"
+                                      sizes="(max-width: 800px) 100vw, 800px"
+                                      placeholder="blur"
+                                      blurDataURL={PLACEHOLDER_BLUR_DATA_URL}
+                                      unoptimized
+                                      onError={(e) => {
+                                        e.target.src = '/api/placeholder/800/450';
+                                      }}
+                                      style={{
+                                        padding: '1rem',
+                                        objectPosition: 'center center',
+                                      }}
+                                    />
+                                  </div>
+                                )}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent" />
+                            <span className="absolute bottom-4 right-4 z-10 rounded-full bg-black/30 px-3 py-1.5 text-sm font-medium text-white backdrop-blur-sm">
+                              {item.type === 'video' ? 'Video Demo' : `Violation ${idx + 1}`}
+                            </span>
+                          </div>
+                        </SwiperSlide>
+                      ))}
+                    </Swiper>
+                  </div>
+                </div>
+
+                {/* Project Details */}
+                <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+                  {/* Tech Specs */}
                   <div className="space-y-6">
-                    <h3 className="text-2xl font-bold text-green-600">Efficiency ⚡</h3>
+                    <h3 className="flex items-center text-2xl font-bold text-red-600">
+                      <FaMicrochip className="mr-2" />
+                      Core Technology
+                    </h3>
+                    <ul className="space-y-4 text-lg">
+                      {[
+                        'Vietnam-trained YOLOv8 models',
+                        'Advanced vehicle tracking algorithms',
+                        'Multi-camera fusion system',
+                        'Violation decision-making engine',
+                        'Edge-cloud hybrid architecture',
+                      ].map((item, idx) => (
+                        <motion.li
+                          key={idx}
+                          className="flex items-center rounded-lg bg-red-50/50 p-4 backdrop-blur-sm"
+                          whileHover={{ scale: 1.02 }}
+                        >
+                          <div className="mr-3 size-2 rounded-full bg-red-600" />
+                          {item}
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Performance Metrics */}
+                  <div className="space-y-6">
+                    <h3 className="flex items-center text-2xl font-bold text-yellow-600">
+                      <FaChartLine className="mr-2" />
+                      System Performance
+                    </h3>
                     <div className="grid grid-cols-2 gap-4">
                       {[
-                        { value: '-70%', label: 'Inspection Time' },
-                        { value: '24/7', label: 'Continuous Operation' },
-                        { value: '+45%', label: 'Damage Detection' },
-                        { value: '99.8%', label: 'System Uptime' },
+                        { value: '96.7%', label: 'Violation Detection' },
+                        { value: '0.15s', label: 'Response Time' },
+                        {
+                          value: 'Red/Yellow',
+                          label: 'Violation Classification',
+                          badge: (
+                            <div className="mt-2 flex gap-2">
+                              <span className="rounded-full bg-red-100 px-2 py-1 text-xs text-red-800">Red Violations</span>
+                              <span className="rounded-full bg-yellow-100 px-2 py-1 text-xs text-yellow-800">Yellow Violations</span>
+                            </div>
+                          ),
+                        },
+                        { value: '40%', label: 'Efficiency Improvement' },
                       ].map((stat, idx) => (
                         <motion.div
                           key={idx}
-                          className="rounded-xl bg-green-50/50 p-6 backdrop-blur-sm"
-                          whileHover={{ scale: 1.05 }}
+                          className="rounded-xl bg-yellow-50/50 p-6 backdrop-blur-sm"
+                          whileHover={{ y: -5 }}
                         >
-                          <div className="text-3xl font-bold text-green-600">{stat.value}</div>
+                          <div className="text-3xl font-bold text-yellow-600">
+                            {stat.value}
+                          </div>
                           <div className="text-gray-600">{stat.label}</div>
+                          {stat.badge && stat.badge}
                         </motion.div>
                       ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Violation Classification */}
+                <div className="space-y-6">
+                  <h3 className="flex items-center text-2xl font-bold text-gray-800">
+                    <FaBalanceScale className="mr-2" />
+                    Violation Categories
+                  </h3>
+                  <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                    <div className="rounded-xl bg-red-50/80 p-6 backdrop-blur-sm">
+                      <h4 className="mb-3 flex items-center text-lg font-bold text-red-600">
+                        <FaExclamationTriangle className="mr-2" />
+                        Red Violations
+                      </h4>
+                      <ul className="space-y-2 text-gray-700">
+                        {['Red light running', 'Wrong way driving', 'Dangerous overtaking'].map((item, idx) => (
+                          <li key={idx} className="flex items-center">
+                            <FaAngleRight className="mr-2 text-red-500" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="rounded-xl bg-yellow-50/80 p-6 backdrop-blur-sm">
+                      <h4 className="mb-3 flex items-center text-lg font-bold text-yellow-600">
+                        <FaExclamationCircle className="mr-2" />
+                        Yellow Violations
+                      </h4>
+                      <ul className="space-y-2 text-gray-700">
+                        {['Lane violations', 'Illegal parking', 'Speeding'].map((item, idx) => (
+                          <li key={idx} className="flex items-center">
+                            <FaAngleRight className="mr-2 text-yellow-500" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 </div>
@@ -714,7 +1031,7 @@ export const ProjectsShowcase = () => {
       </div>
     </div>
   );
-};
+});
 
 // Helper components
 const AppStoreButton = ({ url, platform, fullWidth, theme }) => {
