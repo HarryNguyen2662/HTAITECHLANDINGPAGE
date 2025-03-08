@@ -3,27 +3,66 @@
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 
+export type ContactFormData = {
+  name: string;
+  email: string;
+  phone: string;
+  service: string;
+  message: string;
+};
+
 export const ContactForm = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
     phone: '',
     service: '',
     message: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name as keyof typeof formData]: value,
+      [name]: value,
     }));
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Add your form submission logic here
-    alert('Form submitted successfully!');
+    setIsSubmitting(true);
+    setSubmitError(null);
+    setSubmitSuccess(false);
+
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const contentType = response.headers.get('content-type');
+      let result;
+      if (contentType && contentType.includes('application/json')) {
+        result = await response.json();
+      } else {
+        const text = await response.text();
+        throw new Error(`Unexpected response: ${text.slice(0, 100)}`);
+      }
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || `Server error: ${response.status}`);
+      }
+
+      setSubmitSuccess(true);
+      setFormData({ name: '', email: '', phone: '', service: '', message: '' });
+    } catch (err) {
+      setSubmitError(err instanceof Error ? err.message : 'Failed to send message');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const containerVariants = {
@@ -47,7 +86,7 @@ export const ContactForm = () => {
     hover: {
       y: -5,
       boxShadow:
-				'0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+        '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
     },
   };
 
@@ -60,7 +99,7 @@ export const ContactForm = () => {
           variants={containerVariants}
           className="grid grid-cols-1 gap-12 lg:grid-cols-2"
         >
-          {/* Left Column - Contact Form */}
+          {/* Contact Form Column */}
           <motion.div
             variants={itemVariants}
             className="rounded-3xl border border-white/20 bg-white p-10 shadow-2xl backdrop-blur-lg"
@@ -74,10 +113,8 @@ export const ContactForm = () => {
                 Transform Your Vision into Reality
               </h2>
               <p className="mb-8 text-lg leading-relaxed text-gray-600">
-                From crafting compelling websites to shaping distinctive
-                brands, bringing products to life, or cultivating innovative
-                ideas — let's collaborate to create something impactful and
-                meaningful. Turn your project dreams into tangible success.
+                Let's collaborate to create something impactful and meaningful.
+                Turn your project dreams into tangible success.
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-8">
@@ -92,8 +129,7 @@ export const ContactForm = () => {
                         htmlFor={field}
                         className="mb-3 block text-sm font-medium text-gray-700"
                       >
-                        {field.charAt(0).toUpperCase()
-                        + field.slice(1).replace('_', ' ')}
+                        {field.charAt(0).toUpperCase() + field.slice(1)}
                         <span className="ml-1 text-red-500">*</span>
                       </label>
                       {field === 'service'
@@ -156,29 +192,64 @@ export const ContactForm = () => {
                   />
                 </motion.div>
 
-                <motion.button
-                  whileHover="hover"
-                  variants={hoverEffect}
-                  type="submit"
-                  className="flex w-full items-center justify-center space-x-3 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 px-8 py-5 font-semibold text-white transition-all duration-300 hover:shadow-xl"
-                >
-                  <span>Send Message</span>
-                  <motion.svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="size-5"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    initial={{ x: 0 }}
-                    animate={{ x: 5 }}
-                    transition={{ repeat: Infinity, duration: 1 }}
+                <div className="space-y-4">
+                  <motion.button
+                    whileHover={!isSubmitting ? 'hover' : undefined}
+                    variants={hoverEffect}
+                    type="submit"
+                    disabled={isSubmitting}
+                    className={`flex w-full items-center justify-center space-x-3 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 px-8 py-5 font-semibold text-white transition-all duration-300 ${
+                      isSubmitting
+                        ? 'cursor-not-allowed opacity-50'
+                        : 'hover:shadow-xl'
+                    }`}
                   >
-                    <path
-                      fillRule="evenodd"
-                      d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                      clipRule="evenodd"
-                    />
-                  </motion.svg>
-                </motion.button>
+                    {isSubmitting
+                      ? (
+                          <span>Sending...</span>
+                        )
+                      : (
+                          <>
+                            <span>Send Message</span>
+                            <motion.svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="size-5"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                              initial={{ x: 0 }}
+                              animate={{ x: 5 }}
+                              transition={{ repeat: Infinity, duration: 1 }}
+                            >
+                              <path
+                                fillRule="evenodd"
+                                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                                clipRule="evenodd"
+                              />
+                            </motion.svg>
+                          </>
+                        )}
+                  </motion.button>
+
+                  {submitError && (
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      className="text-center text-red-500"
+                    >
+                      {submitError}
+                    </motion.div>
+                  )}
+
+                  {submitSuccess && (
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      className="text-center text-green-600"
+                    >
+                      Message sent successfully! We'll contact you soon.
+                    </motion.div>
+                  )}
+                </div>
               </form>
             </motion.div>
           </motion.div>
@@ -206,7 +277,7 @@ export const ContactForm = () => {
                     '123 Ly Dao Thanh, An Hai Bac, Son Tra, Da Nang',
                   ],
                 },
-              ].map((office) => (
+              ].map(office => (
                 <motion.div
                   key={office.country}
                   whileHover={{ scale: 1.02 }}
@@ -232,7 +303,7 @@ export const ContactForm = () => {
                 </h3>
                 <motion.a
                   whileHover={{ scale: 1.05 }}
-                  href="mailto:start@coderpush.com"
+                  href="mailto:tainguyenhuu@htaitech.net"
                   className="inline-flex items-center space-x-2 text-lg font-medium text-purple-600 hover:text-purple-700"
                 >
                   <svg

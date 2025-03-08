@@ -27,6 +27,11 @@ export default function middleware(
   request: NextRequest,
   event: NextFetchEvent,
 ) {
+  // Bypass middleware for send-email API route so it reaches the endpoint
+  if (request.nextUrl.pathname.includes('/send-email')) {
+    return NextResponse.next();
+  }
+
   if (
     request.nextUrl.pathname.includes('/sign-in')
     || request.nextUrl.pathname.includes('/sign-up')
@@ -38,11 +43,10 @@ export default function middleware(
       if (isProtectedRoute(req)) {
         const locale
           = req.nextUrl.pathname.match(/(\/.*)\/dashboard/)?.at(1) ?? '';
-
         const signInUrl = new URL(`${locale}/sign-in`, req.url);
 
         authObj.protect({
-          // `unauthenticatedUrl` is needed to avoid error: "Unable to find `next-intl` locale because the middleware didn't run on this request"
+          // `unauthenticatedUrl` avoids errors with next-intl locale detection
           unauthenticatedUrl: signInUrl.toString(),
         });
       }
@@ -57,7 +61,6 @@ export default function middleware(
           '/onboarding/organization-selection',
           req.url,
         );
-
         return NextResponse.redirect(orgSelection);
       }
 
@@ -69,5 +72,9 @@ export default function middleware(
 }
 
 export const config = {
-  matcher: ['/((?!.+\\.[\\w]+$|_next|monitoring).*)', '/', '/(api|trpc)(.*)'], // Also exclude tunnelRoute used in Sentry from the matcher
+  matcher: [
+    '/((?!.+\\.[\\w]+$|_next|monitoring).*)',
+    '/',
+    '/(api|trpc)(.*)',
+  ], // Also exclude tunnelRoute used in Sentry from the matcher
 };
