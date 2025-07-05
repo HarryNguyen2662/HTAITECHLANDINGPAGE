@@ -84,6 +84,13 @@ export const AboutUs = () => {
       href: 'https://www.linkedin.com/in/quang-minh%EF%BC%88%E3%83%9F%E3%83%B3%EF%BC%89-a9395027/',
       image: '/assets/images/chuminh.png',
     },
+    {
+      name: 'Nguyen Viet Tam, MBA',
+      role: 'Director of Sales & Commercial Operations, Vietnam',
+      bio: 'Over 15 years of experience in accounting, taxation, and business law. Senior compliance and finance specialist at major corporations such as Đèo Cả Group, Sun Group, and others.',
+      links: [],
+      image: '/assets/images/chutam.png',
+    },
   ];
 
   return (
