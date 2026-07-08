@@ -1,13 +1,13 @@
-import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { ContactForm } from '@/template/contactspage';
 import { CTA } from '@/template/CTA';
 import { Footer } from '@/template/Footer';
 import { Navbar } from '@/template/Navbar';
 
-export async function generateMetadata(props: { params: { locale: string } }) {
+export async function generateMetadata(props: { params: Promise<{ locale: string }> }) {
   const t = await getTranslations({
-    locale: props.params.locale,
+    locale: (await props.params).locale,
     namespace: 'Index',
   });
 
@@ -17,8 +17,8 @@ export async function generateMetadata(props: { params: { locale: string } }) {
   };
 }
 
-const ServicesPage = (props: { params: { locale: string } }) => {
-  unstable_setRequestLocale(props.params.locale);
+const ServicesPage = async (props: { params: Promise<{ locale: string }> }) => {
+  setRequestLocale((await props.params).locale);
 
   return (
     <>

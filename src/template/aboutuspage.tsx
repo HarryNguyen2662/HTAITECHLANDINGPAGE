@@ -1,11 +1,11 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import Image from 'next/image';
 import React from 'react';
 
 export const AboutUs = () => {
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -13,7 +13,7 @@ export const AboutUs = () => {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
@@ -23,7 +23,7 @@ export const AboutUs = () => {
     hover: {
       y: -5,
       boxShadow:
-				'0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+        '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
     },
   };
 
@@ -32,31 +32,31 @@ export const AboutUs = () => {
       title: 'Collective Success',
       icon: '🌟',
       description:
-				'Where collaborative synergy meets measurable outcomes - your growth is our ultimate success metric',
+        'Where collaborative synergy meets measurable outcomes - your growth is our ultimate success metric',
     },
     {
       title: 'Ownership Excellence',
       icon: '🏆',
       description:
-				'Covenant-based commitments backed by our reputation capital',
+        'Covenant-based commitments backed by our reputation capital',
     },
     {
       title: 'Knowledge Alchemy',
       icon: '📚',
       description:
-				'Transforming intellectual capital into strategic advantage through our R&D forge',
+        'Transforming intellectual capital into strategic advantage through our R&D forge',
     },
     {
       title: 'Precision Craftsmanship',
       icon: '🎨',
       description:
-				'Architecting digital masterpieces where binary precision meets aesthetic vision',
+        'Architecting digital masterpieces where binary precision meets aesthetic vision',
     },
     {
       title: 'Visionary Leap',
       icon: '🚀',
       description:
-				'Orchestrating market-defining innovations that propel industry leadership',
+        'Orchestrating market-defining innovations that propel industry leadership',
     },
   ];
 

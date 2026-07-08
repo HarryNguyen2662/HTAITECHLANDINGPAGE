@@ -37,15 +37,15 @@ export default function middleware(
     || request.nextUrl.pathname.includes('/sign-up')
     || isProtectedRoute(request)
   ) {
-    return clerkMiddleware((auth, req) => {
-      const authObj = auth();
+    return clerkMiddleware(async (auth, req) => {
+      const authObj = await auth();
 
       if (isProtectedRoute(req)) {
         const locale
           = req.nextUrl.pathname.match(/(\/.*)\/dashboard/)?.at(1) ?? '';
         const signInUrl = new URL(`${locale}/sign-in`, req.url);
 
-        authObj.protect({
+        auth.protect({
           // `unauthenticatedUrl` avoids errors with next-intl locale detection
           unauthenticatedUrl: signInUrl.toString(),
         });

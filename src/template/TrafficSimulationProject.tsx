@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { FaChartLine, FaCity, FaFilePdf, FaVideo } from 'react-icons/fa';
 
 import { Badge } from '@/components/ui/badge';
@@ -8,7 +8,7 @@ import { VideoDemoButton } from './VideoDemoButton';
 import { VideoPlayer } from './Videoplayer';
 
 export const TrafficSimulationProject: React.FC = () => {
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,

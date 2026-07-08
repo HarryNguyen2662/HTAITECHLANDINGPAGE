@@ -21,12 +21,14 @@ export default withSentryConfig(
     withNextIntlConfig({
       eslint: {
         dirs: ['.'],
+        // `npm run lint` (pre-commit + CI) already lints with this project's
+        // flat ESLint config; Next 15's built-in build-time linter doesn't
+        // support that config format yet, so it's redundant here.
+        ignoreDuringBuilds: true,
       },
       poweredByHeader: false,
       reactStrictMode: true,
-      experimental: {
-        serverComponentsExternalPackages: ['@electric-sql/pglite'],
-      },
+      serverExternalPackages: ['@electric-sql/pglite'],
     }),
   ),
   {

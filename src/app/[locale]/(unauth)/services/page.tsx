@@ -1,15 +1,15 @@
-import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
-import { CTA } from '@/template/CTA';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 
+import { CTA } from '@/template/CTA';
 import { Footer } from '@/template/Footer';
 import { ServiceHero } from '@/template/HEROservice';
 import { Navbar } from '@/template/Navbar';
 import { Servicestemplate } from '@/template/Servicetemplate';
 import { WhatWeProvide } from '@/template/whatweprovide';
 
-export async function generateMetadata(props: { params: { locale: string } }) {
+export async function generateMetadata(props: { params: Promise<{ locale: string }> }) {
   const t = await getTranslations({
-    locale: props.params.locale,
+    locale: (await props.params).locale,
     namespace: 'Index',
   });
 
@@ -19,8 +19,8 @@ export async function generateMetadata(props: { params: { locale: string } }) {
   };
 }
 
-const ServicesPage = (props: { params: { locale: string } }) => {
-  unstable_setRequestLocale(props.params.locale);
+const ServicesPage = async (props: { params: Promise<{ locale: string }> }) => {
+  setRequestLocale((await props.params).locale);
 
   return (
     <>

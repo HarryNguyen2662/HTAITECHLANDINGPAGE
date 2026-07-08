@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import Image from 'next/image';
 import { FaDocker, FaGamepad } from 'react-icons/fa';
 import { FaHelmetSafety } from 'react-icons/fa6';
@@ -10,7 +10,7 @@ import { AppStoreButton } from './AppStoreButton';
 const PLACEHOLDER_BLUR_DATA_URL = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjJmMmYyIi8+PC9zdmc+';
 
 export const TictactoeProject: React.FC = () => {
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
@@ -84,7 +84,7 @@ export const TictactoeProject: React.FC = () => {
               fill
               className="object-cover object-center"
               blurDataURL={PLACEHOLDER_BLUR_DATA_URL}
-              unoptimized={true}
+              unoptimized
             />
           </div>
         </div>
