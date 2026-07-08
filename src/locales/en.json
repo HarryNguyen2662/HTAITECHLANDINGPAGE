@@ -13,11 +13,13 @@
     "Contact": "Contact"
   },
   "Hero": {
-    "follow_twitter": "Follow @Ixartz on Twitter",
-    "title": "Bringing Ideas to Life with AI and Technology - <important>H&T AI TECH</important>",
-    "description": "Empowering Success with Advanced AI and Technology – H&T AI TECH Propels Your Business Forward.",
-    "primary_button": "Learn more",
-    "secondary_button": "Contact"
+    "eyebrow": "Đà Nẵng, Việt Nam — applied AI studio",
+    "title": "We build AI that makes the call — <important>pass or fail, safe or not.</important>",
+    "description": "Helmet compliance at 92% accuracy. Traffic violations flagged in 0.15 seconds. A driving-exam simulator that's helped thousands prepare for their license. H&T AI TECH designs and ships computer-vision systems for Vietnam's smart cities — built and tested in Đà Nẵng.",
+    "primary_button": "See the work",
+    "secondary_button": "Talk to the team",
+    "exhibit_label": "Exhibit — shipped product",
+    "exhibit_caption": "Luyện Thi Mô Phỏng 120 Tình Huống — our AI-graded driving-exam simulator, live on the App Store and Google Play."
   },
   "HeroService": {
     "follow_twitter": "Crafting Excellence in Every Solution",
@@ -37,9 +39,9 @@
     "title": "Sponsored by"
   },
   "Services": {
-    "section_subtitle": "Working Steps",
-    "section_title": "Cultivating Exceptional Teams Begins With Cutting-Edge Technology",
-    "section_description": "H&T AI TECH - Your Premier Technology Partner",
+    "section_subtitle": "Engagement models",
+    "section_title": "Four ways to work with us",
+    "section_description": "Pick the model that fits how you need to move — from one specialist to a full AI build.",
     "step1_title": "Effortless Team Expansion",
     "step1_description": "Elevate your capabilities with on-demand expertise. Our staff augmentation brings specialized talent to your team, helping you scale rapidly while maintaining complete control of your projects.",
     "step2_title": "Full-Service Development Teams",
@@ -121,9 +123,9 @@
     "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquam enim dui, id consequat turpis ullamcorper ac. Mauris id quam dolor. Nullam eu egestas turpis. Proin risus elit, sollicitudin in mi a, accumsan euismod turpis. In euismod mi sed diam tristique hendrerit."
   },
   "CTA": {
-    "title": "You are ready?",
-    "description": "At H&T AI TECH, we’re committed to delivering results that drive your business forward and help you achieve your software development objectives.",
-    "button_text": "GET IN TOUCH WITH US TODAY"
+    "title": "Have a system that needs to make the right call?",
+    "description": "Tell us what you're trying to detect, verify, or automate — traffic, safety, quality control, or something we haven't built yet. We reply from Đà Nẵng within one business day.",
+    "button_text": "Start the conversation"
   },
   "Footer": {
     "product": "Product",

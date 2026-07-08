@@ -1,7 +1,5 @@
 import Link from 'next/link';
-import Image from 'next/image';
 
-// import { useTranslations } from 'next-intl';
 import { CenteredFooter } from '@/features/landing/CenteredFooter';
 import { Section } from '@/features/landing/Section';
 import { AppConfig } from '@/utils/AppConfig';
@@ -49,78 +47,47 @@ export const Footer = () => {
   ];
 
   return (
-    <Section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
-      <div className="absolute inset-0 bg-[url('/assets/svg/grid.svg')] bg-center opacity-5" />
+    <Section className="border-ink bg-ink text-paper border-t-2">
       <CenteredFooter
-        logo={(
-          <Image
-            src="/assets/images/.png"
-            alt="CP Logo"
-            width={0} // Adjust width as needed
-            height={0} // Adjust height as needed
-            className="object-contain"
-          />
-        )}
+        logo={null}
         name="H&T AI TECH"
-        iconList={(
-          <div className="flex gap-4">
-            {socialLinks.map((link, index) => (
-              <Link
-                key={index}
-                href={link.href}
-                className="rounded-full bg-gray-700 p-2 transition-colors hover:bg-gray-600"
-                aria-label={`Social media link ${index + 1}`}
-              >
-                {link.icon}
-              </Link>
-            ))}
-          </div>
-        )}
-        legalLinks={(
-          <div className="flex gap-6">
-            {legalLinks.map((link, index) => (
-              <Link
-                key={index}
-                href={link.href}
-                className="text-sm text-gray-300 transition-colors hover:text-white"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-        )}
+        iconList={<></>}
+        legalLinks={<></>}
       >
         <div className="mx-auto w-full max-w-7xl px-4">
           <div className="grid grid-cols-1 gap-12 py-12 lg:grid-cols-3">
             {/* Logo & Contact Section */}
             <div className="space-y-6">
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3">
                 <img
                   src="/assets/images/handtailogo.png"
-                  alt="CP Logo"
-                  className="size-16 object-contain"
+                  alt="H&T AI Tech"
+                  className="size-10 object-contain"
                 />
-                <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-2xl font-bold text-transparent">
+                <span className="text-paper font-display text-xl font-semibold">
                   H&T AI TECH
                 </span>
               </div>
 
+              <p className="text-paper/50 max-w-xs font-mono text-xs uppercase tracking-[0.15em]">
+                Đà Nẵng, Việt Nam — applied AI &amp; software studio
+              </p>
+
               <div className="space-y-4">
                 <Link
                   href="mailto:tainguyenhuu@htaitech.net"
-                  className="group inline-flex items-center gap-2 text-gray-300 transition-colors hover:text-white"
+                  className="text-paper/70 hover:text-paper group inline-flex items-center gap-2 transition-colors"
                 >
                   <span className="text-lg">tainguyenhuu@htaitech.net</span>
                   <span className="opacity-0 transition-opacity group-hover:opacity-100">→</span>
                 </Link>
 
-                <div className="flex gap-4">
+                <div className="flex gap-3">
                   {socialLinks.map((link, index) => (
                     <Link
-                      // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-                      key={index}
+                      key={link.href}
                       href={link.href}
-                      className="rounded-full bg-gray-700 p-2 transition-colors hover:bg-gray-600"
+                      className="border-paper/20 text-paper/70 hover:border-paper/40 hover:text-paper rounded border p-2 transition-colors"
                       aria-label={`Social media link ${index + 1}`}
                     >
                       {link.icon}
@@ -135,17 +102,17 @@ export const Footer = () => {
               <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
                 <div className="md:col-span-2">
                   <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
-                    {services.map((service, index) => (
-                      <div key={index} className="space-y-3">
-                        <h3 className="text-sm font-semibold uppercase tracking-wider text-blue-400">
+                    {services.map(service => (
+                      <div key={service.title} className="space-y-3">
+                        <h3 className="font-mono text-xs font-medium uppercase tracking-[0.15em] text-primary">
                           {service.title}
                         </h3>
                         <ul className="space-y-2">
-                          {service.items.map((item, idx) => (
-                            <li key={idx}>
+                          {service.items.map(item => (
+                            <li key={item}>
                               <Link
                                 href="#"
-                                className="text-sm text-gray-300 transition-colors hover:text-white"
+                                className="text-paper/70 hover:text-paper text-sm transition-colors"
                               >
                                 {item}
                               </Link>
@@ -160,27 +127,27 @@ export const Footer = () => {
                 {/* Career & Address Section */}
                 <div className="space-y-8">
                   <div className="space-y-3">
-                    <h3 className="text-sm font-semibold uppercase tracking-wider text-purple-400">
+                    <h3 className="font-mono text-xs font-medium uppercase tracking-[0.15em] text-verify">
                       Career
                     </h3>
                     <Link
                       href="#"
-                      className="text-sm text-gray-300 transition-colors hover:text-white"
+                      className="text-paper/70 hover:text-paper text-sm transition-colors"
                     >
                       Apply for Jobs
                     </Link>
                   </div>
 
                   <div className="space-y-3">
-                    <h3 className="text-sm font-semibold uppercase tracking-wider text-green-400">
+                    <h3 className="font-mono text-xs font-medium uppercase tracking-[0.15em] text-primary">
                       Our Offices
                     </h3>
                     <ul className="space-y-4">
-                      {addresses.map((address, index) => (
-                        <li key={index} className="text-sm">
-                          <p className="font-medium text-gray-200">{address.location}</p>
-                          {address.address.map((line, idx) => (
-                            <p key={idx} className="text-gray-400">{line}</p>
+                      {addresses.map(address => (
+                        <li key={address.location} className="text-sm">
+                          <p className="text-paper/90 font-medium">{address.location}</p>
+                          {address.address.map(line => (
+                            <p key={line} className="text-paper/50">{line}</p>
                           ))}
                         </li>
                       ))}
@@ -192,8 +159,8 @@ export const Footer = () => {
           </div>
 
           {/* Bottom Legal Section */}
-          <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-gray-700 pt-8 md:flex-row">
-            <p className="text-sm text-gray-400">
+          <div className="border-paper/15 mt-8 flex flex-col items-center justify-between gap-4 border-t pt-8 md:flex-row">
+            <p className="text-paper/50 font-mono text-xs">
               ©
               {' '}
               {new Date().getFullYear()}
@@ -203,11 +170,11 @@ export const Footer = () => {
             </p>
 
             <div className="flex gap-6">
-              {legalLinks.map((link, index) => (
+              {legalLinks.map(link => (
                 <Link
-                  key={index}
+                  key={link.href}
                   href={link.href}
-                  className="text-sm text-gray-300 transition-colors hover:text-white"
+                  className="text-paper/70 hover:text-paper text-sm transition-colors"
                 >
                   {link.label}
                 </Link>

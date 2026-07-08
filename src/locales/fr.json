@@ -1,23 +1,25 @@
 {
   "Index": {
-    "meta_title": "SaaS Template - Le template SaaS parfait pour construire et mettre à l'échelle votre entreprise en toute simplicité.",
-    "meta_description": "Un template gratuit et open-source de landing page pour votre entreprise SaaS, construit avec React, TypeScript, Shadcn UI et Tailwind CSS."
+    "meta_title": "H&T AI TECH - Une IA qui rend le verdict.",
+    "meta_description": "H&T AI TECH conçoit et déploie des systèmes de vision par ordinateur pour les villes intelligentes du Vietnam."
   },
   "Navbar": {
     "sign_in": "Se connecter",
     "sign_up": "S'inscrire",
-    "product": "Produit",
-    "docs": "Docs",
-    "blog": "Blog",
-    "community": "Communauté",
-    "company": "Entreprise"
+    "How_We_Work": "Notre méthode",
+    "Services": "Services",
+    "Our_Projects": "Projets",
+    "About_Us": "À propos",
+    "Contact": "Contact"
   },
   "Hero": {
-    "follow_twitter": "Suivez @Ixartz sur Twitter",
-    "title": "Le parfait <important>SaaS template</important> pour construire et mettre à l'échelle votre entreprise en toute simplicité.",
-    "description": "Un template gratuit et open-source de landing page pour votre entreprise SaaS, construit avec React, TypeScript, Shadcn UI et Tailwind CSS.",
-    "primary_button": "Démarrer",
-    "secondary_button": "Mettez une étoile sur GitHub"
+    "eyebrow": "Đà Nẵng, Vietnam — studio d'IA appliquée",
+    "title": "Notre IA rend le verdict — <important>conforme ou non, réussite ou échec.</important>",
+    "description": "Détection de casques avec 92 % de précision. Infractions de circulation signalées en 0,15 seconde. Un simulateur d'examen de conduite qui a aidé des milliers de candidats à se préparer. H&T AI TECH conçoit et déploie des systèmes de vision par ordinateur pour les villes intelligentes du Vietnam — conçus et testés à Đà Nẵng.",
+    "primary_button": "Voir nos réalisations",
+    "secondary_button": "Contacter l'équipe",
+    "exhibit_label": "Pièce à conviction — produit déployé",
+    "exhibit_caption": "Luyện Thi Mô Phỏng 120 Tình Huống — notre simulateur d'examen de conduite noté par IA, disponible sur l'App Store et Google Play."
   },
   "Sponsors": {
     "title": "Sponsorisé par"
@@ -61,9 +63,26 @@
     "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquam enim dui, id consequat turpis ullamcorper ac. Mauris id quam dolor. Nullam eu egestas turpis. Proin risus elit, sollicitudin in mi a, accumsan euismod turpis. In euismod mi sed diam tristique hendrerit."
   },
   "CTA": {
-    "title": "Vous êtes prêt?",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "button_text": "Mettez une étoile sur GitHub"
+    "title": "Un système qui doit prendre la bonne décision ?",
+    "description": "Décrivez-nous ce que vous voulez détecter, vérifier ou automatiser — circulation, sécurité, contrôle qualité, ou autre chose. Nous répondons depuis Đà Nẵng sous un jour ouvré.",
+    "button_text": "Démarrer la conversation"
+  },
+  "Services": {
+    "section_subtitle": "Modèles de collaboration",
+    "section_title": "Quatre façons de travailler avec nous",
+    "section_description": "Choisissez le modèle adapté à votre rythme — d'un seul spécialiste à une équipe IA complète.",
+    "step1_title": "Renfort d'équipe simplifié",
+    "step1_description": "Renforcez vos capacités avec une expertise à la demande. Notre renfort de personnel apporte des talents spécialisés à votre équipe, pour accélérer sans perdre le contrôle de vos projets.",
+    "step2_title": "Équipes de développement dédiées",
+    "step2_description": "Concrétisez votre vision avec nos experts dédiés. Nous constituons et déployons des équipes complètes qui travaillent exclusivement sur vos projets.",
+    "step3_title": "Solutions logicielles sur mesure",
+    "step3_description": "Un logiciel conçu exactement comme vous en avez besoin. Notre équipe gère tout, du concept au lancement, pendant que vous pilotez votre activité.",
+    "step4_title": "Innovation et solutions IA",
+    "step4_description": "Une expertise IA de pointe, forte d'expériences dans de grandes entreprises technologiques et centres de recherche, pour des résultats concrets.",
+    "step5_title": "Étape 5 : Déploiement",
+    "step5_description": "Nous déployons la solution et assurons le support continu.",
+    "step6_title": "Étape 6 : Revue",
+    "step6_description": "Nous analysons les résultats et ajustons si nécessaire."
   },
   "Footer": {
     "product": "Produit",

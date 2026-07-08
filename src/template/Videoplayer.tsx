@@ -1,7 +1,11 @@
-import { motion } from 'framer-motion';
+'use client';
+
+import dynamic from 'next/dynamic';
 import { memo, useRef, useState } from 'react';
 import { FaSpinner } from 'react-icons/fa';
-import ReactPlayer from 'react-player';
+import type ReactPlayerType from 'react-player';
+
+const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
 
 type VideoPlayerProps = {
   url: string;
@@ -11,22 +15,19 @@ type VideoPlayerProps = {
 export const VideoPlayer = memo(({ url, autoPlay = true }: VideoPlayerProps) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const playerRef = useRef<ReactPlayer | null>(null);
+  const playerRef = useRef<ReactPlayerType | null>(null);
 
   return (
-    <motion.div
-      className="relative aspect-video overflow-hidden rounded-xl border-4 border-white shadow-lg"
-      whileHover={{ scale: 1.02 }}
-    >
+    <div className="bg-ink relative aspect-video overflow-hidden">
       {loading && !error && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-          <FaSpinner className="animate-spin text-4xl text-white" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <FaSpinner className="text-paper/60 animate-spin text-3xl" />
         </div>
       )}
 
       {error && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/10">
-          <div className="mb-2 text-red-500">Failed to load video</div>
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
+          <div className="text-paper/80 text-sm">Failed to load video</div>
           <button
             type="button"
             onClick={() => {
@@ -36,7 +37,7 @@ export const VideoPlayer = memo(({ url, autoPlay = true }: VideoPlayerProps) => 
                 playerRef.current.getInternalPlayer()?.loadVideoById?.(url);
               }
             }}
-            className="rounded-lg bg-white px-4 py-2 text-sm font-medium shadow-sm hover:bg-gray-100"
+            className="border-paper/30 text-paper hover:bg-paper/10 rounded border px-4 py-2 text-sm font-medium"
           >
             Retry
           </button>
@@ -69,8 +70,6 @@ export const VideoPlayer = memo(({ url, autoPlay = true }: VideoPlayerProps) => 
           }}
         />
       </div>
-
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-blue-600/20 to-purple-600/20" />
-    </motion.div>
+    </div>
   );
 });

@@ -1,5 +1,5 @@
-import { useTranslations } from 'next-intl';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 import { Background } from '@/components/Background';
 import { FeatureCard } from '@/features/landing/FeatureCard';
@@ -20,8 +20,8 @@ export const Services = () => {
               <Image
                 src="/assets/images/staff.png"
                 alt="Innovation Icon"
-                width={50}
-                height={50}
+                width={28}
+                height={28}
               />
             )}
             title={t('step1_title')}
@@ -34,8 +34,8 @@ export const Services = () => {
               <Image
                 src="/assets/images/brainstorm.png"
                 alt="Innovation Icon"
-                width={50}
-                height={50}
+                width={28}
+                height={28}
               />
             )}
             title={t('step2_title')}
@@ -48,8 +48,8 @@ export const Services = () => {
               <Image
                 src="/assets/images/coding.png"
                 alt="Innovation Icon"
-                width={50}
-                height={50}
+                width={28}
+                height={28}
               />
             )}
             title={t('step3_title')}
@@ -62,8 +62,8 @@ export const Services = () => {
               <Image
                 src="/assets/images/innovation.png"
                 alt="Innovation Icon"
-                width={50}
-                height={50}
+                width={28}
+                height={28}
               />
             )}
             title={t('step4_title')}

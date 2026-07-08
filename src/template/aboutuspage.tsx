@@ -2,7 +2,9 @@
 
 import { motion, type Variants } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
+import { FaLinkedin } from 'react-icons/fa';
 
 export const AboutUs = () => {
   const containerVariants: Variants = {
@@ -14,72 +16,64 @@ export const AboutUs = () => {
   };
 
   const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { type: 'spring', stiffness: 120 },
-    },
-    hover: {
-      y: -5,
-      boxShadow:
-        '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+      transition: { duration: 0.5 },
     },
   };
 
   const coreValues = [
     {
-      title: 'Collective Success',
-      icon: '🌟',
-      description:
-        'Where collaborative synergy meets measurable outcomes - your growth is our ultimate success metric',
+      title: 'We show our work',
+      description: 'Every claim on this site ties back to a shipped product or a published metric, not a slide.',
     },
     {
-      title: 'Ownership Excellence',
-      icon: '🏆',
-      description:
-        'Covenant-based commitments backed by our reputation capital',
+      title: 'We own outcomes',
+      description: 'If a system underperforms after launch, that\'s our problem to fix, not a change order.',
     },
     {
-      title: 'Knowledge Alchemy',
-      icon: '📚',
-      description:
-        'Transforming intellectual capital into strategic advantage through our R&D forge',
+      title: 'We publish what we learn',
+      description: 'Model accuracy, failure modes, and what didn\'t work — we document it, we don\'t hide it.',
     },
     {
-      title: 'Precision Craftsmanship',
-      icon: '🎨',
-      description:
-        'Architecting digital masterpieces where binary precision meets aesthetic vision',
+      title: 'We test for the field',
+      description: 'A detection system that\'s 90% accurate in a demo and 60% accurate on-site is a failed system.',
     },
     {
-      title: 'Visionary Leap',
-      icon: '🚀',
-      description:
-        'Orchestrating market-defining innovations that propel industry leadership',
+      title: 'We build what\'s next',
+      description: 'Traffic and safety AI in Vietnam is still early. We\'d rather define what "good" looks like.',
     },
   ];
 
-  const teamMembers = [
+  const teamMembers: {
+    name: string;
+    role: string;
+    bio: string;
+    links: string[];
+    href?: string;
+    image: string;
+  }[] = [
     {
       name: 'Dr. Nguyen Huu Tai',
-      role: 'Founder | CEO | Head of AI & IoT',
-      bio: 'Founder and CEO, leading AI and IoT innovation. Expert in intelligent systems, computer vision, and smart city solutions, with extensive experience in AI-driven automation and digital transformation.',
+      role: 'Founder, CEO — Head of AI & IoT',
+      bio: 'Leads AI and IoT innovation. Expert in intelligent systems, computer vision, and smart-city solutions, with extensive experience in AI-driven automation and digital transformation.',
       links: ['LinkedIn'],
       href: 'https://www.linkedin.com/in/tai-nguyen-huu-69979570/',
       image: '/assets/images/chutai.png',
     },
     {
       name: 'Dr. Le Quang Chien',
-      role: 'Founder, AI Team Lead, AI & IoT Expert',
-      bio: 'Founder and leader of the AI Team, specializing in AI and IoT. Contributor to enterprise automation and innovative technology solutions in Vietnam.',
+      role: 'Founder — AI Team Lead',
+      bio: 'Leads the AI team, specializing in AI and IoT. Contributor to enterprise automation and technology solutions across Vietnam.',
       links: [],
       image: '/assets/images/chuchien.png',
     },
     {
       name: 'Dr. Le Quang Minh',
-      role: 'Founder & Marketing Director (Japan Market)',
-      bio: 'Founder and Marketing Director for the Japan market at iResonance, leading AI-powered business evolution. Multilingual (Vietnamese, English, Japanese) with a passion for AI, education, natural agriculture, and dancing. Experienced in software development, project management, and business analysis, with a background in electronic and telecommunication engineering.',
+      role: 'Founder — Marketing Director, Japan Market',
+      bio: 'Leads AI-powered business development for the Japan market at iResonance. Multilingual (Vietnamese, English, Japanese), with a background in electronic and telecommunication engineering.',
       links: ['LinkedIn'],
       href: 'https://www.linkedin.com/in/quang-minh%EF%BC%88%E3%83%9F%E3%83%B3%EF%BC%89-a9395027/',
       image: '/assets/images/chuminh.png',
@@ -87,145 +81,125 @@ export const AboutUs = () => {
     {
       name: 'Nguyen Viet Tam, MBA',
       role: 'Director of Sales & Commercial Operations, Vietnam',
-      bio: 'Over 15 years of experience in accounting, taxation, and business law. Senior compliance and finance specialist at major corporations such as Đèo Cả Group, Sun Group, and others.',
+      bio: 'Over 15 years in accounting, taxation, and business law. Senior compliance and finance specialist at Đèo Cả Group, Sun Group, and others.',
       links: [],
       image: '/assets/images/chutam.png',
     },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 px-4 py-12 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl">
+    <div className="min-h-screen bg-background px-4 py-16 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl">
         <motion.div
           initial="hidden"
           animate="visible"
           variants={containerVariants}
-          className="space-y-20"
+          className="space-y-24"
         >
           {/* Mission Section */}
-          <motion.div variants={itemVariants} className="text-center">
-            <h1 className="mb-8 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-5xl font-bold text-transparent">
-              Redefining Digital Excellence
+          <motion.div variants={itemVariants} className="max-w-2xl">
+            <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+              About H&T AI TECH
+            </p>
+            <h1 className="mt-4 font-display text-4xl font-semibold text-foreground sm:text-5xl">
+              The people behind the systems
             </h1>
-            <p className="mx-auto max-w-3xl text-xl text-gray-600">
-              At the vanguard of technological innovation, H&T AI TECH
-              engineers future-ready solutions that transcend conventional
-              boundaries. We architect digital ecosystems where artificial
-              intelligence converges with human ingenuity to catalyze
-              unprecedented growth.
+            <p className="mt-6 text-xl leading-relaxed text-muted-foreground">
+              H&T AI TECH is a small team of Vietnamese engineers and
+              operators who've shipped computer-vision systems for traffic
+              and safety monitoring, an AI-graded driving-exam app used by
+              thousands, and staff-augmentation teams for outside clients —
+              all built and supported from Đà Nẵng.
             </p>
           </motion.div>
 
           {/* Core Values */}
-          <motion.div variants={itemVariants} className="space-y-12">
-            <h2 className="text-center text-3xl font-bold text-gray-900">
-              Pillars of Excellence
+          <motion.div variants={itemVariants}>
+            <h2 className="font-display text-2xl font-semibold text-foreground">
+              How we work
             </h2>
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
+            <div className="mt-8 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-5">
               {coreValues.map(value => (
-                <motion.div
-                  key={value.title}
-                  variants={itemVariants}
-                  whileHover="hover"
-                  className="rounded-2xl border border-white/20 bg-white p-6 text-center shadow-xl backdrop-blur-lg"
-                >
-                  <div className="mb-4 text-4xl">{value.icon}</div>
-                  <h3 className="mb-2 text-lg font-semibold text-gray-900">
+                <div key={value.title} className="border-t-2 border-line pt-5">
+                  <h3 className="font-display text-lg font-semibold text-foreground">
                     {value.title}
                   </h3>
-                  <p className="text-sm text-gray-600">{value.description}</p>
-                </motion.div>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    {value.description}
+                  </p>
+                </div>
               ))}
             </div>
           </motion.div>
 
           {/* Team Section */}
-          <motion.div variants={itemVariants} className="space-y-12">
-            <h2 className="text-center text-3xl font-bold text-gray-900">
-              Visionary Leadership
+          <motion.div variants={itemVariants}>
+            <h2 className="font-display text-2xl font-semibold text-foreground">
+              Founders &amp; leadership
             </h2>
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-8 grid gap-6 md:grid-cols-2">
               {teamMembers.map(member => (
-                <motion.div
+                <div
                   key={member.name}
-                  variants={itemVariants}
-                  whileHover="hover"
-                  className="group relative rounded-2xl border border-white/20 bg-white p-8 shadow-xl backdrop-blur-lg"
+                  className="flex gap-5 border border-line p-6"
                 >
-                  {/* Profile Image Container */}
-                  <div className="absolute -top-10 left-1/2 -translate-x-1/2">
-                    <motion.div
-                      whileHover={{ scale: 1.05, rotate: 2 }}
-                      className="relative size-32 overflow-hidden rounded-full border-4 border-white bg-gradient-to-r from-purple-600 to-pink-600 shadow-xl"
-                    >
-                      <Image
-                        src={member.image} // Add image URL to your teamMembers data
-                        alt={member.name}
-                        width={128}
-                        height={128}
-                        className="size-full object-cover"
-                        loading="lazy"
-                        placeholder="blur"
-                        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
-                      />
-                      <div className="absolute inset-0 rounded-full border-2 border-white/30" />
-                    </motion.div>
+                  <div className="relative size-16 shrink-0 overflow-hidden rounded-full border border-line grayscale">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      width={64}
+                      height={64}
+                      className="size-full object-cover"
+                      loading="lazy"
+                      placeholder="blur"
+                      blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
+                    />
                   </div>
 
-                  {/* Content */}
-                  <div className="mt-20 border-b border-gray-100 pb-6">
-                    <h3 className="text-center text-xl font-bold text-gray-900">
-                      {member.name}
-                    </h3>
-                    <p className="mt-2 text-center text-sm font-medium text-gray-500">
-                      <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                        {member.role}
-                      </span>
+                  <div className="min-w-0">
+                    <div className="flex items-start justify-between gap-3">
+                      <div>
+                        <h3 className="font-display text-lg font-semibold text-foreground">
+                          {member.name}
+                        </h3>
+                        <p className="text-sm font-medium text-primary">
+                          {member.role}
+                        </p>
+                      </div>
+                      {member.links.includes('LinkedIn') && member.href && (
+                        <Link
+                          href={member.href}
+                          aria-label={`${member.name} on LinkedIn`}
+                          className="shrink-0 text-muted-foreground transition-colors hover:text-primary"
+                        >
+                          <FaLinkedin className="size-5" />
+                        </Link>
+                      )}
+                    </div>
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                      {member.bio}
                     </p>
                   </div>
-
-                  <p className="mb-6 text-gray-600">{member.bio}</p>
-
-                  <div className="flex justify-center space-x-3">
-                    {member.links.map(link => (
-                      <motion.a
-                        key={link}
-                        href={member.href}
-                        whileHover={{ scale: 1.1 }}
-                        className="flex items-center rounded-lg bg-gray-100 px-3 py-2 text-xs font-semibold text-gray-700 transition-all hover:bg-gray-200"
-                      >
-                        {link === 'LinkedIn' && (
-                          <svg
-                            className="mr-2 size-4" /* Add LinkedIn icon SVG */
-                          />
-                        )}
-                        {link}
-                      </motion.a>
-                    ))}
-                  </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </motion.div>
 
-          {/* CTA Section */}
-          <motion.div
-            variants={itemVariants}
-            className="rounded-3xl border border-white/20 bg-gradient-to-r from-purple-600 to-pink-600 p-12 text-center shadow-2xl backdrop-blur-lg"
-          >
-            <h2 className="mb-6 text-3xl font-bold text-white">
-              Pioneer the Future with Us
+          {/* Closing */}
+          <motion.div variants={itemVariants} className="border-t border-line pt-10">
+            <h2 className="font-display text-xl font-semibold text-foreground">
+              Want to build this kind of work?
             </h2>
-            <p className="mb-8 text-lg text-purple-100">
-              Forge your legacy in the digital revolution. Collaborate with
-              visionaries reshaping global technology landscapes.
+            <p className="mt-2 max-w-xl text-muted-foreground">
+              We're a small team that hires slowly and rarely. If Đà Nẵng-based
+              applied AI work sounds interesting, we'd like to hear from you.
             </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              className="rounded-xl bg-white/90 px-8 py-4 font-semibold text-purple-600 shadow-lg transition-all duration-300 hover:bg-white hover:shadow-xl"
+            <Link
+              href="/contacts"
+              className="mt-4 inline-block font-medium text-primary underline decoration-primary/30 underline-offset-4 hover:decoration-primary"
             >
-              Explore Executive Opportunities
-            </motion.button>
+              Get in touch →
+            </Link>
           </motion.div>
         </motion.div>
       </div>

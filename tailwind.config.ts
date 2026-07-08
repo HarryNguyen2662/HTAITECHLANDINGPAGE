@@ -40,9 +40,19 @@ const config = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
+        verify: {
+          DEFAULT: 'hsl(var(--verify))',
+          foreground: 'hsl(var(--verify-foreground))',
+        },
+        line: 'hsl(var(--border))',
         backdropBlur: {
           md: '10px',
         },
+      },
+      fontFamily: {
+        display: ['var(--font-display)', 'ui-serif', 'Georgia', 'serif'],
+        body: ['var(--font-body)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-mono)', 'ui-monospace', 'SFMono-Regular', 'monospace'],
       },
       borderRadius: {
         lg: 'var(--radius)',
