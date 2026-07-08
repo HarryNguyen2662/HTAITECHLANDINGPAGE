@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { FaYoutube } from 'react-icons/fa';
 
 type VideoDemoButtonProps = {
@@ -6,23 +5,16 @@ type VideoDemoButtonProps = {
   color?: 'purple' | 'blue';
 };
 
-export const VideoDemoButton = ({ url, color = 'purple' }: VideoDemoButtonProps) => {
-  const colors = {
-    purple:
-        'bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700',
-    blue: 'bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700',
-  };
-
+export const VideoDemoButton = ({ url }: VideoDemoButtonProps) => {
   return (
-    <motion.a
-      whileHover={{ scale: 1.05 }}
+    <a
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-white shadow-lg transition-all ${colors[color]}`}
+      className="inline-flex items-center justify-center gap-2 bg-primary px-5 py-3 text-primary-foreground transition-colors hover:bg-primary/90"
     >
       <FaYoutube className="text-xl" />
-      <span className="font-semibold">Watch Demo</span>
-    </motion.a>
+      <span className="font-medium">Watch demo</span>
+    </a>
   );
 };

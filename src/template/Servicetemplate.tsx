@@ -1,5 +1,5 @@
-import { useTranslations } from 'next-intl';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 import { Background } from '@/components/Background';
 import { FeatureCard } from '@/features/landing/FeatureCard';
@@ -20,8 +20,8 @@ export const Servicestemplate = () => {
               <Image
                 src="/assets/images/artificial-intelligence.png"
                 alt="Innovation Icon"
-                width={100}
-                height={100}
+                width={28}
+                height={28}
               />
             )}
             title={t('step1_title')}
@@ -34,8 +34,8 @@ export const Servicestemplate = () => {
               <Image
                 src="/assets/images/mvp.png"
                 alt="Innovation Icon"
-                width={100}
-                height={100}
+                width={28}
+                height={28}
               />
             )}
             title={t('step2_title')}
@@ -48,8 +48,8 @@ export const Servicestemplate = () => {
               <Image
                 src="/assets/images/QA.png"
                 alt="Innovation Icon"
-                width={100}
-                height={100}
+                width={28}
+                height={28}
               />
             )}
             title={t('step3_title')}
@@ -62,8 +62,8 @@ export const Servicestemplate = () => {
               <Image
                 src="/assets/images/business.png"
                 alt="Innovation Icon"
-                width={100}
-                height={100}
+                width={28}
+                height={28}
               />
             )}
             title={t('step4_title')}
@@ -75,8 +75,8 @@ export const Servicestemplate = () => {
               <Image
                 src="/assets/images/database-management.png"
                 alt="Innovation Icon"
-                width={100}
-                height={100}
+                width={28}
+                height={28}
               />
             )}
             title={t('step5_title')}
@@ -88,8 +88,8 @@ export const Servicestemplate = () => {
               <Image
                 src="/assets/images/app-store.png"
                 alt="Innovation Icon"
-                width={100}
-                height={100}
+                width={28}
+                height={28}
               />
             )}
             title={t('step6_title')}
@@ -101,8 +101,8 @@ export const Servicestemplate = () => {
               <Image
                 src="/assets/images/web-design.png"
                 alt="Innovation Icon"
-                width={100}
-                height={100}
+                width={28}
+                height={28}
               />
             )}
             title={t('step7_title')}
@@ -114,8 +114,8 @@ export const Servicestemplate = () => {
               <Image
                 src="/assets/images/android.png"
                 alt="Innovation Icon"
-                width={100}
-                height={100}
+                width={28}
+                height={28}
               />
             )}
             title={t('step8_title')}
@@ -127,8 +127,8 @@ export const Servicestemplate = () => {
               <Image
                 src="/assets/images/machine-learning.png"
                 alt="Innovation Icon"
-                width={100}
-                height={100}
+                width={28}
+                height={28}
               />
             )}
             title={t('step9_title')}
@@ -140,8 +140,8 @@ export const Servicestemplate = () => {
               <Image
                 src="/assets/images/dataengineering.png"
                 alt="Innovation Icon"
-                width={100}
-                height={100}
+                width={28}
+                height={28}
               />
             )}
             title={t('step10_title')}
@@ -153,8 +153,8 @@ export const Servicestemplate = () => {
               <Image
                 src="/assets/images/frontend.png"
                 alt="Innovation Icon"
-                width={100}
-                height={100}
+                width={28}
+                height={28}
               />
             )}
             title={t('step11_title')}
@@ -166,8 +166,8 @@ export const Servicestemplate = () => {
               <Image
                 src="/assets/images/pipeline.png"
                 alt="Innovation Icon"
-                width={100}
-                height={100}
+                width={28}
+                height={28}
               />
             )}
             title={t('step12_title')}

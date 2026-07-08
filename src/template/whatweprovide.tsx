@@ -1,95 +1,70 @@
-"use client";
+'use client';
 
-import React from 'react';
 import { Check } from 'lucide-react';
-import { motion } from 'framer-motion';
 import Image from 'next/image';
-
-// Removed unused FeatureCard component
+import Link from 'next/link';
+import React from 'react';
 
 const CheckItem: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <div className="flex items-center gap-3 mb-4">
-    <div className="flex h-6 w-6 items-center justify-center rounded-full bg-green-500">
-      <Check className="h-4 w-4 text-white" />
+  <div className="mb-4 flex items-center gap-3">
+    <div className="flex size-6 shrink-0 items-center justify-center rounded-full bg-verify">
+      <Check className="size-4 text-verify-foreground" />
     </div>
-    <span className="text-white text-lg">{children}</span>
+    <span className="text-paper text-lg">{children}</span>
   </div>
 );
 
 export const WhatWeProvide = () => {
   return (
-    <div className="w-full bg-gradient-to-br from-blue-50 to-purple-50 py-20">
+    <div className="w-full bg-secondary py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">What We Provide</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            At H&T AI TECH, we implement a cohesive approach and agile methodology to ensure the efficient and 
-            effective delivery of projects. We kick off by conducting a thorough analysis of client needs in the discovery 
-            phase, promoting collaborative efforts to understand project objectives, timelines, and key deliverables.
+        <div className="mx-auto mb-16 max-w-2xl">
+          <p className="font-mono text-xs font-medium uppercase tracking-[0.15em] text-muted-foreground">
+            How engagements run
+          </p>
+          <h2 className="mt-2 font-display text-3xl font-semibold text-foreground">
+            What to expect
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            We start every project with a discovery phase — understanding
+            your objectives, timelines, and key deliverables — before any
+            code gets written.
           </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-16">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="flex-1 relative"
-          >
-            <div className="relative h-[500px] w-full rounded-[2rem] overflow-hidden shadow-2xl transform transition-all hover:rotate-[1deg] hover:shadow-3xl">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 z-10" />
-              <Image
-                src="/assets/images/teamservice.png"
-                alt="Collaborative team working on agile process"
-                fill
-                className="object-cover object-left-top"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                priority
-              />
+        <div className="flex flex-col items-stretch gap-8 lg:flex-row">
+          <div className="relative h-[500px] flex-1 overflow-hidden border border-line">
+            <Image
+              src="/assets/images/teamservice.png"
+              alt="H&T team working through an agile planning session"
+              fill
+              className="object-cover object-left-top grayscale"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              priority
+            />
+          </div>
+
+          <div className="bg-ink flex-1 p-10">
+            <h3 className="text-paper font-display text-2xl font-semibold">
+              Scrum &amp; agile methodology
+            </h3>
+            <p className="text-paper/70 mb-8 mt-3 text-lg leading-relaxed">
+              With our streamlined process, clients can expect:
+            </p>
+
+            <div className="mb-8 space-y-4">
+              <CheckItem>Efficient project management</CheckItem>
+              <CheckItem>Accelerated timelines</CheckItem>
+              <CheckItem>Results that consistently exceed expectations</CheckItem>
             </div>
-            
-            {/* Decorative connection element */}
-            <div className="hidden lg:block absolute -right-24 top-1/2 -translate-y-1/2 w-48 h-48 bg-gradient-to-r from-blue-500 to-purple-500 blur-3xl opacity-20 -z-10" />
-          </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="flex-1 relative"
-          >
-            <div className="rounded-[2rem] bg-gradient-to-br from-gray-900 to-gray-800 p-10 shadow-2xl border border-gray-800 overflow-hidden">
-              {/* Glowing accent */}
-              <div className="absolute -top-20 -right-20 w-48 h-48 bg-blue-500/30 rounded-full blur-3xl" />
-              
-              <div className="relative z-10">
-                <div className="mb-8">
-                  <h3 className="text-3xl font-bold text-transparent bg-gradient-to-r from-blue-400 to-purple-300 bg-clip-text mb-4">
-                    Scrum or Agile Methodology
-                  </h3>
-                  <p className="text-gray-300 mb-8 text-lg leading-relaxed">
-                    With our streamlined process and agile methodology, clients can anticipate:
-                  </p>
-                </div>
-
-                <div className="mb-8 space-y-6">
-                  <CheckItem>Efficient Project Management</CheckItem>
-                  <CheckItem>Accelerated timelines</CheckItem>
-                  <CheckItem>High-quality Results That Consistently Exceed Expectations</CheckItem>
-                </div>
-
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-full rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-5 text-lg font-semibold text-white shadow-lg transition-all hover:shadow-xl"
-                >
-                  CONTACT US →
-                </motion.button>
-              </div>
-            </div>
-          </motion.div>
+            <Link
+              href="/contacts"
+              className="block w-full bg-primary px-8 py-4 text-center text-lg font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            >
+              Contact us →
+            </Link>
+          </div>
         </div>
       </div>
     </div>

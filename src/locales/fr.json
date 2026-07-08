@@ -21,6 +21,20 @@
     "exhibit_label": "Pièce à conviction — produit déployé",
     "exhibit_caption": "Luyện Thi Mô Phỏng 120 Tình Huống — notre simulateur d'examen de conduite noté par IA, disponible sur l'App Store et Google Play."
   },
+  "HeroService": {
+    "follow_twitter": "Des services pensés pour votre problème",
+    "title": "Des services pensés pour <important>ce que vous essayez vraiment de résoudre</important>",
+    "description": "Du renfort de personnel à la création complète d'un système IA, nous adaptons chaque mission à votre problème, pas à une offre standard. Voici l'étendue de ce que nous faisons.",
+    "primary_button": "En savoir plus",
+    "secondary_button": "Contact"
+  },
+  "HowweworkService": {
+    "follow_twitter": "Notre méthode",
+    "title": "Notre méthode, <important>sans zone d'ombre</important>",
+    "description": "Aucun processus opaque. Voici exactement comment se déroule une collaboration avec H&T AI TECH, du premier échange au support continu.",
+    "primary_button": "En savoir plus",
+    "secondary_button": "Contact"
+  },
   "Sponsors": {
     "title": "Sponsorisé par"
   },
@@ -66,6 +80,35 @@
     "title": "Un système qui doit prendre la bonne décision ?",
     "description": "Décrivez-nous ce que vous voulez détecter, vérifier ou automatiser — circulation, sécurité, contrôle qualité, ou autre chose. Nous répondons depuis Đà Nẵng sous un jour ouvré.",
     "button_text": "Démarrer la conversation"
+  },
+  "Servicesforpage": {
+    "section_subtitle": "L'étendue complète",
+    "section_title": "Tout ce que nous construisons, en une liste",
+    "section_description": "Pas de forfaits ni de paliers — dites-nous ce qui s'applique à votre projet et nous cadrerons le reste.",
+    "step1_title": "Solutions d'intelligence artificielle et de machine learning",
+    "step1_description": "Modèles sur mesure et systèmes d'IA appliquée, de la vision par ordinateur à l'analyse prédictive, conçus pour vos données réelles.",
+    "step2_title": "Développement de MVP",
+    "step2_description": "Accélérez votre parcours produit, de l'idée au lancement. Nous transformons rapidement les concepts en MVP prêts pour le marché.",
+    "step3_title": "Tests QA et automatisation",
+    "step3_description": "Garantissez un logiciel sans faille grâce à une assurance qualité complète et des frameworks de test automatisés.",
+    "step4_title": "Business Intelligence",
+    "step4_description": "Transformez vos données brutes en atouts stratégiques avec des tableaux de bord BI puissants pour des décisions éclairées.",
+    "step5_title": "Data Science",
+    "step5_description": "Exploitez le potentiel caché de vos données grâce à l'analyse avancée, la modélisation prédictive et le machine learning.",
+    "step6_title": "Développement d'applications iOS",
+    "step6_description": "Des applications iOS élégantes et performantes, conçues autour de l'expérience utilisateur.",
+    "step7_title": "Design UX/UI",
+    "step7_description": "Des expériences numériques mémorables, centrées sur l'utilisateur, l'ergonomie et la conversion.",
+    "step8_title": "Développement d'applications Android",
+    "step8_description": "Des applications Android évolutives, conçues pour une grande diversité d'appareils et d'objectifs métier.",
+    "step9_title": "Services de machine learning",
+    "step9_description": "Optimisez vos opérations et identifiez de nouvelles opportunités grâce à des implémentations ML sur mesure.",
+    "step10_title": "Ingénierie des données",
+    "step10_description": "Une infrastructure de données robuste, pour collecter, traiter et analyser à l'échelle de l'entreprise.",
+    "step11_title": "Développement front-end",
+    "step11_description": "Des interfaces web réactives et soignées, qui allient forme et fonction sur tous les appareils.",
+    "step12_title": "Services DevOps",
+    "step12_description": "Des pratiques DevOps pour renforcer la collaboration, automatiser les workflows et accélérer les livraisons."
   },
   "Services": {
     "section_subtitle": "Modèles de collaboration",

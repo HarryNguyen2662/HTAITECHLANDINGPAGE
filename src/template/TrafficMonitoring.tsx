@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useRef } from 'react';
 import { FaAngleRight, FaBalanceScale, FaCar, FaChartLine, FaChevronLeft, FaChevronRight, FaExclamationCircle, FaExclamationTriangle, FaMicrochip } from 'react-icons/fa';
@@ -70,18 +69,18 @@ export const TrafficMonitoring = () => {
     }
   };
   return (
-    <div className="overflow-hidden rounded-[2rem] border-2 border-white/20 bg-white shadow-2xl backdrop-blur-xl">
+    <div className="border border-line bg-background">
       <div className="grid grid-cols-1 gap-8 p-10">
         {/* Title Section */}
-        <div className="space-y-4">
-          <div className="inline-flex items-center rounded-2xl bg-gradient-to-r from-red-600 to-yellow-500 px-6 py-4 backdrop-blur-sm">
-            <FaCar className="mr-3 text-4xl text-white" />
-            <h2 className="text-4xl font-bold text-white">
+        <div className="space-y-2">
+          <div className="flex items-center gap-3">
+            <FaCar className="text-2xl text-primary" />
+            <h2 className="font-display text-3xl font-semibold text-foreground">
               AI Traffic Violation Detection
             </h2>
           </div>
-          <p className="text-2xl text-gray-600">
-            Real-time traffic law enforcement system with Vietnamese data-trained models
+          <p className="font-mono text-sm text-muted-foreground">
+            Real-time enforcement, trained on Vietnamese traffic data
           </p>
         </div>
 
@@ -90,23 +89,25 @@ export const TrafficMonitoring = () => {
           {/* Navigation Arrows */}
           <div className="absolute inset-y-0 z-20 flex w-full items-center justify-between px-4">
             <button
+              type="button"
               onClick={() => handleSlideChange(trafficSwiperRef, 'prev')}
-              className={`${navClasses.trafficNav.prev} rounded-full bg-black/30 p-3 backdrop-blur-lg transition duration-200 hover:scale-110 hover:bg-black/50`}
+              className={`${navClasses.trafficNav.prev} border border-line bg-background/90 p-3 transition-colors hover:bg-background`}
               aria-label="Previous traffic image"
             >
-              <FaChevronLeft className="size-6 text-white" />
+              <FaChevronLeft className="size-5 text-foreground" />
             </button>
             <button
+              type="button"
               onClick={() => handleSlideChange(trafficSwiperRef, 'next')}
-              className={`${navClasses.trafficNav.next} rounded-full bg-black/30 p-3 backdrop-blur-lg transition duration-200 hover:scale-110 hover:bg-black/50`}
+              className={`${navClasses.trafficNav.next} border border-line bg-background/90 p-3 transition-colors hover:bg-background`}
               aria-label="Next traffic image"
             >
-              <FaChevronRight className="size-6 text-white" />
+              <FaChevronRight className="size-5 text-foreground" />
             </button>
           </div>
 
           {/* Swiper Container */}
-          <div className="relative isolate overflow-hidden bg-gray-100 py-8">
+          <div className="relative isolate overflow-hidden bg-secondary py-8">
             <Swiper
               ref={trafficSwiperRef}
               modules={[Navigation, Autoplay, Pagination]}
@@ -137,7 +138,7 @@ export const TrafficMonitoring = () => {
               {trafficImages.map((item, idx) => (
                 <SwiperSlide key={idx}>
                   <div
-                    className="relative mx-auto overflow-hidden rounded-xl shadow-2xl"
+                    className="relative mx-auto overflow-hidden border border-line"
                     style={{
                       aspectRatio: '16/9',
                       maxWidth: '800px',
@@ -166,8 +167,7 @@ export const TrafficMonitoring = () => {
                             />
                           </div>
                         )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent" />
-                    <span className="absolute bottom-4 right-4 z-10 rounded-full bg-black/30 px-3 py-1.5 text-sm font-medium text-white backdrop-blur-sm">
+                    <span className="bg-ink text-paper absolute bottom-3 right-3 z-10 px-2.5 py-1 font-mono text-xs">
                       {item.type === 'video' ? 'Video Demo' : `Violation ${idx + 1}`}
                     </span>
                   </div>
@@ -180,99 +180,80 @@ export const TrafficMonitoring = () => {
         {/* Project Details */}
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
           {/* Tech Specs */}
-          <div className="space-y-6">
-            <h3 className="flex items-center text-2xl font-bold text-red-600">
-              <FaMicrochip className="mr-2" />
-              Core Technology
+          <div className="space-y-4">
+            <h3 className="flex items-center gap-2 font-display text-xl font-semibold text-foreground">
+              <FaMicrochip className="text-primary" />
+              Core technology
             </h3>
-            <ul className="space-y-4 text-lg">
+            <ul className="space-y-3">
               {[
                 'Vietnam-trained YOLOv8 models',
                 'Advanced vehicle tracking algorithms',
                 'Multi-camera fusion system',
                 'Violation decision-making engine',
                 'Edge-cloud hybrid architecture',
-              ].map((item, idx) => (
-                <motion.li
-                  key={idx}
-                  className="flex items-center rounded-lg bg-red-50/50 p-4 backdrop-blur-sm"
-                  whileHover={{ scale: 1.02 }}
-                >
-                  <div className="mr-3 size-2 rounded-full bg-red-600" />
+              ].map(item => (
+                <li key={item} className="border-t border-line pt-3 text-muted-foreground">
                   {item}
-                </motion.li>
+                </li>
               ))}
             </ul>
           </div>
 
           {/* Performance Metrics */}
-          <div className="space-y-6">
-            <h3 className="flex items-center text-2xl font-bold text-yellow-600">
-              <FaChartLine className="mr-2" />
-              System Performance
+          <div className="space-y-4">
+            <h3 className="flex items-center gap-2 font-display text-xl font-semibold text-foreground">
+              <FaChartLine className="text-primary" />
+              System performance
             </h3>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { value: '96.7%', label: 'Violation Detection' },
-                { value: '0.15s', label: 'Response Time' },
-                {
-                  value: 'Red/Yellow',
-                  label: 'Violation Classification',
-                  badge: (
-                    <div className="mt-2 flex gap-2">
-                      <span className="rounded-full bg-red-100 px-2 py-1 text-xs text-red-800">Red Violations</span>
-                      <span className="rounded-full bg-yellow-100 px-2 py-1 text-xs text-yellow-800">Yellow Violations</span>
-                    </div>
-                  ),
-                },
-                { value: '40%', label: 'Efficiency Improvement' },
-              ].map((stat, idx) => (
-                <motion.div
-                  key={idx}
-                  className="rounded-xl bg-yellow-50/50 p-6 backdrop-blur-sm"
-                  whileHover={{ y: -5 }}
-                >
-                  <div className="text-3xl font-bold text-yellow-600">
+                { value: '96.7%', label: 'Violation detection' },
+                { value: '0.15s', label: 'Response time' },
+                { value: '2', label: 'Violation classes' },
+                { value: '40%', label: 'Efficiency gain' },
+              ].map(stat => (
+                <div key={stat.label} className="border border-line p-5">
+                  <div className="font-mono text-2xl font-medium tabular-nums text-foreground">
                     {stat.value}
                   </div>
-                  <div className="text-gray-600">{stat.label}</div>
-                  {stat.badge && stat.badge}
-                </motion.div>
+                  <div className="mt-1 text-sm text-muted-foreground">{stat.label}</div>
+                </div>
               ))}
             </div>
           </div>
         </div>
 
         {/* Violation Classification */}
-        <div className="space-y-6">
-          <h3 className="flex items-center text-2xl font-bold text-gray-800">
-            <FaBalanceScale className="mr-2" />
-            Violation Categories
+        <div className="border-t border-line pt-6">
+          <h3 className="flex items-center gap-2 font-display text-xl font-semibold text-foreground">
+            <FaBalanceScale className="text-primary" />
+            Violation categories
           </h3>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-            <div className="rounded-xl bg-red-50/80 p-6 backdrop-blur-sm">
-              <h4 className="mb-3 flex items-center text-lg font-bold text-red-600">
-                <FaExclamationTriangle className="mr-2" />
-                Red Violations
+          <div className="mt-4 grid grid-cols-1 gap-8 md:grid-cols-2">
+            <div className="border-t-2 border-destructive pt-4">
+              <h4 className="flex items-center gap-2 font-medium text-destructive">
+                <FaExclamationTriangle />
+                Red violations
               </h4>
-              <ul className="space-y-2 text-gray-700">
-                {['Red light running', 'Wrong way driving', 'Dangerous overtaking'].map((item, idx) => (
-                  <li key={idx} className="flex items-center">
-                    <FaAngleRight className="mr-2 text-red-500" />
+              <ul className="mt-3 space-y-2 text-muted-foreground">
+                {['Red light running', 'Wrong way driving', 'Dangerous overtaking'].map(item => (
+                  <li key={item} className="flex items-center gap-2">
+                    <FaAngleRight className="shrink-0 text-destructive" />
                     {item}
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="rounded-xl bg-yellow-50/80 p-6 backdrop-blur-sm">
-              <h4 className="mb-3 flex items-center text-lg font-bold text-yellow-600">
-                <FaExclamationCircle className="mr-2" />
-                Yellow Violations
+            <div className="border-t-2 border-amber-600 pt-4">
+              <h4 className="flex items-center gap-2 font-medium text-amber-600">
+                <FaExclamationCircle />
+                Yellow violations
               </h4>
-              <ul className="space-y-2 text-gray-700">
-                {['Lane violations', 'Illegal parking', 'Speeding'].map((item, idx) => (
-                  <li key={idx} className="flex items-center">
-                    <FaAngleRight className="mr-2 text-yellow-500" />
+              <ul className="mt-3 space-y-2 text-muted-foreground">
+                {['Lane violations', 'Illegal parking', 'Speeding'].map(item => (
+                  <li key={item} className="flex items-center gap-2">
+                    <FaAngleRight className="shrink-0 text-amber-600" />
                     {item}
                   </li>
                 ))}

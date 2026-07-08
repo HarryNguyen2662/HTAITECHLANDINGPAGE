@@ -22,16 +22,16 @@
     "exhibit_caption": "Luyện Thi Mô Phỏng 120 Tình Huống — our AI-graded driving-exam simulator, live on the App Store and Google Play."
   },
   "HeroService": {
-    "follow_twitter": "Crafting Excellence in Every Solution",
-    "title": "Crafting Excellence in Every <important>Solution</important>",
-    "description": "At H&T AI TECH, we excel in delivering a versatile portfolio of innovative services tailored to the distinct challenges of our clients. Our seasoned team of experts is committed to designing premium solutions that spark innovation and fuel sustainable business advancement. Dive into our expansive range of offerings below:",
+    "follow_twitter": "Services built around your problem",
+    "title": "Services built around <important>what you're actually trying to solve</important>",
+    "description": "From staff augmentation to full AI builds, we scope engagements around your problem, not a fixed package. Here's the full range of what we do.",
     "primary_button": "Learn more",
     "secondary_button": "Contact"
   },
   "HowweworkService": {
     "follow_twitter": "How we work",
-    "title": "How we <important>Work</important>",
-    "description": "At H&T AI TECH, we champion a collaborative software development approach that delivers superior results through efficiency, transparency, and client-centered value. Our refined methodology ensures precision and excellence at every stage—from initial concept to final delivery.",
+    "title": "How we <important>actually work</important>",
+    "description": "No black-box process. Here's exactly how an engagement with H&T AI TECH runs, from first call to ongoing support.",
     "primary_button": "Learn more",
     "secondary_button": "Contact"
   },
@@ -56,12 +56,12 @@
     "step6_description": "We review the results and make any necessary adjustments."
   },
   "Servicesforpage": {
-    "section_subtitle": "",
-    "section_title": "",
-    "section_description": "",
+    "section_subtitle": "The full range",
+    "section_title": "Everything we build, in one list",
+    "section_description": "No packages, no tiers — tell us which of these apply to your project and we'll scope the rest.",
     "step1_title": "Artificial Intelligence & Machine Learning Solutions",
-    "step1_description": "MVP Product Development Services",
-    "step2_title": "Full-Service Development Teams",
+    "step1_description": "Custom models and applied AI systems, from computer vision to predictive analytics, built for your actual data and use case.",
+    "step2_title": "MVP Product Development",
     "step2_description": "Accelerate your product journey from ideation to launch. We specialize in rapidly transforming concepts into market-ready MVPs for startups and enterprises.",
     "step3_title": "QA Testing & Automation Solutions",
     "step3_description": "Ensure flawless software performance with end-to-end quality assurance and cutting-edge test automation frameworks.",

@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useRef } from 'react';
 import { FaCheck, FaChevronLeft, FaChevronRight, FaClock, FaCrosshairs, FaExclamationTriangle, FaMagic, FaRobot, FaRuler, FaSyncAlt, FaTimes, FaTrophy } from 'react-icons/fa';
@@ -42,7 +41,7 @@ export const ContainerEvaluation = () => {
     },
     {
       type: 'image',
-      url: '/assets/images/container4.png',
+      src: '/assets/images/container4.png',
       aspectRatio: '16/9',
     },
   ];
@@ -63,21 +62,19 @@ export const ContainerEvaluation = () => {
     }
   };
   return (
-    <div className="overflow-hidden rounded-[2rem] border-2 border-white/20 bg-gradient-to-br from-gray-50 to-blue-50 shadow-2xl backdrop-blur-xl">
+    <div className="border border-line bg-background">
       <div className="grid grid-cols-1 gap-8 p-10">
         {/* Title Section */}
-        <div className="space-y-4">
-          <div className="inline-flex items-center rounded-2xl bg-gradient-to-r from-blue-600 to-green-600 px-8 py-5 shadow-lg">
-            <FaRobot className="mr-4 text-5xl text-white" />
-            <div>
-              <h2 className="text-4xl font-bold text-white">
-                AI Container Damage Detection
-              </h2>
-              <p className="mt-2 text-xl text-white/90">
-                Overcoming Inspection Challenges with Computer Vision & 3D AI
-              </p>
-            </div>
+        <div className="space-y-2">
+          <div className="flex items-center gap-3">
+            <FaRobot className="text-2xl text-primary" />
+            <h2 className="font-display text-3xl font-semibold text-foreground">
+              AI Container Damage Detection
+            </h2>
           </div>
+          <p className="font-mono text-sm text-muted-foreground">
+            Overcoming inspection challenges with computer vision &amp; 3D AI
+          </p>
         </div>
 
         {/* Enhanced Gallery Section - Original Structure Maintained */}
@@ -85,23 +82,25 @@ export const ContainerEvaluation = () => {
           {/* Navigation Arrows */}
           <div className="absolute inset-y-0 z-20 flex w-full items-center justify-between px-4">
             <button
+              type="button"
               onClick={() => handleSlideChange(containerSwiperRef, 'prev')}
-              className={`${navClasses.containerNav.prev} rounded-full bg-black/30 p-3 backdrop-blur-lg transition duration-200 hover:scale-110 hover:bg-black/50`}
+              className={`${navClasses.containerNav.prev} border border-line bg-background/90 p-3 transition-colors hover:bg-background`}
               aria-label="Previous container image"
             >
-              <FaChevronLeft className="size-6 text-white" />
+              <FaChevronLeft className="size-5 text-foreground" />
             </button>
             <button
+              type="button"
               onClick={() => handleSlideChange(containerSwiperRef, 'next')}
-              className={`${navClasses.containerNav.next} rounded-full bg-black/30 p-3 backdrop-blur-lg transition duration-200 hover:scale-110 hover:bg-black/50`}
+              className={`${navClasses.containerNav.next} border border-line bg-background/90 p-3 transition-colors hover:bg-background`}
               aria-label="Next container image"
             >
-              <FaChevronRight className="size-6 text-white" />
+              <FaChevronRight className="size-5 text-foreground" />
             </button>
           </div>
 
           {/* Swiper Container */}
-          <div className="relative isolate overflow-hidden bg-gray-100 py-8">
+          <div className="relative isolate overflow-hidden bg-secondary py-8">
             <Swiper
               ref={containerSwiperRef}
               modules={[Navigation, Autoplay, Pagination]}
@@ -132,7 +131,7 @@ export const ContainerEvaluation = () => {
               {containerImages.map((imgPath, idx) => (
                 <SwiperSlide key={idx}>
                   <div
-                    className="relative mx-auto overflow-hidden rounded-xl shadow-2xl"
+                    className="relative mx-auto overflow-hidden border border-line"
                     style={{
                       aspectRatio: '16/9',
                       maxWidth: '800px',
@@ -155,8 +154,7 @@ export const ContainerEvaluation = () => {
                         }}
                       />
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent" />
-                    <span className="absolute bottom-4 right-4 z-10 rounded-full bg-black/30 px-3 py-1.5 text-sm font-medium text-white backdrop-blur-sm">
+                    <span className="bg-ink text-paper absolute bottom-3 right-3 z-10 px-2.5 py-1 font-mono text-xs">
                       Scan
                       {' '}
                       {idx + 1}
@@ -168,81 +166,69 @@ export const ContainerEvaluation = () => {
           </div>
         </div>
 
-        {/* New Challenge/Solution Section */}
+        {/* Challenge/Solution Section */}
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-          <div className="rounded-xl bg-red-50/80 p-8 backdrop-blur-sm">
-            <h3 className="mb-6 flex items-center text-2xl font-bold text-red-600">
-              <FaExclamationTriangle className="mr-2" />
-              Inspection Challenges
+          <div className="border-t-2 border-destructive pt-5">
+            <h3 className="flex items-center gap-2 font-display text-xl font-semibold text-foreground">
+              <FaExclamationTriangle className="text-destructive" />
+              Inspection challenges
             </h3>
-            <ul className="space-y-4">
+            <ul className="mt-4 space-y-3">
               {[
                 '15-20 day container wait times',
                 'Subjective manual inspections',
                 'High storage costs ($1/day)',
                 'Safety risks at height',
-              ].map((item, idx) => (
-                <motion.li
-                  key={idx}
-                  className="flex items-center rounded-lg bg-white p-4 shadow-sm"
-                  whileHover={{ x: 10 }}
-                >
-                  <FaTimes className="mr-3 text-red-500" />
+              ].map(item => (
+                <li key={item} className="flex items-center gap-3 text-muted-foreground">
+                  <FaTimes className="shrink-0 text-destructive" />
                   {item}
-                </motion.li>
+                </li>
               ))}
             </ul>
           </div>
 
-          <div className="rounded-xl bg-green-50/80 p-8 backdrop-blur-sm">
-            <h3 className="mb-6 flex items-center text-2xl font-bold text-green-600">
-              <FaMagic className="mr-2" />
-              AI Solutions
+          <div className="border-t-2 border-verify pt-5">
+            <h3 className="flex items-center gap-2 font-display text-xl font-semibold text-foreground">
+              <FaMagic className="text-verify" />
+              AI solutions
             </h3>
-            <ul className="space-y-4">
+            <ul className="mt-4 space-y-3">
               {[
                 '2mm precision 3D scanning',
                 'Automated damage classification',
                 'Real-time EIR generation',
                 'Mobile field deployment',
-              ].map((item, idx) => (
-                <motion.li
-                  key={idx}
-                  className="flex items-center rounded-lg bg-white p-4 shadow-sm"
-                  whileHover={{ x: 10 }}
-                >
-                  <FaCheck className="mr-3 text-green-500" />
+              ].map(item => (
+                <li key={item} className="flex items-center gap-3 text-muted-foreground">
+                  <FaCheck className="shrink-0 text-verify" />
                   {item}
-                </motion.li>
+                </li>
               ))}
             </ul>
           </div>
         </div>
 
         {/* Performance Metrics */}
-        <div className="space-y-6">
-          <h3 className="flex items-center text-2xl font-bold text-purple-600">
-            <FaTrophy className="mr-2" />
-            Performance Leadership
+        <div className="border-t border-line pt-6">
+          <h3 className="flex items-center gap-2 font-display text-xl font-semibold text-foreground">
+            <FaTrophy className="text-primary" />
+            Performance leadership
           </h3>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="mt-4 grid grid-cols-2 gap-4">
             {[
-              { value: '-70%', label: 'Inspection Time', icon: FaClock },
+              { value: '-70%', label: 'Inspection time', icon: FaClock },
               { value: '24/7', label: 'Operation', icon: FaSyncAlt },
               { value: '99.8%', label: 'Accuracy', icon: FaCrosshairs },
-              { value: '2mm', label: 'Detection Precision', icon: FaRuler },
-            ].map((stat, idx) => (
-              <motion.div
-                key={idx}
-                className="rounded-xl bg-purple-50/80 p-6 backdrop-blur-sm"
-                whileHover={{ y: -5 }}
-              >
-                <stat.icon className="mb-3 text-3xl text-purple-600" />
-                <div className="text-3xl font-bold text-purple-600">
+              { value: '2mm', label: 'Detection precision', icon: FaRuler },
+            ].map(stat => (
+              <div key={stat.label} className="border border-line p-5">
+                <stat.icon className="mb-2 text-lg text-primary" />
+                <div className="font-mono text-2xl font-medium tabular-nums text-foreground">
                   {stat.value}
                 </div>
-                <div className="text-gray-600">{stat.label}</div>
-              </motion.div>
+                <div className="mt-1 text-sm text-muted-foreground">{stat.label}</div>
+              </div>
             ))}
           </div>
         </div>
