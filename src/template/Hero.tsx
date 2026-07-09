@@ -1,8 +1,10 @@
-import Link from 'next/link';
+import { Heading } from '@astryxdesign/core/Heading';
+import { Link } from '@astryxdesign/core/Link';
+import { Section } from '@astryxdesign/core/Section';
+import { Text } from '@astryxdesign/core/Text';
 import { useTranslations } from 'next-intl';
 
 import { buttonVariants } from '@/components/ui/buttonVariants';
-import { Section } from '@/features/landing/Section';
 import { cn } from '@/utils/Helpers';
 
 import { VideoPlayer } from './Videoplayer';
@@ -11,33 +13,35 @@ export const Hero = () => {
   const t = useTranslations('Hero');
 
   return (
-    <Section className="py-16 lg:py-24">
-      <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1.1fr_1fr] lg:gap-10">
+    <Section variant="transparent" padding={0} className="px-3 py-16 lg:py-24">
+      <div className="mx-auto grid max-w-screen-lg grid-cols-1 items-center gap-12 lg:grid-cols-[1.1fr_1fr] lg:gap-10">
         <div>
-          <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+          <Text type="label" color="secondary" className="font-mono text-xs uppercase tracking-[0.2em]">
             {t('eyebrow')}
-          </p>
+          </Text>
 
-          <h1 className="mt-4 max-w-xl font-display text-4xl font-semibold leading-[1.1] tracking-tight text-foreground sm:text-5xl">
+          <Heading level={1} className="mt-4 max-w-xl font-display text-4xl font-semibold leading-[1.1] tracking-tight sm:text-5xl">
             {t.rich('title', {
               important: chunks => (
                 <span className="text-primary">{chunks}</span>
               ),
             })}
-          </h1>
+          </Heading>
 
-          <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted-foreground">
+          <Text type="large" color="secondary" className="mt-6 block max-w-lg leading-relaxed">
             {t('description')}
-          </p>
+          </Text>
 
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
+              color="inherit"
               className={cn(buttonVariants({ size: 'lg' }), 'rounded px-6')}
               href="/project"
             >
               {t('primary_button')}
             </Link>
             <Link
+              color="inherit"
               className={cn(
                 buttonVariants({ variant: 'outline', size: 'lg' }),
                 'rounded border-ink px-6 text-foreground hover:bg-secondary',
@@ -51,20 +55,22 @@ export const Hero = () => {
 
         {/* Exhibit — the one signature treatment on this page */}
         <div className="relative">
-          <div className="border-ink border">
-            <div className="border-ink bg-ink flex items-center justify-between border-b px-4 py-2">
-              <span className="text-paper font-mono text-[11px] font-medium uppercase tracking-[0.15em]">
+          <div className="border border-ink">
+            <div className="flex items-center justify-between border-b border-ink bg-ink px-4 py-2">
+              <Text type="label" color="inherit" className="font-mono text-[11px] uppercase tracking-[0.15em] text-paper">
                 {t('exhibit_label')}
-              </span>
-              <span className="text-paper/50 font-mono text-[11px] tabular-nums">01</span>
+              </Text>
+              <Text type="supporting" color="inherit" className="font-mono text-[11px] tabular-nums text-paper/50">
+                01
+              </Text>
             </div>
             <div className="p-2">
               <VideoPlayer url="https://youtu.be/UqmzedIvqfI" autoPlay={false} />
             </div>
           </div>
-          <p className="mt-3 max-w-md font-mono text-xs leading-relaxed text-muted-foreground">
+          <Text type="supporting" color="secondary" className="mt-3 block max-w-md font-mono text-xs leading-relaxed">
             {t('exhibit_caption')}
-          </p>
+          </Text>
         </div>
       </div>
     </Section>

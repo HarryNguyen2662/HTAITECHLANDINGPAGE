@@ -22,9 +22,10 @@ const ServicesPage = async (props: { params: Promise<{ locale: string }> }) => {
 
   return (
     <>
-      <Navbar />
-      <ContactForm />
-      <CTA />
+      <Navbar>
+        <ContactForm />
+        <CTA />
+      </Navbar>
       <Footer />
     </>
   );

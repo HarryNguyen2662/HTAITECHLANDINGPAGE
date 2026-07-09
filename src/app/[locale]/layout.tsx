@@ -1,9 +1,13 @@
+import '@astryxdesign/core/reset.css';
+import '@astryxdesign/core/astryx.css';
+import '@/styles/astryx-theme/theme.css';
 import '@/styles/global.css';
 
 import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 
+import { AstryxProvider } from '@/components/AstryxProvider';
 import { DemoBadge } from '@/components/DemoBadge';
 import { fontBody, fontDisplay, fontMono } from '@/libs/fonts';
 import { AllLocales } from '@/utils/AppConfig';
@@ -60,9 +64,11 @@ export default async function RootLayout(props: {
           locale={locale}
           messages={messages}
         >
-          {props.children}
+          <AstryxProvider>
+            {props.children}
 
-          <DemoBadge />
+            <DemoBadge />
+          </AstryxProvider>
         </NextIntlClientProvider>
       </body>
     </html>

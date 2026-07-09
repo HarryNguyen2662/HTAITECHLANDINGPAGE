@@ -1,9 +1,8 @@
-import Link from 'next/link';
+import { Link } from '@astryxdesign/core/Link';
 import { useTranslations } from 'next-intl';
 
 import { buttonVariants } from '@/components/ui/buttonVariants';
 import { CTABanner } from '@/features/landing/CTABanner';
-import { Section } from '@/features/landing/Section';
 import { cn } from '@/utils/Helpers';
 
 export const CTA = () => {
@@ -11,12 +10,13 @@ export const CTA = () => {
 
   return (
     <div className="bg-ink py-24">
-      <Section>
+      <div className="mx-auto max-w-screen-lg px-3">
         <CTABanner
           title={t('title')}
           description={t('description')}
           buttons={(
             <Link
+              color="inherit"
               className={cn(buttonVariants({ size: 'lg' }), 'rounded px-8')}
               href="/contacts"
             >
@@ -24,7 +24,7 @@ export const CTA = () => {
             </Link>
           )}
         />
-      </Section>
+      </div>
     </div>
   );
 };

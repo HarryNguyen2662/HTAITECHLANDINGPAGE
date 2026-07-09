@@ -24,11 +24,12 @@ const IndexPage = async (props: { params: Promise<{ locale: string }> }) => {
 
   return (
     <>
-      <Navbar />
-      <Hero />
-      <Services />
-      <Process />
-      <CTA />
+      <Navbar>
+        <Hero />
+        <Services />
+        <Process />
+        <CTA />
+      </Navbar>
       <Footer />
     </>
   );

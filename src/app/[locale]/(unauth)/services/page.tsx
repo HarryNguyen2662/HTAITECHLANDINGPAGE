@@ -24,11 +24,12 @@ const ServicesPage = async (props: { params: Promise<{ locale: string }> }) => {
 
   return (
     <>
-      <Navbar />
-      <ServiceHero />
-      <Servicestemplate />
-      <WhatWeProvide />
-      <CTA />
+      <Navbar>
+        <ServiceHero />
+        <Servicestemplate />
+        <WhatWeProvide />
+        <CTA />
+      </Navbar>
       <Footer />
     </>
   );

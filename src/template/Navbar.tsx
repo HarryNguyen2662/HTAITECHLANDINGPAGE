@@ -1,69 +1,76 @@
-import Link from 'next/link';
+'use client';
+
+import { AppShell } from '@astryxdesign/core/AppShell';
+import { Link } from '@astryxdesign/core/Link';
+import { TopNav, TopNavHeading, TopNavItem } from '@astryxdesign/core/TopNav';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import type { ReactNode } from 'react';
 
 import { LocaleSwitcher } from '@/components/LocaleSwitcher';
-// import { buttonVariants } from '@/components/ui/buttonVariants';
-import { CenteredMenu } from '@/features/landing/CenteredMenu';
-import { Section } from '@/features/landing/Section';
+import { usePathname } from '@/libs/i18nNavigation';
 
-import { Logo } from './Logo';
+import logoSrc from '../../public/assets/images/handtailogo.png';
 
-export const Navbar = () => {
+const links = [
+  { href: '/howwework', key: 'How_We_Work' },
+  { href: '/services', key: 'Services' },
+  { href: '/project', key: 'Our_Projects' },
+  { href: '/aboutus', key: 'About_Us' },
+] as const;
+
+export const Navbar = ({ children }: { children: ReactNode }) => {
   const t = useTranslations('Navbar');
+  const pathname = usePathname();
 
   return (
-    <Section className="border-b border-line px-3 py-5">
-      <CenteredMenu
-        logo={<Logo />}
-        rightMenu={(
-          <li data-fade>
-            <LocaleSwitcher />
-          </li>
-        )}
-      >
-        <li>
-          <Link href="/howwework" className="font-medium">{t('How_We_Work')}</Link>
-        </li>
-
-        <li>
-          <Link href="/services" className="font-medium">{t('Services')}</Link>
-        </li>
-
-        <li>
-          <Link href="/project" className="font-medium">{t('Our_Projects')}</Link>
-        </li>
-
-        <li>
-          <Link href="/aboutus" className="font-medium">{t('About_Us')}</Link>
-        </li>
-
-        <li>
-          <Link
-            href="/contacts"
-            className="rounded border border-primary px-3 py-1.5 text-sm font-medium text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
-          >
-            {t('Contact')}
-          </Link>
-        </li>
-      </CenteredMenu>
-    </Section>
+    <AppShell
+      height="auto"
+      contentPadding={0}
+      variant="section"
+      topNav={(
+        <TopNav
+          label={t('main_navigation')}
+          heading={(
+            <TopNavHeading
+              heading="H&T AI TECH"
+              headingHref="/"
+              logo={(
+                <Image
+                  src={logoSrc}
+                  alt=""
+                  width={32}
+                  height={32}
+                  className="size-8 object-contain"
+                />
+              )}
+            />
+          )}
+          startContent={links.map(link => (
+            <TopNavItem
+              key={link.href}
+              label={t(link.key)}
+              href={link.href}
+              isSelected={pathname === link.href}
+            />
+          ))}
+          endContent={(
+            <>
+              <Link
+                href="/contacts"
+                isStandalone
+                color="inherit"
+                className="border border-primary px-3 py-1.5 text-sm font-medium text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+              >
+                {t('Contact')}
+              </Link>
+              <LocaleSwitcher />
+            </>
+          )}
+        />
+      )}
+    >
+      {children}
+    </AppShell>
   );
 };
-
-/*
-            <li className="ml-1 mr-2.5" data-fade>
-              <Link href="/sign-in">{t('sign_in')}</Link>
-            </li>
-            <li>
-              <Link className={buttonVariants()} href="/sign-up">
-                {t('sign_up')}
-              </Link>
-            </li>
-
-                              images: [
-                    '/assets/images/helmet1.png',
-                    '/assets/images/helmet2.png',
-                    '/assets/images/helmet3.png',
-                    '/assets/images/helmet1.png',
-                  ],
-*/

@@ -45,6 +45,11 @@ const config = {
           foreground: 'hsl(var(--verify-foreground))',
         },
         line: 'hsl(var(--border))',
+        // Aliases used across template components for the "exhibit"/inverted
+        // dark-band moments (ink = foreground, paper = background).
+        ink: 'hsl(var(--foreground))',
+        paper: 'hsl(var(--background))',
+        graphite: 'hsl(var(--muted-foreground))',
         backdropBlur: {
           md: '10px',
         },

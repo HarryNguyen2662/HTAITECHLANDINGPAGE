@@ -23,10 +23,11 @@ const HowweworkPage = async (props: { params: Promise<{ locale: string }> }) => 
 
   return (
     <>
-      <Navbar />
-      <HowweworkHero />
-      <Howweworkstep />
-      <CTA />
+      <Navbar>
+        <HowweworkHero />
+        <Howweworkstep />
+        <CTA />
+      </Navbar>
       <Footer />
     </>
   );
