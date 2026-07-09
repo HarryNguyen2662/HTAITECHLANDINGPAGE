@@ -26,8 +26,8 @@ export const WhatWeProvide = () => {
             What to expect
           </Heading>
           <Text type="large" color="secondary" className="mt-4 block">
-            We start every project with a discovery phase — understanding
-            your objectives, timelines, and key deliverables — before any
+            We start every project with a discovery phase, understanding
+            your objectives, timelines, and key deliverables before any
             code gets written.
           </Text>
         </div>
@@ -63,7 +63,7 @@ export const WhatWeProvide = () => {
               color="inherit"
               className="block w-full bg-primary px-8 py-4 text-center text-lg font-medium text-primary-foreground transition-colors hover:bg-primary/90"
             >
-              Contact us →
+              Talk to the team
             </Link>
           </div>
         </div>

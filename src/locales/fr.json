@@ -14,13 +14,13 @@
     "Contact": "Contact"
   },
   "Hero": {
-    "eyebrow": "Đà Nẵng, Vietnam — studio d'IA appliquée",
-    "title": "Notre IA rend le verdict — <important>conforme ou non, réussite ou échec.</important>",
-    "description": "Détection de casques avec 92 % de précision. Infractions de circulation signalées en 0,15 seconde. Un simulateur d'examen de conduite qui a aidé des milliers de candidats à se préparer. H&T AI TECH conçoit et déploie des systèmes de vision par ordinateur pour les villes intelligentes du Vietnam — conçus et testés à Đà Nẵng.",
+    "eyebrow": "Đà Nẵng, Vietnam · Studio d'IA appliquée",
+    "title": "L'IA qui rend le verdict : <important>réussite ou échec.</important>",
+    "description": "La vision par ordinateur pour les villes intelligentes du Vietnam : 92 % de conformité casque, infractions signalées en 0,15 s, un simulateur d'examen utilisé par des milliers de candidats.",
     "primary_button": "Voir nos réalisations",
     "secondary_button": "Contacter l'équipe",
-    "exhibit_label": "Pièce à conviction — produit déployé",
-    "exhibit_caption": "Luyện Thi Mô Phỏng 120 Tình Huống — notre simulateur d'examen de conduite noté par IA, disponible sur l'App Store et Google Play."
+    "exhibit_label": "Pièce à conviction · Produit déployé",
+    "exhibit_caption": "Luyện Thi Mô Phỏng 120 Tình Huống : notre simulateur d'examen de conduite noté par IA, disponible sur l'App Store et Google Play."
   },
   "HeroService": {
     "follow_twitter": "Des services pensés pour votre problème",
@@ -79,13 +79,13 @@
   },
   "CTA": {
     "title": "Un système qui doit prendre la bonne décision ?",
-    "description": "Décrivez-nous ce que vous voulez détecter, vérifier ou automatiser — circulation, sécurité, contrôle qualité, ou autre chose. Nous répondons depuis Đà Nẵng sous un jour ouvré.",
-    "button_text": "Démarrer la conversation"
+    "description": "Décrivez-nous ce que vous voulez détecter, vérifier ou automatiser : circulation, sécurité, contrôle qualité, ou autre chose. Nous répondons depuis Đà Nẵng sous un jour ouvré.",
+    "button_text": "Contacter l'équipe"
   },
   "Servicesforpage": {
     "section_subtitle": "L'étendue complète",
     "section_title": "Tout ce que nous construisons, en une liste",
-    "section_description": "Pas de forfaits ni de paliers — dites-nous ce qui s'applique à votre projet et nous cadrerons le reste.",
+    "section_description": "Pas de forfaits ni de paliers. Dites-nous ce qui s'applique à votre projet et nous cadrerons le reste.",
     "step1_title": "Solutions d'intelligence artificielle et de machine learning",
     "step1_description": "Modèles sur mesure et systèmes d'IA appliquée, de la vision par ordinateur à l'analyse prédictive, conçus pour vos données réelles.",
     "step2_title": "Développement de MVP",
@@ -114,7 +114,7 @@
   "Services": {
     "section_subtitle": "Modèles de collaboration",
     "section_title": "Quatre façons de travailler avec nous",
-    "section_description": "Choisissez le modèle adapté à votre rythme — d'un seul spécialiste à une équipe IA complète.",
+    "section_description": "Choisissez le modèle adapté à votre rythme, d'un seul spécialiste à une équipe IA complète.",
     "step1_title": "Renfort d'équipe simplifié",
     "step1_description": "Renforcez vos capacités avec une expertise à la demande. Notre renfort de personnel apporte des talents spécialisés à votre équipe, pour accélérer sans perdre le contrôle de vos projets.",
     "step2_title": "Équipes de développement dédiées",

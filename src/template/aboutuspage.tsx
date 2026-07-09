@@ -38,7 +38,7 @@ export const AboutUs = () => {
     },
     {
       title: 'We publish what we learn',
-      description: 'Model accuracy, failure modes, and what didn\'t work — we document it, we don\'t hide it.',
+      description: 'Model accuracy, failure modes, and what didn\'t work: we document it, we don\'t hide it.',
     },
     {
       title: 'We test for the field',
@@ -46,7 +46,7 @@ export const AboutUs = () => {
     },
     {
       title: 'We build what\'s next',
-      description: 'Traffic and safety AI in Vietnam is still early. We\'d rather define what "good" looks like.',
+      description: 'Traffic and safety AI in Vietnam is still early. We\'d rather define what “good” looks like.',
     },
   ];
 
@@ -60,7 +60,7 @@ export const AboutUs = () => {
   }[] = [
     {
       name: 'Dr. Nguyen Huu Tai',
-      role: 'Founder, CEO — Head of AI & IoT',
+      role: 'Founder, CEO, Head of AI & IoT',
       bio: 'Leads AI and IoT innovation. Expert in intelligent systems, computer vision, and smart-city solutions, with extensive experience in AI-driven automation and digital transformation.',
       links: ['LinkedIn'],
       href: 'https://www.linkedin.com/in/tai-nguyen-huu-69979570/',
@@ -68,14 +68,14 @@ export const AboutUs = () => {
     },
     {
       name: 'Dr. Le Quang Chien',
-      role: 'Founder — AI Team Lead',
+      role: 'Founder, AI Team Lead',
       bio: 'Leads the AI team, specializing in AI and IoT. Contributor to enterprise automation and technology solutions across Vietnam.',
       links: [],
       image: '/assets/images/chuchien.png',
     },
     {
       name: 'Dr. Le Quang Minh',
-      role: 'Founder — Marketing Director, Japan Market',
+      role: 'Founder, Marketing Director for Japan',
       bio: 'Leads AI-powered business development for the Japan market at iResonance. Multilingual (Vietnamese, English, Japanese), with a background in electronic and telecommunication engineering.',
       links: ['LinkedIn'],
       href: 'https://www.linkedin.com/in/quang-minh%EF%BC%88%E3%83%9F%E3%83%B3%EF%BC%89-a9395027/',
@@ -111,7 +111,7 @@ export const AboutUs = () => {
               H&T AI TECH is a small team of Vietnamese engineers and
               operators who've shipped computer-vision systems for traffic
               and safety monitoring, an AI-graded driving-exam app used by
-              thousands, and staff-augmentation teams for outside clients —
+              thousands, and staff-augmentation teams for outside clients,
               all built and supported from Đà Nẵng.
             </Text>
           </motion.div>
@@ -119,7 +119,7 @@ export const AboutUs = () => {
           {/* Core Values */}
           <motion.div variants={itemVariants}>
             <Heading level={2} className="font-display text-2xl font-semibold">
-              How we work
+              Operating principles
             </Heading>
             <div className="mt-8 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-5">
               {coreValues.map(value => (
@@ -197,7 +197,7 @@ export const AboutUs = () => {
               isStandalone
               className="mt-4 inline-block font-medium"
             >
-              Get in touch →
+              Introduce yourself →
             </Link>
           </motion.div>
         </motion.div>

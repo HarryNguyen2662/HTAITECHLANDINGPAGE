@@ -167,9 +167,6 @@ export const TrafficMonitoring = () => {
                             />
                           </div>
                         )}
-                    <span className="absolute bottom-3 right-3 z-10 bg-ink px-2.5 py-1 font-mono text-xs text-paper">
-                      {item.type === 'video' ? 'Video Demo' : `Violation ${idx + 1}`}
-                    </span>
                   </div>
                 </SwiperSlide>
               ))}
@@ -185,7 +182,7 @@ export const TrafficMonitoring = () => {
               <FaMicrochip className="text-primary" />
               Core technology
             </Heading>
-            <ul className="space-y-3">
+            <ul className="mt-4 space-y-3 border-t border-line pt-4">
               {[
                 'Vietnam-trained YOLOv8 models',
                 'Advanced vehicle tracking algorithms',
@@ -193,7 +190,7 @@ export const TrafficMonitoring = () => {
                 'Violation decision-making engine',
                 'Edge-cloud hybrid architecture',
               ].map(item => (
-                <li key={item} className="border-t border-line pt-3">
+                <li key={item}>
                   <Text type="body" color="secondary">{item}</Text>
                 </li>
               ))}
@@ -245,15 +242,15 @@ export const TrafficMonitoring = () => {
                 ))}
               </ul>
             </div>
-            <div className="border-t-2 border-amber-600 pt-4">
-              <Heading level={4} color="inherit" className="flex items-center gap-2 font-medium text-amber-600">
+            <div className="border-t-2 border-amber-700 pt-4">
+              <Heading level={4} color="inherit" className="flex items-center gap-2 font-medium text-amber-700">
                 <FaExclamationCircle />
                 Yellow violations
               </Heading>
               <ul className="mt-3 space-y-2">
                 {['Lane violations', 'Illegal parking', 'Speeding'].map(item => (
                   <li key={item} className="flex items-center gap-2">
-                    <FaAngleRight className="shrink-0 text-amber-600" />
+                    <FaAngleRight className="shrink-0 text-amber-700" />
                     <Text type="body" color="secondary">{item}</Text>
                   </li>
                 ))}

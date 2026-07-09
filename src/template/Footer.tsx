@@ -18,11 +18,11 @@ const socialLinks = [
 ];
 
 const services = [
-  { title: 'Software Development Services:', items: ['MVP Product Development Services', 'iOS App Development Services', 'Android App Development', 'Front-end Development Services'] },
-  { title: 'Design Services:', items: ['UX/UI Design Services'] },
-  { title: 'Quality Assurance & Testing:', items: ['QA Testing & Automation Solutions'] },
-  { title: 'AI & Advanced Analytics:', items: ['AI & Machine Learning Solutions', 'Data Science Solutions', 'Business Intelligence Services', 'Data Engineering Solutions', 'Machine Learning Services'] },
-  { title: 'Infrastructure & Operations:', items: ['DevOps Services'] },
+  { title: 'Software Development', items: ['MVP Product Development Services', 'iOS App Development Services', 'Android App Development', 'Front-end Development Services'] },
+  { title: 'Design', items: ['UX/UI Design Services'] },
+  { title: 'Quality Assurance & Testing', items: ['QA Testing & Automation Solutions'] },
+  { title: 'AI & Advanced Analytics', items: ['AI & Machine Learning Solutions', 'Data Science Solutions', 'Business Intelligence Services', 'Data Engineering Solutions', 'Machine Learning Services'] },
+  { title: 'Infrastructure & Operations', items: ['DevOps Services'] },
 ];
 
 const addresses = [
@@ -54,7 +54,7 @@ export const Footer = () => {
             </HStack>
 
             <Text type="supporting" color="inherit" className="max-w-xs font-mono text-xs uppercase tracking-[0.15em] text-paper/50">
-              Đà Nẵng, Việt Nam — applied AI &amp; software studio
+              Đà Nẵng, Việt Nam · Applied AI &amp; software studio
             </Text>
 
             <VStack gap={4}>

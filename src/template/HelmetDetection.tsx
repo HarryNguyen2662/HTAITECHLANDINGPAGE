@@ -80,7 +80,7 @@ export const HelmetDetection = () => {
             </Heading>
           </div>
           <Text type="body" size="sm" color="secondary" className="block font-mono">
-            YOLOv8 · 92% head-detection accuracy · 30 FPS
+            YOLOv8 · 92% head detection at 30 FPS
           </Text>
         </div>
 
@@ -158,10 +158,6 @@ export const HelmetDetection = () => {
                           </div>
                         )}
 
-                    {/* Media Label */}
-                    <span className="absolute bottom-3 right-3 z-10 bg-ink px-2.5 py-1 font-mono text-xs text-paper">
-                      {item.type === 'video' ? 'Video Demo' : `Image ${idx + 1}`}
-                    </span>
                   </div>
                 </SwiperSlide>
               ))}
@@ -177,7 +173,7 @@ export const HelmetDetection = () => {
               <FaMicrochip className="text-primary" />
               Model training
             </Heading>
-            <ul className="space-y-3">
+            <ul className="mt-4 space-y-3 border-t border-line pt-4">
               {[
                 'Trained on 525 images (10% of Hard Hat Workers Dataset)',
                 'Re-labeled training set: 314 Head, 1124 Helmet labels',
@@ -185,7 +181,7 @@ export const HelmetDetection = () => {
                 'YOLOv8 medium model, 100 epochs training',
                 'Data augmentation: 10x increase in training samples',
               ].map(item => (
-                <li key={item} className="border-t border-line pt-3">
+                <li key={item}>
                   <Text type="body" color="secondary">{item}</Text>
                 </li>
               ))}

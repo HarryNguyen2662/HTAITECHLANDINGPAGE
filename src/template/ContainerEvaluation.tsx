@@ -154,11 +154,6 @@ export const ContainerEvaluation = () => {
                         }}
                       />
                     </div>
-                    <span className="absolute bottom-3 right-3 z-10 bg-ink px-2.5 py-1 font-mono text-xs text-paper">
-                      Scan
-                      {' '}
-                      {idx + 1}
-                    </span>
                   </div>
                 </SwiperSlide>
               ))}

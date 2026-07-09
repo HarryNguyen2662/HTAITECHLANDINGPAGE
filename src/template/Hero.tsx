@@ -53,15 +53,12 @@ export const Hero = () => {
           </div>
         </div>
 
-        {/* Exhibit — the one signature treatment on this page */}
+        {/* Exhibit: the one signature treatment on this page */}
         <div className="relative">
           <div className="border border-ink">
-            <div className="flex items-center justify-between border-b border-ink bg-ink px-4 py-2">
+            <div className="border-b border-ink bg-ink px-4 py-2">
               <Text type="label" color="inherit" className="font-mono text-[11px] uppercase tracking-[0.15em] text-paper">
                 {t('exhibit_label')}
-              </Text>
-              <Text type="supporting" color="inherit" className="font-mono text-[11px] tabular-nums text-paper/50">
-                01
               </Text>
             </div>
             <div className="p-2">

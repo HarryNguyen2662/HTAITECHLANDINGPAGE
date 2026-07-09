@@ -14,13 +14,13 @@
     "Contact": "Contact"
   },
   "Hero": {
-    "eyebrow": "Đà Nẵng, Việt Nam — applied AI studio",
-    "title": "We build AI that makes the call — <important>pass or fail, safe or not.</important>",
-    "description": "Helmet compliance at 92% accuracy. Traffic violations flagged in 0.15 seconds. A driving-exam simulator that's helped thousands prepare for their license. H&T AI TECH designs and ships computer-vision systems for Vietnam's smart cities — built and tested in Đà Nẵng.",
+    "eyebrow": "Đà Nẵng, Việt Nam · Applied AI studio",
+    "title": "AI that makes the call: <important>pass or fail, safe or not.</important>",
+    "description": "Computer vision for Vietnam's smart cities: 92% helmet compliance, violations flagged in 0.15 seconds, an exam simulator used by thousands.",
     "primary_button": "See the work",
     "secondary_button": "Talk to the team",
-    "exhibit_label": "Exhibit — shipped product",
-    "exhibit_caption": "Luyện Thi Mô Phỏng 120 Tình Huống — our AI-graded driving-exam simulator, live on the App Store and Google Play."
+    "exhibit_label": "Exhibit · Shipped product",
+    "exhibit_caption": "Luyện Thi Mô Phỏng 120 Tình Huống: our AI-graded driving-exam simulator, live on the App Store and Google Play."
   },
   "HeroService": {
     "follow_twitter": "Services built around your problem",
@@ -42,7 +42,7 @@
   "Services": {
     "section_subtitle": "Engagement models",
     "section_title": "Four ways to work with us",
-    "section_description": "Pick the model that fits how you need to move — from one specialist to a full AI build.",
+    "section_description": "Pick the model that fits how you need to move, from one specialist to a full AI build.",
     "step1_title": "Effortless Team Expansion",
     "step1_description": "Elevate your capabilities with on-demand expertise. Our staff augmentation brings specialized talent to your team, helping you scale rapidly while maintaining complete control of your projects.",
     "step2_title": "Full-Service Development Teams",
@@ -59,7 +59,7 @@
   "Servicesforpage": {
     "section_subtitle": "The full range",
     "section_title": "Everything we build, in one list",
-    "section_description": "No packages, no tiers — tell us which of these apply to your project and we'll scope the rest.",
+    "section_description": "No packages, no tiers. Tell us which of these apply to your project and we'll scope the rest.",
     "step1_title": "Artificial Intelligence & Machine Learning Solutions",
     "step1_description": "Custom models and applied AI systems, from computer vision to predictive analytics, built for your actual data and use case.",
     "step2_title": "MVP Product Development",
@@ -125,8 +125,8 @@
   },
   "CTA": {
     "title": "Have a system that needs to make the right call?",
-    "description": "Tell us what you're trying to detect, verify, or automate — traffic, safety, quality control, or something we haven't built yet. We reply from Đà Nẵng within one business day.",
-    "button_text": "Start the conversation"
+    "description": "Tell us what you're trying to detect, verify, or automate: traffic, safety, quality control, or something we haven't built yet. We reply from Đà Nẵng within one business day.",
+    "button_text": "Talk to the team"
   },
   "Footer": {
     "product": "Product",

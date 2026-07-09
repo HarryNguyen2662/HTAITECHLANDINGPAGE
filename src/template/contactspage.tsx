@@ -248,7 +248,7 @@ export const ContactForm = () => {
               <div className="mt-6 space-y-6">
                 <div>
                   <Text type="label" color="accent" className="font-mono text-xs uppercase tracking-[0.15em]">
-                    Vietnam — HQ
+                    Vietnam · HQ
                   </Text>
                   <Text type="body" color="secondary" className="mt-2 block leading-relaxed">
                     123 Ly Dao Thanh, An Hai Bac, Son Tra

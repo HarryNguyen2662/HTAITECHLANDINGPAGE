@@ -7,7 +7,8 @@ export const FeatureCard = (props: {
   children: React.ReactNode;
 }) => (
   <div className="group border-t-2 border-line pt-6 transition-colors duration-300 hover:border-primary">
-    <div className="flex size-12 items-center justify-center rounded border border-line bg-secondary p-2.5 [&_svg]:size-full [&_svg]:stroke-graphite">
+    {/* Icons follow the site photo rule: non-evidence imagery renders grayscale */}
+    <div className="flex size-12 items-center justify-center rounded border border-line bg-secondary p-2.5 [&_img]:grayscale [&_svg]:size-full [&_svg]:stroke-graphite">
       {props.icon}
     </div>
 

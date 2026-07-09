@@ -14,9 +14,6 @@ export const TictactoeProject: React.FC = () => {
     <div className="border border-line bg-background">
       <div className="grid items-center gap-8 p-8 md:grid-cols-2">
         <div className="space-y-4">
-          <Text type="label" color="secondary" className="block font-mono text-xs uppercase tracking-[0.15em]">
-            Shipped product
-          </Text>
           <div className="flex items-center gap-3">
             <FaGamepad className="text-2xl text-primary" />
             <Heading level={3} className="font-display text-2xl font-semibold">

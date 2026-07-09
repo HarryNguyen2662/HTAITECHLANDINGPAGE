@@ -13,9 +13,6 @@ export const TrafficSimulationProject: React.FC = () => {
     <div className="border border-line bg-background">
       <div className="grid items-center gap-8 p-8 md:grid-cols-2">
         <div className="space-y-4">
-          <Text type="label" color="secondary" className="block font-mono text-xs uppercase tracking-[0.15em]">
-            Shipped product
-          </Text>
           <Heading level={3} className="font-display text-2xl font-semibold">
             Traffic Simulation Platform
           </Heading>
@@ -27,8 +24,8 @@ export const TrafficSimulationProject: React.FC = () => {
 
           <Text type="body" color="secondary" className="block leading-relaxed">
             A comprehensive training system for traffic law education, with
-            AI-powered evaluation and real-time feedback — the same engine
-            behind our driving-exam simulator.
+            AI-powered evaluation and real-time feedback. It runs on the same
+            engine as our driving-exam simulator.
           </Text>
 
           <div className="flex flex-col gap-3 sm:flex-row">

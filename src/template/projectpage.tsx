@@ -59,7 +59,7 @@ export const ProjectsShowcase = memo(() => {
             Have a smart-city or safety project in mind?
           </Heading>
           <Text type="large" color="inherit" className="mx-auto mt-3 block max-w-xl text-paper/70">
-            Tell us what you're trying to detect, verify, or automate — we'll
+            Tell us what you're trying to detect, verify, or automate, and we'll
             tell you honestly whether it's a good fit for what we build.
           </Text>
 
@@ -68,7 +68,7 @@ export const ProjectsShowcase = memo(() => {
             color="inherit"
             className="mt-6 inline-block bg-primary px-8 py-3.5 font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Request a project demo
+            Talk to the team
           </Link>
         </div>
       </div>

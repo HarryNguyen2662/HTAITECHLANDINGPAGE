@@ -15,7 +15,7 @@ export const ProjectHero = () => {
               <span className="text-primary">shipped, not just prototyped</span>
             </>
           )}
-          description="Helmet detection, container inspection, traffic enforcement, and a driving-exam simulator used by thousands — real computer-vision systems built for Vietnam's smart cities."
+          description="Helmet detection, container inspection, traffic enforcement, and a driving-exam simulator used by thousands. Real systems, built for Vietnam's smart cities."
           buttons={(
             <Link
               href="/contacts"

@@ -2,10 +2,8 @@
 
 import { Heading } from '@astryxdesign/core/Heading';
 import { Icon } from '@astryxdesign/core/Icon';
-import { Link } from '@astryxdesign/core/Link';
 import { Text } from '@astryxdesign/core/Text';
 import {
-  ArrowRight,
   Building,
   ChevronRight,
   Code,
@@ -19,46 +17,32 @@ type ServiceCardProps = {
   number: number;
   title: string;
   description: string;
-  isEven?: boolean;
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   image: string;
   benefits: string[];
 };
 
+/* Consistent index-row layout: number + content left, evidence image right.
+   The repetition is the design (a numbered engagement-model index), matching
+   the Process timeline's documentation motif. */
 const ServiceCard: React.FC<ServiceCardProps> = ({
   number,
   title,
   description,
-  isEven = false,
   icon,
   image,
   benefits,
 }) => {
-  const imagePanel = (
-    <div className="w-full lg:w-1/2">
-      <div className="relative aspect-[5/3] w-full overflow-hidden border border-line">
-        <Image
-          src={image}
-          alt={title}
-          fill
-          className="object-cover"
-        />
-      </div>
-    </div>
-  );
-
   return (
-    <div className="grid grid-cols-1 gap-8 border-t border-line py-12 first:border-t-0 first:pt-0 lg:grid-cols-2 lg:items-center">
-      {!isEven && imagePanel}
-
+    <div className="grid grid-cols-1 gap-8 border-t border-line py-12 first:border-t-0 first:pt-0 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-center">
       <div className="w-full">
         <div className="flex items-center gap-3">
-          <Text type="label" color="secondary" className="font-mono tabular-nums">
+          <Text type="label" color="inherit" as="span" className="flex size-9 shrink-0 items-center justify-center border border-ink font-mono text-sm text-ink">
             {String(number).padStart(2, '0')}
           </Text>
           <Icon icon={icon} color="accent" size="sm" />
         </div>
-        <Heading level={2} className="mt-3 font-display text-2xl font-semibold">{title}</Heading>
+        <Heading level={2} className="mt-4 font-display text-2xl font-semibold">{title}</Heading>
         <Text type="body" color="secondary" className="mt-3 block leading-relaxed">{description}</Text>
 
         <ul className="mt-6 space-y-2">
@@ -71,7 +55,16 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         </ul>
       </div>
 
-      {isEven && imagePanel}
+      <div className="w-full">
+        <div className="relative aspect-[5/3] w-full overflow-hidden border border-line">
+          <Image
+            src={image}
+            alt={title}
+            fill
+            className="object-cover grayscale"
+          />
+        </div>
+      </div>
     </div>
   );
 };
@@ -90,7 +83,7 @@ const Howweworkstep = () => {
           'Flexible engagement models',
           'Reduced hiring overhead',
         ]}
-        description="Need specialized talent to strengthen your team? Our staff augmentation services provide the right professionals — developers, designers, and QA specialists — to boost your capabilities and accelerate your projects without the commitment of permanent hires."
+        description="Need specialized talent to strengthen your team? Our staff augmentation services provide the right professionals (developers, designers, and QA specialists) to boost your capabilities and accelerate your projects without the commitment of permanent hires."
       />
 
       <ServiceCard
@@ -105,7 +98,6 @@ const Howweworkstep = () => {
           'Agile development process',
         ]}
         description="For a more hands-on approach, we assemble a dedicated team with the right expertise to handle your project from start to finish, with resources focused exclusively on your initiative."
-        isEven
       />
 
       <ServiceCard
@@ -133,20 +125,8 @@ const Howweworkstep = () => {
           'Process automation',
           'Predictive analytics',
         ]}
-        description="From computer-vision systems to low-code automation, we help you apply AI where it actually moves the needle — grounded in what your data can support, not what's trending."
-        isEven
+        description="From computer-vision systems to low-code automation, we help you apply AI where it actually moves the needle, grounded in what your data can support rather than what's trending."
       />
-
-      <div className="mt-4 flex justify-center border-t border-line pt-12">
-        <Link
-          href="/contacts"
-          color="inherit"
-          className="inline-flex items-center gap-2 bg-primary px-8 py-3.5 font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-        >
-          Talk to the team
-          <Icon icon={ArrowRight} color="inherit" size="sm" />
-        </Link>
-      </div>
     </div>
   );
 };

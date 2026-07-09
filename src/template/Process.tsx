@@ -11,12 +11,12 @@ const processSteps = [
   {
     number: 1,
     title: 'Understand the problem',
-    content: 'We start by understanding what you\'re actually trying to detect, verify, or automate — and whether AI is even the right tool for it.',
+    content: 'We start by understanding what you\'re actually trying to detect, verify, or automate, and whether AI is even the right tool for it.',
   },
   {
     number: 2,
     title: 'Scope a real plan',
-    content: 'A plan and timeline built around your data, infrastructure, and constraints — not a template we reuse for every client.',
+    content: 'A plan and timeline built around your data, infrastructure, and constraints, not a template we reuse for every client.',
   },
   {
     number: 3,
@@ -68,7 +68,7 @@ export const Process = () => {
             {' '}
             <span className="font-medium text-foreground">H&T AI Tech</span>
             , onboarding is where most vendor relationships either earn trust
-            or lose it. We treat it that way — every project starts the same
+            or lose it. We treat it that way: every project starts the same
             methodical four steps, whether you're evaluating us for a pilot
             or handing over production infrastructure.
           </Text>
