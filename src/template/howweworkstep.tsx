@@ -1,5 +1,9 @@
 'use client';
 
+import { Heading } from '@astryxdesign/core/Heading';
+import { Icon } from '@astryxdesign/core/Icon';
+import { Link } from '@astryxdesign/core/Link';
+import { Text } from '@astryxdesign/core/Text';
 import {
   ArrowRight,
   Building,
@@ -9,7 +13,6 @@ import {
   Users,
 } from 'lucide-react';
 import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react';
 
 type ServiceCardProps = {
@@ -17,7 +20,7 @@ type ServiceCardProps = {
   title: string;
   description: string;
   isEven?: boolean;
-  icon: React.ElementType;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   image: string;
   benefits: string[];
 };
@@ -50,19 +53,19 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 
       <div className="w-full">
         <div className="flex items-center gap-3">
-          <span className="font-mono text-sm font-medium tabular-nums text-muted-foreground">
+          <Text type="label" color="secondary" className="font-mono tabular-nums">
             {String(number).padStart(2, '0')}
-          </span>
-          {React.createElement(icon, { className: 'text-primary', size: 20 })}
+          </Text>
+          <Icon icon={icon} color="accent" size="sm" />
         </div>
-        <h2 className="mt-3 font-display text-2xl font-semibold text-foreground">{title}</h2>
-        <p className="mt-3 leading-relaxed text-muted-foreground">{description}</p>
+        <Heading level={2} className="mt-3 font-display text-2xl font-semibold">{title}</Heading>
+        <Text type="body" color="secondary" className="mt-3 block leading-relaxed">{description}</Text>
 
         <ul className="mt-6 space-y-2">
           {benefits.map(benefit => (
-            <li key={benefit} className="flex items-center gap-2 text-foreground">
-              <ChevronRight size={16} className="shrink-0 text-primary" />
-              <span>{benefit}</span>
+            <li key={benefit} className="flex items-center gap-2">
+              <Icon icon={ChevronRight} color="accent" size="sm" className="shrink-0" />
+              <Text type="body">{benefit}</Text>
             </li>
           ))}
         </ul>
@@ -137,10 +140,11 @@ const Howweworkstep = () => {
       <div className="mt-4 flex justify-center border-t border-line pt-12">
         <Link
           href="/contacts"
+          color="inherit"
           className="inline-flex items-center gap-2 bg-primary px-8 py-3.5 font-medium text-primary-foreground transition-colors hover:bg-primary/90"
         >
           Talk to the team
-          <ArrowRight size={16} />
+          <Icon icon={ArrowRight} color="inherit" size="sm" />
         </Link>
       </div>
     </div>

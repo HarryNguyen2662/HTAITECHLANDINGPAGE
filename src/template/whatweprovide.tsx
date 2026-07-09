@@ -1,16 +1,16 @@
-'use client';
-
-import { Check } from 'lucide-react';
+import { Heading } from '@astryxdesign/core/Heading';
+import { Icon } from '@astryxdesign/core/Icon';
+import { Link } from '@astryxdesign/core/Link';
+import { Text } from '@astryxdesign/core/Text';
 import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react';
 
 const CheckItem: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   <div className="mb-4 flex items-center gap-3">
     <div className="flex size-6 shrink-0 items-center justify-center rounded-full bg-verify">
-      <Check className="size-4 text-verify-foreground" />
+      <Icon icon="check" color="inherit" size="sm" className="text-verify-foreground" />
     </div>
-    <span className="text-paper text-lg">{children}</span>
+    <Text type="large" color="inherit" className="text-paper">{children}</Text>
   </div>
 );
 
@@ -19,17 +19,17 @@ export const WhatWeProvide = () => {
     <div className="w-full bg-secondary py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto mb-16 max-w-2xl">
-          <p className="font-mono text-xs font-medium uppercase tracking-[0.15em] text-muted-foreground">
+          <Text type="label" color="secondary" className="block font-mono text-xs uppercase tracking-[0.15em]">
             How engagements run
-          </p>
-          <h2 className="mt-2 font-display text-3xl font-semibold text-foreground">
+          </Text>
+          <Heading level={2} className="mt-2 font-display text-3xl font-semibold">
             What to expect
-          </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
+          </Heading>
+          <Text type="large" color="secondary" className="mt-4 block">
             We start every project with a discovery phase — understanding
             your objectives, timelines, and key deliverables — before any
             code gets written.
-          </p>
+          </Text>
         </div>
 
         <div className="flex flex-col items-stretch gap-8 lg:flex-row">
@@ -44,13 +44,13 @@ export const WhatWeProvide = () => {
             />
           </div>
 
-          <div className="bg-ink flex-1 p-10">
-            <h3 className="text-paper font-display text-2xl font-semibold">
+          <div className="flex-1 bg-ink p-10">
+            <Heading level={3} color="inherit" className="font-display text-2xl font-semibold text-paper">
               Scrum &amp; agile methodology
-            </h3>
-            <p className="text-paper/70 mb-8 mt-3 text-lg leading-relaxed">
+            </Heading>
+            <Text type="large" color="inherit" className="mb-8 mt-3 block leading-relaxed text-paper/70">
               With our streamlined process, clients can expect:
-            </p>
+            </Text>
 
             <div className="mb-8 space-y-4">
               <CheckItem>Efficient project management</CheckItem>
@@ -60,6 +60,7 @@ export const WhatWeProvide = () => {
 
             <Link
               href="/contacts"
+              color="inherit"
               className="block w-full bg-primary px-8 py-4 text-center text-lg font-medium text-primary-foreground transition-colors hover:bg-primary/90"
             >
               Contact us →
