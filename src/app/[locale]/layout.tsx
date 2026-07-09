@@ -1,3 +1,4 @@
+import '@/styles/tailwind-base.css';
 import '@astryxdesign/core/reset.css';
 import '@astryxdesign/core/astryx.css';
 import '@/styles/astryx-theme/theme.css';

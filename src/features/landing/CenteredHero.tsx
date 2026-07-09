@@ -1,3 +1,7 @@
+import { Heading } from '@astryxdesign/core/Heading';
+import { HStack } from '@astryxdesign/core/HStack';
+import { Text } from '@astryxdesign/core/Text';
+
 export const CenteredHero = (props: {
   banner: React.ReactNode;
   title: React.ReactNode;
@@ -7,16 +11,16 @@ export const CenteredHero = (props: {
   <>
     <div className="text-center">{props.banner}</div>
 
-    <div className="mt-3 text-center text-5xl font-bold tracking-tight">
+    <Heading level={1} className="mt-3 text-center font-display text-5xl font-bold tracking-tight">
       {props.title}
-    </div>
+    </Heading>
 
-    <div className="mx-auto mt-5 max-w-screen-md text-center text-xl text-muted-foreground">
+    <Text type="large" color="secondary" className="mx-auto mt-5 block max-w-screen-md text-center text-xl">
       {props.description}
-    </div>
+    </Text>
 
-    <div className="mt-8 flex justify-center gap-x-5 gap-y-3 max-sm:flex-col">
+    <HStack gap={3} justify="center" wrap="wrap" className="mt-8">
       {props.buttons}
-    </div>
+    </HStack>
   </>
 );

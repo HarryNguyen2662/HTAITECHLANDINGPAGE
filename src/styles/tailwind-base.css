@@ -1,0 +1,107 @@
+/*
+ * Tailwind's Preflight reset (`@tailwind base`) must be imported before
+ * Astryx's CSS (reset.css / astryx.css / theme.css) so its cascade layer is
+ * established first — layer order is fixed at first appearance, and layer
+ * order always wins over selector specificity. Without this split,
+ * Preflight's unscoped `button { background-color: transparent }` beats
+ * Astryx's own (higher-specificity) button variant colors, since Tailwind
+ * v3's `@tailwind` directives compile to unlayered CSS by default and
+ * `@tailwind components`/`@tailwind utilities` still need to win over
+ * Astryx's component defaults — see src/styles/global.css for those.
+ *
+ * The app's own base-layer rules (`--background` etc., h1-h4 font-display)
+ * live here too, in a differently-named layer (`@apply` requires a matching
+ * `@tailwind base` in the same file to name it literally "base"), so they
+ * keep their original low-priority position instead of jumping ahead of
+ * Astryx's component styles.
+ */
+@layer tailwind-base {
+  @tailwind base;
+}
+
+@layer app-base {
+  :root {
+    /* H&T token system — ink / paper / signal / verify, see .claude/CLAUDE.md
+       and the UI Redesign Directive for the rationale behind each. */
+    --background: 42.9 30.4% 95.5%; /* paper */
+    --foreground: 210 16.7% 9.4%; /* ink */
+
+    --card: 42.9 30.4% 95.5%; /* paper — flat, not elevated */
+    --card-foreground: 210 16.7% 9.4%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 16.7% 9.4%;
+
+    --primary: 17.2 73.2% 43.9%; /* signal */
+    --primary-foreground: 42.9 30.4% 95.5%;
+
+    --secondary: 41.5 28.9% 91.2%; /* paper-dim */
+    --secondary-foreground: 210 16.7% 9.4%;
+
+    --muted: 41.5 28.9% 91.2%; /* paper-dim */
+    --muted-foreground: 212.7 6.9% 31.2%; /* graphite */
+
+    --accent: 17.2 40% 92%; /* faint signal tint, hover states only */
+    --accent-foreground: 210 16.7% 9.4%;
+
+    --verify: 159.8 56.3% 27.8%;
+    --verify-foreground: 42.9 30.4% 95.5%;
+
+    --destructive: 3 65% 42%;
+    --destructive-foreground: 42.9 30.4% 95.5%;
+
+    --border: 40 19% 84.5%; /* line */
+    --input: 40 19% 84.5%;
+    --ring: 17.2 73.2% 43.9%; /* signal */
+
+    --radius: 0.25rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer app-base {
+  * {
+    @apply border-border;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background-color: hsl(var(--primary) / 15%);
+  }
+}

@@ -1,8 +1,11 @@
 'use client';
 
+import { Avatar } from '@astryxdesign/core/Avatar';
+import { Heading } from '@astryxdesign/core/Heading';
+import { Icon } from '@astryxdesign/core/Icon';
+import { Link } from '@astryxdesign/core/Link';
+import { Text } from '@astryxdesign/core/Text';
 import { motion, type Variants } from 'framer-motion';
-import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react';
 import { FaLinkedin } from 'react-icons/fa';
 
@@ -98,35 +101,35 @@ export const AboutUs = () => {
         >
           {/* Mission Section */}
           <motion.div variants={itemVariants} className="max-w-2xl">
-            <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+            <Text type="label" color="secondary" className="font-mono text-xs uppercase tracking-[0.2em]">
               About H&T AI TECH
-            </p>
-            <h1 className="mt-4 font-display text-4xl font-semibold text-foreground sm:text-5xl">
+            </Text>
+            <Heading level={1} className="mt-4 font-display text-4xl font-semibold sm:text-5xl">
               The people behind the systems
-            </h1>
-            <p className="mt-6 text-xl leading-relaxed text-muted-foreground">
+            </Heading>
+            <Text type="large" color="secondary" className="mt-6 block text-xl leading-relaxed">
               H&T AI TECH is a small team of Vietnamese engineers and
               operators who've shipped computer-vision systems for traffic
               and safety monitoring, an AI-graded driving-exam app used by
               thousands, and staff-augmentation teams for outside clients —
               all built and supported from Đà Nẵng.
-            </p>
+            </Text>
           </motion.div>
 
           {/* Core Values */}
           <motion.div variants={itemVariants}>
-            <h2 className="font-display text-2xl font-semibold text-foreground">
+            <Heading level={2} className="font-display text-2xl font-semibold">
               How we work
-            </h2>
+            </Heading>
             <div className="mt-8 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-5">
               {coreValues.map(value => (
                 <div key={value.title} className="border-t-2 border-line pt-5">
-                  <h3 className="font-display text-lg font-semibold text-foreground">
+                  <Heading level={3} className="font-display text-lg font-semibold">
                     {value.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  </Heading>
+                  <Text type="supporting" color="secondary" className="mt-2 block leading-relaxed">
                     {value.description}
-                  </p>
+                  </Text>
                 </div>
               ))}
             </div>
@@ -134,51 +137,44 @@ export const AboutUs = () => {
 
           {/* Team Section */}
           <motion.div variants={itemVariants}>
-            <h2 className="font-display text-2xl font-semibold text-foreground">
+            <Heading level={2} className="font-display text-2xl font-semibold">
               Founders &amp; leadership
-            </h2>
+            </Heading>
             <div className="mt-8 grid gap-6 md:grid-cols-2">
               {teamMembers.map(member => (
                 <div
                   key={member.name}
                   className="flex gap-5 border border-line p-6"
                 >
-                  <div className="relative size-16 shrink-0 overflow-hidden rounded-full border border-line grayscale">
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      width={64}
-                      height={64}
-                      className="size-full object-cover"
-                      loading="lazy"
-                      placeholder="blur"
-                      blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
-                    />
+                  <div className="size-16 shrink-0 rounded-full border border-line grayscale">
+                    <Avatar src={member.image} name={member.name} size={64} />
                   </div>
 
                   <div className="min-w-0">
                     <div className="flex items-start justify-between gap-3">
                       <div>
-                        <h3 className="font-display text-lg font-semibold text-foreground">
+                        <Heading level={3} className="font-display text-lg font-semibold">
                           {member.name}
-                        </h3>
-                        <p className="text-sm font-medium text-primary">
+                        </Heading>
+                        <Text type="body" size="sm" weight="medium" color="accent">
                           {member.role}
-                        </p>
+                        </Text>
                       </div>
                       {member.links.includes('LinkedIn') && member.href && (
                         <Link
                           href={member.href}
-                          aria-label={`${member.name} on LinkedIn`}
-                          className="shrink-0 text-muted-foreground transition-colors hover:text-primary"
+                          isExternalLink
+                          label={`${member.name} on LinkedIn`}
+                          color="secondary"
+                          className="shrink-0 hover:text-primary"
                         >
-                          <FaLinkedin className="size-5" />
+                          <Icon icon={FaLinkedin} color="inherit" size="sm" />
                         </Link>
                       )}
                     </div>
-                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    <Text type="body" size="sm" color="secondary" className="mt-3 block leading-relaxed">
                       {member.bio}
-                    </p>
+                    </Text>
                   </div>
                 </div>
               ))}
@@ -187,16 +183,19 @@ export const AboutUs = () => {
 
           {/* Closing */}
           <motion.div variants={itemVariants} className="border-t border-line pt-10">
-            <h2 className="font-display text-xl font-semibold text-foreground">
+            <Heading level={2} className="font-display text-xl font-semibold">
               Want to build this kind of work?
-            </h2>
-            <p className="mt-2 max-w-xl text-muted-foreground">
+            </Heading>
+            <Text type="body" color="secondary" className="mt-2 block max-w-xl">
               We're a small team that hires slowly and rarely. If Đà Nẵng-based
               applied AI work sounds interesting, we'd like to hear from you.
-            </p>
+            </Text>
             <Link
               href="/contacts"
-              className="mt-4 inline-block font-medium text-primary underline decoration-primary/30 underline-offset-4 hover:decoration-primary"
+              color="accent"
+              hasUnderline
+              isStandalone
+              className="mt-4 inline-block font-medium"
             >
               Get in touch →
             </Link>
