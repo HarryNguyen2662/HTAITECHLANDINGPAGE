@@ -5,7 +5,9 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 
-import Link from 'next/link';
+import { Heading } from '@astryxdesign/core/Heading';
+import { Link } from '@astryxdesign/core/Link';
+import { Text } from '@astryxdesign/core/Text';
 import { memo } from 'react';
 
 import { ContainerEvaluation } from './ContainerEvaluation';
@@ -22,12 +24,12 @@ export const ProjectsShowcase = memo(() => {
       <div className="mx-auto max-w-7xl space-y-20">
         <div className="space-y-8">
           <div>
-            <p className="font-mono text-xs font-medium uppercase tracking-[0.15em] text-muted-foreground">
+            <Text type="label" color="secondary" className="block font-mono text-xs uppercase tracking-[0.15em]">
               Case studies
-            </p>
-            <h2 className="mt-2 font-display text-2xl font-semibold text-foreground">
+            </Text>
+            <Heading level={2} className="mt-2 font-display text-2xl font-semibold">
               Applied computer vision
-            </h2>
+            </Heading>
           </div>
           <div className="space-y-8">
             <HelmetDetection />
@@ -38,12 +40,12 @@ export const ProjectsShowcase = memo(() => {
 
         <div className="space-y-8">
           <div>
-            <p className="font-mono text-xs font-medium uppercase tracking-[0.15em] text-muted-foreground">
+            <Text type="label" color="secondary" className="block font-mono text-xs uppercase tracking-[0.15em]">
               Consumer apps
-            </p>
-            <h2 className="mt-2 font-display text-2xl font-semibold text-foreground">
+            </Text>
+            <Heading level={2} className="mt-2 font-display text-2xl font-semibold">
               Shipped products
-            </h2>
+            </Heading>
           </div>
           <div className="space-y-8">
             <TictactoeProject />
@@ -53,16 +55,17 @@ export const ProjectsShowcase = memo(() => {
 
         {/* CTA Section */}
         <div className="bg-ink px-8 py-14 text-center sm:px-12">
-          <h2 className="text-paper font-display text-2xl font-semibold sm:text-3xl">
+          <Heading level={2} color="inherit" className="font-display text-2xl font-semibold text-paper sm:text-3xl">
             Have a smart-city or safety project in mind?
-          </h2>
-          <p className="text-paper/70 mx-auto mt-3 max-w-xl">
+          </Heading>
+          <Text type="large" color="inherit" className="mx-auto mt-3 block max-w-xl text-paper/70">
             Tell us what you're trying to detect, verify, or automate — we'll
             tell you honestly whether it's a good fit for what we build.
-          </p>
+          </Text>
 
           <Link
             href="/contacts"
+            color="inherit"
             className="mt-6 inline-block bg-primary px-8 py-3.5 font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
             Request a project demo

@@ -1,6 +1,8 @@
+import { Badge } from '@astryxdesign/core/Badge';
+import { Heading } from '@astryxdesign/core/Heading';
+import { HStack } from '@astryxdesign/core/HStack';
+import { Text } from '@astryxdesign/core/Text';
 import { FaFilePdf, FaVideo } from 'react-icons/fa';
-
-import { Badge } from '@/components/ui/badge';
 
 import { AppStoreButton } from './AppStoreButton';
 import { VideoDemoButton } from './VideoDemoButton';
@@ -11,29 +13,23 @@ export const TrafficSimulationProject: React.FC = () => {
     <div className="border border-line bg-background">
       <div className="grid items-center gap-8 p-8 md:grid-cols-2">
         <div className="space-y-4">
-          <p className="font-mono text-xs font-medium uppercase tracking-[0.15em] text-muted-foreground">
+          <Text type="label" color="secondary" className="block font-mono text-xs uppercase tracking-[0.15em]">
             Shipped product
-          </p>
-          <h3 className="font-display text-2xl font-semibold text-foreground">
+          </Text>
+          <Heading level={3} className="font-display text-2xl font-semibold">
             Traffic Simulation Platform
-          </h3>
+          </Heading>
 
-          <div className="flex flex-wrap gap-2">
-            <Badge variant="outline" className="flex items-center gap-1.5 rounded-none border-line font-mono text-xs font-normal text-muted-foreground">
-              <FaFilePdf className="size-3.5" />
-              <span>Training docs</span>
-            </Badge>
-            <Badge variant="outline" className="flex items-center gap-1.5 rounded-none border-line font-mono text-xs font-normal text-muted-foreground">
-              <FaVideo className="size-3.5" />
-              <span>Video guides</span>
-            </Badge>
-          </div>
+          <HStack gap={2} wrap="wrap">
+            <Badge variant="neutral" icon={<FaFilePdf className="size-3.5" />} label="Training docs" />
+            <Badge variant="neutral" icon={<FaVideo className="size-3.5" />} label="Video guides" />
+          </HStack>
 
-          <p className="leading-relaxed text-muted-foreground">
+          <Text type="body" color="secondary" className="block leading-relaxed">
             A comprehensive training system for traffic law education, with
             AI-powered evaluation and real-time feedback — the same engine
             behind our driving-exam simulator.
-          </p>
+          </Text>
 
           <div className="flex flex-col gap-3 sm:flex-row">
             <AppStoreButton

@@ -1,7 +1,9 @@
+import { Badge } from '@astryxdesign/core/Badge';
+import { Heading } from '@astryxdesign/core/Heading';
+import { HStack } from '@astryxdesign/core/HStack';
+import { Text } from '@astryxdesign/core/Text';
 import Image from 'next/image';
 import { FaDownload, FaGamepad, FaLayerGroup } from 'react-icons/fa';
-
-import { Badge } from '@/components/ui/badge';
 
 import { AppStoreButton } from './AppStoreButton';
 
@@ -12,31 +14,25 @@ export const TictactoeProject: React.FC = () => {
     <div className="border border-line bg-background">
       <div className="grid items-center gap-8 p-8 md:grid-cols-2">
         <div className="space-y-4">
-          <p className="font-mono text-xs font-medium uppercase tracking-[0.15em] text-muted-foreground">
+          <Text type="label" color="secondary" className="block font-mono text-xs uppercase tracking-[0.15em]">
             Shipped product
-          </p>
+          </Text>
           <div className="flex items-center gap-3">
             <FaGamepad className="text-2xl text-primary" />
-            <h3 className="font-display text-2xl font-semibold text-foreground">
+            <Heading level={3} className="font-display text-2xl font-semibold">
               Tic Tac Toe AI
-            </h3>
+            </Heading>
           </div>
 
-          <div className="flex flex-wrap gap-2">
-            <Badge variant="outline" className="flex items-center gap-1.5 rounded-none border-line font-mono text-xs font-normal text-muted-foreground">
-              <FaDownload className="size-3.5" />
-              <span>1M+ downloads</span>
-            </Badge>
-            <Badge variant="outline" className="flex items-center gap-1.5 rounded-none border-line font-mono text-xs font-normal text-muted-foreground">
-              <FaLayerGroup className="size-3.5" />
-              <span>Cross-platform</span>
-            </Badge>
-          </div>
+          <HStack gap={2} wrap="wrap">
+            <Badge variant="neutral" icon={<FaDownload className="size-3.5" />} label="1M+ downloads" />
+            <Badge variant="neutral" icon={<FaLayerGroup className="size-3.5" />} label="Cross-platform" />
+          </HStack>
 
-          <p className="leading-relaxed text-muted-foreground">
+          <Text type="body" color="secondary" className="block leading-relaxed">
             An advanced AI opponent with multiple difficulty levels, a
             5-in-a-row mode, and cross-platform multiplayer support.
-          </p>
+          </Text>
 
           <div className="flex flex-col gap-3 sm:flex-row">
             <AppStoreButton

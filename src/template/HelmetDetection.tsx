@@ -1,3 +1,7 @@
+import { Card } from '@astryxdesign/core/Card';
+import { Heading } from '@astryxdesign/core/Heading';
+import { IconButton } from '@astryxdesign/core/IconButton';
+import { Text } from '@astryxdesign/core/Text';
 import Image from 'next/image';
 import { useRef } from 'react';
 import { FaChartLine, FaChevronLeft, FaChevronRight, FaMicrochip, FaTrophy } from 'react-icons/fa';
@@ -71,35 +75,31 @@ export const HelmetDetection = () => {
         <div className="space-y-2">
           <div className="flex items-center gap-3">
             <FaHelmetSafety className="text-2xl text-primary" />
-            <h2 className="font-display text-3xl font-semibold text-foreground">
+            <Heading level={2} className="font-display text-3xl font-semibold">
               AI Helmet Detection System
-            </h2>
+            </Heading>
           </div>
-          <p className="font-mono text-sm text-muted-foreground">
+          <Text type="body" size="sm" color="secondary" className="block font-mono">
             YOLOv8 · 92% head-detection accuracy · 30 FPS
-          </p>
+          </Text>
         </div>
 
         {/* Enhanced Image Gallery with direct navigation buttons */}
         <div className="group/gallery relative">
           {/* Custom Navigation Arrows */}
           <div className="absolute inset-y-0 z-20 flex w-full items-center justify-between px-4">
-            <button
-              type="button"
+            <IconButton
+              label="Previous image"
+              icon={<FaChevronLeft className="size-5" />}
               onClick={() => handleSlideChange(helmetSwiperRef, 'prev')}
-              className={`${navClasses.helmetNav.prev} border border-line bg-background/90 p-3 transition-colors hover:bg-background`}
-              aria-label="Previous image"
-            >
-              <FaChevronLeft className="size-5 text-foreground" />
-            </button>
-            <button
-              type="button"
+              className={`${navClasses.helmetNav.prev} rounded-none border border-line bg-background/90 hover:bg-background`}
+            />
+            <IconButton
+              label="Next image"
+              icon={<FaChevronRight className="size-5" />}
               onClick={() => handleSlideChange(helmetSwiperRef, 'next')}
-              className={`${navClasses.helmetNav.next} border border-line bg-background/90 p-3 transition-colors hover:bg-background`}
-              aria-label="Next image"
-            >
-              <FaChevronRight className="size-5 text-foreground" />
-            </button>
+              className={`${navClasses.helmetNav.next} rounded-none border border-line bg-background/90 hover:bg-background`}
+            />
           </div>
 
           {/* Gallery Content */}
@@ -159,7 +159,7 @@ export const HelmetDetection = () => {
                         )}
 
                     {/* Media Label */}
-                    <span className="bg-ink text-paper absolute bottom-3 right-3 z-10 px-2.5 py-1 font-mono text-xs">
+                    <span className="absolute bottom-3 right-3 z-10 bg-ink px-2.5 py-1 font-mono text-xs text-paper">
                       {item.type === 'video' ? 'Video Demo' : `Image ${idx + 1}`}
                     </span>
                   </div>
@@ -173,10 +173,10 @@ export const HelmetDetection = () => {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
           {/* Tech Specs */}
           <div className="space-y-4">
-            <h3 className="flex items-center gap-2 font-display text-xl font-semibold text-foreground">
+            <Heading level={3} className="flex items-center gap-2 font-display text-xl font-semibold">
               <FaMicrochip className="text-primary" />
               Model training
-            </h3>
+            </Heading>
             <ul className="space-y-3">
               {[
                 'Trained on 525 images (10% of Hard Hat Workers Dataset)',
@@ -185,8 +185,8 @@ export const HelmetDetection = () => {
                 'YOLOv8 medium model, 100 epochs training',
                 'Data augmentation: 10x increase in training samples',
               ].map(item => (
-                <li key={item} className="border-t border-line pt-3 text-muted-foreground">
-                  {item}
+                <li key={item} className="border-t border-line pt-3">
+                  <Text type="body" color="secondary">{item}</Text>
                 </li>
               ))}
             </ul>
@@ -194,10 +194,10 @@ export const HelmetDetection = () => {
 
           {/* Performance Metrics */}
           <div className="space-y-4">
-            <h3 className="flex items-center gap-2 font-display text-xl font-semibold text-foreground">
+            <Heading level={3} className="flex items-center gap-2 font-display text-xl font-semibold">
               <FaTrophy className="text-primary" />
               Model performance
-            </h3>
+            </Heading>
             <div className="grid grid-cols-2 gap-4">
               {[
                 { value: '92%', label: 'Head detection accuracy' },
@@ -205,12 +205,12 @@ export const HelmetDetection = () => {
                 { value: '30 FPS', label: 'Processing speed' },
                 { value: '98.7%', label: 'mAP score' },
               ].map(stat => (
-                <div key={stat.label} className="border border-line p-5">
-                  <div className="font-mono text-2xl font-medium tabular-nums text-foreground">
+                <Card key={stat.label} padding={5} className="rounded-none border-line">
+                  <Text type="body" color="inherit" className="block font-mono text-2xl font-medium tabular-nums">
                     {stat.value}
-                  </div>
-                  <div className="mt-1 text-sm text-muted-foreground">{stat.label}</div>
-                </div>
+                  </Text>
+                  <Text type="body" size="sm" color="secondary" className="mt-1 block">{stat.label}</Text>
+                </Card>
               ))}
             </div>
           </div>
@@ -218,15 +218,15 @@ export const HelmetDetection = () => {
 
         {/* Additional Information Section */}
         <div className="border-t border-line pt-6">
-          <h3 className="flex items-center gap-2 font-display text-xl font-semibold text-foreground">
+          <Heading level={3} className="flex items-center gap-2 font-display text-xl font-semibold">
             <FaChartLine className="text-primary" />
             Future improvements
-          </h3>
-          <p className="mt-3 text-muted-foreground">
+          </Heading>
+          <Text type="body" color="secondary" className="mt-3 block">
             With expanded training data (100% of Hard Hat Workers Dataset) and additional sources,
             model accuracy is expected to improve significantly. Current results are strong
             considering the limited training data (only 10% of available dataset).
-          </p>
+          </Text>
         </div>
       </div>
     </div>

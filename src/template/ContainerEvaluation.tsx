@@ -1,3 +1,7 @@
+import { Card } from '@astryxdesign/core/Card';
+import { Heading } from '@astryxdesign/core/Heading';
+import { IconButton } from '@astryxdesign/core/IconButton';
+import { Text } from '@astryxdesign/core/Text';
 import Image from 'next/image';
 import { useRef } from 'react';
 import { FaCheck, FaChevronLeft, FaChevronRight, FaClock, FaCrosshairs, FaExclamationTriangle, FaMagic, FaRobot, FaRuler, FaSyncAlt, FaTimes, FaTrophy } from 'react-icons/fa';
@@ -68,35 +72,31 @@ export const ContainerEvaluation = () => {
         <div className="space-y-2">
           <div className="flex items-center gap-3">
             <FaRobot className="text-2xl text-primary" />
-            <h2 className="font-display text-3xl font-semibold text-foreground">
+            <Heading level={2} className="font-display text-3xl font-semibold">
               AI Container Damage Detection
-            </h2>
+            </Heading>
           </div>
-          <p className="font-mono text-sm text-muted-foreground">
+          <Text type="body" size="sm" color="secondary" className="block font-mono">
             Overcoming inspection challenges with computer vision &amp; 3D AI
-          </p>
+          </Text>
         </div>
 
         {/* Enhanced Gallery Section - Original Structure Maintained */}
         <div className="group/gallery relative">
           {/* Navigation Arrows */}
           <div className="absolute inset-y-0 z-20 flex w-full items-center justify-between px-4">
-            <button
-              type="button"
+            <IconButton
+              label="Previous container image"
+              icon={<FaChevronLeft className="size-5" />}
               onClick={() => handleSlideChange(containerSwiperRef, 'prev')}
-              className={`${navClasses.containerNav.prev} border border-line bg-background/90 p-3 transition-colors hover:bg-background`}
-              aria-label="Previous container image"
-            >
-              <FaChevronLeft className="size-5 text-foreground" />
-            </button>
-            <button
-              type="button"
+              className={`${navClasses.containerNav.prev} rounded-none border border-line bg-background/90 hover:bg-background`}
+            />
+            <IconButton
+              label="Next container image"
+              icon={<FaChevronRight className="size-5" />}
               onClick={() => handleSlideChange(containerSwiperRef, 'next')}
-              className={`${navClasses.containerNav.next} border border-line bg-background/90 p-3 transition-colors hover:bg-background`}
-              aria-label="Next container image"
-            >
-              <FaChevronRight className="size-5 text-foreground" />
-            </button>
+              className={`${navClasses.containerNav.next} rounded-none border border-line bg-background/90 hover:bg-background`}
+            />
           </div>
 
           {/* Swiper Container */}
@@ -154,7 +154,7 @@ export const ContainerEvaluation = () => {
                         }}
                       />
                     </div>
-                    <span className="bg-ink text-paper absolute bottom-3 right-3 z-10 px-2.5 py-1 font-mono text-xs">
+                    <span className="absolute bottom-3 right-3 z-10 bg-ink px-2.5 py-1 font-mono text-xs text-paper">
                       Scan
                       {' '}
                       {idx + 1}
@@ -169,10 +169,10 @@ export const ContainerEvaluation = () => {
         {/* Challenge/Solution Section */}
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
           <div className="border-t-2 border-destructive pt-5">
-            <h3 className="flex items-center gap-2 font-display text-xl font-semibold text-foreground">
+            <Heading level={3} className="flex items-center gap-2 font-display text-xl font-semibold">
               <FaExclamationTriangle className="text-destructive" />
               Inspection challenges
-            </h3>
+            </Heading>
             <ul className="mt-4 space-y-3">
               {[
                 '15-20 day container wait times',
@@ -180,19 +180,19 @@ export const ContainerEvaluation = () => {
                 'High storage costs ($1/day)',
                 'Safety risks at height',
               ].map(item => (
-                <li key={item} className="flex items-center gap-3 text-muted-foreground">
+                <li key={item} className="flex items-center gap-3">
                   <FaTimes className="shrink-0 text-destructive" />
-                  {item}
+                  <Text type="body" color="secondary">{item}</Text>
                 </li>
               ))}
             </ul>
           </div>
 
           <div className="border-t-2 border-verify pt-5">
-            <h3 className="flex items-center gap-2 font-display text-xl font-semibold text-foreground">
+            <Heading level={3} className="flex items-center gap-2 font-display text-xl font-semibold">
               <FaMagic className="text-verify" />
               AI solutions
-            </h3>
+            </Heading>
             <ul className="mt-4 space-y-3">
               {[
                 '2mm precision 3D scanning',
@@ -200,9 +200,9 @@ export const ContainerEvaluation = () => {
                 'Real-time EIR generation',
                 'Mobile field deployment',
               ].map(item => (
-                <li key={item} className="flex items-center gap-3 text-muted-foreground">
+                <li key={item} className="flex items-center gap-3">
                   <FaCheck className="shrink-0 text-verify" />
-                  {item}
+                  <Text type="body" color="secondary">{item}</Text>
                 </li>
               ))}
             </ul>
@@ -211,10 +211,10 @@ export const ContainerEvaluation = () => {
 
         {/* Performance Metrics */}
         <div className="border-t border-line pt-6">
-          <h3 className="flex items-center gap-2 font-display text-xl font-semibold text-foreground">
+          <Heading level={3} className="flex items-center gap-2 font-display text-xl font-semibold">
             <FaTrophy className="text-primary" />
             Performance leadership
-          </h3>
+          </Heading>
           <div className="mt-4 grid grid-cols-2 gap-4">
             {[
               { value: '-70%', label: 'Inspection time', icon: FaClock },
@@ -222,13 +222,13 @@ export const ContainerEvaluation = () => {
               { value: '99.8%', label: 'Accuracy', icon: FaCrosshairs },
               { value: '2mm', label: 'Detection precision', icon: FaRuler },
             ].map(stat => (
-              <div key={stat.label} className="border border-line p-5">
+              <Card key={stat.label} padding={5} className="rounded-none border-line">
                 <stat.icon className="mb-2 text-lg text-primary" />
-                <div className="font-mono text-2xl font-medium tabular-nums text-foreground">
+                <Text type="body" color="inherit" className="block font-mono text-2xl font-medium tabular-nums">
                   {stat.value}
-                </div>
-                <div className="mt-1 text-sm text-muted-foreground">{stat.label}</div>
-              </div>
+                </Text>
+                <Text type="body" size="sm" color="secondary" className="mt-1 block">{stat.label}</Text>
+              </Card>
             ))}
           </div>
         </div>

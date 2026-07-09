@@ -1,3 +1,7 @@
+import { Card } from '@astryxdesign/core/Card';
+import { Heading } from '@astryxdesign/core/Heading';
+import { IconButton } from '@astryxdesign/core/IconButton';
+import { Text } from '@astryxdesign/core/Text';
 import Image from 'next/image';
 import { useRef } from 'react';
 import { FaAngleRight, FaBalanceScale, FaCar, FaChartLine, FaChevronLeft, FaChevronRight, FaExclamationCircle, FaExclamationTriangle, FaMicrochip } from 'react-icons/fa';
@@ -75,35 +79,31 @@ export const TrafficMonitoring = () => {
         <div className="space-y-2">
           <div className="flex items-center gap-3">
             <FaCar className="text-2xl text-primary" />
-            <h2 className="font-display text-3xl font-semibold text-foreground">
+            <Heading level={2} className="font-display text-3xl font-semibold">
               AI Traffic Violation Detection
-            </h2>
+            </Heading>
           </div>
-          <p className="font-mono text-sm text-muted-foreground">
+          <Text type="body" size="sm" color="secondary" className="block font-mono">
             Real-time enforcement, trained on Vietnamese traffic data
-          </p>
+          </Text>
         </div>
 
         {/* Enhanced Gallery Section */}
         <div className="group/gallery relative">
           {/* Navigation Arrows */}
           <div className="absolute inset-y-0 z-20 flex w-full items-center justify-between px-4">
-            <button
-              type="button"
+            <IconButton
+              label="Previous traffic image"
+              icon={<FaChevronLeft className="size-5" />}
               onClick={() => handleSlideChange(trafficSwiperRef, 'prev')}
-              className={`${navClasses.trafficNav.prev} border border-line bg-background/90 p-3 transition-colors hover:bg-background`}
-              aria-label="Previous traffic image"
-            >
-              <FaChevronLeft className="size-5 text-foreground" />
-            </button>
-            <button
-              type="button"
+              className={`${navClasses.trafficNav.prev} rounded-none border border-line bg-background/90 hover:bg-background`}
+            />
+            <IconButton
+              label="Next traffic image"
+              icon={<FaChevronRight className="size-5" />}
               onClick={() => handleSlideChange(trafficSwiperRef, 'next')}
-              className={`${navClasses.trafficNav.next} border border-line bg-background/90 p-3 transition-colors hover:bg-background`}
-              aria-label="Next traffic image"
-            >
-              <FaChevronRight className="size-5 text-foreground" />
-            </button>
+              className={`${navClasses.trafficNav.next} rounded-none border border-line bg-background/90 hover:bg-background`}
+            />
           </div>
 
           {/* Swiper Container */}
@@ -167,7 +167,7 @@ export const TrafficMonitoring = () => {
                             />
                           </div>
                         )}
-                    <span className="bg-ink text-paper absolute bottom-3 right-3 z-10 px-2.5 py-1 font-mono text-xs">
+                    <span className="absolute bottom-3 right-3 z-10 bg-ink px-2.5 py-1 font-mono text-xs text-paper">
                       {item.type === 'video' ? 'Video Demo' : `Violation ${idx + 1}`}
                     </span>
                   </div>
@@ -181,10 +181,10 @@ export const TrafficMonitoring = () => {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
           {/* Tech Specs */}
           <div className="space-y-4">
-            <h3 className="flex items-center gap-2 font-display text-xl font-semibold text-foreground">
+            <Heading level={3} className="flex items-center gap-2 font-display text-xl font-semibold">
               <FaMicrochip className="text-primary" />
               Core technology
-            </h3>
+            </Heading>
             <ul className="space-y-3">
               {[
                 'Vietnam-trained YOLOv8 models',
@@ -193,8 +193,8 @@ export const TrafficMonitoring = () => {
                 'Violation decision-making engine',
                 'Edge-cloud hybrid architecture',
               ].map(item => (
-                <li key={item} className="border-t border-line pt-3 text-muted-foreground">
-                  {item}
+                <li key={item} className="border-t border-line pt-3">
+                  <Text type="body" color="secondary">{item}</Text>
                 </li>
               ))}
             </ul>
@@ -202,10 +202,10 @@ export const TrafficMonitoring = () => {
 
           {/* Performance Metrics */}
           <div className="space-y-4">
-            <h3 className="flex items-center gap-2 font-display text-xl font-semibold text-foreground">
+            <Heading level={3} className="flex items-center gap-2 font-display text-xl font-semibold">
               <FaChartLine className="text-primary" />
               System performance
-            </h3>
+            </Heading>
             <div className="grid grid-cols-2 gap-4">
               {[
                 { value: '96.7%', label: 'Violation detection' },
@@ -213,12 +213,12 @@ export const TrafficMonitoring = () => {
                 { value: '2', label: 'Violation classes' },
                 { value: '40%', label: 'Efficiency gain' },
               ].map(stat => (
-                <div key={stat.label} className="border border-line p-5">
-                  <div className="font-mono text-2xl font-medium tabular-nums text-foreground">
+                <Card key={stat.label} padding={5} className="rounded-none border-line">
+                  <Text type="body" color="inherit" className="block font-mono text-2xl font-medium tabular-nums">
                     {stat.value}
-                  </div>
-                  <div className="mt-1 text-sm text-muted-foreground">{stat.label}</div>
-                </div>
+                  </Text>
+                  <Text type="body" size="sm" color="secondary" className="mt-1 block">{stat.label}</Text>
+                </Card>
               ))}
             </div>
           </div>
@@ -226,35 +226,35 @@ export const TrafficMonitoring = () => {
 
         {/* Violation Classification */}
         <div className="border-t border-line pt-6">
-          <h3 className="flex items-center gap-2 font-display text-xl font-semibold text-foreground">
+          <Heading level={3} className="flex items-center gap-2 font-display text-xl font-semibold">
             <FaBalanceScale className="text-primary" />
             Violation categories
-          </h3>
+          </Heading>
           <div className="mt-4 grid grid-cols-1 gap-8 md:grid-cols-2">
             <div className="border-t-2 border-destructive pt-4">
-              <h4 className="flex items-center gap-2 font-medium text-destructive">
+              <Heading level={4} color="inherit" className="flex items-center gap-2 font-medium text-destructive">
                 <FaExclamationTriangle />
                 Red violations
-              </h4>
-              <ul className="mt-3 space-y-2 text-muted-foreground">
+              </Heading>
+              <ul className="mt-3 space-y-2">
                 {['Red light running', 'Wrong way driving', 'Dangerous overtaking'].map(item => (
                   <li key={item} className="flex items-center gap-2">
                     <FaAngleRight className="shrink-0 text-destructive" />
-                    {item}
+                    <Text type="body" color="secondary">{item}</Text>
                   </li>
                 ))}
               </ul>
             </div>
             <div className="border-t-2 border-amber-600 pt-4">
-              <h4 className="flex items-center gap-2 font-medium text-amber-600">
+              <Heading level={4} color="inherit" className="flex items-center gap-2 font-medium text-amber-600">
                 <FaExclamationCircle />
                 Yellow violations
-              </h4>
-              <ul className="mt-3 space-y-2 text-muted-foreground">
+              </Heading>
+              <ul className="mt-3 space-y-2">
                 {['Lane violations', 'Illegal parking', 'Speeding'].map(item => (
                   <li key={item} className="flex items-center gap-2">
                     <FaAngleRight className="shrink-0 text-amber-600" />
-                    {item}
+                    <Text type="body" color="secondary">{item}</Text>
                   </li>
                 ))}
               </ul>
