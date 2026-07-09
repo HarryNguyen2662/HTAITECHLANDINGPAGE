@@ -6,6 +6,7 @@ import { Hero } from '@/template/Hero';
 import { Navbar } from '@/template/Navbar';
 import { Process } from '@/template/Process';
 import { Services } from '@/template/Services';
+import { StatStrip } from '@/template/StatStrip';
 
 export async function generateMetadata(props: { params: Promise<{ locale: string }> }) {
   const t = await getTranslations({
@@ -26,6 +27,7 @@ const IndexPage = async (props: { params: Promise<{ locale: string }> }) => {
     <>
       <Navbar>
         <Hero />
+        <StatStrip />
         <Services />
         <Process />
         <CTA />

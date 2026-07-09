@@ -22,6 +22,7 @@ export const Servicestemplate = () => {
 
       <div className="mx-auto grid max-w-screen-lg grid-cols-1 gap-x-3 gap-y-8 md:grid-cols-3">
         <FeatureCard
+          index={0}
           icon={(
             <Image
               src="/assets/images/artificial-intelligence.png"
@@ -36,6 +37,7 @@ export const Servicestemplate = () => {
         </FeatureCard>
 
         <FeatureCard
+          index={1}
           icon={(
             <Image
               src="/assets/images/mvp.png"
@@ -50,6 +52,7 @@ export const Servicestemplate = () => {
         </FeatureCard>
 
         <FeatureCard
+          index={2}
           icon={(
             <Image
               src="/assets/images/QA.png"
@@ -64,6 +67,7 @@ export const Servicestemplate = () => {
         </FeatureCard>
 
         <FeatureCard
+          index={0}
           icon={(
             <Image
               src="/assets/images/business.png"
@@ -77,6 +81,7 @@ export const Servicestemplate = () => {
           {t('step4_description')}
         </FeatureCard>
         <FeatureCard
+          index={1}
           icon={(
             <Image
               src="/assets/images/database-management.png"
@@ -90,6 +95,7 @@ export const Servicestemplate = () => {
           {t('step5_description')}
         </FeatureCard>
         <FeatureCard
+          index={2}
           icon={(
             <Image
               src="/assets/images/app-store.png"
@@ -103,6 +109,7 @@ export const Servicestemplate = () => {
           {t('step6_description')}
         </FeatureCard>
         <FeatureCard
+          index={0}
           icon={(
             <Image
               src="/assets/images/web-design.png"
@@ -116,6 +123,7 @@ export const Servicestemplate = () => {
           {t('step7_description')}
         </FeatureCard>
         <FeatureCard
+          index={1}
           icon={(
             <Image
               src="/assets/images/android.png"
@@ -129,6 +137,7 @@ export const Servicestemplate = () => {
           {t('step8_description')}
         </FeatureCard>
         <FeatureCard
+          index={2}
           icon={(
             <Image
               src="/assets/images/machine-learning.png"
@@ -142,6 +151,7 @@ export const Servicestemplate = () => {
           {t('step9_description')}
         </FeatureCard>
         <FeatureCard
+          index={0}
           icon={(
             <Image
               src="/assets/images/dataengineering.png"
@@ -155,6 +165,7 @@ export const Servicestemplate = () => {
           {t('step10_description')}
         </FeatureCard>
         <FeatureCard
+          index={1}
           icon={(
             <Image
               src="/assets/images/frontend.png"
@@ -168,6 +179,7 @@ export const Servicestemplate = () => {
           {t('step11_description')}
         </FeatureCard>
         <FeatureCard
+          index={2}
           icon={(
             <Image
               src="/assets/images/pipeline.png"

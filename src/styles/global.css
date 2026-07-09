@@ -36,3 +36,42 @@
   background-size: 300% 300%;
   animation: gradient-shine 6s ease infinite;
 }
+
+/* Exhibit viewfinder: a detection-style scan sweep over the hero exhibit.
+   Runs a few passes on load, then rests so it never fights video playback.
+   The reduced-motion block above collapses it to a single instant pass. */
+@keyframes exhibit-scan {
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  92% {
+    opacity: 1;
+  }
+  100% {
+    top: calc(100% - 2px);
+    opacity: 0;
+  }
+}
+
+.animate-exhibit-scan {
+  animation: exhibit-scan 3.2s cubic-bezier(0.4, 0, 0.2, 1) 0.8s 3;
+}
+
+/* Model-class ticker on the ink CTA band. Two copies of the same list sit
+   side by side; sliding the track by -50% loops seamlessly. */
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-ticker {
+  animation: ticker 48s linear infinite;
+}

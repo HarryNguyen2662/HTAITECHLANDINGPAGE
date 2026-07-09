@@ -61,7 +61,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
             src={image}
             alt={title}
             fill
-            className="object-cover grayscale"
+            className="object-cover grayscale transition-[filter] duration-500 hover:grayscale-0"
           />
         </div>
       </div>

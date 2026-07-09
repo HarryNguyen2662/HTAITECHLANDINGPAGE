@@ -144,9 +144,9 @@ export const AboutUs = () => {
               {teamMembers.map(member => (
                 <div
                   key={member.name}
-                  className="flex gap-5 border border-line p-6"
+                  className="group flex gap-5 border border-line p-6 transition-colors duration-300 hover:border-ink"
                 >
-                  <div className="size-16 shrink-0 rounded-full border border-line grayscale">
+                  <div className="size-16 shrink-0 rounded-full border border-line grayscale transition-[filter] duration-500 group-hover:grayscale-0">
                     <Avatar src={member.image} name={member.name} size={64} />
                   </div>
 

@@ -38,7 +38,7 @@ export const WhatWeProvide = () => {
               src="/assets/images/teamservice.png"
               alt="H&T team working through an agile planning session"
               fill
-              className="object-cover object-left-top grayscale"
+              className="object-cover object-left-top grayscale transition-[filter] duration-500 hover:grayscale-0"
               sizes="(max-width: 1024px) 100vw, 50vw"
               priority
             />

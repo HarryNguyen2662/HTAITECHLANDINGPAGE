@@ -22,6 +22,7 @@ export const Services = () => {
 
       <div className="mx-auto grid max-w-screen-lg grid-cols-1 gap-x-3 gap-y-8 md:grid-cols-2">
         <FeatureCard
+          index={0}
           icon={(
             <Image
               src="/assets/images/staff.png"
@@ -36,6 +37,7 @@ export const Services = () => {
         </FeatureCard>
 
         <FeatureCard
+          index={1}
           icon={(
             <Image
               src="/assets/images/brainstorm.png"
@@ -50,6 +52,7 @@ export const Services = () => {
         </FeatureCard>
 
         <FeatureCard
+          index={0}
           icon={(
             <Image
               src="/assets/images/coding.png"
@@ -64,6 +67,7 @@ export const Services = () => {
         </FeatureCard>
 
         <FeatureCard
+          index={1}
           icon={(
             <Image
               src="/assets/images/innovation.png"

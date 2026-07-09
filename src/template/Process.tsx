@@ -59,7 +59,7 @@ export const Process = () => {
               alt="H&T engineers reviewing a project together"
               width={720}
               height={480}
-              className="aspect-video h-auto w-full object-cover grayscale"
+              className="aspect-video h-auto w-full object-cover grayscale transition-[filter] duration-500 hover:grayscale-0"
             />
           </div>
 
