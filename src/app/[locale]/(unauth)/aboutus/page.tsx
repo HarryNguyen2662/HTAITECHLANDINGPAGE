@@ -2,9 +2,12 @@ import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import { AboutUs } from '@/template/aboutuspage';
 
-export async function generateMetadata(props: { params: { locale: string } }) {
+export async function generateMetadata(props: {
+  params: Promise<{ locale: string }>;
+}) {
+  const params = await props.params;
   const t = await getTranslations({
-    locale: props.params.locale,
+    locale: params.locale,
     namespace: 'Index',
   });
 
@@ -14,8 +17,11 @@ export async function generateMetadata(props: { params: { locale: string } }) {
   };
 }
 
-const AboutUsPage = (props: { params: { locale: string } }) => {
-  unstable_setRequestLocale(props.params.locale);
+const AboutUsPage = async (props: {
+  params: Promise<{ locale: string }>;
+}) => {
+  const params = await props.params;
+  unstable_setRequestLocale(params.locale);
 
   return <AboutUs />;
 };

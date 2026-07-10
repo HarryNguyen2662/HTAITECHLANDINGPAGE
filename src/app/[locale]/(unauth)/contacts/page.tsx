@@ -3,9 +3,12 @@ import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { ContactForm } from '@/template/contactspage';
 import { CTA } from '@/template/CTA';
 
-export async function generateMetadata(props: { params: { locale: string } }) {
+export async function generateMetadata(props: {
+  params: Promise<{ locale: string }>;
+}) {
+  const params = await props.params;
   const t = await getTranslations({
-    locale: props.params.locale,
+    locale: params.locale,
     namespace: 'Index',
   });
 
@@ -15,8 +18,11 @@ export async function generateMetadata(props: { params: { locale: string } }) {
   };
 }
 
-const ContactsPage = (props: { params: { locale: string } }) => {
-  unstable_setRequestLocale(props.params.locale);
+const ContactsPage = async (props: {
+  params: Promise<{ locale: string }>;
+}) => {
+  const params = await props.params;
+  unstable_setRequestLocale(params.locale);
 
   return (
     <>

@@ -5,9 +5,12 @@ import { ServiceHero } from '@/template/HEROservice';
 import { Servicestemplate } from '@/template/Servicetemplate';
 import { WhatWeProvide } from '@/template/whatweprovide';
 
-export async function generateMetadata(props: { params: { locale: string } }) {
+export async function generateMetadata(props: {
+  params: Promise<{ locale: string }>;
+}) {
+  const params = await props.params;
   const t = await getTranslations({
-    locale: props.params.locale,
+    locale: params.locale,
     namespace: 'Index',
   });
 
@@ -17,8 +20,11 @@ export async function generateMetadata(props: { params: { locale: string } }) {
   };
 }
 
-const ServicesPage = (props: { params: { locale: string } }) => {
-  unstable_setRequestLocale(props.params.locale);
+const ServicesPage = async (props: {
+  params: Promise<{ locale: string }>;
+}) => {
+  const params = await props.params;
+  unstable_setRequestLocale(params.locale);
 
   return (
     <>
