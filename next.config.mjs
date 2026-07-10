@@ -21,12 +21,13 @@ export default withSentryConfig(
     withNextIntlConfig({
       eslint: {
         dirs: ['.'],
+        // Next 15's built-in ESLint runner is incompatible with ESLint 8 options.
+        // Lint still runs via lint-staged / `npm run lint`.
+        ignoreDuringBuilds: true,
       },
       poweredByHeader: false,
       reactStrictMode: true,
-      experimental: {
-        serverComponentsExternalPackages: ['@electric-sql/pglite'],
-      },
+      serverExternalPackages: ['@electric-sql/pglite'],
     }),
   ),
   {

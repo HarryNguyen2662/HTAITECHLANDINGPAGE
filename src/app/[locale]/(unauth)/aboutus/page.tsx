@@ -1,33 +1,29 @@
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import { AboutUs } from '@/template/aboutuspage';
-import { Footer } from '@/template/Footer';
-import { Navbar } from '@/template/Navbar';
 
-export async function generateMetadata(props: { params: { locale: string } }) {
+export async function generateMetadata(props: {
+  params: Promise<{ locale: string }>;
+}) {
+  const params = await props.params;
   const t = await getTranslations({
-    locale: props.params.locale,
+    locale: params.locale,
     namespace: 'Index',
   });
 
   return {
-    title: t('meta_title'),
+    title: `About Us | ${t('meta_title')}`,
     description: t('meta_description'),
   };
 }
 
-const ServicesPage = (props: { params: { locale: string } }) => {
-  unstable_setRequestLocale(props.params.locale);
+const AboutUsPage = async (props: {
+  params: Promise<{ locale: string }>;
+}) => {
+  const params = await props.params;
+  unstable_setRequestLocale(params.locale);
 
-  return (
-    <>
-      <Navbar />
-      <AboutUs />
-      <Footer />
-    </>
-  );
+  return <AboutUs />;
 };
 
-export default ServicesPage;
-
-// {/*<Sponsors />*/}
+export default AboutUsPage;

@@ -1,181 +1,82 @@
-import { useTranslations } from 'next-intl';
-import Image from 'next/image';
+'use client';
 
-import { Background } from '@/components/Background';
-import { FeatureCard } from '@/features/landing/FeatureCard';
-import { Section } from '@/features/landing/Section';
+import { Text } from '@astryxdesign/core/Text';
+import { useTranslations } from 'next-intl';
+
+type ServiceItem = {
+  titleKey: string;
+  descriptionKey: string;
+};
+
+type ServiceGroup = {
+  groupKey: string;
+  items: ServiceItem[];
+};
+
+const groups: ServiceGroup[] = [
+  {
+    groupKey: 'group_software',
+    items: [
+      { titleKey: 'mvp_title', descriptionKey: 'mvp_description' },
+      { titleKey: 'ios_title', descriptionKey: 'ios_description' },
+      { titleKey: 'android_title', descriptionKey: 'android_description' },
+      { titleKey: 'fe_title', descriptionKey: 'fe_description' },
+    ],
+  },
+  {
+    groupKey: 'group_design',
+    items: [{ titleKey: 'ux_title', descriptionKey: 'ux_description' }],
+  },
+  {
+    groupKey: 'group_qa',
+    items: [{ titleKey: 'qa_title', descriptionKey: 'qa_description' }],
+  },
+  {
+    groupKey: 'group_ai',
+    items: [
+      { titleKey: 'ai_title', descriptionKey: 'ai_description' },
+      { titleKey: 'ds_title', descriptionKey: 'ds_description' },
+      { titleKey: 'bi_title', descriptionKey: 'bi_description' },
+      { titleKey: 'de_title', descriptionKey: 'de_description' },
+      { titleKey: 'ml_title', descriptionKey: 'ml_description' },
+    ],
+  },
+  {
+    groupKey: 'group_infra',
+    items: [{ titleKey: 'devops_title', descriptionKey: 'devops_description' }],
+  },
+];
 
 export const Servicestemplate = () => {
   const t = useTranslations('Servicesforpage');
 
   return (
-    <Background>
-      <Section
-        title={t('section_title')}
-        description={t('section_description')}
-      >
-        <div className="grid grid-cols-1 gap-x-3 gap-y-8 md:grid-cols-3">
-          <FeatureCard
-            icon={(
-              <Image
-                src="/assets/images/artificial-intelligence.png"
-                alt="Innovation Icon"
-                width={100}
-                height={100}
-              />
-            )}
-            title={t('step1_title')}
-          >
-            {t('step1_description')}
-          </FeatureCard>
-
-          <FeatureCard
-            icon={(
-              <Image
-                src="/assets/images/mvp.png"
-                alt="Innovation Icon"
-                width={100}
-                height={100}
-              />
-            )}
-            title={t('step2_title')}
-          >
-            {t('step2_description')}
-          </FeatureCard>
-
-          <FeatureCard
-            icon={(
-              <Image
-                src="/assets/images/QA.png"
-                alt="Innovation Icon"
-                width={100}
-                height={100}
-              />
-            )}
-            title={t('step3_title')}
-          >
-            {t('step3_description')}
-          </FeatureCard>
-
-          <FeatureCard
-            icon={(
-              <Image
-                src="/assets/images/business.png"
-                alt="Innovation Icon"
-                width={100}
-                height={100}
-              />
-            )}
-            title={t('step4_title')}
-          >
-            {t('step4_description')}
-          </FeatureCard>
-          <FeatureCard
-            icon={(
-              <Image
-                src="/assets/images/database-management.png"
-                alt="Innovation Icon"
-                width={100}
-                height={100}
-              />
-            )}
-            title={t('step5_title')}
-          >
-            {t('step5_description')}
-          </FeatureCard>
-          <FeatureCard
-            icon={(
-              <Image
-                src="/assets/images/app-store.png"
-                alt="Innovation Icon"
-                width={100}
-                height={100}
-              />
-            )}
-            title={t('step6_title')}
-          >
-            {t('step6_description')}
-          </FeatureCard>
-          <FeatureCard
-            icon={(
-              <Image
-                src="/assets/images/web-design.png"
-                alt="Innovation Icon"
-                width={100}
-                height={100}
-              />
-            )}
-            title={t('step7_title')}
-          >
-            {t('step7_description')}
-          </FeatureCard>
-          <FeatureCard
-            icon={(
-              <Image
-                src="/assets/images/android.png"
-                alt="Innovation Icon"
-                width={100}
-                height={100}
-              />
-            )}
-            title={t('step8_title')}
-          >
-            {t('step8_description')}
-          </FeatureCard>
-          <FeatureCard
-            icon={(
-              <Image
-                src="/assets/images/machine-learning.png"
-                alt="Innovation Icon"
-                width={100}
-                height={100}
-              />
-            )}
-            title={t('step9_title')}
-          >
-            {t('step9_description')}
-          </FeatureCard>
-          <FeatureCard
-            icon={(
-              <Image
-                src="/assets/images/dataengineering.png"
-                alt="Innovation Icon"
-                width={100}
-                height={100}
-              />
-            )}
-            title={t('step10_title')}
-          >
-            {t('step10_description')}
-          </FeatureCard>
-          <FeatureCard
-            icon={(
-              <Image
-                src="/assets/images/frontend.png"
-                alt="Innovation Icon"
-                width={100}
-                height={100}
-              />
-            )}
-            title={t('step11_title')}
-          >
-            {t('step11_description')}
-          </FeatureCard>
-          <FeatureCard
-            icon={(
-              <Image
-                src="/assets/images/pipeline.png"
-                alt="Innovation Icon"
-                width={100}
-                height={100}
-              />
-            )}
-            title={t('step12_title')}
-          >
-            {t('step12_description')}
-          </FeatureCard>
-        </div>
-      </Section>
-    </Background>
+    <section className="ht-section">
+      <div className="ht-container space-y-16">
+        {groups.map(group => (
+          <div key={group.groupKey}>
+            <p className="ht-eyebrow mb-6">{t(group.groupKey)}</p>
+            <div className="grid gap-8 md:grid-cols-2">
+              {group.items.map(item => (
+                <article
+                  key={item.titleKey}
+                  className="border-t border-[var(--ht-line)] pt-5"
+                >
+                  <h3
+                    className="mb-3 text-xl font-semibold text-[var(--ht-ink)]"
+                    style={{ fontFamily: 'Georgia, \'Times New Roman\', serif' }}
+                  >
+                    {t(item.titleKey)}
+                  </h3>
+                  <Text type="body" color="secondary" as="p">
+                    {t(item.descriptionKey)}
+                  </Text>
+                </article>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };

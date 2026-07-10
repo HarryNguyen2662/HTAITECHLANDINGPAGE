@@ -1,15 +1,18 @@
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import { CTA } from '@/template/CTA';
-import { Footer } from '@/template/Footer';
 import { Hero } from '@/template/Hero';
-import { Navbar } from '@/template/Navbar';
-import { Services } from '@/template/Services';
 import { Process } from '@/template/Process';
+import { ProjectTeaser } from '@/template/ProjectTeaser';
+import { ProofStrip } from '@/template/ProofStrip';
+import { Services } from '@/template/Services';
 
-export async function generateMetadata(props: { params: { locale: string } }) {
+export async function generateMetadata(props: {
+  params: Promise<{ locale: string }>;
+}) {
+  const params = await props.params;
   const t = await getTranslations({
-    locale: props.params.locale,
+    locale: params.locale,
     namespace: 'Index',
   });
 
@@ -19,21 +22,20 @@ export async function generateMetadata(props: { params: { locale: string } }) {
   };
 }
 
-const IndexPage = (props: { params: { locale: string } }) => {
-  unstable_setRequestLocale(props.params.locale);
+const IndexPage = async (props: { params: Promise<{ locale: string }> }) => {
+  const params = await props.params;
+  unstable_setRequestLocale(params.locale);
 
   return (
     <>
-      <Navbar />
       <Hero />
+      <ProofStrip />
       <Services />
       <Process />
+      <ProjectTeaser />
       <CTA />
-      <Footer />
     </>
   );
 };
 
 export default IndexPage;
-
-// {/*<Sponsors />*/}
