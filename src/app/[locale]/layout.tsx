@@ -1,8 +1,8 @@
 import '@/styles/global.css';
 
 import type { Metadata } from 'next';
-import { NextIntlClientProvider, useMessages } from 'next-intl';
-import { unstable_setRequestLocale } from 'next-intl/server';
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages, unstable_setRequestLocale } from 'next-intl/server';
 
 import { AstryxProviders } from '@/components/AstryxProviders';
 import { AllLocales } from '@/utils/AppConfig';
@@ -36,20 +36,21 @@ export function generateStaticParams() {
   return AllLocales.map(locale => ({ locale }));
 }
 
-export default function RootLayout(props: {
+export default async function RootLayout(props: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
-  unstable_setRequestLocale(props.params.locale);
+  const params = await props.params;
+  unstable_setRequestLocale(params.locale);
 
-  const messages = useMessages();
+  const messages = await getMessages();
 
   return (
-    <html lang={props.params.locale} suppressHydrationWarning>
+    <html lang={params.locale} suppressHydrationWarning>
       <body className="antialiased" suppressHydrationWarning>
         <AstryxProviders>
           <NextIntlClientProvider
-            locale={props.params.locale}
+            locale={params.locale}
             messages={messages}
           >
             {props.children}
