@@ -1,6 +1,5 @@
 'use client';
 
-import { Text } from '@astryxdesign/core/Text';
 import { useTranslations } from 'next-intl';
 
 export const ServiceHero = () => {
@@ -12,9 +11,7 @@ export const ServiceHero = () => {
         <div className="ht-fade-up max-w-3xl">
           <p className="ht-eyebrow mb-4">{t('eyebrow')}</p>
           <h1 className="ht-display mb-6">{t('title')}</h1>
-          <Text type="large" color="secondary" as="p">
-            {t('description')}
-          </Text>
+          <p className="ht-lede">{t('description')}</p>
         </div>
       </div>
     </section>

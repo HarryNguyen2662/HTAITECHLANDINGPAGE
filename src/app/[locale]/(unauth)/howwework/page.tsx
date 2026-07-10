@@ -14,14 +14,12 @@ export async function generateMetadata(props: {
   });
 
   return {
-    title: `How We Work | ${t('meta_title')}`,
+    title: `How it works | ${t('meta_title')}`,
     description: t('meta_description'),
   };
 }
 
-const HowweworkPage = async (props: {
-  params: Promise<{ locale: string }>;
-}) => {
+const HowweworkPage = async (props: { params: Promise<{ locale: string }> }) => {
   const params = await props.params;
   unstable_setRequestLocale(params.locale);
 

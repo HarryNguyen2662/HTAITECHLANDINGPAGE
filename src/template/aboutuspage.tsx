@@ -1,62 +1,52 @@
 'use client';
 
 import { Button } from '@astryxdesign/core/Button';
-import { Text } from '@astryxdesign/core/Text';
 import Image from 'next/image';
 
 const pillars = [
   {
-    title: 'Collective success',
-    description:
-      'Collaborative delivery with measurable outcomes — your growth is the success metric.',
+    title: 'Production ownership',
+    description: 'Senior engineers own architecture, AI integration, and delivery outcomes inside your repo.',
   },
   {
-    title: 'Ownership excellence',
-    description:
-      'Clear commitments and accountable delivery backed by our reputation.',
+    title: 'Eval-first shipping',
+    description: 'Acceptance checks, guardrails, and rollback paths are launch scope — not afterthoughts.',
   },
   {
-    title: 'Knowledge alchemy',
-    description:
-      'Turning research and engineering experience into strategic advantage for your product.',
+    title: 'Embedded operating model',
+    description: 'Your standups, your review process, clear senior ownership from day one.',
   },
   {
-    title: 'Precision craftsmanship',
-    description:
-      'Software where technical rigor meets careful product and interface design.',
-  },
-  {
-    title: 'Visionary leap',
-    description:
-      'Market-defining AI and software initiatives that move industries forward.',
+    title: 'Scale when useful',
+    description: 'Add capacity when the loop works. No forced team growth from a staffing plan.',
   },
 ];
 
 const teamMembers = [
   {
     name: 'Dr. Nguyen Huu Tai',
-    role: 'Founder | CEO | Head of AI & IoT',
-    bio: 'Founder and CEO, leading AI and IoT innovation. Expert in intelligent systems, computer vision, and smart city solutions, with extensive experience in AI-driven automation and digital transformation.',
+    role: 'Founder · CEO · Head of AI & IoT',
+    bio: 'Leads AI and IoT innovation across intelligent systems, computer vision, and smart-city automation.',
     href: 'https://www.linkedin.com/in/tai-nguyen-huu-69979570/',
     image: '/assets/images/chutai.png',
   },
   {
     name: 'Dr. Le Quang Chien',
-    role: 'Founder, AI Team Lead, AI & IoT Expert',
-    bio: 'Founder and leader of the AI Team, specializing in AI and IoT. Contributor to enterprise automation and innovative technology solutions in Vietnam.',
+    role: 'Founder · AI Team Lead',
+    bio: 'Leads the AI team on enterprise automation and production AI systems in Vietnam.',
     image: '/assets/images/chuchien.png',
   },
   {
     name: 'Dr. Le Quang Minh',
-    role: 'Founder & Marketing Director (Japan Market)',
-    bio: 'Founder and Marketing Director for the Japan market, leading AI-powered business evolution. Multilingual (Vietnamese, English, Japanese) with experience across software, project management, and business analysis.',
+    role: 'Founder · Marketing Director (Japan)',
+    bio: 'Leads Japan-market growth for AI-powered business evolution. Multilingual: Vietnamese, English, Japanese.',
     href: 'https://www.linkedin.com/in/quang-minh%EF%BC%88%E3%83%9F%E3%83%B3%EF%BC%89-a9395027/',
     image: '/assets/images/chuminh.png',
   },
   {
     name: 'Nguyen Viet Tam, MBA',
-    role: 'Director of Sales & Commercial Operations, Vietnam',
-    bio: 'Over 15 years of experience in accounting, taxation, and business law. Senior compliance and finance specialist at major corporations such as Đèo Cả Group, Sun Group, and others.',
+    role: 'Director of Sales & Commercial Operations',
+    bio: '15+ years in accounting, taxation, and business law across major Vietnamese enterprises.',
     image: '/assets/images/chutam.png',
   },
 ];
@@ -67,69 +57,52 @@ export const AboutUs = () => {
       <section className="border-b border-[var(--ht-line)]">
         <div className="ht-container py-20 sm:py-28">
           <div className="ht-fade-up max-w-3xl">
-            <p className="ht-eyebrow mb-4">About us</p>
-            <h1 className="ht-display mb-6">Redefining digital excellence</h1>
-            <Text type="large" color="secondary" as="p">
-              At the vanguard of technological innovation, H&T AI TECH engineers
-              future-ready solutions where artificial intelligence converges with
-              human ingenuity to catalyze growth.
-            </Text>
+            <p className="ht-eyebrow mb-4">About</p>
+            <h1 className="ht-display mb-6">AI-native engineering studio</h1>
+            <p className="ht-lede">
+              H&T AI TECH builds production AI for products, operations, and
+              smart-city systems. Senior engineers embed with your team, ship into
+              your repo, and leave systems your operators can run.
+            </p>
           </div>
         </div>
       </section>
 
       <section className="ht-section">
         <div className="ht-container">
-          <p className="ht-eyebrow mb-3">Pillars of excellence</p>
+          <p className="ht-eyebrow mb-3">Operating principles</p>
           <h2 className="ht-title mb-10">What we optimize for</h2>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 md:grid-cols-2">
             {pillars.map(pillar => (
-              <article key={pillar.title} className="border-t border-[var(--ht-line)] pt-5">
-                <h3
-                  className="mb-3 text-xl font-semibold text-[var(--ht-ink)]"
-                  style={{ fontFamily: 'Georgia, \'Times New Roman\', serif' }}
-                >
-                  {pillar.title}
-                </h3>
-                <Text type="body" color="secondary" as="p">
-                  {pillar.description}
-                </Text>
+              <article key={pillar.title} className="ht-panel p-6">
+                <h3 className="mb-3 text-xl font-semibold text-[var(--ht-ink)]">{pillar.title}</h3>
+                <p className="text-[var(--ht-muted)]">{pillar.description}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section
-        className="ht-section border-y border-[var(--ht-line)]"
-        style={{ backgroundColor: 'rgba(239, 234, 227, 0.5)' }}
-      >
+      <section className="ht-section border-y border-[var(--ht-line)] bg-[var(--ht-bg-elevated)]">
         <div className="ht-container">
           <p className="ht-eyebrow mb-3">Leadership</p>
-          <h2 className="ht-title mb-10">Visionary leadership</h2>
-          <div className="grid gap-10 md:grid-cols-2">
+          <h2 className="ht-title mb-10">Team</h2>
+          <div className="grid gap-8 md:grid-cols-2">
             {teamMembers.map(member => (
               <article key={member.name} className="flex gap-5">
-                <div className="relative size-24 shrink-0 overflow-hidden bg-[var(--ht-surface-2)] sm:size-28">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    className="object-cover"
-                  />
+                <div className="relative size-24 shrink-0 overflow-hidden bg-[var(--ht-bg-soft)] sm:size-28">
+                  <Image src={member.image} alt={member.name} fill className="object-cover" />
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-[var(--ht-ink)]">{member.name}</h3>
                   <p className="mb-2 text-sm text-[var(--ht-accent)]">{member.role}</p>
-                  <Text type="supporting" color="secondary" as="p">
-                    {member.bio}
-                  </Text>
+                  <p className="text-sm text-[var(--ht-muted)]">{member.bio}</p>
                   {member.href && (
                     <a
                       href={member.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-3 inline-block text-sm font-medium text-[var(--ht-ink)] no-underline hover:underline"
+                      className="mt-3 inline-block text-sm font-medium text-[var(--ht-ink)] no-underline hover:text-[var(--ht-accent)]"
                     >
                       LinkedIn →
                     </a>
@@ -143,14 +116,12 @@ export const AboutUs = () => {
 
       <section className="ht-section">
         <div className="ht-container max-w-3xl">
-          <h2 className="ht-title mb-4">Pioneer the future with us</h2>
-          <Text type="large" color="secondary" as="p">
-            Forge your legacy in the digital revolution. Collaborate with
-            visionaries reshaping technology landscapes.
-          </Text>
-          <div className="mt-8">
-            <Button label="Explore opportunities" variant="primary" href="/contacts" />
-          </div>
+          <h2 className="ht-title mb-4">Work with us</h2>
+          <p className="ht-lede mb-8">
+            Bring the role, roadmap, and risks. We will help decide whether you
+            need one engineer, a small squad, a scoped product sprint, or an audit.
+          </p>
+          <Button label="Book a call" variant="primary" href="/contacts" />
         </div>
       </section>
     </div>

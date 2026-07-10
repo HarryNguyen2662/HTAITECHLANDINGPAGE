@@ -12,7 +12,7 @@ export async function generateMetadata(props: {
   });
 
   return {
-    title: `About Us | ${t('meta_title')}`,
+    title: `About | ${t('meta_title')}`,
     description: t('meta_description'),
   };
 }
