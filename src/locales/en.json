@@ -1,7 +1,7 @@
 {
   "Index": {
-    "meta_title": "H&T AI TECH - Bringing Ideas to Life with AI and Technology.",
-    "meta_description": "Bringing Ideas to Life with AI and Technology."
+    "meta_title": "H&T AI TECH — Production software and AI delivery",
+    "meta_description": "Senior engineers and AI specialists who embed with your team, ship into your repo, and deliver software you can run."
   },
   "Navbar": {
     "sign_in": "Sign In",
@@ -13,74 +13,104 @@
     "Contact": "Contact"
   },
   "Hero": {
-    "follow_twitter": "Follow @Ixartz on Twitter",
-    "title": "Bringing Ideas to Life with AI and Technology - <important>H&T AI TECH</important>",
-    "description": "Empowering Success with Advanced AI and Technology – H&T AI TECH Propels Your Business Forward.",
-    "primary_button": "Learn more",
-    "secondary_button": "Contact"
+    "brand": "H&T AI TECH",
+    "title": "Ship production software and AI that your team can run.",
+    "description": "Senior engineers embed with your roadmap — staff augmentation, dedicated teams, custom builds, and AI systems that move past demos.",
+    "primary_button": "Explore services",
+    "secondary_button": "Talk to us"
+  },
+  "Proof": {
+    "eyebrow": "What buyers usually need",
+    "item1": "Embedded senior capacity",
+    "item2": "Clear delivery ownership",
+    "item3": "AI that ships to production",
+    "item4": "Da Nang · Vietnam timezone"
   },
   "HeroService": {
-    "follow_twitter": "Crafting Excellence in Every Solution",
-    "title": "Crafting Excellence in Every <important>Solution</important>",
-    "description": "At H&T AI TECH, we excel in delivering a versatile portfolio of innovative services tailored to the distinct challenges of our clients. Our seasoned team of experts is committed to designing premium solutions that spark innovation and fuel sustainable business advancement. Dive into our expansive range of offerings below:",
-    "primary_button": "Learn more",
-    "secondary_button": "Contact"
+    "eyebrow": "Services",
+    "title": "A full delivery catalog — scoped to outcomes, not buzzwords.",
+    "description": "From MVP and mobile to AI, data, and DevOps. Pick the lane that matches your delivery risk; we staff and ship against it."
   },
   "HowweworkService": {
-    "follow_twitter": "How we work",
-    "title": "How we <important>Work</important>",
-    "description": "At H&T AI TECH, we champion a collaborative software development approach that delivers superior results through efficiency, transparency, and client-centered value. Our refined methodology ensures precision and excellence at every stage—from initial concept to final delivery.",
-    "primary_button": "Learn more",
-    "secondary_button": "Contact"
+    "eyebrow": "How we work",
+    "title": "Collaborative delivery with clear ownership at every stage.",
+    "description": "Efficiency, transparency, and client-centered value — from first consultation to launch. We match the engagement model to the risk, then execute."
   },
   "Sponsors": {
     "title": "Sponsored by"
   },
   "Services": {
-    "section_subtitle": "Working Steps",
-    "section_title": "Cultivating Exceptional Teams Begins With Cutting-Edge Technology",
-    "section_description": "H&T AI TECH - Your Premier Technology Partner",
-    "step1_title": "Effortless Team Expansion",
-    "step1_description": "Elevate your capabilities with on-demand expertise. Our staff augmentation brings specialized talent to your team, helping you scale rapidly while maintaining complete control of your projects.",
-    "step2_title": "Full-Service Development Teams",
-    "step2_description": "Transform your vision into reality with our dedicated experts. We build and deploy complete teams that work exclusively on your projects, delivering custom solutions perfectly aligned with your business objectives.",
-    "step3_title": "Custom Software Solutions",
-    "step3_description": "Transform your business with tailored software that works exactly how you need it. While you focus on driving your business forward, our expert team handles everything from concept to launch, delivering powerful solutions that give you a competitive edge.",
-    "step4_title": "AI Innovation & Solutions",
-    "step4_description": "Transform your business with cutting-edge AI expertise. Our seasoned specialists, backed by experience from major tech companies and research initiatives, deliver powerful AI solutions that drive real business outcomes. Let our proven track record in enterprise AI implementation power your next breakthrough.",
-    "step5_title": "Step 5: Deployment",
-    "step5_description": "We deploy the solution and provide ongoing support.",
-    "step6_title": "Step 6: Review",
-    "step6_description": "We review the results and make any necessary adjustments."
+    "section_eyebrow": "Engagement models",
+    "section_title": "Four ways to work with H&T AI TECH",
+    "section_description": "Choose the model that fits your control needs, timeline, and delivery risk.",
+    "step1_title": "Staff augmentation",
+    "step1_description": "Add specialized developers, designers, or QA into your team. Fast ramp, flexible engagement, you keep project control.",
+    "step2_title": "Dedicated development teams",
+    "step2_description": "A cross-functional squad that works exclusively on your product — with project ownership, agile cadence, and end-to-end delivery.",
+    "step3_title": "Custom software solutions",
+    "step3_description": "From concept to launch: architecture, build, CI/CD, and post-launch support so you can focus on the business.",
+    "step4_title": "AI innovation & solutions",
+    "step4_description": "Computer vision, ML, and enterprise AI with evals, guardrails, and operational metrics — not demo-only wrappers."
+  },
+  "Process": {
+    "eyebrow": "Delivery process",
+    "title": "How a project starts producing signal",
+    "description": "Onboarding and early delivery decide whether a build succeeds. Our process keeps scope, risk, and ownership explicit.",
+    "step1_title": "Initial consultation",
+    "step1_description": "Clarify goals, constraints, stack, and success criteria.",
+    "step2_title": "Planning and strategy",
+    "step2_description": "Map workflow, milestones, team shape, and delivery risks.",
+    "step3_title": "Design and development",
+    "step3_description": "Build in short loops with review, quality gates, and visible progress.",
+    "step4_title": "Testing and deployment",
+    "step4_description": "Ship with thorough testing, rollout plans, and handover.",
+    "cta": "Start a conversation"
+  },
+  "ProjectTeaser": {
+    "eyebrow": "Selected work",
+    "title": "AI systems already running in the field",
+    "description": "Smart-city computer vision, inspection automation, and traffic enforcement — built for real operating conditions.",
+    "cta": "View projects"
   },
   "Servicesforpage": {
-    "section_subtitle": "",
-    "section_title": "",
-    "section_description": "",
-    "step1_title": "Artificial Intelligence & Machine Learning Solutions",
-    "step1_description": "MVP Product Development Services",
-    "step2_title": "Full-Service Development Teams",
-    "step2_description": "Accelerate your product journey from ideation to launch. We specialize in rapidly transforming concepts into market-ready MVPs for startups and enterprises.",
-    "step3_title": "QA Testing & Automation Solutions",
-    "step3_description": "Ensure flawless software performance with end-to-end quality assurance and cutting-edge test automation frameworks.",
-    "step4_title": "Business Intelligence Services",
-    "step4_description": "Convert raw data into strategic assets with powerful BI tools and dashboards that drive informed, competitive decision-making.",
-    "step5_title": "Data Science Solutions",
-    "step5_description": "Unlock hidden potential in your data through advanced analytics, predictive modeling, and machine learning-driven insights.",
-    "step6_title": "iOS App Development Services",
-    "step6_description": "Craft premium, user-centric iOS applications that combine elegant design with high-performance functionality to elevate brand experiences.",
-    "step7_title": "UX/UI Design Services",
-    "step7_description": "Shape memorable digital experiences with human-centered design solutions that prioritize usability, aesthetics, and conversion-driven interfaces.",
-    "step8_title": "Android App Development",
-    "step8_description": "Expand your reach with scalable Android applications engineered for diverse devices, user needs, and business objectives.",
-    "step9_title": "Machine Learning Services",
-    "step9_description": "Optimize operations and uncover growth opportunities through custom ML implementations tailored to your unique workflows.",
-    "step10_title": "Data Engineering Solutions",
-    "step10_description": "Build robust data infrastructure that streamlines collection, processing, and analysis at scale for enterprise-grade insights.",
-    "step11_title": "Front-End Development Services",
-    "step11_description": "Deliver captivating web experiences with responsive, pixel-perfect interfaces that balance form and function across all devices.",
-    "step12_title": "DevOps Services",
-    "step12_description": "Implement DevOps practices to enhance team collaboration, automate workflows, and accelerate software delivery cycles."
+    "group_software": "Software development",
+    "group_design": "Design",
+    "group_qa": "Quality assurance",
+    "group_ai": "AI & advanced analytics",
+    "group_infra": "Infrastructure & operations",
+    "ai_title": "Artificial Intelligence & Machine Learning",
+    "ai_description": "Production AI systems: models, pipelines, evals, and integration into products operators can trust.",
+    "mvp_title": "MVP Product Development",
+    "mvp_description": "Turn concepts into market-ready MVPs quickly — scoped for learning, not endless rebuilds.",
+    "qa_title": "QA Testing & Automation",
+    "qa_description": "End-to-end quality assurance and test automation so releases stay reliable as you scale.",
+    "bi_title": "Business Intelligence",
+    "bi_description": "Dashboards and BI workflows that turn raw data into decisions your team can act on.",
+    "ds_title": "Data Science Solutions",
+    "ds_description": "Analytics, predictive modeling, and ML-driven insights tied to real business questions.",
+    "ios_title": "iOS App Development",
+    "ios_description": "User-centric iOS apps with strong design and performance for brand-critical experiences.",
+    "ux_title": "UX/UI Design",
+    "ux_description": "Human-centered interfaces that prioritize usability, clarity, and conversion.",
+    "android_title": "Android App Development",
+    "android_description": "Scalable Android applications engineered for diverse devices and business goals.",
+    "ml_title": "Machine Learning Services",
+    "ml_description": "Custom ML implementations tailored to your workflows, data, and operating constraints.",
+    "de_title": "Data Engineering",
+    "de_description": "Robust data infrastructure for collection, processing, and analysis at enterprise scale.",
+    "fe_title": "Front-End Development",
+    "fe_description": "Responsive, pixel-accurate web interfaces that balance form and function across devices.",
+    "devops_title": "DevOps Services",
+    "devops_description": "Automation, collaboration, and delivery pipelines that shorten release cycles safely."
+  },
+  "WhatWeProvide": {
+    "eyebrow": "Delivery method",
+    "title": "Agile delivery with clear checkpoints",
+    "description": "We start with discovery — needs, objectives, timelines, and deliverables — then run collaborative sprints with visible progress.",
+    "point1": "Efficient project management",
+    "point2": "Accelerated, realistic timelines",
+    "point3": "Quality results that hold up after launch",
+    "cta": "Contact us"
   },
   "Features": {
     "section_subtitle": "Features",
@@ -121,9 +151,9 @@
     "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquam enim dui, id consequat turpis ullamcorper ac. Mauris id quam dolor. Nullam eu egestas turpis. Proin risus elit, sollicitudin in mi a, accumsan euismod turpis. In euismod mi sed diam tristique hendrerit."
   },
   "CTA": {
-    "title": "You are ready?",
-    "description": "At H&T AI TECH, we’re committed to delivering results that drive your business forward and help you achieve your software development objectives.",
-    "button_text": "GET IN TOUCH WITH US TODAY"
+    "title": "Ready to move from idea to shipped software?",
+    "description": "Bring the role, roadmap, and risks. We will help decide whether you need staff augmentation, a dedicated team, a scoped build, or an AI sprint.",
+    "button_text": "Get in touch"
   },
   "Footer": {
     "product": "Product",

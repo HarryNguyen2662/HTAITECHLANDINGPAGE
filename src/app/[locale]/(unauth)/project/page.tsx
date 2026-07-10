@@ -1,7 +1,5 @@
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
-import { Footer } from '@/template/Footer';
-import { Navbar } from '@/template/Navbar';
 import { ProjectsShowcase } from '@/template/projectpage';
 
 export async function generateMetadata(props: { params: { locale: string } }) {
@@ -11,23 +9,15 @@ export async function generateMetadata(props: { params: { locale: string } }) {
   });
 
   return {
-    title: t('meta_title'),
+    title: `Projects | ${t('meta_title')}`,
     description: t('meta_description'),
   };
 }
 
-const ServicesPage = (props: { params: { locale: string } }) => {
+const ProjectPage = (props: { params: { locale: string } }) => {
   unstable_setRequestLocale(props.params.locale);
 
-  return (
-    <>
-      <Navbar />
-      <ProjectsShowcase />
-      <Footer />
-    </>
-  );
+  return <ProjectsShowcase />;
 };
 
-export default ServicesPage;
-
-// {/*<Sponsors />*/}
+export default ProjectPage;

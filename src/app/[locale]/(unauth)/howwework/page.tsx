@@ -1,10 +1,8 @@
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import { CTA } from '@/template/CTA';
-import { Footer } from '@/template/Footer';
 import { HowweworkHero } from '@/template/HEROhowwework';
 import Howweworkstep from '@/template/howweworkstep';
-import { Navbar } from '@/template/Navbar';
 
 export async function generateMetadata(props: { params: { locale: string } }) {
   const t = await getTranslations({
@@ -13,7 +11,7 @@ export async function generateMetadata(props: { params: { locale: string } }) {
   });
 
   return {
-    title: t('meta_title'),
+    title: `How We Work | ${t('meta_title')}`,
     description: t('meta_description'),
   };
 }
@@ -23,15 +21,11 @@ const HowweworkPage = (props: { params: { locale: string } }) => {
 
   return (
     <>
-      <Navbar />
       <HowweworkHero />
       <Howweworkstep />
       <CTA />
-      <Footer />
     </>
   );
 };
 
 export default HowweworkPage;
-
-// {/*<Sponsors />*/}

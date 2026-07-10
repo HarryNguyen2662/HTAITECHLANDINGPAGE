@@ -1,67 +1,98 @@
+'use client';
+
+import { Button } from '@astryxdesign/core/Button';
+import { HStack } from '@astryxdesign/core/HStack';
+import { Text } from '@astryxdesign/core/Text';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
-
-import { LocaleSwitcher } from '@/components/LocaleSwitcher';
-// import { buttonVariants } from '@/components/ui/buttonVariants';
-import { CenteredMenu } from '@/features/landing/CenteredMenu';
-import { Section } from '@/features/landing/Section';
+import { useState } from 'react';
 
 import { Logo } from './Logo';
 
+const navItems = [
+  { href: '/howwework', key: 'How_We_Work' as const },
+  { href: '/services', key: 'Services' as const },
+  { href: '/project', key: 'Our_Projects' as const },
+  { href: '/aboutus', key: 'About_Us' as const },
+  { href: '/contacts', key: 'Contact' as const },
+];
+
 export const Navbar = () => {
   const t = useTranslations('Navbar');
+  const [open, setOpen] = useState(false);
 
   return (
-    <Section className="px-3 py-6">
-      <CenteredMenu
-        logo={<Logo />}
-        rightMenu={(
-          <>
-            {/* PRO: Dark mode toggle button */}
-            <li data-fade>
-              <LocaleSwitcher />
-            </li>
-          </>
-        )}
-      >
-        <li>
-          <Link href="/howwework">{t('How_We_Work')}</Link>
-        </li>
+    <header
+      className="ht-fade-in sticky top-0 z-50 border-b border-[var(--ht-line)] backdrop-blur-md"
+      style={{ backgroundColor: 'rgba(247, 244, 239, 0.9)' }}
+    >
+      <div className="ht-container flex items-center justify-between gap-4 py-4">
+        <Logo />
 
-        <li>
-          <Link href="/services">{t('Services')}</Link>
-        </li>
+        <nav className="hidden items-center gap-7 lg:flex">
+          {navItems.map(item => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="text-sm font-medium text-[var(--ht-muted)] no-underline transition-colors hover:text-[var(--ht-ink)]"
+            >
+              {t(item.key)}
+            </Link>
+          ))}
+        </nav>
 
-        <li>
-          <Link href="/project">{t('Our_Projects')}</Link>
-        </li>
+        <div className="hidden lg:block">
+          <Button
+            label={t('Contact')}
+            variant="primary"
+            size="md"
+            href="/contacts"
+          />
+        </div>
 
-        <li>
-          <Link href="/aboutus">{t('About_Us')}</Link>
-        </li>
+        <button
+          type="button"
+          className="inline-flex size-10 items-center justify-center rounded-md border border-[var(--ht-line)] text-[var(--ht-ink)] lg:hidden"
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-expanded={open}
+          onClick={() => setOpen(v => !v)}
+        >
+          <span className="sr-only">Menu</span>
+          <div className="flex flex-col gap-1.5">
+            <span className={`block h-0.5 w-5 bg-current transition ${open ? 'translate-y-2 rotate-45' : ''}`} />
+            <span className={`block h-0.5 w-5 bg-current transition ${open ? 'opacity-0' : ''}`} />
+            <span className={`block h-0.5 w-5 bg-current transition ${open ? '-translate-y-2 -rotate-45' : ''}`} />
+          </div>
+        </button>
+      </div>
 
-        <li>
-          <Link href="/contacts">{t('Contact')}</Link>
-        </li>
-      </CenteredMenu>
-    </Section>
+      {open && (
+        <div className="border-t border-[var(--ht-line)] bg-[var(--ht-surface)] px-4 py-5 lg:hidden">
+          <div className="flex flex-col gap-4">
+            {navItems.map(item => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-base font-medium text-[var(--ht-ink)] no-underline"
+                onClick={() => setOpen(false)}
+              >
+                {t(item.key)}
+              </Link>
+            ))}
+            <HStack gap={2}>
+              <Button
+                label={t('Contact')}
+                variant="primary"
+                size="md"
+                href="/contacts"
+              />
+            </HStack>
+            <Text type="supporting" color="secondary">
+              Production software and AI delivery from Da Nang.
+            </Text>
+          </div>
+        </div>
+      )}
+    </header>
   );
 };
-
-/*
-            <li className="ml-1 mr-2.5" data-fade>
-              <Link href="/sign-in">{t('sign_in')}</Link>
-            </li>
-            <li>
-              <Link className={buttonVariants()} href="/sign-up">
-                {t('sign_up')}
-              </Link>
-            </li>
-
-                              images: [
-                    '/assets/images/helmet1.png',
-                    '/assets/images/helmet2.png',
-                    '/assets/images/helmet3.png',
-                    '/assets/images/helmet1.png',
-                  ],
-*/
