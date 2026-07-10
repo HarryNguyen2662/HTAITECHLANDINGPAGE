@@ -2,7 +2,6 @@
 
 import { Button } from '@astryxdesign/core/Button';
 import { HStack } from '@astryxdesign/core/HStack';
-import { Text } from '@astryxdesign/core/Text';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
@@ -10,8 +9,8 @@ import { useState } from 'react';
 import { Logo } from './Logo';
 
 const navItems = [
-  { href: '/howwework', key: 'How_We_Work' as const },
   { href: '/services', key: 'Services' as const },
+  { href: '/howwework', key: 'How_We_Work' as const },
   { href: '/project', key: 'Our_Projects' as const },
   { href: '/aboutus', key: 'About_Us' as const },
   { href: '/contacts', key: 'Contact' as const },
@@ -22,10 +21,7 @@ export const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header
-      className="ht-fade-in sticky top-0 z-50 border-b border-[var(--ht-line)] backdrop-blur-md"
-      style={{ backgroundColor: 'rgba(247, 244, 239, 0.9)' }}
-    >
+    <header className="bg-[var(--ht-bg)]/95 sticky top-0 z-50 border-b border-[var(--ht-line)] backdrop-blur-md">
       <div className="ht-container flex items-center justify-between gap-4 py-4">
         <Logo />
 
@@ -42,12 +38,7 @@ export const Navbar = () => {
         </nav>
 
         <div className="hidden lg:block">
-          <Button
-            label={t('Contact')}
-            variant="primary"
-            size="md"
-            href="/contacts"
-          />
+          <Button label={t('cta')} variant="primary" size="md" href="/contacts" />
         </div>
 
         <button
@@ -67,7 +58,7 @@ export const Navbar = () => {
       </div>
 
       {open && (
-        <div className="border-t border-[var(--ht-line)] bg-[var(--ht-surface)] px-4 py-5 lg:hidden">
+        <div className="border-t border-[var(--ht-line)] bg-[var(--ht-bg-elevated)] px-4 py-5 lg:hidden">
           <div className="flex flex-col gap-4">
             {navItems.map(item => (
               <Link
@@ -80,16 +71,8 @@ export const Navbar = () => {
               </Link>
             ))}
             <HStack gap={2}>
-              <Button
-                label={t('Contact')}
-                variant="primary"
-                size="md"
-                href="/contacts"
-              />
+              <Button label={t('cta')} variant="primary" size="md" href="/contacts" />
             </HStack>
-            <Text type="supporting" color="secondary">
-              Production software and AI delivery from Da Nang.
-            </Text>
           </div>
         </div>
       )}

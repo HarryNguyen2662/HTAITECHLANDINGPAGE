@@ -1,7 +1,6 @@
 'use client';
 
 import { Button } from '@astryxdesign/core/Button';
-import { Text } from '@astryxdesign/core/Text';
 import { TextArea } from '@astryxdesign/core/TextArea';
 import { TextInput } from '@astryxdesign/core/TextInput';
 import React, { useState } from 'react';
@@ -15,16 +14,14 @@ export type ContactFormData = {
 };
 
 const services = [
-  'Staff Augmentation',
-  'Dedicated Development Teams',
-  'Custom Software Solutions',
-  'AI Innovation & Solutions',
-  'MVP Product Development',
-  'Mobile App Development',
-  'UX/UI Design',
-  'QA & Automation',
-  'Data / BI / ML',
-  'DevOps',
+  'Hire AI Engineers',
+  'AI Product Development',
+  'Agentic Development',
+  'Cloud Transformation',
+  'AI Data Platforms',
+  'AI Product UX',
+  'Computer Vision Systems',
+  'Machine Learning Services',
   'Other',
 ];
 
@@ -80,27 +77,25 @@ export const ContactForm = () => {
         <div className="ht-container py-20 sm:py-28">
           <div className="ht-fade-up max-w-3xl">
             <p className="ht-eyebrow mb-4">Contact</p>
-            <h1 className="ht-display mb-6">Transform your vision into reality</h1>
-            <Text type="large" color="secondary" as="p">
-              Tell us about the role, roadmap, or product risk. We will help
-              decide the right engagement model.
-            </Text>
+            <h1 className="ht-display mb-6">Talk to a senior operator before you hire</h1>
+            <p className="ht-lede">
+              Bring the role, roadmap, repo context, and risks. We will help decide
+              whether you need one engineer, a small squad, a scoped product sprint,
+              or an audit first.
+            </p>
           </div>
         </div>
       </section>
 
       <section className="ht-section">
         <div className="ht-container grid gap-12 lg:grid-cols-[1.3fr_0.9fr]">
-          <form
-            onSubmit={handleSubmit}
-            className="space-y-5 border border-[var(--ht-line)] bg-white/70 p-6 sm:p-8"
-          >
+          <form onSubmit={handleSubmit} className="ht-panel space-y-5 p-6 sm:p-8">
             <TextInput
               label="Name"
               isRequired
               value={formData.name}
               changeAction={value => setFormData(prev => ({ ...prev, name: value }))}
-              placeholder="Enter your name"
+              placeholder="Your name"
               size="lg"
             />
             <TextInput
@@ -109,7 +104,7 @@ export const ContactForm = () => {
               isRequired
               value={formData.email}
               changeAction={value => setFormData(prev => ({ ...prev, email: value }))}
-              placeholder="Enter your email"
+              placeholder="you@company.com"
               size="lg"
             />
             <TextInput
@@ -117,7 +112,7 @@ export const ContactForm = () => {
               isRequired
               value={formData.phone}
               changeAction={value => setFormData(prev => ({ ...prev, phone: value }))}
-              placeholder="Enter your phone"
+              placeholder="Phone number"
               size="lg"
             />
             <div>
@@ -132,7 +127,7 @@ export const ContactForm = () => {
                 required
                 value={formData.service}
                 onChange={e => setFormData(prev => ({ ...prev, service: e.target.value }))}
-                className="w-full rounded-md border border-[var(--ht-line)] bg-white p-3 text-[var(--ht-ink)] outline-none focus:border-[var(--ht-accent)]"
+                className="w-full rounded-md border border-[var(--ht-line)] bg-[var(--ht-bg)] p-3 text-[var(--ht-ink)] outline-none focus:border-[var(--ht-accent)]"
               >
                 <option value="">Select a service</option>
                 {services.map(service => (
@@ -147,14 +142,12 @@ export const ContactForm = () => {
               isRequired
               value={formData.message}
               changeAction={value => setFormData(prev => ({ ...prev, message: value }))}
-              placeholder="Tell us about your project"
+              placeholder="Role, roadmap, stack, risks…"
               size="lg"
               rows={5}
             />
 
-            {submitError && (
-              <p className="text-sm text-red-600">{submitError}</p>
-            )}
+            {submitError && <p className="text-sm text-red-400">{submitError}</p>}
             {submitSuccess && (
               <p className="text-sm text-[var(--ht-accent)]">
                 Message sent. We will get back to you soon.
@@ -172,23 +165,18 @@ export const ContactForm = () => {
           </form>
 
           <aside className="space-y-8">
-            <div>
-              <p className="ht-eyebrow mb-3">Our global presence</p>
-              <h2
-                className="mb-3 text-2xl font-semibold text-[var(--ht-ink)]"
-                style={{ fontFamily: 'Georgia, \'Times New Roman\', serif' }}
-              >
-                Vietnam
-              </h2>
-              <Text type="body" color="secondary" as="p">
+            <div className="ht-panel p-6">
+              <p className="ht-eyebrow mb-3">Office</p>
+              <h2 className="mb-3 text-2xl font-semibold text-[var(--ht-ink)]">Vietnam</h2>
+              <p className="text-[var(--ht-muted)]">
                 123 Ly Dao Thanh, An Hai Bac, Son Tra, Da Nang
-              </Text>
+              </p>
             </div>
-            <div>
-              <p className="ht-eyebrow mb-3">Let&apos;s connect</p>
+            <div className="ht-panel p-6">
+              <p className="ht-eyebrow mb-3">Email</p>
               <a
                 href="mailto:tainguyenhuu@htaitech.net"
-                className="text-lg text-[var(--ht-ink)] no-underline hover:underline"
+                className="text-lg text-[var(--ht-ink)] no-underline hover:text-[var(--ht-accent)]"
               >
                 tainguyenhuu@htaitech.net
               </a>

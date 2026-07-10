@@ -46,7 +46,7 @@ export default async function RootLayout(props: {
   const messages = await getMessages();
 
   return (
-    <html lang={params.locale} suppressHydrationWarning>
+    <html lang={params.locale} className="dark" style={{ colorScheme: 'dark' }} suppressHydrationWarning>
       <body className="antialiased" suppressHydrationWarning>
         <AstryxProviders>
           <NextIntlClientProvider

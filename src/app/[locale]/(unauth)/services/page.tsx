@@ -20,9 +20,7 @@ export async function generateMetadata(props: {
   };
 }
 
-const ServicesPage = async (props: {
-  params: Promise<{ locale: string }>;
-}) => {
+const ServicesPage = async (props: { params: Promise<{ locale: string }> }) => {
   const params = await props.params;
   unstable_setRequestLocale(params.locale);
 

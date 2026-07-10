@@ -1,81 +1,49 @@
 'use client';
 
-import { Text } from '@astryxdesign/core/Text';
+import { Button } from '@astryxdesign/core/Button';
 import { useTranslations } from 'next-intl';
 
-type ServiceItem = {
-  titleKey: string;
-  descriptionKey: string;
-};
-
-type ServiceGroup = {
-  groupKey: string;
-  items: ServiceItem[];
-};
-
-const groups: ServiceGroup[] = [
-  {
-    groupKey: 'group_software',
-    items: [
-      { titleKey: 'mvp_title', descriptionKey: 'mvp_description' },
-      { titleKey: 'ios_title', descriptionKey: 'ios_description' },
-      { titleKey: 'android_title', descriptionKey: 'android_description' },
-      { titleKey: 'fe_title', descriptionKey: 'fe_description' },
-    ],
-  },
-  {
-    groupKey: 'group_design',
-    items: [{ titleKey: 'ux_title', descriptionKey: 'ux_description' }],
-  },
-  {
-    groupKey: 'group_qa',
-    items: [{ titleKey: 'qa_title', descriptionKey: 'qa_description' }],
-  },
-  {
-    groupKey: 'group_ai',
-    items: [
-      { titleKey: 'ai_title', descriptionKey: 'ai_description' },
-      { titleKey: 'ds_title', descriptionKey: 'ds_description' },
-      { titleKey: 'bi_title', descriptionKey: 'bi_description' },
-      { titleKey: 'de_title', descriptionKey: 'de_description' },
-      { titleKey: 'ml_title', descriptionKey: 'ml_description' },
-    ],
-  },
-  {
-    groupKey: 'group_infra',
-    items: [{ titleKey: 'devops_title', descriptionKey: 'devops_description' }],
-  },
-];
+const catalog = [
+  { tag: 'hire_tag', title: 'hire_title', description: 'hire_description', stack: ['LangGraph', 'Bedrock', 'OpenAI', 'Evals'] },
+  { tag: 'product_tag', title: 'product_title', description: 'product_description', stack: ['React', 'TypeScript', 'Python', 'AWS'] },
+  { tag: 'agentic_tag', title: 'agentic_title', description: 'agentic_description', stack: ['Tool calling', 'Eval loops', 'Observability', 'Handoff'] },
+  { tag: 'cloud_tag', title: 'cloud_title', description: 'cloud_description', stack: ['AWS', 'Terraform', 'CI/CD', 'Security'] },
+  { tag: 'data_tag', title: 'data_title', description: 'data_description', stack: ['Python', 'Postgres', 'BigQuery', 'dbt'] },
+  { tag: 'ux_tag', title: 'ux_title', description: 'ux_description', stack: ['React', 'TypeScript', 'Vercel', 'Design systems'] },
+  { tag: 'vision_tag', title: 'vision_title', description: 'vision_description', stack: ['YOLOv8', 'Edge', '3D scan', 'Realtime'] },
+  { tag: 'ml_tag', title: 'ml_title', description: 'ml_description', stack: ['Training', 'Serving', 'Monitoring', 'Handover'] },
+] as const;
 
 export const Servicestemplate = () => {
-  const t = useTranslations('Servicesforpage');
+  const t = useTranslations('ServicesCatalog');
 
   return (
     <section className="ht-section">
-      <div className="ht-container space-y-16">
-        {groups.map(group => (
-          <div key={group.groupKey}>
-            <p className="ht-eyebrow mb-6">{t(group.groupKey)}</p>
-            <div className="grid gap-8 md:grid-cols-2">
-              {group.items.map(item => (
-                <article
-                  key={item.titleKey}
-                  className="border-t border-[var(--ht-line)] pt-5"
-                >
-                  <h3
-                    className="mb-3 text-xl font-semibold text-[var(--ht-ink)]"
-                    style={{ fontFamily: 'Georgia, \'Times New Roman\', serif' }}
+      <div className="ht-container">
+        <div className="grid gap-4 md:grid-cols-2">
+          {catalog.map(item => (
+            <article key={item.title} className="ht-panel flex flex-col p-6 sm:p-8">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--ht-accent)]">
+                {t(item.tag)}
+              </p>
+              <h2 className="mb-3 text-2xl font-semibold tracking-tight text-[var(--ht-ink)]">
+                {t(item.title)}
+              </h2>
+              <p className="mb-6 flex-1 text-[var(--ht-muted)]">{t(item.description)}</p>
+              <div className="mb-6 flex flex-wrap gap-2">
+                {item.stack.map(tech => (
+                  <span
+                    key={tech}
+                    className="border border-[var(--ht-line)] px-2.5 py-1 text-xs text-[var(--ht-muted)]"
                   >
-                    {t(item.titleKey)}
-                  </h3>
-                  <Text type="body" color="secondary" as="p">
-                    {t(item.descriptionKey)}
-                  </Text>
-                </article>
-              ))}
-            </div>
-          </div>
-        ))}
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              <Button label="Talk to us" variant="secondary" href="/contacts" />
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

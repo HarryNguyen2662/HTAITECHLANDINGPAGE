@@ -3,27 +3,20 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-export const Logo = ({
-  compact = false,
-  inverted = false,
-}: {
-  compact?: boolean;
-  inverted?: boolean;
-}) => {
+export const Logo = ({ compact = false }: { compact?: boolean }) => {
   return (
     <Link href="/" className="group flex items-center gap-3 no-underline">
       <Image
         src="/assets/images/handtailogo.png"
-        alt="Handtail Logo"
-        width={compact ? 40 : 48}
-        height={compact ? 40 : 48}
+        alt="H&T AI TECH"
+        width={compact ? 36 : 42}
+        height={compact ? 36 : 42}
         className="object-contain"
       />
       <span
-        className={`font-semibold tracking-tight transition-opacity group-hover:opacity-80 ${
-          inverted ? 'text-white' : 'text-[var(--ht-ink)]'
-        } ${compact ? 'text-base' : 'text-lg sm:text-xl'}`}
-        style={{ fontFamily: 'Georgia, \'Times New Roman\', serif' }}
+        className={`font-semibold tracking-tight text-[var(--ht-ink)] transition-opacity group-hover:opacity-80 ${
+          compact ? 'text-sm' : 'text-base sm:text-lg'
+        }`}
       >
         H&T AI TECH
       </span>

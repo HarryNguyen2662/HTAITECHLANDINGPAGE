@@ -1,180 +1,104 @@
 {
   "Index": {
-    "meta_title": "H&T AI TECH — Production software and AI delivery",
-    "meta_description": "Senior engineers and AI specialists who embed with your team, ship into your repo, and deliver software you can run."
+    "meta_title": "H&T AI TECH — AI Engineering Studio",
+    "meta_description": "Senior AI engineers who embed with your team, ship into your repo, and deliver production AI your operators can run."
   },
   "Navbar": {
-    "sign_in": "Sign In",
-    "sign_up": "Sign Up",
-    "How_We_Work": "How We Work",
     "Services": "Services",
-    "Our_Projects": "Our Projects",
-    "About_Us": "About Us",
-    "Contact": "Contact"
+    "How_We_Work": "How it works",
+    "Our_Projects": "Work",
+    "About_Us": "About",
+    "Contact": "Contact",
+    "cta": "Book a call"
   },
   "Hero": {
     "brand": "H&T AI TECH",
-    "title": "Ship production software and AI that your team can run.",
-    "description": "Senior engineers embed with your roadmap — staff augmentation, dedicated teams, custom builds, and AI systems that move past demos.",
-    "primary_button": "Explore services",
-    "secondary_button": "Talk to us"
+    "title": "AI Engineering Studio for your next growth stage",
+    "description": "Senior engineers work with your roadmap, systems, and data to ship useful AI features your team can run — not demos that die after the pitch.",
+    "primary_button": "Book a 30-min call",
+    "secondary_button": "Hire AI engineers"
   },
   "Proof": {
-    "eyebrow": "What buyers usually need",
-    "item1": "Embedded senior capacity",
-    "item2": "Clear delivery ownership",
-    "item3": "AI that ships to production",
-    "item4": "Da Nang · Vietnam timezone"
+    "eyebrow": "Signals you can inspect before a call",
+    "item1_label": "Focus",
+    "item1_value": "Production AI",
+    "item2_label": "Model",
+    "item2_value": "Embedded seniors",
+    "item3_label": "Base",
+    "item3_value": "Da Nang · Vietnam",
+    "item4_label": "Delivery",
+    "item4_value": "Repo + rituals"
+  },
+  "HomeServices": {
+    "eyebrow": "Services",
+    "title": "How teams work with us",
+    "description": "Pick the lane that matches delivery risk. We staff and ship against it."
+  },
+  "DeliveryProof": {
+    "eyebrow": "Delivery proof",
+    "title": "What has to exist before an AI system ships",
+    "item1_title": "Workflow map before model choice",
+    "item1_description": "User decision, data path, approval point, and failure mode are explicit before implementation expands.",
+    "item2_title": "Eval set and acceptance checks",
+    "item2_description": "The first release has known quality signals instead of demo-only confidence.",
+    "item3_title": "Guardrails and rollback paths",
+    "item3_description": "Human review, permissions, logging, and fallback behavior are treated as launch scope.",
+    "item4_title": "Operational metrics after launch",
+    "item4_description": "Adoption, reliability, latency, cost, and value stay visible after the system ships."
+  },
+  "CTA": {
+    "eyebrow": "Start here",
+    "title": "Bring the pilot, risk, and business goal",
+    "description": "A senior operator will help decide whether the next step is a production AI sprint, an embedded engineer, an audit, or no-build advice.",
+    "button_text": "Talk to H&T AI TECH",
+    "secondary_button": "Explore services"
   },
   "HeroService": {
     "eyebrow": "Services",
-    "title": "A full delivery catalog — scoped to outcomes, not buzzwords.",
-    "description": "From MVP and mobile to AI, data, and DevOps. Pick the lane that matches your delivery risk; we staff and ship against it."
+    "title": "AI-native engineering capacity for production systems",
+    "description": "From embedded AI engineers to scoped product builds, agentic systems, data platforms, and cloud foundations — choose for shipped output."
   },
   "HowweworkService": {
-    "eyebrow": "How we work",
-    "title": "Collaborative delivery with clear ownership at every stage.",
-    "description": "Efficiency, transparency, and client-centered value — from first consultation to launch. We match the engagement model to the risk, then execute."
+    "eyebrow": "How it works",
+    "title": "How an embedded AI engineer starts producing signal",
+    "description": "Clear operating ownership, short ramp, and capacity that scales only when the loop is working."
   },
-  "Sponsors": {
-    "title": "Sponsored by"
-  },
-  "Services": {
-    "section_eyebrow": "Engagement models",
-    "section_title": "Four ways to work with H&T AI TECH",
-    "section_description": "Choose the model that fits your control needs, timeline, and delivery risk.",
-    "step1_title": "Staff augmentation",
-    "step1_description": "Add specialized developers, designers, or QA into your team. Fast ramp, flexible engagement, you keep project control.",
-    "step2_title": "Dedicated development teams",
-    "step2_description": "A cross-functional squad that works exclusively on your product — with project ownership, agile cadence, and end-to-end delivery.",
-    "step3_title": "Custom software solutions",
-    "step3_description": "From concept to launch: architecture, build, CI/CD, and post-launch support so you can focus on the business.",
-    "step4_title": "AI innovation & solutions",
-    "step4_description": "Computer vision, ML, and enterprise AI with evals, guardrails, and operational metrics — not demo-only wrappers."
-  },
-  "Process": {
-    "eyebrow": "Delivery process",
-    "title": "How a project starts producing signal",
-    "description": "Onboarding and early delivery decide whether a build succeeds. Our process keeps scope, risk, and ownership explicit.",
-    "step1_title": "Initial consultation",
-    "step1_description": "Clarify goals, constraints, stack, and success criteria.",
-    "step2_title": "Planning and strategy",
-    "step2_description": "Map workflow, milestones, team shape, and delivery risks.",
-    "step3_title": "Design and development",
-    "step3_description": "Build in short loops with review, quality gates, and visible progress.",
-    "step4_title": "Testing and deployment",
-    "step4_description": "Ship with thorough testing, rollout plans, and handover.",
-    "cta": "Start a conversation"
-  },
-  "ProjectTeaser": {
-    "eyebrow": "Selected work",
-    "title": "AI systems already running in the field",
-    "description": "Smart-city computer vision, inspection automation, and traffic enforcement — built for real operating conditions.",
-    "cta": "View projects"
-  },
-  "Servicesforpage": {
-    "group_software": "Software development",
-    "group_design": "Design",
-    "group_qa": "Quality assurance",
-    "group_ai": "AI & advanced analytics",
-    "group_infra": "Infrastructure & operations",
-    "ai_title": "Artificial Intelligence & Machine Learning",
-    "ai_description": "Production AI systems: models, pipelines, evals, and integration into products operators can trust.",
-    "mvp_title": "MVP Product Development",
-    "mvp_description": "Turn concepts into market-ready MVPs quickly — scoped for learning, not endless rebuilds.",
-    "qa_title": "QA Testing & Automation",
-    "qa_description": "End-to-end quality assurance and test automation so releases stay reliable as you scale.",
-    "bi_title": "Business Intelligence",
-    "bi_description": "Dashboards and BI workflows that turn raw data into decisions your team can act on.",
-    "ds_title": "Data Science Solutions",
-    "ds_description": "Analytics, predictive modeling, and ML-driven insights tied to real business questions.",
-    "ios_title": "iOS App Development",
-    "ios_description": "User-centric iOS apps with strong design and performance for brand-critical experiences.",
-    "ux_title": "UX/UI Design",
-    "ux_description": "Human-centered interfaces that prioritize usability, clarity, and conversion.",
-    "android_title": "Android App Development",
-    "android_description": "Scalable Android applications engineered for diverse devices and business goals.",
+  "ServicesCatalog": {
+    "hire_tag": "TEAM",
+    "hire_title": "Hire AI Engineers",
+    "hire_description": "Add senior AI engineers who work in your repo and own production outcomes.",
+    "product_tag": "PRODUCT",
+    "product_title": "AI Product Development",
+    "product_description": "Turn your AI pilot into software customers actually use — shipped and reliable.",
+    "agentic_tag": "METHOD",
+    "agentic_title": "Agentic Development",
+    "agentic_description": "Embed multi-agent AI into your real product, with evals and review built in.",
+    "cloud_tag": "CLOUD",
+    "cloud_title": "Cloud Transformation",
+    "cloud_description": "Modernize your cloud and data foundation so it is ready for reliable AI.",
+    "data_tag": "DATA",
+    "data_title": "AI Data Platforms",
+    "data_description": "Permissions, semantic layers, retrieval, pipelines, and reporting that make AI useful against production data.",
+    "ux_tag": "UX",
+    "ux_title": "AI Product UX",
+    "ux_description": "Streaming interfaces, review flows, dashboards, and internal tools operators can trust daily.",
+    "vision_tag": "VISION",
+    "vision_title": "Computer Vision Systems",
+    "vision_description": "Field-ready detection and inspection systems with measurable accuracy and operating constraints.",
+    "ml_tag": "ML",
     "ml_title": "Machine Learning Services",
-    "ml_description": "Custom ML implementations tailored to your workflows, data, and operating constraints.",
-    "de_title": "Data Engineering",
-    "de_description": "Robust data infrastructure for collection, processing, and analysis at enterprise scale.",
-    "fe_title": "Front-End Development",
-    "fe_description": "Responsive, pixel-accurate web interfaces that balance form and function across devices.",
-    "devops_title": "DevOps Services",
-    "devops_description": "Automation, collaboration, and delivery pipelines that shorten release cycles safely."
-  },
-  "WhatWeProvide": {
-    "eyebrow": "Delivery method",
-    "title": "Agile delivery with clear checkpoints",
-    "description": "We start with discovery — needs, objectives, timelines, and deliverables — then run collaborative sprints with visible progress.",
-    "point1": "Efficient project management",
-    "point2": "Accelerated, realistic timelines",
-    "point3": "Quality results that hold up after launch",
-    "cta": "Contact us"
-  },
-  "Features": {
-    "section_subtitle": "Features",
-    "section_title": "Unlock the Full Potential of the SaaS Template",
-    "section_description": "A free and open-source landing page template for your SaaS business, built with React, TypeScript, Shadcn UI, and Tailwind CSS.",
-    "feature1_title": "Node.js",
-    "feature2_title": "React",
-    "feature3_title": "Tailwind CSS",
-    "feature4_title": "TypeScript",
-    "feature5_title": "Shadcn UI",
-    "feature6_title": "ESLint",
-    "feature_description": "A free and open-source landing page template for your SaaS business, built with React, TypeScript, Shadcn UI, and Tailwind CSS."
-  },
-  "Pricing": {
-    "section_subtitle": "Features",
-    "section_title": "Unlock the Full Potential of the SaaS Template",
-    "section_description": "A free and open-source landing page template for your SaaS business, built with React, TypeScript, Shadcn UI, and Tailwind CSS.",
-    "button_text": "Get Started"
-  },
-  "PricingPlan": {
-    "free_plan_name": "Free",
-    "premium_plan_name": "Premium",
-    "enterprise_plan_name": "Enterprise",
-    "free_plan_description": "For individuals",
-    "premium_plan_description": "For small teams",
-    "enterprise_plan_description": "For industry leaders",
-    "feature_team_member": "{number} Team Members",
-    "feature_website": "{number} Websites",
-    "feature_storage": "{number} GB Storage",
-    "feature_transfer": "{number} TB Transfer",
-    "feature_email_support": "Email Support",
-    "plan_interval_month": "month",
-    "plan_interval_year": "year",
-    "next_renew_date": "Your subscription renews on {date}"
-  },
-  "FAQ": {
-    "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
-    "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquam enim dui, id consequat turpis ullamcorper ac. Mauris id quam dolor. Nullam eu egestas turpis. Proin risus elit, sollicitudin in mi a, accumsan euismod turpis. In euismod mi sed diam tristique hendrerit."
-  },
-  "CTA": {
-    "title": "Ready to move from idea to shipped software?",
-    "description": "Bring the role, roadmap, and risks. We will help decide whether you need staff augmentation, a dedicated team, a scoped build, or an AI sprint.",
-    "button_text": "Get in touch"
-  },
-  "Footer": {
-    "product": "Product",
-    "docs": "Docs",
-    "blog": "Blog",
-    "community": "Community",
-    "company": "Company",
-    "terms_of_service": "Terms Of Service",
-    "privacy_policy": "Privacy Policy",
-    "designed_by": "Designed by <author></author>."
+    "ml_description": "Custom ML implementations with training loops, evaluation, and handover your team can run."
   },
   "ProtectFallback": {
     "not_enough_permission": "You do not have the permissions to perform this action"
   },
   "SignIn": {
     "meta_title": "Sign in",
-    "meta_description": "Seamlessly sign in to your account with our user-friendly login process."
+    "meta_description": "Sign in to your account."
   },
   "SignUp": {
     "meta_title": "Sign up",
-    "meta_description": "Effortlessly create an account through our intuitive sign-up process."
+    "meta_description": "Create an account."
   },
   "DashboardLayout": {
     "home": "Home",
@@ -184,16 +108,16 @@
     "settings": "Settings"
   },
   "Dashboard": {
-    "meta_title": "SaaS Template Dashboard",
-    "meta_description": "A free and open-source landing page template for your SaaS business, built with Next.js, TypeScript, Shadcn UI, and Tailwind CSS."
+    "meta_title": "Dashboard",
+    "meta_description": "Dashboard"
   },
   "DashboardIndex": {
     "title_bar": "Dashboard",
     "title_bar_description": "Welcome to your dashboard",
     "message_state_title": "Let's get started",
-    "message_state_description": "You can customize this page by editing the file at <code>dashboard/page.tsx</code>",
-    "message_state_button": "Star on GitHub",
-    "message_state_alternative": "Want more features using the same stack? Try <url></url>."
+    "message_state_description": "Customize this page.",
+    "message_state_button": "Continue",
+    "message_state_alternative": "Need more features?"
   },
   "UserProfile": {
     "title_bar": "User Profile",
@@ -207,7 +131,7 @@
     "title_bar": "Billing",
     "title_bar_description": "Manage your billing and subscription",
     "current_section_title": "Current Plan",
-    "current_section_description": "Adjust your payment plan to best suit your requirements",
+    "current_section_description": "Adjust your payment plan",
     "manage_subscription_button": "Manage Subscription"
   },
   "BillingOptions": {
@@ -217,7 +141,7 @@
   "CheckoutConfirmation": {
     "title_bar": "Payment Confirmation",
     "message_state_title": "Payment successful",
-    "message_state_description": "Your payment has been successfully processed. Thank you for your purchase!",
+    "message_state_description": "Your payment has been processed.",
     "message_state_button": "Go back to Billing"
   },
   "DataTable": {
@@ -239,18 +163,63 @@
   "AddTodo": {
     "title_bar": "Add Todo",
     "add_todo_section_title": "Create a new todo",
-    "add_todo_section_description": "Fill in the form below to create a new todo"
+    "add_todo_section_description": "Fill in the form below"
   },
   "EditTodo": {
     "title_bar": "Edit todo",
     "edit_todo_section_title": "Modify todo",
-    "edit_todo_section_description": "Fill in the form below to edit the todo"
+    "edit_todo_section_description": "Fill in the form below"
   },
   "TodoForm": {
     "title_label": "Title",
-    "title_description": "Enter a descriptive title for your todo.",
+    "title_description": "Enter a descriptive title.",
     "message_title": "Message",
-    "message_description": "Enter a detailed message for your todo.",
+    "message_description": "Enter a detailed message.",
     "submit_button": "Submit"
+  },
+  "Footer": {
+    "privacy_policy": "Privacy Policy",
+    "terms_of_service": "Terms of Service"
+  },
+  "FAQ": {
+    "question": "Question?",
+    "answer": "Answer."
+  },
+  "Features": {
+    "section_subtitle": "Features",
+    "section_title": "Features",
+    "section_description": "Features",
+    "feature1_title": "Node.js",
+    "feature2_title": "React",
+    "feature3_title": "Tailwind CSS",
+    "feature4_title": "TypeScript",
+    "feature5_title": "Shadcn UI",
+    "feature6_title": "ESLint",
+    "feature_description": "Features"
+  },
+  "Pricing": {
+    "section_subtitle": "Pricing",
+    "section_title": "Pricing",
+    "section_description": "Pricing",
+    "button_text": "Get Started"
+  },
+  "PricingPlan": {
+    "free_plan_name": "Free",
+    "premium_plan_name": "Premium",
+    "enterprise_plan_name": "Enterprise",
+    "free_plan_description": "For individuals",
+    "premium_plan_description": "For small teams",
+    "enterprise_plan_description": "For industry leaders",
+    "feature_team_member": "{number} Team Members",
+    "feature_website": "{number} Websites",
+    "feature_storage": "{number} GB Storage",
+    "feature_transfer": "{number} TB Transfer",
+    "feature_email_support": "Email Support",
+    "plan_interval_month": "month",
+    "plan_interval_year": "year",
+    "next_renew_date": "Your subscription renews on {date}"
+  },
+  "Sponsors": {
+    "title": "Sponsored by"
   }
 }

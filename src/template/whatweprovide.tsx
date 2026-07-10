@@ -1,39 +1,43 @@
 'use client';
 
 import { Button } from '@astryxdesign/core/Button';
-import { Text } from '@astryxdesign/core/Text';
-import { useTranslations } from 'next-intl';
 
 export const WhatWeProvide = () => {
-  const t = useTranslations('WhatWeProvide');
-
   return (
-    <section
-      className="ht-section border-y border-[var(--ht-line)]"
-      style={{ backgroundColor: 'rgba(239, 234, 227, 0.5)' }}
-    >
-      <div className="ht-container grid items-start gap-12 lg:grid-cols-2">
+    <section className="ht-section border-y border-[var(--ht-line)] bg-[var(--ht-bg-elevated)]">
+      <div className="ht-container grid gap-10 lg:grid-cols-2">
         <div>
-          <p className="ht-eyebrow mb-3">{t('eyebrow')}</p>
-          <h2 className="ht-title mb-4">{t('title')}</h2>
-          <Text type="large" color="secondary" as="p">
-            {t('description')}
-          </Text>
+          <p className="ht-eyebrow mb-3">Bench shape</p>
+          <h2 className="ht-title mb-4">
+            The AI engineering capacity buyers usually need
+          </h2>
+          <p className="ht-lede">
+            We match the role to delivery risk: agentic systems, AI product UX,
+            data platforms, cloud architecture, or full-stack product ownership.
+          </p>
         </div>
 
-        <div className="border border-[var(--ht-line)] bg-white/70 p-8 sm:p-10">
-          <p className="mb-6 text-sm font-semibold uppercase tracking-[0.14em] text-[var(--ht-ink)]">
-            Scrum / Agile methodology
-          </p>
-          <ul className="mb-8 space-y-4">
-            {[t('point1'), t('point2'), t('point3')].map(point => (
-              <li key={point} className="flex gap-3 text-[var(--ht-muted)]">
-                <span className="mt-1.5 size-2 shrink-0 rounded-full bg-[var(--ht-accent)]" />
-                <span>{point}</span>
-              </li>
-            ))}
-          </ul>
-          <Button label={t('cta')} variant="primary" href="/contacts" />
+        <div className="space-y-4">
+          {[
+            {
+              title: 'Agentic systems · Staff / senior',
+              body: 'Tool-calling workflows, eval loops, observability, and human handoff — not demo-only wrappers.',
+            },
+            {
+              title: 'Data platforms · Senior',
+              body: 'Make AI useful against production data: permissions, semantic layers, retrieval, pipelines, reporting.',
+            },
+            {
+              title: 'AI product UX · Full-stack',
+              body: 'Streaming interfaces, review flows, dashboards, and internal tools operators trust daily.',
+            },
+          ].map(item => (
+            <div key={item.title} className="ht-panel p-5">
+              <h3 className="mb-2 font-semibold text-[var(--ht-ink)]">{item.title}</h3>
+              <p className="text-sm text-[var(--ht-muted)]">{item.body}</p>
+            </div>
+          ))}
+          <Button label="Request AI engineers" variant="primary" href="/contacts" />
         </div>
       </div>
     </section>
