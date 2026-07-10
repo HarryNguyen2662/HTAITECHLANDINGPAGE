@@ -3,7 +3,7 @@ import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { CTA } from '@/template/CTA';
 import { Hero } from '@/template/Hero';
 import { Process } from '@/template/Process';
-import { ProjectTeaser } from '@/template/ProjectTeaser';
+import { Products } from '@/template/Products';
 import { ProofStrip } from '@/template/ProofStrip';
 import { Services } from '@/template/Services';
 
@@ -31,8 +31,8 @@ const IndexPage = async (props: { params: Promise<{ locale: string }> }) => {
       <Hero />
       <ProofStrip />
       <Services />
+      <Products />
       <Process />
-      <ProjectTeaser />
       <CTA />
     </>
   );

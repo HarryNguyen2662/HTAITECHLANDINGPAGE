@@ -10,6 +10,7 @@ import { Logo } from './Logo';
 
 const navItems = [
   { href: '/services', key: 'Services' as const },
+  { href: '/#products', label: 'Products' },
   { href: '/howwework', key: 'How_We_Work' as const },
   { href: '/project', key: 'Our_Projects' as const },
   { href: '/aboutus', key: 'About_Us' as const },
@@ -32,7 +33,7 @@ export const Navbar = () => {
               href={item.href}
               className="text-sm font-medium text-[var(--ht-muted)] no-underline transition-colors hover:text-[var(--ht-ink)]"
             >
-              {t(item.key)}
+              {'label' in item ? item.label : t(item.key)}
             </Link>
           ))}
         </nav>
@@ -67,7 +68,7 @@ export const Navbar = () => {
                 className="text-base font-medium text-[var(--ht-ink)] no-underline"
                 onClick={() => setOpen(false)}
               >
-                {t(item.key)}
+                {'label' in item ? item.label : t(item.key)}
               </Link>
             ))}
             <HStack gap={2}>
