@@ -6,6 +6,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 
 import { Button } from '@astryxdesign/core/Button';
+import { useTranslations } from 'next-intl';
 import React, { memo } from 'react';
 
 import { ContainerEvaluation } from './ContainerEvaluation';
@@ -16,6 +17,8 @@ import { TrafficMonitoring } from './TrafficMonitoring';
 import { TrafficSimulationProject } from './TrafficSimulationProject';
 
 export const ProjectsShowcase = memo(() => {
+  const t = useTranslations('WorkPage');
+
   return (
     <div>
       <ProjectHero />
@@ -23,12 +26,9 @@ export const ProjectsShowcase = memo(() => {
       <section id="projects" className="ht-section">
         <div className="ht-container space-y-16">
           <div>
-            <p className="ht-eyebrow mb-3">Case studies</p>
-            <h2 className="ht-title mb-4">Projects already serving users</h2>
-            <p className="ht-lede">
-              Vision and product systems trained for real sites, roads, and devices —
-              with accuracy and performance you can review.
-            </p>
+            <p className="ht-eyebrow mb-3">{t('cases_eyebrow')}</p>
+            <h2 className="ht-title mb-4">{t('cases_title')}</h2>
+            <p className="ht-lede">{t('cases_description')}</p>
           </div>
 
           <div className="space-y-16 [&_*]:!text-[inherit]">
@@ -50,11 +50,11 @@ export const ProjectsShowcase = memo(() => {
           </div>
 
           <div className="ht-panel bg-[var(--ht-bg-soft)] px-8 py-12 sm:px-12">
-            <h2 className="ht-title mb-4">Want something similar for your organization?</h2>
+            <h2 className="ht-title mb-4">{t('cta_title')}</h2>
             <p className="mb-8 max-w-2xl text-[var(--ht-muted)]">
-              We can adapt these systems for your sites, cities, or product roadmap.
+              {t('cta_description')}
             </p>
-            <Button label="Request a project demo" variant="primary" size="lg" href="/contacts" />
+            <Button label={t('cta_button')} variant="primary" size="lg" href="/contacts" />
           </div>
         </div>
       </section>

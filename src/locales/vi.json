@@ -1,0 +1,423 @@
+{
+  "Index": {
+    "meta_title": "H&T AI TECH — AI & phần mềm cho vận hành thực tế",
+    "meta_description": "H&T AI TECH thiết kế và triển khai hệ thống AI, phần mềm tùy chỉnh và đội ngũ kỹ sư cho doanh nghiệp cùng các chương trình đô thị thông minh tại Việt Nam và quốc tế."
+  },
+  "Navbar": {
+    "Services": "Dịch vụ",
+    "How_We_Work": "Cách làm",
+    "Our_Projects": "Dự án",
+    "About_Us": "Về chúng tôi",
+    "Contact": "Liên hệ",
+    "Products": "Sản phẩm",
+    "cta": "Liên hệ ngay"
+  },
+  "Hero": {
+    "brand": "H&T AI TECH",
+    "title": "Xây AI vận hành được trong thực tế",
+    "description": "Chúng tôi giúp doanh nghiệp và đô thị biến ý tưởng thành phần mềm chạy thật — thị giác máy tính, học máy và đội ngũ kỹ sư tại Đà Nẵng.",
+    "primary_button": "Trao đổi với chúng tôi",
+    "secondary_button": "Xem dịch vụ"
+  },
+  "Proof": {
+    "eyebrow": "Tóm tắt nhanh",
+    "item1_label": "Chuyên môn",
+    "item1_value": "AI & thị giác máy tính",
+    "item2_label": "Hợp tác",
+    "item2_value": "Đội ngũ & sản phẩm",
+    "item3_label": "Địa điểm",
+    "item3_value": "Đà Nẵng, Việt Nam",
+    "item4_label": "Trọng tâm",
+    "item4_value": "Hệ thống đang chạy"
+  },
+  "HomeServices": {
+    "eyebrow": "Dịch vụ",
+    "title": "Các hình thức hợp tác",
+    "description": "Dù bạn cần chuyên gia bổ sung vào đội ngũ hay một dự án do H&T triển khai trọn gói, chúng tôi giữ phạm vi rõ ràng và chịu trách nhiệm bàn giao.",
+    "learn_more": "Tìm hiểu thêm →",
+    "see_all": "Xem tất cả dịch vụ",
+    "contact_us": "Liên hệ"
+  },
+  "DeliveryProof": {
+    "eyebrow": "Cách chúng tôi bàn giao",
+    "title": "Các mốc chất lượng cho mọi bản phát hành AI",
+    "item1_title": "Làm rõ quy trình trước",
+    "item1_description": "Chúng tôi ghi nhận quyết định, luồng dữ liệu và tình huống lỗi trước khi chọn mô hình hay viết mã production.",
+    "item2_title": "Định nghĩa chỉ số thành công sớm",
+    "item2_description": "Độ chính xác, độ trễ và tiêu chí chấp nhận được thống nhất ngay từ đầu để tiến độ đo được.",
+    "item3_title": "Lên kế hoạch triển khai an toàn",
+    "item3_description": "Phân quyền, kiểm tra bởi người, nhật ký và phương án dự phòng nằm trong kế hoạch ra mắt — không phải phần phụ.",
+    "item4_title": "Theo dõi sau khi lên production",
+    "item4_description": "Chúng tôi theo dõi độ ổn định, chi phí và mức sử dụng để cải tiến dựa trên hiệu năng thực tế."
+  },
+  "CTA": {
+    "eyebrow": "Bước tiếp theo",
+    "title": "Cho chúng tôi biết bạn muốn xây gì",
+    "description": "Chia sẻ mục tiêu, thời gian và ràng buộc. Chúng tôi sẽ đề xuất đội ngũ, sprint sản phẩm hoặc workshop khám phá.",
+    "button_text": "Liên hệ H&T AI TECH",
+    "secondary_button": "Xem dịch vụ"
+  },
+  "HeroService": {
+    "eyebrow": "Dịch vụ",
+    "title": "AI, phần mềm và đội ngũ cho sản phẩm tham vọng",
+    "description": "Từ đội kỹ sư chuyên trách đến nền tảng thị giác máy tính và hạ tầng đám mây — chọn hình thức phù hợp với lộ trình của bạn."
+  },
+  "HowweworkService": {
+    "eyebrow": "Cách làm",
+    "title": "Lộ trình thực tế từ kickoff đến bản phát hành đầu",
+    "description": "Chúng tôi bắt đầu bằng sự rõ ràng, bố trí đúng chuyên gia, và chỉ mở rộng khi việc bàn giao đã chạy ổn."
+  },
+  "ServicesCatalog": {
+    "hire_tag": "ĐỘI NGŨ",
+    "hire_title": "Bổ sung đội kỹ sư",
+    "hire_description": "Đưa lập trình viên, chuyên gia AI và QA giàu kinh nghiệm vào quy trình hiện có của bạn với trách nhiệm rõ ràng.",
+    "product_tag": "XÂY DỰNG",
+    "product_title": "Xây sản phẩm AI trọn gói",
+    "product_description": "Biến ý tưởng hoặc bản thử thành phần mềm mà người dùng và vận hành có thể tin cậy mỗi ngày.",
+    "agentic_tag": "TÁC TỬ",
+    "agentic_title": "Tự động hóa đa tác tử",
+    "agentic_description": "Thiết kế luồng agent với gọi công cụ, bước kiểm duyệt và giám sát cho quy trình kinh doanh thực.",
+    "cloud_tag": "ĐÁM MÂY",
+    "cloud_title": "Hiện đại hóa cloud & nền tảng",
+    "cloud_description": "Củng cố hạ tầng, pipeline dữ liệu và quy trình triển khai để workload AI ổn định.",
+    "data_tag": "DỮ LIỆU",
+    "data_title": "Nền tảng dữ liệu cho AI",
+    "data_description": "Xây retrieval, pipeline và báo cáo để mô hình luôn gắn với dữ liệu đáng tin cậy.",
+    "ux_tag": "GIAO DIỆN",
+    "ux_title": "Giao diện sẵn sàng cho AI",
+    "ux_description": "Tạo dashboard, màn hình duyệt và công cụ vận hành giúp kết quả AI dễ tin và dễ hành động.",
+    "vision_tag": "THỊ GIÁC",
+    "vision_title": "Hệ thống thị giác máy tính",
+    "vision_description": "Triển khai mô hình phát hiện và kiểm tra cho an toàn lao động, logistics và giám sát đô thị thông minh.",
+    "ml_tag": "ML",
+    "ml_title": "Học máy tùy chỉnh",
+    "ml_description": "Huấn luyện, đánh giá và vận hành mô hình theo lĩnh vực của bạn — kèm bàn giao để đội nội bộ duy trì được."
+  },
+  "Products": {
+    "eyebrow": "Sản phẩm",
+    "title": "Sản phẩm của H&T AI TECH",
+    "description": "Phần mềm và hệ thống AI chúng tôi thiết kế, bàn giao và hỗ trợ — từ thị giác đô thị thông minh đến ứng dụng người dùng.",
+    "view_details": "Xem chi tiết →",
+    "building_eyebrow": "Đang triển khai",
+    "building_title": "Những gì đội sản phẩm đang xây",
+    "building_description": "Các sáng kiến đang chạy với bước tiếp theo cụ thể — để bạn thấy H&T đang đầu tư vào đâu.",
+    "next_label": "Tiếp theo:",
+    "browse_work": "Xem tất cả dự án",
+    "status_live": "Đang chạy",
+    "status_progress": "Đang làm",
+    "p1_tag": "THỊ GIÁC",
+    "p1_name": "HelmetGuard",
+    "p1_category": "An toàn lao động",
+    "p1_description": "Phát hiện mũ bảo hộ và đầu người trên công trường bằng YOLOv8 — khoảng 92% độ chính xác trên video thời gian thực.",
+    "p2_tag": "THỊ GIÁC",
+    "p2_name": "ContainerScan",
+    "p2_category": "Kiểm tra logistics",
+    "p2_description": "Phát hiện hư hỏng container bằng thị giác máy tính và quét 3D — kiểm tra nhanh hơn, báo cáo tự động.",
+    "p3_tag": "THỊ GIÁC",
+    "p3_name": "TrafficEnforce",
+    "p3_category": "Đô thị thông minh",
+    "p3_description": "Phát hiện vi phạm giao thông thời gian thực với mô hình huấn luyện trên dữ liệu đường Việt Nam và hệ đa camera.",
+    "p4_tag": "ỨNG DỤNG",
+    "p4_name": "Tic Tac Toe AI",
+    "p4_category": "Người dùng · 1M+ lượt tải",
+    "p4_description": "Game đa nền tảng với đối thủ AI mạnh, chế độ 5-in-a-row và chơi mạng trên iOS và Android.",
+    "b1_name": "Nền tảng mô phỏng giao thông",
+    "b1_category": "Đào tạo · Giáo dục",
+    "b1_description": "Nền tảng hỗ trợ AI để luyện luật giao thông với chấm điểm, phản hồi và tài liệu học trên mobile.",
+    "b1_next": "Thêm gói tình huống và chấm điểm AI sâu hơn",
+    "b2_name": "Bộ thị giác đô thị thông minh",
+    "b2_category": "Nền tảng",
+    "b2_description": "Gộp mô hình mũ bảo hộ, container và giao thông thành một stack thị giác có giám sát chung.",
+    "b2_next": "Kho mô hình dùng chung và dashboard vận hành",
+    "b3_name": "Operations Copilot",
+    "b3_category": "Công cụ nội bộ",
+    "b3_description": "Hỗ trợ agent cho duyệt kiểm tra và phân loại vi phạm, có phê duyệt của người trước khi hành động.",
+    "b3_next": "Thử nghiệm thực địa và tăng kiểm soát an toàn"
+  },
+  "Approach": {
+    "step1_title": "Hiểu rõ bài toán",
+    "step1_timing": "Ngày 1–2",
+    "step1_body": "Chúng tôi thống nhất mục tiêu, người dùng, nguồn dữ liệu, ràng buộc và tiêu chí thành công cho bản phát hành đầu.",
+    "step2_title": "Ghép đúng người",
+    "step2_timing": "Ngày 3–5",
+    "step2_body": "Bạn gặp chuyên gia phù hợp với công việc — AI, backend, cloud hoặc product — trước khi kickoff.",
+    "step3_title": "Bàn giao phần hữu ích đầu tiên",
+    "step3_timing": "Tuần 1–2",
+    "step3_body": "Cấp quyền, rà soát kiến trúc, nhịp bàn giao và một phần chạy được sớm để xác nhận hướng đi.",
+    "step4_title": "Chỉ mở rộng khi cần",
+    "step4_timing": "Tuần 3+",
+    "step4_body": "Chúng tôi thêm người hoặc phạm vi khi kết quả chứng minh được — không vì kế hoạch bắt buộc đội phải lớn hơn.",
+    "why_eyebrow": "Vì sao chọn H&T",
+    "why_title": "Những gì bạn nhận được khi hợp tác",
+    "why1_title": "Chuyên gia biết bàn giao",
+    "why1_body": "Kỹ sư AI, thị giác và full-stack có kinh nghiệm đưa hệ thống từ prototype sang sử dụng thực tế.",
+    "why2_title": "Giao tiếp rõ ràng",
+    "why2_body": "Tiếp cận trực tiếp lead cấp cao, kế hoạch bằng văn bản và tiến độ bạn có thể xem mỗi sprint.",
+    "why3_title": "Bàn giao từ Việt Nam",
+    "why3_body": "Đội tại Đà Nẵng, tiếng Anh tốt, chi phí cạnh tranh và khung giờ phù hợp khách khu vực lẫn quốc tế.",
+    "faq_eyebrow": "Câu hỏi thường gặp",
+    "faq_title": "Khách thường hỏi trước khi bắt đầu",
+    "faq1_q": "Các bạn chỉ cung cấp nhân sự tạm thời?",
+    "faq1_a": "Không. Chúng tôi có thể bổ sung đội ngũ, nhưng ưu tiên các hợp tác mà H&T cùng chịu trách nhiệm kiến trúc, tích hợp AI và chất lượng bàn giao.",
+    "faq2_q": "Dự án có thể bắt đầu nhanh không?",
+    "faq2_a": "Buổi trao đổi đầu có thể diễn ra trong vài ngày. Ngày bắt đầu phụ thuộc độ phù hợp vai trò, onboarding bảo mật và lịch chuyên gia.",
+    "faq3_q": "Kỹ sư có làm trong tool và họp của chúng tôi không?",
+    "faq3_a": "Có. Chúng tôi làm trong repository, standup và quy trình review của bạn với trách nhiệm rõ từ H&T AI TECH.",
+    "faq4_q": "Nếu cần sản phẩm phạm vi cố định thay vì đội ngũ?",
+    "faq4_a": "Chúng tôi có thể chạy build sản phẩm theo phạm vi, workshop khám phá, hoặc tư vấn nếu ý tưởng chưa sẵn sàng.",
+    "cta": "Bắt đầu trao đổi"
+  },
+  "TeamShapes": {
+    "eyebrow": "Hình thái đội ngũ",
+    "title": "Chuyên gia khớp với việc bạn cần làm",
+    "description": "Chúng tôi bố trí theo bài toán — hệ thị giác, nền tảng dữ liệu, giao diện sản phẩm hoặc sở hữu sản phẩm trọn — thay vì roster chung chung.",
+    "item1_title": "Tự động hóa & agent",
+    "item1_body": "Luồng gọi công cụ, yêu cầu duyệt bởi người và có thể quan sát khi chạy production.",
+    "item2_title": "Dữ liệu & backend cho AI",
+    "item2_body": "Pipeline, phân quyền, retrieval và báo cáo giữ mô hình gắn với dữ liệu thật.",
+    "item3_title": "Giao diện sản phẩm",
+    "item3_body": "Dashboard, màn hình duyệt và công cụ vận hành giúp kết quả AI thành hành động.",
+    "cta": "Thảo luận nhu cầu đội ngũ"
+  },
+  "AboutPage": {
+    "eyebrow": "Về chúng tôi",
+    "title": "Công ty AI xây hệ thống dùng được ngoài đời",
+    "description": "H&T AI TECH là đội ngũ tại Đà Nẵng thiết kế thị giác máy tính, học máy và phần mềm tùy chỉnh cho doanh nghiệp cùng chương trình công. Chúng tôi quan tâm hệ thống vẫn hữu ích sau khi ra mắt.",
+    "principles_eyebrow": "Nguyên tắc",
+    "principles_title": "Cách chúng tôi làm việc với khách",
+    "p1_title": "Bàn giao có trách nhiệm",
+    "p1_description": "Chúng tôi chịu trách nhiệm kiến trúc, chất lượng AI và kết quả phát hành — không chỉ số giờ.",
+    "p2_title": "Đo trước khi mở rộng",
+    "p2_description": "Độ chính xác, độ trễ và tiêu chí chấp nhận được thống nhất sớm để tiến độ luôn nhìn thấy được.",
+    "p3_title": "Làm trong quy trình của bạn",
+    "p3_description": "Kỹ sư của chúng tôi tham gia tool và nghi thức của bạn với trách nhiệm rõ từ H&T AI TECH.",
+    "p4_title": "Mở rộng theo bằng chứng",
+    "p4_description": "Chúng tôi tăng phạm vi hoặc nhân sự khi kết quả chứng minh được, không mặc định.",
+    "team_eyebrow": "Lãnh đạo",
+    "team_title": "Đội ngũ",
+    "linkedin": "LinkedIn →",
+    "team": {
+      "tai": {
+        "name": "TS. Nguyễn Hữu Tài",
+        "role": "Founder · CEO · Head of AI & IoT",
+        "bio": "Dẫn dắt đổi mới AI và IoT trên hệ thống thông minh, thị giác máy tính và tự động hóa đô thị thông minh."
+      },
+      "chien": {
+        "name": "TS. Lê Quang Chiến",
+        "role": "Founder · AI Team Lead",
+        "bio": "Dẫn dắt đội AI về tự động hóa doanh nghiệp và hệ thống AI ứng dụng tại Việt Nam."
+      },
+      "minh": {
+        "name": "TS. Lê Quang Minh",
+        "role": "Founder · Giám đốc Marketing (Nhật Bản)",
+        "bio": "Dẫn dắt tăng trưởng thị trường Nhật cho các sáng kiến kinh doanh dựa trên AI. Nói tiếng Việt, Anh và Nhật."
+      },
+      "tam": {
+        "name": "Nguyễn Việt Tâm, MBA",
+        "role": "Giám đốc Kinh doanh & Vận hành thương mại",
+        "bio": "Hơn 15 năm kinh nghiệm kế toán, thuế và luật doanh nghiệp tại các doanh nghiệp lớn ở Việt Nam."
+      }
+    },
+    "cta_title": "Hợp tác với H&T",
+    "cta_description": "Cho chúng tôi biết về sản phẩm, bài toán vận hành hoặc nhu cầu tuyển dụng. Chúng tôi sẽ đề xuất bước tiếp theo thực tế.",
+    "cta_button": "Liên hệ"
+  },
+  "ContactPage": {
+    "eyebrow": "Liên hệ",
+    "title": "Cùng thảo luận dự án AI hoặc phần mềm tiếp theo",
+    "description": "Chia sẻ mục tiêu, thời gian và ràng buộc. Chúng tôi giúp bạn chọn hợp tác đội ngũ, xây sản phẩm hoặc workshop khám phá ngắn.",
+    "name": "Họ tên",
+    "email": "Email",
+    "phone": "Số điện thoại",
+    "service": "Dịch vụ *",
+    "service_placeholder": "Chọn dịch vụ",
+    "message": "Tin nhắn",
+    "message_placeholder": "Mục tiêu, lộ trình, stack, rủi ro…",
+    "name_placeholder": "Tên của bạn",
+    "email_placeholder": "ban@congty.com",
+    "phone_placeholder": "Số điện thoại",
+    "send": "Gửi tin nhắn",
+    "sending": "Đang gửi…",
+    "success": "Đã gửi. Chúng tôi sẽ phản hồi sớm.",
+    "office": "Văn phòng",
+    "vietnam": "Việt Nam",
+    "address": "123 Lý Đạo Thành, An Hải Bắc, Sơn Trà, Đà Nẵng",
+    "email_label": "Email",
+    "s1": "Bổ sung đội kỹ sư",
+    "s2": "Xây sản phẩm AI trọn gói",
+    "s3": "Tự động hóa đa tác tử",
+    "s4": "Hiện đại hóa cloud & nền tảng",
+    "s5": "Nền tảng dữ liệu cho AI",
+    "s6": "Giao diện sẵn sàng cho AI",
+    "s7": "Hệ thống thị giác máy tính",
+    "s8": "Học máy tùy chỉnh",
+    "s9": "Khác"
+  },
+  "WorkPage": {
+    "eyebrow": "Dự án",
+    "title": "Hệ thống AI cho đô thị, logistics và sản phẩm hàng ngày",
+    "description": "Khám phá triển khai thị giác máy tính, nền tảng đào tạo và ứng dụng người dùng do H&T AI TECH xây — kèm chỉ số từ điều kiện vận hành thực.",
+    "primary": "Xem dự án",
+    "secondary": "Yêu cầu demo",
+    "cases_eyebrow": "Case study",
+    "cases_title": "Dự án đang phục vụ người dùng",
+    "cases_description": "Hệ thị giác và sản phẩm được huấn luyện cho công trường, đường phố và thiết bị thật — với độ chính xác và hiệu năng bạn có thể xem.",
+    "cta_title": "Muốn hệ thống tương tự cho tổ chức của bạn?",
+    "cta_description": "Chúng tôi có thể thích ứng các hệ thống này cho địa điểm, đô thị hoặc lộ trình sản phẩm của bạn.",
+    "cta_button": "Yêu cầu demo dự án"
+  },
+  "Footer": {
+    "blurb": "H&T AI TECH xây AI ứng dụng, thị giác máy tính và phần mềm tùy chỉnh cho doanh nghiệp cùng chương trình đô thị thông minh từ Đà Nẵng, Việt Nam.",
+    "cta": "Liên hệ",
+    "services": "Dịch vụ",
+    "products": "Sản phẩm",
+    "company": "Công ty",
+    "privacy_policy": "Chính sách bảo mật",
+    "terms_of_service": "Điều khoản sử dụng",
+    "rights": "© {year} H&T AI TECH. Bảo lưu mọi quyền.",
+    "s1": "Bổ sung đội ngũ",
+    "s2": "Xây sản phẩm AI",
+    "s3": "Tự động hóa đa tác tử",
+    "s4": "Hiện đại hóa cloud",
+    "s5": "Nền tảng dữ liệu",
+    "s6": "Thị giác máy tính",
+    "p1": "HelmetGuard",
+    "p2": "ContainerScan",
+    "p3": "TrafficEnforce",
+    "p4": "Tic Tac Toe AI",
+    "p5": "Đang triển khai",
+    "c1": "Cách làm",
+    "c2": "Dự án",
+    "c3": "Về chúng tôi",
+    "c4": "Liên hệ"
+  },
+  "ProtectFallback": {
+    "not_enough_permission": "Bạn không có quyền thực hiện thao tác này"
+  },
+  "SignIn": {
+    "meta_title": "Đăng nhập",
+    "meta_description": "Đăng nhập vào tài khoản của bạn."
+  },
+  "SignUp": {
+    "meta_title": "Đăng ký",
+    "meta_description": "Tạo tài khoản."
+  },
+  "DashboardLayout": {
+    "home": "Trang chủ",
+    "todos": "Todos",
+    "members": "Thành viên",
+    "billing": "Thanh toán",
+    "settings": "Cài đặt"
+  },
+  "Dashboard": {
+    "meta_title": "Bảng điều khiển",
+    "meta_description": "Bảng điều khiển"
+  },
+  "DashboardIndex": {
+    "title_bar": "Bảng điều khiển",
+    "title_bar_description": "Chào mừng đến bảng điều khiển",
+    "message_state_title": "Bắt đầu nào",
+    "message_state_description": "Tùy chỉnh trang này.",
+    "message_state_button": "Tiếp tục",
+    "message_state_alternative": "Cần thêm tính năng?"
+  },
+  "UserProfile": {
+    "title_bar": "Hồ sơ người dùng",
+    "title_bar_description": "Xem và quản lý hồ sơ"
+  },
+  "OrganizationProfile": {
+    "title_bar": "Quản lý tổ chức",
+    "title_bar_description": "Quản lý tổ chức của bạn"
+  },
+  "Billing": {
+    "title_bar": "Thanh toán",
+    "title_bar_description": "Quản lý thanh toán và gói đăng ký",
+    "current_section_title": "Gói hiện tại",
+    "current_section_description": "Điều chỉnh gói thanh toán",
+    "manage_subscription_button": "Quản lý đăng ký"
+  },
+  "BillingOptions": {
+    "current_plan": "Gói hiện tại",
+    "upgrade_plan": "Bắt đầu"
+  },
+  "CheckoutConfirmation": {
+    "title_bar": "Xác nhận thanh toán",
+    "message_state_title": "Thanh toán thành công",
+    "message_state_description": "Thanh toán của bạn đã được xử lý.",
+    "message_state_button": "Quay lại Thanh toán"
+  },
+  "DataTable": {
+    "no_results": "Không có kết quả."
+  },
+  "Todos": {
+    "title_bar": "Danh sách việc",
+    "title_bar_description": "Xem và quản lý việc cần làm",
+    "add_todo_button": "Việc mới"
+  },
+  "TodoTableColumns": {
+    "open_menu": "Mở menu",
+    "edit": "Sửa",
+    "delete": "Xóa",
+    "title_header": "Tiêu đề",
+    "message_header": "Nội dung",
+    "created_at_header": "Tạo lúc"
+  },
+  "AddTodo": {
+    "title_bar": "Thêm việc",
+    "add_todo_section_title": "Tạo việc mới",
+    "add_todo_section_description": "Điền form bên dưới"
+  },
+  "EditTodo": {
+    "title_bar": "Sửa việc",
+    "edit_todo_section_title": "Chỉnh sửa việc",
+    "edit_todo_section_description": "Điền form bên dưới"
+  },
+  "TodoForm": {
+    "title_label": "Tiêu đề",
+    "title_description": "Nhập tiêu đề mô tả.",
+    "message_title": "Nội dung",
+    "message_description": "Nhập nội dung chi tiết.",
+    "submit_button": "Gửi"
+  },
+  "FAQ": {
+    "question": "Câu hỏi?",
+    "answer": "Trả lời."
+  },
+  "Features": {
+    "section_subtitle": "Tính năng",
+    "section_title": "Tính năng",
+    "section_description": "Tính năng",
+    "feature1_title": "Node.js",
+    "feature2_title": "React",
+    "feature3_title": "Tailwind CSS",
+    "feature4_title": "TypeScript",
+    "feature5_title": "Shadcn UI",
+    "feature6_title": "ESLint",
+    "feature_description": "Tính năng"
+  },
+  "Pricing": {
+    "section_subtitle": "Giá",
+    "section_title": "Giá",
+    "section_description": "Giá",
+    "button_text": "Bắt đầu"
+  },
+  "PricingPlan": {
+    "free_plan_name": "Miễn phí",
+    "premium_plan_name": "Premium",
+    "enterprise_plan_name": "Enterprise",
+    "free_plan_description": "Cho cá nhân",
+    "premium_plan_description": "Cho nhóm nhỏ",
+    "enterprise_plan_description": "Cho doanh nghiệp",
+    "feature_team_member": "{number} thành viên",
+    "feature_website": "{number} website",
+    "feature_storage": "{number} GB lưu trữ",
+    "feature_transfer": "{number} TB truyền tải",
+    "feature_email_support": "Hỗ trợ email",
+    "plan_interval_month": "tháng",
+    "plan_interval_year": "năm",
+    "next_renew_date": "Gói của bạn gia hạn vào {date}"
+  },
+  "Sponsors": {
+    "title": "Tài trợ bởi"
+  }
+}

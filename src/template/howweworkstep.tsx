@@ -1,54 +1,31 @@
 'use client';
 
 import { Button } from '@astryxdesign/core/Button';
-
-const steps = [
-  {
-    number: '01',
-    title: 'Understand the problem',
-    timing: 'Days 1–2',
-    body: 'We align on goals, users, data sources, constraints, and what success should look like for the first release.',
-  },
-  {
-    number: '02',
-    title: 'Assemble the right people',
-    timing: 'Days 3–5',
-    body: 'You meet specialists matched to the work — AI, backend, cloud, or product engineering — before kickoff.',
-  },
-  {
-    number: '03',
-    title: 'Deliver the first useful increment',
-    timing: 'Week 1–2',
-    body: 'Access, architecture review, delivery rhythm, and an early working slice that proves direction.',
-  },
-  {
-    number: '04',
-    title: 'Grow only when it helps',
-    timing: 'Week 3+',
-    body: 'We add people or scope when results justify it — not because a plan says the team must get larger.',
-  },
-];
-
-const faqs = [
-  {
-    q: 'Do you only provide temporary staff?',
-    a: 'No. We can extend your team, but we prefer engagements where H&T owns architecture, AI integration, and delivery quality together with you.',
-  },
-  {
-    q: 'How quickly can a project start?',
-    a: 'Intro conversations can happen within a few days. Start dates depend on role fit, security onboarding, and specialist availability.',
-  },
-  {
-    q: 'Will your engineers join our tools and meetings?',
-    a: 'Yes. We work in your repositories, standups, and review process with clear ownership from H&T AI TECH.',
-  },
-  {
-    q: 'What if we need a fixed-scope product instead of a team?',
-    a: 'We can run a scoped product build, a discovery workshop, or advise if the idea is not ready yet.',
-  },
-];
+import { useTranslations } from 'next-intl';
 
 export default function Howweworkstep() {
+  const t = useTranslations('Approach');
+
+  const steps = [
+    { number: '01', title: 'step1_title', timing: 'step1_timing', body: 'step1_body' },
+    { number: '02', title: 'step2_title', timing: 'step2_timing', body: 'step2_body' },
+    { number: '03', title: 'step3_title', timing: 'step3_timing', body: 'step3_body' },
+    { number: '04', title: 'step4_title', timing: 'step4_timing', body: 'step4_body' },
+  ] as const;
+
+  const why = [
+    { title: 'why1_title', body: 'why1_body' },
+    { title: 'why2_title', body: 'why2_body' },
+    { title: 'why3_title', body: 'why3_body' },
+  ] as const;
+
+  const faqs = [
+    { q: 'faq1_q', a: 'faq1_a' },
+    { q: 'faq2_q', a: 'faq2_a' },
+    { q: 'faq3_q', a: 'faq3_a' },
+    { q: 'faq4_q', a: 'faq4_a' },
+  ] as const;
+
   return (
     <>
       <section className="ht-section">
@@ -57,10 +34,10 @@ export default function Howweworkstep() {
             <article key={step.number} className="ht-panel grid gap-4 p-6 sm:grid-cols-[5rem_1fr_auto] sm:items-start sm:p-8">
               <p className="text-3xl font-semibold text-[var(--ht-accent)]">{step.number}</p>
               <div>
-                <h2 className="mb-2 text-2xl font-semibold text-[var(--ht-ink)]">{step.title}</h2>
-                <p className="text-[var(--ht-muted)]">{step.body}</p>
+                <h2 className="mb-2 text-2xl font-semibold text-[var(--ht-ink)]">{t(step.title)}</h2>
+                <p className="text-[var(--ht-muted)]">{t(step.body)}</p>
               </div>
-              <p className="text-sm uppercase tracking-[0.14em] text-[var(--ht-faint)]">{step.timing}</p>
+              <p className="text-sm uppercase tracking-[0.14em] text-[var(--ht-faint)]">{t(step.timing)}</p>
             </article>
           ))}
         </div>
@@ -68,26 +45,13 @@ export default function Howweworkstep() {
 
       <section className="ht-section border-y border-[var(--ht-line)] bg-[var(--ht-bg-soft)]">
         <div className="ht-container">
-          <p className="ht-eyebrow mb-3">Why teams choose H&T</p>
-          <h2 className="ht-title mb-8">What you can expect when we work together</h2>
+          <p className="ht-eyebrow mb-3">{t('why_eyebrow')}</p>
+          <h2 className="ht-title mb-8">{t('why_title')}</h2>
           <div className="grid gap-4 md:grid-cols-3">
-            {[
-              {
-                title: 'Specialists who ship',
-                body: 'AI, vision, and full-stack engineers with experience taking systems from prototype to live use.',
-              },
-              {
-                title: 'Clear communication',
-                body: 'Direct access to senior leads, written plans, and progress you can review every sprint.',
-              },
-              {
-                title: 'Vietnam-based delivery',
-                body: 'A Da Nang team with strong English, competitive rates, and overlap for regional and global clients.',
-              },
-            ].map(item => (
+            {why.map(item => (
               <article key={item.title} className="ht-panel p-6">
-                <h3 className="mb-2 text-lg font-semibold text-[var(--ht-ink)]">{item.title}</h3>
-                <p className="text-sm text-[var(--ht-muted)]">{item.body}</p>
+                <h3 className="mb-2 text-lg font-semibold text-[var(--ht-ink)]">{t(item.title)}</h3>
+                <p className="text-sm text-[var(--ht-muted)]">{t(item.body)}</p>
               </article>
             ))}
           </div>
@@ -96,8 +60,8 @@ export default function Howweworkstep() {
 
       <section className="ht-section">
         <div className="ht-container">
-          <p className="ht-eyebrow mb-3">FAQ</p>
-          <h2 className="ht-title mb-8">Questions clients ask before starting</h2>
+          <p className="ht-eyebrow mb-3">{t('faq_eyebrow')}</p>
+          <h2 className="ht-title mb-8">{t('faq_title')}</h2>
           <div className="space-y-4">
             {faqs.map((faq, index) => (
               <details key={faq.q} className="ht-panel group p-5 open:border-[var(--ht-line-strong)]">
@@ -106,14 +70,14 @@ export default function Howweworkstep() {
                     0
                     {index + 1}
                   </span>
-                  {faq.q}
+                  {t(faq.q)}
                 </summary>
-                <p className="mt-3 text-[var(--ht-muted)]">{faq.a}</p>
+                <p className="mt-3 text-[var(--ht-muted)]">{t(faq.a)}</p>
               </details>
             ))}
           </div>
           <div className="mt-10">
-            <Button label="Start a conversation" variant="primary" size="lg" href="/contacts" />
+            <Button label={t('cta')} variant="primary" size="lg" href="/contacts" />
           </div>
         </div>
       </section>

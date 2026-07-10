@@ -2,14 +2,6 @@
 
 import { useLocale } from 'next-intl';
 
-import { Button } from '@/components/ui/button';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
 import { usePathname, useRouter } from '@/libs/i18nNavigation';
 import { AppConfig } from '@/utils/AppConfig';
 
@@ -24,32 +16,21 @@ export const LocaleSwitcher = () => {
   };
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button className="p-2 focus-visible:ring-offset-0" variant="ghost" size="icon" aria-label="lang-switcher">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="size-6 stroke-current stroke-2"
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            viewBox="0 0 24 24"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" />
-            <path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0M3.6 9h16.8M3.6 15h16.8" />
-            <path d="M11.5 3a17 17 0 0 0 0 18M12.5 3a17 17 0 0 1 0 18" />
-          </svg>
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent>
-        <DropdownMenuRadioGroup value={locale} onValueChange={handleChange}>
-          {AppConfig.locales.map(elt => (
-            <DropdownMenuRadioItem key={elt.id} value={elt.id}>
-              {elt.name}
-            </DropdownMenuRadioItem>
-          ))}
-        </DropdownMenuRadioGroup>
-      </DropdownMenuContent>
-    </DropdownMenu>
+    <label className="relative inline-flex items-center">
+      <span className="sr-only">Language</span>
+      <select
+        value={locale}
+        onChange={e => handleChange(e.target.value)}
+        className="h-9 appearance-none rounded-md border border-[var(--ht-line)] bg-[var(--ht-bg-elevated)] px-3 pr-8 text-sm font-medium text-[var(--ht-ink)] outline-none transition-colors hover:border-[var(--ht-accent)]"
+        aria-label="Language switcher"
+      >
+        {AppConfig.locales.map(elt => (
+          <option key={elt.id} value={elt.id}>
+            {elt.id.toUpperCase()}
+          </option>
+        ))}
+      </select>
+      <span className="pointer-events-none absolute right-2 text-[var(--ht-faint)]">▾</span>
+    </label>
   );
 };

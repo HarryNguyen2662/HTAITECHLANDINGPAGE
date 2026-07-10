@@ -16,6 +16,7 @@ const catalog = [
 
 export const Servicestemplate = () => {
   const t = useTranslations('ServicesCatalog');
+  const tHome = useTranslations('HomeServices');
 
   return (
     <section className="ht-section">
@@ -40,7 +41,7 @@ export const Servicestemplate = () => {
                   </span>
                 ))}
               </div>
-              <Button label="Contact us" variant="secondary" href="/contacts" />
+              <Button label={tHome('contact_us')} variant="secondary" href="/contacts" />
             </article>
           ))}
         </div>

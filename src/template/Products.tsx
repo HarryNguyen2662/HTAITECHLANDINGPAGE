@@ -2,85 +2,32 @@
 
 import { Button } from '@astryxdesign/core/Button';
 import Link from 'next/link';
-
-const shippedProducts = [
-  {
-    tag: 'VISION',
-    name: 'HelmetGuard',
-    category: 'Workplace safety',
-    description:
-      'Detects helmets and heads on construction sites with YOLOv8 — about 92% accuracy in live video streams.',
-    status: 'Live',
-    href: '/project#projects',
-  },
-  {
-    tag: 'VISION',
-    name: 'ContainerScan',
-    category: 'Logistics inspection',
-    description:
-      'Finds container damage with computer vision and 3D scanning — faster inspections and automated reports.',
-    status: 'Live',
-    href: '/project#projects',
-  },
-  {
-    tag: 'VISION',
-    name: 'TrafficEnforce',
-    category: 'Smart city',
-    description:
-      'Flags traffic violations in real time using models trained on Vietnamese road data and multi-camera setups.',
-    status: 'Live',
-    href: '/project#projects',
-  },
-  {
-    tag: 'APP',
-    name: 'Tic Tac Toe AI',
-    category: 'Consumer · 1M+ downloads',
-    description:
-      'A cross-platform game with strong AI opponents, 5-in-a-row mode, and multiplayer on iOS and Android.',
-    status: 'Live',
-    href: '/project#projects',
-  },
-];
-
-const buildingNow = [
-  {
-    tag: 'IN PROGRESS',
-    name: 'Traffic Simulation Platform',
-    category: 'Training · Education',
-    description:
-      'An AI-assisted platform for traffic-law practice with scoring, feedback, and mobile learning materials.',
-    next: 'More scenario packs and richer AI scoring',
-  },
-  {
-    tag: 'IN PROGRESS',
-    name: 'Smart City Vision Suite',
-    category: 'Platform',
-    description:
-      'Combining helmet, container, and traffic models into one deployable vision stack with shared monitoring.',
-    next: 'Shared model registry and operator dashboards',
-  },
-  {
-    tag: 'IN PROGRESS',
-    name: 'Operations Copilot',
-    category: 'Internal tools',
-    description:
-      'Agent-assisted review for inspections and violation triage, with human approval before actions go out.',
-    next: 'Field pilot and stronger safety checks',
-  },
-];
+import { useTranslations } from 'next-intl';
 
 export const Products = () => {
+  const t = useTranslations('Products');
+
+  const shippedProducts = [
+    { tag: 'p1_tag', name: 'p1_name', category: 'p1_category', description: 'p1_description', href: '/project#projects' },
+    { tag: 'p2_tag', name: 'p2_name', category: 'p2_category', description: 'p2_description', href: '/project#projects' },
+    { tag: 'p3_tag', name: 'p3_name', category: 'p3_category', description: 'p3_description', href: '/project#projects' },
+    { tag: 'p4_tag', name: 'p4_name', category: 'p4_category', description: 'p4_description', href: '/project#projects' },
+  ] as const;
+
+  const buildingNow = [
+    { name: 'b1_name', category: 'b1_category', description: 'b1_description', next: 'b1_next' },
+    { name: 'b2_name', category: 'b2_category', description: 'b2_description', next: 'b2_next' },
+    { name: 'b3_name', category: 'b3_category', description: 'b3_description', next: 'b3_next' },
+  ] as const;
+
   return (
     <>
       <section id="products" className="ht-section border-y border-[var(--ht-line)] bg-[var(--ht-bg-soft)]">
         <div className="ht-container">
           <div className="mb-12 max-w-2xl">
-            <p className="ht-eyebrow mb-3">Products</p>
-            <h2 className="ht-title mb-4">Products from H&T AI TECH</h2>
-            <p className="ht-lede">
-              Software and AI systems we design, ship, and support — from smart-city
-              vision to consumer apps.
-            </p>
+            <p className="ht-eyebrow mb-3">{t('eyebrow')}</p>
+            <h2 className="ht-title mb-4">{t('title')}</h2>
+            <p className="ht-lede">{t('description')}</p>
           </div>
 
           <div className="grid gap-4 md:grid-cols-2">
@@ -91,22 +38,22 @@ export const Products = () => {
               >
                 <div className="mb-4 flex items-center justify-between gap-3">
                   <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--ht-accent)]">
-                    {product.tag}
+                    {t(product.tag)}
                   </p>
                   <span className="border border-[var(--ht-line)] px-2 py-0.5 text-xs text-[var(--ht-muted)]">
-                    {product.status}
+                    {t('status_live')}
                   </span>
                 </div>
                 <h3 className="mb-1 text-2xl font-semibold tracking-tight text-[var(--ht-ink)]">
-                  {product.name}
+                  {t(product.name)}
                 </h3>
-                <p className="mb-3 text-sm text-[var(--ht-faint)]">{product.category}</p>
-                <p className="mb-5 flex-1 text-[var(--ht-muted)]">{product.description}</p>
+                <p className="mb-3 text-sm text-[var(--ht-faint)]">{t(product.category)}</p>
+                <p className="mb-5 flex-1 text-[var(--ht-muted)]">{t(product.description)}</p>
                 <Link
                   href={product.href}
                   className="text-sm font-medium text-[var(--ht-ink)] no-underline hover:text-[var(--ht-accent)]"
                 >
-                  See details →
+                  {t('view_details')}
                 </Link>
               </article>
             ))}
@@ -117,12 +64,9 @@ export const Products = () => {
       <section id="building-now" className="ht-section">
         <div className="ht-container">
           <div className="mb-12 max-w-2xl">
-            <p className="ht-eyebrow mb-3">In progress</p>
-            <h2 className="ht-title mb-4">What our product teams are building now</h2>
-            <p className="ht-lede">
-              Active initiatives with concrete next steps — so you can see where
-              H&T is investing today.
-            </p>
+            <p className="ht-eyebrow mb-3">{t('building_eyebrow')}</p>
+            <h2 className="ht-title mb-4">{t('building_title')}</h2>
+            <p className="ht-lede">{t('building_description')}</p>
           </div>
 
           <div className="space-y-4">
@@ -137,16 +81,19 @@ export const Products = () => {
                 </p>
                 <div>
                   <div className="mb-2 flex flex-wrap items-center gap-3">
-                    <h3 className="text-xl font-semibold text-[var(--ht-ink)]">{item.name}</h3>
+                    <h3 className="text-xl font-semibold text-[var(--ht-ink)]">{t(item.name)}</h3>
                     <span className="border-[var(--ht-accent)]/40 border px-2 py-0.5 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--ht-accent)]">
-                      {item.tag}
+                      {t('status_progress')}
                     </span>
                   </div>
-                  <p className="mb-2 text-sm text-[var(--ht-faint)]">{item.category}</p>
-                  <p className="mb-3 text-[var(--ht-muted)]">{item.description}</p>
+                  <p className="mb-2 text-sm text-[var(--ht-faint)]">{t(item.category)}</p>
+                  <p className="mb-3 text-[var(--ht-muted)]">{t(item.description)}</p>
                   <p className="text-sm text-[var(--ht-ink)]">
-                    <span className="text-[var(--ht-faint)]">Next: </span>
-                    {item.next}
+                    <span className="text-[var(--ht-faint)]">
+                      {t('next_label')}
+                      {' '}
+                    </span>
+                    {t(item.next)}
                   </p>
                 </div>
               </article>
@@ -154,7 +101,7 @@ export const Products = () => {
           </div>
 
           <div className="mt-10">
-            <Button label="Browse all work" variant="secondary" href="/project" />
+            <Button label={t('browse_work')} variant="secondary" href="/project" />
           </div>
         </div>
       </section>

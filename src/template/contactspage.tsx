@@ -3,6 +3,7 @@
 import { Button } from '@astryxdesign/core/Button';
 import { TextArea } from '@astryxdesign/core/TextArea';
 import { TextInput } from '@astryxdesign/core/TextInput';
+import { useTranslations } from 'next-intl';
 import React, { useState } from 'react';
 
 export type ContactFormData = {
@@ -13,19 +14,10 @@ export type ContactFormData = {
   message: string;
 };
 
-const services = [
-  'Engineering team extension',
-  'End-to-end AI product build',
-  'Multi-agent automation',
-  'Cloud & platform modernization',
-  'Data platforms for AI',
-  'AI-ready product interfaces',
-  'Computer vision systems',
-  'Custom machine learning',
-  'Other',
-];
+const serviceKeys = ['s1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 's9'] as const;
 
 export const ContactForm = () => {
+  const t = useTranslations('ContactPage');
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
@@ -76,12 +68,9 @@ export const ContactForm = () => {
       <section className="border-b border-[var(--ht-line)]">
         <div className="ht-container py-20 sm:py-28">
           <div className="ht-fade-up max-w-3xl">
-            <p className="ht-eyebrow mb-4">Contact</p>
-            <h1 className="ht-display mb-6">Let&apos;s discuss your next AI or software project</h1>
-            <p className="ht-lede">
-              Share your goals, timeline, and constraints. We will help you choose
-              a team engagement, a product build, or a short discovery workshop.
-            </p>
+            <p className="ht-eyebrow mb-4">{t('eyebrow')}</p>
+            <h1 className="ht-display mb-6">{t('title')}</h1>
+            <p className="ht-lede">{t('description')}</p>
           </div>
         </div>
       </section>
@@ -90,28 +79,28 @@ export const ContactForm = () => {
         <div className="ht-container grid gap-12 lg:grid-cols-[1.3fr_0.9fr]">
           <form onSubmit={handleSubmit} className="ht-panel space-y-5 p-6 sm:p-8">
             <TextInput
-              label="Name"
+              label={t('name')}
               isRequired
               value={formData.name}
               changeAction={value => setFormData(prev => ({ ...prev, name: value }))}
-              placeholder="Your name"
+              placeholder={t('name_placeholder')}
               size="lg"
             />
             <TextInput
-              label="Email"
+              label={t('email')}
               type="email"
               isRequired
               value={formData.email}
               changeAction={value => setFormData(prev => ({ ...prev, email: value }))}
-              placeholder="you@company.com"
+              placeholder={t('email_placeholder')}
               size="lg"
             />
             <TextInput
-              label="Phone"
+              label={t('phone')}
               isRequired
               value={formData.phone}
               changeAction={value => setFormData(prev => ({ ...prev, phone: value }))}
-              placeholder="Phone number"
+              placeholder={t('phone_placeholder')}
               size="lg"
             />
             <div>
@@ -119,7 +108,7 @@ export const ContactForm = () => {
                 htmlFor="contact-service"
                 className="mb-2 block text-sm font-medium text-[var(--ht-ink)]"
               >
-                Service *
+                {t('service')}
               </label>
               <select
                 id="contact-service"
@@ -128,33 +117,31 @@ export const ContactForm = () => {
                 onChange={e => setFormData(prev => ({ ...prev, service: e.target.value }))}
                 className="w-full rounded-md border border-[var(--ht-line)] bg-[var(--ht-bg)] p-3 text-[var(--ht-ink)] outline-none focus:border-[var(--ht-accent)]"
               >
-                <option value="">Select a service</option>
-                {services.map(service => (
-                  <option key={service} value={service}>
-                    {service}
+                <option value="">{t('service_placeholder')}</option>
+                {serviceKeys.map(key => (
+                  <option key={key} value={t(key)}>
+                    {t(key)}
                   </option>
                 ))}
               </select>
             </div>
             <TextArea
-              label="Message"
+              label={t('message')}
               isRequired
               value={formData.message}
               changeAction={value => setFormData(prev => ({ ...prev, message: value }))}
-              placeholder="Role, roadmap, stack, risks…"
+              placeholder={t('message_placeholder')}
               size="lg"
               rows={5}
             />
 
             {submitError && <p className="text-sm text-red-400">{submitError}</p>}
             {submitSuccess && (
-              <p className="text-sm text-[var(--ht-accent)]">
-                Message sent. We will get back to you soon.
-              </p>
+              <p className="text-sm text-[var(--ht-accent)]">{t('success')}</p>
             )}
 
             <Button
-              label={isSubmitting ? 'Sending…' : 'Send message'}
+              label={isSubmitting ? t('sending') : t('send')}
               variant="primary"
               type="submit"
               size="lg"
@@ -165,14 +152,14 @@ export const ContactForm = () => {
 
           <aside className="space-y-8">
             <div className="ht-panel p-6">
-              <p className="ht-eyebrow mb-3">Office</p>
-              <h2 className="mb-3 text-2xl font-semibold text-[var(--ht-ink)]">Vietnam</h2>
-              <p className="text-[var(--ht-muted)]">
-                123 Ly Dao Thanh, An Hai Bac, Son Tra, Da Nang
-              </p>
+              <p className="ht-eyebrow mb-3">{t('office')}</p>
+              <h2 className="mb-3 text-2xl font-semibold text-[var(--ht-ink)]">
+                {t('vietnam')}
+              </h2>
+              <p className="text-[var(--ht-muted)]">{t('address')}</p>
             </div>
             <div className="ht-panel p-6">
-              <p className="ht-eyebrow mb-3">Email</p>
+              <p className="ht-eyebrow mb-3">{t('email_label')}</p>
               <a
                 href="mailto:tainguyenhuu@htaitech.net"
                 className="text-lg text-[var(--ht-ink)] no-underline hover:text-[var(--ht-accent)]"

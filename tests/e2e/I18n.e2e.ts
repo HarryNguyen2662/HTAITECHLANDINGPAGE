@@ -2,25 +2,26 @@ import { expect, test } from '@playwright/test';
 
 test.describe('I18n', () => {
   test.describe('Language Switching', () => {
-    test('should switch language from English to French using dropdown and verify text on the homepage', async ({ page }) => {
+    test('should show Vietnamese by default on the homepage', async ({ page }) => {
       await page.goto('/');
 
-      await expect(page.getByText('The perfect SaaS template to build')).toBeVisible();
-
-      await page.getByRole('button', { name: 'lang-switcher' }).click();
-      await page.getByText('Français').click();
-
-      await expect(page.getByText('Le parfait SaaS template pour construire')).toBeVisible();
+      await expect(page.getByText('Xây AI vận hành được trong thực tế')).toBeVisible();
     });
 
-    test('should switch language from English to French using URL and verify text on the sign-in page', async ({ page }) => {
-      await page.goto('/sign-in');
+    test('should switch language from Vietnamese to English using dropdown', async ({ page }) => {
+      await page.goto('/');
 
-      await expect(page.getByText('Email address')).toBeVisible();
+      await expect(page.getByText('Xây AI vận hành được trong thực tế')).toBeVisible();
 
-      await page.goto('/fr/sign-in');
+      await page.getByLabel('Language switcher').selectOption('en');
 
-      await expect(page.getByText('Adresse e-mail')).toBeVisible();
+      await expect(page.getByText('Build AI that holds up in real operations')).toBeVisible();
+    });
+
+    test('should show English when visiting /en', async ({ page }) => {
+      await page.goto('/en');
+
+      await expect(page.getByText('Build AI that holds up in real operations')).toBeVisible();
     });
   });
 });

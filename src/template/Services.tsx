@@ -42,14 +42,14 @@ export const Services = () => {
                 href={service.href}
                 className="text-sm font-medium text-[var(--ht-ink)] no-underline hover:text-[var(--ht-accent)]"
               >
-                Learn more →
+                {tHome('learn_more')}
               </Link>
             </article>
           ))}
         </div>
 
         <div className="mt-10">
-          <Button label="See all services" variant="secondary" href="/services" />
+          <Button label={tHome('see_all')} variant="secondary" href="/services" />
         </div>
       </div>
     </section>

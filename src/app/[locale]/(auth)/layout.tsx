@@ -1,6 +1,6 @@
 'use client';
 
-import { enUS, frFR } from '@clerk/localizations';
+import { enUS } from '@clerk/localizations';
 import { ClerkProvider } from '@clerk/nextjs';
 import { use } from 'react';
 
@@ -17,8 +17,9 @@ export default function AuthLayout(props: {
   let dashboardUrl = '/dashboard';
   let afterSignOutUrl = '/';
 
-  if (params.locale === 'fr') {
-    clerkLocale = frFR;
+  if (params.locale === 'vi') {
+    // Clerk has no dedicated Vietnamese pack in this version; keep English UI for auth.
+    clerkLocale = enUS;
   }
 
   if (params.locale !== AppConfig.defaultLocale) {

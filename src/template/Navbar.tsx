@@ -6,13 +6,14 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 
+import { LocaleSwitcher } from '@/components/LocaleSwitcher';
 import { ThemeToggle } from '@/components/ThemeToggle';
 
 import { Logo } from './Logo';
 
 const navItems = [
   { href: '/services', key: 'Services' as const },
-  { href: '/#products', label: 'Products' },
+  { href: '/#products', key: 'Products' as const },
   { href: '/howwework', key: 'How_We_Work' as const },
   { href: '/project', key: 'Our_Projects' as const },
   { href: '/aboutus', key: 'About_Us' as const },
@@ -35,17 +36,19 @@ export const Navbar = () => {
               href={item.href}
               className="text-sm font-medium text-[var(--ht-muted)] no-underline transition-colors hover:text-[var(--ht-ink)]"
             >
-              {'label' in item ? item.label : t(item.key)}
+              {t(item.key)}
             </Link>
           ))}
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
+          <LocaleSwitcher />
           <ThemeToggle />
           <Button label={t('cta')} variant="primary" size="md" href="/contacts" />
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">
+          <LocaleSwitcher />
           <ThemeToggle />
           <button
             type="button"
@@ -74,7 +77,7 @@ export const Navbar = () => {
                 className="text-base font-medium text-[var(--ht-ink)] no-underline"
                 onClick={() => setOpen(false)}
               >
-                {'label' in item ? item.label : t(item.key)}
+                {t(item.key)}
               </Link>
             ))}
             <HStack gap={2}>
