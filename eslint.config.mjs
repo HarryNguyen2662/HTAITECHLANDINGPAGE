@@ -31,6 +31,10 @@ export default antfu({
     'src/styles/astryx-theme/htaitech.js',
     'src/styles/astryx-theme/htaitech.d.ts',
     'src/styles/astryx-theme/htaitech.variants.d.ts',
+    'src/styles/farble-theme/theme.css',
+    'src/styles/farble-theme/farble.js',
+    'src/styles/farble-theme/farble.d.ts',
+    'src/styles/farble-theme/farble.variants.d.ts',
   ],
 }, ...tailwind.configs['flat/recommended'], jsxA11y.flatConfigs.recommended, {
   plugins: {
