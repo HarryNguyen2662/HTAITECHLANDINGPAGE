@@ -1,93 +1,93 @@
 {
   "Index": {
-    "meta_title": "H&T AI TECH — AI Engineering Studio",
-    "meta_description": "Senior AI engineers who embed with your team, ship into your repo, and deliver production AI your operators can run."
+    "meta_title": "H&T AI TECH — AI & Software for Real Operations",
+    "meta_description": "H&T AI TECH designs and delivers AI systems, custom software, and engineering teams for enterprises and smart-city programs in Vietnam and beyond."
   },
   "Navbar": {
     "Services": "Services",
-    "How_We_Work": "How it works",
+    "How_We_Work": "Approach",
     "Our_Projects": "Work",
     "About_Us": "About",
     "Contact": "Contact",
-    "cta": "Book a call"
+    "cta": "Get in touch"
   },
   "Hero": {
     "brand": "H&T AI TECH",
-    "title": "AI Engineering Studio for your next growth stage",
-    "description": "Senior engineers work with your roadmap, systems, and data to ship useful AI features your team can run — not demos that die after the pitch.",
-    "primary_button": "Book a 30-min call",
-    "secondary_button": "Hire AI engineers"
+    "title": "Build AI that holds up in real operations",
+    "description": "We help companies and cities turn ideas into working software — computer vision, machine learning, and dedicated engineering teams based in Da Nang.",
+    "primary_button": "Talk with us",
+    "secondary_button": "Browse services"
   },
   "Proof": {
-    "eyebrow": "Signals you can inspect before a call",
-    "item1_label": "Focus",
-    "item1_value": "Production AI",
-    "item2_label": "Model",
-    "item2_value": "Embedded seniors",
-    "item3_label": "Base",
-    "item3_value": "Da Nang · Vietnam",
-    "item4_label": "Delivery",
-    "item4_value": "Repo + rituals"
+    "eyebrow": "At a glance",
+    "item1_label": "Specialty",
+    "item1_value": "Applied AI & CV",
+    "item2_label": "Engagement",
+    "item2_value": "Teams & products",
+    "item3_label": "Location",
+    "item3_value": "Da Nang, Vietnam",
+    "item4_label": "Focus",
+    "item4_value": "Live systems"
   },
   "HomeServices": {
     "eyebrow": "Services",
-    "title": "How teams work with us",
-    "description": "Pick the lane that matches delivery risk. We staff and ship against it."
+    "title": "Ways we partner with you",
+    "description": "Whether you need specialists on your team or a full build from H&T, we keep scope clear and delivery accountable."
   },
   "DeliveryProof": {
-    "eyebrow": "Delivery proof",
-    "title": "What has to exist before an AI system ships",
-    "item1_title": "Workflow map before model choice",
-    "item1_description": "User decision, data path, approval point, and failure mode are explicit before implementation expands.",
-    "item2_title": "Eval set and acceptance checks",
-    "item2_description": "The first release has known quality signals instead of demo-only confidence.",
-    "item3_title": "Guardrails and rollback paths",
-    "item3_description": "Human review, permissions, logging, and fallback behavior are treated as launch scope.",
-    "item4_title": "Operational metrics after launch",
-    "item4_description": "Adoption, reliability, latency, cost, and value stay visible after the system ships."
+    "eyebrow": "How we ship",
+    "title": "Quality gates we use on every AI release",
+    "item1_title": "Map the workflow first",
+    "item1_description": "We document decisions, data paths, and failure cases before choosing models or writing production code.",
+    "item2_title": "Define success metrics early",
+    "item2_description": "Accuracy, latency, and acceptance criteria are agreed up front so progress is measurable.",
+    "item3_title": "Plan for safe rollout",
+    "item3_description": "Permissions, human review, logging, and fallbacks are part of the launch plan — not extras.",
+    "item4_title": "Watch the system after go-live",
+    "item4_description": "We track reliability, cost, and usage so improvements stay grounded in real performance."
   },
   "CTA": {
-    "eyebrow": "Start here",
-    "title": "Bring the pilot, risk, and business goal",
-    "description": "A senior operator will help decide whether the next step is a production AI sprint, an embedded engineer, an audit, or no-build advice.",
-    "button_text": "Talk to H&T AI TECH",
-    "secondary_button": "Explore services"
+    "eyebrow": "Next step",
+    "title": "Tell us what you want to build",
+    "description": "Share your goals, timeline, and constraints. We will recommend a team, a product sprint, or a discovery workshop.",
+    "button_text": "Contact H&T AI TECH",
+    "secondary_button": "View services"
   },
   "HeroService": {
     "eyebrow": "Services",
-    "title": "AI-native engineering capacity for production systems",
-    "description": "From embedded AI engineers to scoped product builds, agentic systems, data platforms, and cloud foundations — choose for shipped output."
+    "title": "AI, software, and teams for ambitious products",
+    "description": "From staffed engineering squads to computer vision platforms and cloud foundations — choose the engagement that fits your roadmap."
   },
   "HowweworkService": {
-    "eyebrow": "How it works",
-    "title": "How an embedded AI engineer starts producing signal",
-    "description": "Clear operating ownership, short ramp, and capacity that scales only when the loop is working."
+    "eyebrow": "Approach",
+    "title": "A practical path from kickoff to first release",
+    "description": "We start with clarity, staff the right specialists, and expand only when delivery is already working."
   },
   "ServicesCatalog": {
     "hire_tag": "TEAM",
-    "hire_title": "Hire AI Engineers",
-    "hire_description": "Add senior AI engineers who work in your repo and own production outcomes.",
-    "product_tag": "PRODUCT",
-    "product_title": "AI Product Development",
-    "product_description": "Turn your AI pilot into software customers actually use — shipped and reliable.",
-    "agentic_tag": "METHOD",
-    "agentic_title": "Agentic Development",
-    "agentic_description": "Embed multi-agent AI into your real product, with evals and review built in.",
+    "hire_title": "Engineering team extension",
+    "hire_description": "Place experienced developers, AI specialists, and QA into your existing workflow with clear ownership.",
+    "product_tag": "BUILD",
+    "product_title": "End-to-end AI product builds",
+    "product_description": "Take a concept or pilot and turn it into software your users and operators can rely on every day.",
+    "agentic_tag": "AGENTS",
+    "agentic_title": "Multi-agent automation",
+    "agentic_description": "Design agent workflows with tool use, review steps, and monitoring for real business processes.",
     "cloud_tag": "CLOUD",
-    "cloud_title": "Cloud Transformation",
-    "cloud_description": "Modernize your cloud and data foundation so it is ready for reliable AI.",
+    "cloud_title": "Cloud & platform modernization",
+    "cloud_description": "Strengthen infrastructure, data pipelines, and deployment practices so AI workloads stay stable.",
     "data_tag": "DATA",
-    "data_title": "AI Data Platforms",
-    "data_description": "Permissions, semantic layers, retrieval, pipelines, and reporting that make AI useful against production data.",
-    "ux_tag": "UX",
-    "ux_title": "AI Product UX",
-    "ux_description": "Streaming interfaces, review flows, dashboards, and internal tools operators can trust daily.",
+    "data_title": "Data platforms for AI",
+    "data_description": "Build retrieval, pipelines, and reporting layers that keep models connected to trustworthy data.",
+    "ux_tag": "INTERFACE",
+    "ux_title": "AI-ready product interfaces",
+    "ux_description": "Create dashboards, review screens, and operator tools that make AI outputs easy to trust and act on.",
     "vision_tag": "VISION",
-    "vision_title": "Computer Vision Systems",
-    "vision_description": "Field-ready detection and inspection systems with measurable accuracy and operating constraints.",
+    "vision_title": "Computer vision systems",
+    "vision_description": "Deploy detection and inspection models for safety, logistics, and smart-city monitoring.",
     "ml_tag": "ML",
-    "ml_title": "Machine Learning Services",
-    "ml_description": "Custom ML implementations with training loops, evaluation, and handover your team can run."
+    "ml_title": "Custom machine learning",
+    "ml_description": "Train, evaluate, and operate models tailored to your domain — with handover your team can maintain."
   },
   "ProtectFallback": {
     "not_enough_permission": "You do not have the permissions to perform this action"

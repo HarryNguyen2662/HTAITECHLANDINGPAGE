@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, unstable_setRequestLocale } from 'next-intl/server';
 
-import { AstryxProviders } from '@/components/AstryxProviders';
+import { AppProviders } from '@/components/AppProviders';
 import { AllLocales } from '@/utils/AppConfig';
 
 export const metadata: Metadata = {
@@ -46,16 +46,16 @@ export default async function RootLayout(props: {
   const messages = await getMessages();
 
   return (
-    <html lang={params.locale} className="dark" style={{ colorScheme: 'dark' }} suppressHydrationWarning>
+    <html lang={params.locale} suppressHydrationWarning>
       <body className="antialiased" suppressHydrationWarning>
-        <AstryxProviders>
+        <AppProviders>
           <NextIntlClientProvider
             locale={params.locale}
             messages={messages}
           >
             {props.children}
           </NextIntlClientProvider>
-        </AstryxProviders>
+        </AppProviders>
       </body>
     </html>
   );
