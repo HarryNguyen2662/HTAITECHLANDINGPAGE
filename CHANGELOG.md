@@ -1,3 +1,19 @@
+# [1.1.0](https://github.com/HarryNguyen2662/HTAITECHLANDINGPAGE/compare/v1.0.0...v1.1.0) (2026-07-10)
+
+
+### Bug Fixes
+
+* finish Next 15 async params and build compatibility ([23749c6](https://github.com/HarryNguyen2662/HTAITECHLANDINGPAGE/commit/23749c6b3139185478021c31c058abf1abc08e66))
+* migrate remaining pages to Next 15 async params ([2058ef7](https://github.com/HarryNguyen2662/HTAITECHLANDINGPAGE/commit/2058ef7c3aea0cbb1b955f5711e75afaa0db17e0))
+* resolve Netlify npm peer dependency install failure ([de1baab](https://github.com/HarryNguyen2662/HTAITECHLANDINGPAGE/commit/de1baab1186d3c460c31c1a2f44db5736fe139f5))
+
+
+### Features
+
+* fix the error sending email function ([2bf73f9](https://github.com/HarryNguyen2662/HTAITECHLANDINGPAGE/commit/2bf73f9402221b67c6223d4488bd12e472a68f01))
+* rebuild H&T marketing site with Astryx ([2e110e4](https://github.com/HarryNguyen2662/HTAITECHLANDINGPAGE/commit/2e110e432da0d8e9ff8b7b993379e40697117213))
+* update sending email function for contact page ([47bd9e9](https://github.com/HarryNguyen2662/HTAITECHLANDINGPAGE/commit/47bd9e972c589193507875dee4e9d03a1bce8780))
+
 # [1.1.0](https://github.com/HarryNguyen2662/HTAITECHLANDINGPAGE/compare/v1.0.0...v1.1.0) (2025-08-15)
 
 
