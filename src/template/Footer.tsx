@@ -14,6 +14,14 @@ const serviceLinks = [
   { href: '/services', label: 'Computer Vision' },
 ];
 
+const productLinks = [
+  { href: '/project', label: 'HelmetGuard' },
+  { href: '/project', label: 'ContainerScan' },
+  { href: '/project', label: 'TrafficEnforce' },
+  { href: '/project', label: 'Tic Tac Toe AI' },
+  { href: '/#building-now', label: 'Building now' },
+];
+
 const companyLinks = [
   { href: '/howwework', label: 'How it works' },
   { href: '/project', label: 'Work' },
@@ -25,7 +33,7 @@ export const Footer = () => {
   return (
     <footer className="border-t border-[var(--ht-line)] bg-[var(--ht-bg)]">
       <div className="ht-container py-16">
-        <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr_1fr]">
+        <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div className="space-y-5">
             <Logo />
             <p className="max-w-sm text-[var(--ht-muted)]">
@@ -52,6 +60,24 @@ export const Footer = () => {
             </p>
             <ul className="space-y-3">
               {serviceLinks.map(link => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-[var(--ht-muted)] no-underline transition-colors hover:text-[var(--ht-ink)]"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--ht-faint)]">
+              Products
+            </p>
+            <ul className="space-y-3">
+              {productLinks.map(link => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
