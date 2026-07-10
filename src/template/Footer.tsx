@@ -6,12 +6,12 @@ import Link from 'next/link';
 import { Logo } from './Logo';
 
 const serviceLinks = [
-  { href: '/services', label: 'Hire AI Engineers' },
-  { href: '/services', label: 'AI Product Development' },
-  { href: '/services', label: 'Agentic Development' },
-  { href: '/services', label: 'Cloud Transformation' },
-  { href: '/services', label: 'AI Data Platforms' },
-  { href: '/services', label: 'Computer Vision' },
+  { href: '/services', label: 'Team extension' },
+  { href: '/services', label: 'AI product builds' },
+  { href: '/services', label: 'Multi-agent automation' },
+  { href: '/services', label: 'Cloud modernization' },
+  { href: '/services', label: 'Data platforms' },
+  { href: '/services', label: 'Computer vision' },
 ];
 
 const productLinks = [
@@ -19,11 +19,11 @@ const productLinks = [
   { href: '/project', label: 'ContainerScan' },
   { href: '/project', label: 'TrafficEnforce' },
   { href: '/project', label: 'Tic Tac Toe AI' },
-  { href: '/#building-now', label: 'Building now' },
+  { href: '/#building-now', label: 'In progress' },
 ];
 
 const companyLinks = [
-  { href: '/howwework', label: 'How it works' },
+  { href: '/howwework', label: 'Approach' },
   { href: '/project', label: 'Work' },
   { href: '/aboutus', label: 'About' },
   { href: '/contacts', label: 'Contact' },
@@ -37,8 +37,8 @@ export const Footer = () => {
           <div className="space-y-5">
             <Logo />
             <p className="max-w-sm text-[var(--ht-muted)]">
-              AI-native engineering studio. Production AI for products, operations,
-              and smart-city systems — shipped into your repo.
+              H&T AI TECH builds applied AI, computer vision, and custom software
+              for enterprises and smart-city programs from Da Nang, Vietnam.
             </p>
             <a
               href="mailto:tainguyenhuu@htaitech.net"
@@ -51,7 +51,7 @@ export const Footer = () => {
               <br />
               123 Ly Dao Thanh, An Hai Bac, Son Tra
             </p>
-            <Button label="Book a call" variant="secondary" href="/contacts" />
+            <Button label="Get in touch" variant="secondary" href="/contacts" />
           </div>
 
           <div>
@@ -106,9 +106,6 @@ export const Footer = () => {
                 </li>
               ))}
             </ul>
-            <p className="mt-8 text-xs uppercase tracking-[0.14em] text-[var(--ht-accent)]">
-              SYS.STATUS · OPERATIONAL
-            </p>
           </div>
         </div>
 

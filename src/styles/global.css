@@ -8,6 +8,41 @@
 
 @layer base {
   :root {
+    --background: 210 20% 98%;
+    --foreground: 222 22% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 22% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 22% 12%;
+    --primary: 222 22% 12%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 210 16% 94%;
+    --secondary-foreground: 222 22% 12%;
+    --muted: 210 16% 94%;
+    --muted-foreground: 215 12% 40%;
+    --accent: 210 16% 92%;
+    --accent-foreground: 222 22% 12%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 16% 88%;
+    --input: 214 16% 88%;
+    --ring: 222 22% 12%;
+    --radius: 0.375rem;
+
+    --ht-bg: #f7f8fa;
+    --ht-bg-elevated: #ffffff;
+    --ht-bg-soft: #eef1f5;
+    --ht-ink: #12161c;
+    --ht-muted: #4b5563;
+    --ht-faint: #6b7280;
+    --ht-line: #d9dee7;
+    --ht-line-strong: #b8c0cc;
+    --ht-accent: #0f766e;
+    --ht-accent-text: #ffffff;
+    --ht-warn: #b45309;
+  }
+
+  .dark {
     --background: 220 16% 6%;
     --foreground: 210 20% 98%;
     --card: 220 14% 9%;
@@ -27,7 +62,6 @@
     --border: 220 10% 20%;
     --input: 220 10% 20%;
     --ring: 210 20% 90%;
-    --radius: 0.375rem;
 
     --ht-bg: #0b0d10;
     --ht-bg-elevated: #12151a;
@@ -37,19 +71,23 @@
     --ht-faint: #7b8494;
     --ht-line: #2a303a;
     --ht-line-strong: #3a4250;
-    --ht-accent: #6ee7b7;
-    --ht-accent-text: #0b0d10;
+    --ht-accent: #2dd4bf;
+    --ht-accent-text: #042f2e;
     --ht-warn: #fbbf24;
   }
 
   html {
-    color-scheme: dark;
+    color-scheme: light;
     scroll-behavior: smooth;
   }
 
+  html.dark {
+    color-scheme: dark;
+  }
+
   body {
-    background: radial-gradient(900px 480px at 12% -8%, rgba(110, 231, 183, 0.08), transparent 55%),
-      radial-gradient(700px 420px at 88% 0%, rgba(148, 163, 184, 0.06), transparent 50%), var(--ht-bg);
+    background: radial-gradient(900px 480px at 12% -8%, rgba(15, 118, 110, 0.08), transparent 55%),
+      radial-gradient(700px 420px at 88% 0%, rgba(15, 23, 42, 0.04), transparent 50%), var(--ht-bg);
     color: var(--ht-ink);
     font-family:
       ui-sans-serif,
@@ -59,12 +97,22 @@
       sans-serif;
   }
 
+  html.dark body {
+    background: radial-gradient(900px 480px at 12% -8%, rgba(45, 212, 191, 0.08), transparent 55%),
+      radial-gradient(700px 420px at 88% 0%, rgba(148, 163, 184, 0.06), transparent 50%), var(--ht-bg);
+  }
+
   * {
     @apply border-border;
   }
 
   ::selection {
-    background: rgba(110, 231, 183, 0.28);
+    background: rgba(15, 118, 110, 0.22);
+    color: inherit;
+  }
+
+  html.dark ::selection {
+    background: rgba(45, 212, 191, 0.28);
     color: #fff;
   }
 }
@@ -132,7 +180,6 @@
   }
 }
 
-/* Ensure Astryx controls stay readable on our dark marketing chrome */
 .astryx-button[data-variant='primary'] {
   background: var(--ht-accent) !important;
   color: var(--ht-accent-text) !important;

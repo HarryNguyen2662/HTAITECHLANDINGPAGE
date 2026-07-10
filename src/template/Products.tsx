@@ -9,8 +9,8 @@ const shippedProducts = [
     name: 'HelmetGuard',
     category: 'Workplace safety',
     description:
-      'YOLOv8 helmet and head detection for construction sites — 92% accuracy, real-time video, field-ready handover.',
-    status: 'Shipped',
+      'Detects helmets and heads on construction sites with YOLOv8 — about 92% accuracy in live video streams.',
+    status: 'Live',
     href: '/project#projects',
   },
   {
@@ -18,8 +18,8 @@ const shippedProducts = [
     name: 'ContainerScan',
     category: 'Logistics inspection',
     description:
-      'Computer vision and 3D AI for container damage inspection — cuts wait time, automates EIR, 2mm precision.',
-    status: 'Shipped',
+      'Finds container damage with computer vision and 3D scanning — faster inspections and automated reports.',
+    status: 'Live',
     href: '/project#projects',
   },
   {
@@ -27,16 +27,16 @@ const shippedProducts = [
     name: 'TrafficEnforce',
     category: 'Smart city',
     description:
-      'Real-time traffic violation detection trained on Vietnamese data — multi-camera fusion, edge-cloud hybrid.',
-    status: 'Shipped',
+      'Flags traffic violations in real time using models trained on Vietnamese road data and multi-camera setups.',
+    status: 'Live',
     href: '/project#projects',
   },
   {
-    tag: 'PRODUCT',
+    tag: 'APP',
     name: 'Tic Tac Toe AI',
     category: 'Consumer · 1M+ downloads',
     description:
-      'Cross-platform game with advanced AI opponents, 5-in-a-row mode, and multiplayer — live on App Store and Google Play.',
+      'A cross-platform game with strong AI opponents, 5-in-a-row mode, and multiplayer on iOS and Android.',
     status: 'Live',
     href: '/project#projects',
   },
@@ -48,38 +48,38 @@ const buildingNow = [
     name: 'Traffic Simulation Platform',
     category: 'Training · Education',
     description:
-      'AI-powered traffic law training with evaluation, real-time feedback, video guides, and mobile apps.',
-    next: 'Expand scenario packs and AI scoring coverage',
+      'An AI-assisted platform for traffic-law practice with scoring, feedback, and mobile learning materials.',
+    next: 'More scenario packs and richer AI scoring',
   },
   {
     tag: 'IN PROGRESS',
     name: 'Smart City Vision Suite',
     category: 'Platform',
     description:
-      'Unifying helmet, container, and traffic models into one deployable vision stack with shared evals and ops metrics.',
-    next: 'Shared model registry, edge packaging, operator dashboards',
+      'Combining helmet, container, and traffic models into one deployable vision stack with shared monitoring.',
+    next: 'Shared model registry and operator dashboards',
   },
   {
     tag: 'IN PROGRESS',
-    name: 'Agentic Ops Copilot',
+    name: 'Operations Copilot',
     category: 'Internal tools',
     description:
-      'Multi-agent workflows for inspection review, violation triage, and human handoff — eval loops before wider release.',
-    next: 'Pilot with field operators, harden guardrails',
+      'Agent-assisted review for inspections and violation triage, with human approval before actions go out.',
+    next: 'Field pilot and stronger safety checks',
   },
 ];
 
 export const Products = () => {
   return (
     <>
-      <section id="products" className="ht-section border-y border-[var(--ht-line)] bg-[var(--ht-bg-elevated)]">
+      <section id="products" className="ht-section border-y border-[var(--ht-line)] bg-[var(--ht-bg-soft)]">
         <div className="ht-container">
           <div className="mb-12 max-w-2xl">
             <p className="ht-eyebrow mb-3">Products</p>
-            <h2 className="ht-title mb-4">Products we build</h2>
+            <h2 className="ht-title mb-4">Products from H&T AI TECH</h2>
             <p className="ht-lede">
-              AI products and field systems H&T AI TECH ships and operates —
-              inspectable before the first scoping call.
+              Software and AI systems we design, ship, and support — from smart-city
+              vision to consumer apps.
             </p>
           </div>
 
@@ -106,7 +106,7 @@ export const Products = () => {
                   href={product.href}
                   className="text-sm font-medium text-[var(--ht-ink)] no-underline hover:text-[var(--ht-accent)]"
                 >
-                  View details →
+                  See details →
                 </Link>
               </article>
             ))}
@@ -117,10 +117,11 @@ export const Products = () => {
       <section id="building-now" className="ht-section">
         <div className="ht-container">
           <div className="mb-12 max-w-2xl">
-            <p className="ht-eyebrow mb-3">Building now</p>
-            <h2 className="ht-title mb-4">What we are shipping next</h2>
+            <p className="ht-eyebrow mb-3">In progress</p>
+            <h2 className="ht-title mb-4">What our product teams are building now</h2>
             <p className="ht-lede">
-              Active product work — clear next milestones, not vague roadmaps.
+              Active initiatives with concrete next steps — so you can see where
+              H&T is investing today.
             </p>
           </div>
 
@@ -153,7 +154,7 @@ export const Products = () => {
           </div>
 
           <div className="mt-10">
-            <Button label="Explore all work" variant="secondary" href="/project" />
+            <Button label="Browse all work" variant="secondary" href="/project" />
           </div>
         </div>
       </section>

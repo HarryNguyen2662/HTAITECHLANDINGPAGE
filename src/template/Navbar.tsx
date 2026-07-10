@@ -6,6 +6,8 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 
+import { ThemeToggle } from '@/components/ThemeToggle';
+
 import { Logo } from './Logo';
 
 const navItems = [
@@ -38,24 +40,28 @@ export const Navbar = () => {
           ))}
         </nav>
 
-        <div className="hidden lg:block">
+        <div className="hidden items-center gap-3 lg:flex">
+          <ThemeToggle />
           <Button label={t('cta')} variant="primary" size="md" href="/contacts" />
         </div>
 
-        <button
-          type="button"
-          className="inline-flex size-10 items-center justify-center rounded-md border border-[var(--ht-line)] text-[var(--ht-ink)] lg:hidden"
-          aria-label={open ? 'Close menu' : 'Open menu'}
-          aria-expanded={open}
-          onClick={() => setOpen(v => !v)}
-        >
-          <span className="sr-only">Menu</span>
-          <div className="flex flex-col gap-1.5">
-            <span className={`block h-0.5 w-5 bg-current transition ${open ? 'translate-y-2 rotate-45' : ''}`} />
-            <span className={`block h-0.5 w-5 bg-current transition ${open ? 'opacity-0' : ''}`} />
-            <span className={`block h-0.5 w-5 bg-current transition ${open ? '-translate-y-2 -rotate-45' : ''}`} />
-          </div>
-        </button>
+        <div className="flex items-center gap-2 lg:hidden">
+          <ThemeToggle />
+          <button
+            type="button"
+            className="inline-flex size-10 items-center justify-center rounded-md border border-[var(--ht-line)] text-[var(--ht-ink)]"
+            aria-label={open ? 'Close menu' : 'Open menu'}
+            aria-expanded={open}
+            onClick={() => setOpen(v => !v)}
+          >
+            <span className="sr-only">Menu</span>
+            <div className="flex flex-col gap-1.5">
+              <span className={`block h-0.5 w-5 bg-current transition ${open ? 'translate-y-2 rotate-45' : ''}`} />
+              <span className={`block h-0.5 w-5 bg-current transition ${open ? 'opacity-0' : ''}`} />
+              <span className={`block h-0.5 w-5 bg-current transition ${open ? '-translate-y-2 -rotate-45' : ''}`} />
+            </div>
+          </button>
+        </div>
       </div>
 
       {open && (

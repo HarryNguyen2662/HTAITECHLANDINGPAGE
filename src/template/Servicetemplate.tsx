@@ -40,7 +40,7 @@ export const Servicestemplate = () => {
                   </span>
                 ))}
               </div>
-              <Button label="Talk to us" variant="secondary" href="/contacts" />
+              <Button label="Contact us" variant="secondary" href="/contacts" />
             </article>
           ))}
         </div>

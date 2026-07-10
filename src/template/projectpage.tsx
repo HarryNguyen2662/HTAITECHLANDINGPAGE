@@ -24,10 +24,10 @@ export const ProjectsShowcase = memo(() => {
         <div className="ht-container space-y-16">
           <div>
             <p className="ht-eyebrow mb-3">Case studies</p>
-            <h2 className="ht-title mb-4">Systems already in production</h2>
+            <h2 className="ht-title mb-4">Projects already serving users</h2>
             <p className="ht-lede">
-              Computer vision and enforcement systems trained for real operating
-              conditions — with evals, metrics, and field constraints.
+              Vision and product systems trained for real sites, roads, and devices —
+              with accuracy and performance you can review.
             </p>
           </div>
 
@@ -50,11 +50,11 @@ export const ProjectsShowcase = memo(() => {
           </div>
 
           <div className="ht-panel bg-[var(--ht-bg-soft)] px-8 py-12 sm:px-12">
-            <h2 className="ht-title mb-4">Innovate with our AI solutions</h2>
+            <h2 className="ht-title mb-4">Want something similar for your organization?</h2>
             <p className="mb-8 max-w-2xl text-[var(--ht-muted)]">
-              Explore collaboration for smart-city, operations, or educational AI projects.
+              We can adapt these systems for your sites, cities, or product roadmap.
             </p>
-            <Button label="Request project demo" variant="primary" size="lg" href="/contacts" />
+            <Button label="Request a project demo" variant="primary" size="lg" href="/contacts" />
           </div>
         </div>
       </section>

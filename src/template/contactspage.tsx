@@ -14,14 +14,14 @@ export type ContactFormData = {
 };
 
 const services = [
-  'Hire AI Engineers',
-  'AI Product Development',
-  'Agentic Development',
-  'Cloud Transformation',
-  'AI Data Platforms',
-  'AI Product UX',
-  'Computer Vision Systems',
-  'Machine Learning Services',
+  'Engineering team extension',
+  'End-to-end AI product build',
+  'Multi-agent automation',
+  'Cloud & platform modernization',
+  'Data platforms for AI',
+  'AI-ready product interfaces',
+  'Computer vision systems',
+  'Custom machine learning',
   'Other',
 ];
 
@@ -77,11 +77,10 @@ export const ContactForm = () => {
         <div className="ht-container py-20 sm:py-28">
           <div className="ht-fade-up max-w-3xl">
             <p className="ht-eyebrow mb-4">Contact</p>
-            <h1 className="ht-display mb-6">Talk to a senior operator before you hire</h1>
+            <h1 className="ht-display mb-6">Let&apos;s discuss your next AI or software project</h1>
             <p className="ht-lede">
-              Bring the role, roadmap, repo context, and risks. We will help decide
-              whether you need one engineer, a small squad, a scoped product sprint,
-              or an audit first.
+              Share your goals, timeline, and constraints. We will help you choose
+              a team engagement, a product build, or a short discovery workshop.
             </p>
           </div>
         </div>

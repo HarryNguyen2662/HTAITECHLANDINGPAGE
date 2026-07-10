@@ -10,15 +10,15 @@ export const ProjectHero = () => {
         <div className="ht-fade-up max-w-3xl">
           <p className="ht-eyebrow mb-4">Work</p>
           <h1 className="ht-display mb-6">
-            Production AI systems for smart cities and operations
+            AI systems for cities, logistics, and everyday products
           </h1>
           <p className="ht-lede mb-8">
-            Field-deployed computer vision and enforcement systems with measurable
-            accuracy, operating constraints, and handover your team can run.
+            Explore computer vision deployments, training platforms, and consumer
+            apps built by H&T AI TECH — with metrics from real operating conditions.
           </p>
           <HStack gap={3} wrap="wrap">
-            <Button label="Explore projects" variant="primary" size="lg" href="#projects" />
-            <Button label="Request demo" variant="secondary" size="lg" href="/contacts" />
+            <Button label="View projects" variant="primary" size="lg" href="#projects" />
+            <Button label="Request a demo" variant="secondary" size="lg" href="/contacts" />
           </HStack>
         </div>
       </div>
