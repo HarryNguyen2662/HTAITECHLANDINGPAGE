@@ -11,6 +11,26 @@
 ### Features
 
 * add Products and Building now sections on home ([3354edc](https://github.com/HarryNguyen2662/HTAITECHLANDINGPAGE/commit/3354edc5d52da6d78dedbda5872a9955e3a710f5))
+* add Vietnamese/English i18n with Vietnamese default ([8cacbf6](https://github.com/HarryNguyen2662/HTAITECHLANDINGPAGE/commit/8cacbf62204398731165f979be6ecc5e3834272e))
+* fix the error sending email function ([2bf73f9](https://github.com/HarryNguyen2662/HTAITECHLANDINGPAGE/commit/2bf73f9402221b67c6223d4488bd12e472a68f01))
+* original H&T copy and light/dark theme (default light) ([18ac8a6](https://github.com/HarryNguyen2662/HTAITECHLANDINGPAGE/commit/18ac8a66b052ed71c6eaef093f7247bca090d2ad))
+* rebuild H&T marketing site with Astryx ([2e110e4](https://github.com/HarryNguyen2662/HTAITECHLANDINGPAGE/commit/2e110e432da0d8e9ff8b7b993379e40697117213))
+* rebuild site as AI engineering studio with CoderPush-style UI ([81587ce](https://github.com/HarryNguyen2662/HTAITECHLANDINGPAGE/commit/81587ceece3e65323e616129f3488139d2bf3226))
+* update sending email function for contact page ([47bd9e9](https://github.com/HarryNguyen2662/HTAITECHLANDINGPAGE/commit/47bd9e972c589193507875dee4e9d03a1bce8780))
+
+# [1.1.0](https://github.com/HarryNguyen2662/HTAITECHLANDINGPAGE/compare/v1.0.0...v1.1.0) (2026-07-10)
+
+
+### Bug Fixes
+
+* finish Next 15 async params and build compatibility ([23749c6](https://github.com/HarryNguyen2662/HTAITECHLANDINGPAGE/commit/23749c6b3139185478021c31c058abf1abc08e66))
+* migrate remaining pages to Next 15 async params ([2058ef7](https://github.com/HarryNguyen2662/HTAITECHLANDINGPAGE/commit/2058ef7c3aea0cbb1b955f5711e75afaa0db17e0))
+* resolve Netlify npm peer dependency install failure ([de1baab](https://github.com/HarryNguyen2662/HTAITECHLANDINGPAGE/commit/de1baab1186d3c460c31c1a2f44db5736fe139f5))
+
+
+### Features
+
+* add Products and Building now sections on home ([3354edc](https://github.com/HarryNguyen2662/HTAITECHLANDINGPAGE/commit/3354edc5d52da6d78dedbda5872a9955e3a710f5))
 * fix the error sending email function ([2bf73f9](https://github.com/HarryNguyen2662/HTAITECHLANDINGPAGE/commit/2bf73f9402221b67c6223d4488bd12e472a68f01))
 * original H&T copy and light/dark theme (default light) ([18ac8a6](https://github.com/HarryNguyen2662/HTAITECHLANDINGPAGE/commit/18ac8a66b052ed71c6eaef093f7247bca090d2ad))
 * rebuild H&T marketing site with Astryx ([2e110e4](https://github.com/HarryNguyen2662/HTAITECHLANDINGPAGE/commit/2e110e432da0d8e9ff8b7b993379e40697117213))
