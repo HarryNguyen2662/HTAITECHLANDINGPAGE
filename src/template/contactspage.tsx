@@ -27,27 +27,6 @@ const emptyForm: ContactFormData = {
   website: '',
 };
 
-async function sendViaBrevo(formData: ContactFormData) {
-  const response = await fetch('/api/send-email', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(formData),
-  });
-
-  const contentType = response.headers.get('content-type');
-  let result: { success?: boolean; error?: string } = {};
-  if (contentType && contentType.includes('application/json')) {
-    result = await response.json();
-  } else {
-    const text = await response.text();
-    throw new Error(`Unexpected response: ${text.slice(0, 100)}`);
-  }
-
-  if (!response.ok || !result.success) {
-    throw new Error(result.error || `Server error: ${response.status}`);
-  }
-}
-
 async function sendViaNetlifyForms(
   formData: ContactFormData,
   locale: string,
@@ -97,13 +76,7 @@ export const ContactForm = () => {
         return;
       }
 
-      try {
-        await sendViaBrevo(formData);
-      } catch {
-        // Production on Netlify: Forms works without Brevo.
-        await sendViaNetlifyForms(formData, locale);
-      }
-
+      await sendViaNetlifyForms(formData, locale);
       setSubmitSuccess(true);
       setFormData(emptyForm);
     } catch {

@@ -27,11 +27,6 @@ export default function middleware(
   request: NextRequest,
   event: NextFetchEvent,
 ) {
-  // Bypass middleware for send-email API route so it reaches the endpoint
-  if (request.nextUrl.pathname.includes('/send-email')) {
-    return NextResponse.next();
-  }
-
   if (
     request.nextUrl.pathname.includes('/sign-in')
     || request.nextUrl.pathname.includes('/sign-up')
