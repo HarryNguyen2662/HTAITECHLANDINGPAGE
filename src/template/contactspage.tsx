@@ -1,8 +1,6 @@
 'use client';
 
 import { Button } from '@astryxdesign/core/Button';
-import { TextArea } from '@astryxdesign/core/TextArea';
-import { TextInput } from '@astryxdesign/core/TextInput';
 import { useTranslations } from 'next-intl';
 import React, { useState } from 'react';
 
@@ -15,6 +13,9 @@ export type ContactFormData = {
 };
 
 const serviceKeys = ['s1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 's9'] as const;
+
+const fieldClass
+  = 'ht-contact-field w-full rounded-lg border border-[var(--ht-line)] bg-[var(--ht-bg)] px-4 py-3.5 text-[var(--ht-ink)] outline-none transition-[border-color,box-shadow,background-color] duration-200 placeholder:text-[var(--ht-faint)] focus:border-[var(--ht-accent)] focus:bg-[var(--ht-bg-elevated)] focus:shadow-[0_0_0_3px_rgba(15,118,110,0.12)]';
 
 export const ContactForm = () => {
   const t = useTranslations('ContactPage');
@@ -64,58 +65,115 @@ export const ContactForm = () => {
   };
 
   return (
-    <div>
-      <section className="border-b border-[var(--ht-line)]">
-        <div className="ht-container py-20 sm:py-28">
-          <div className="ht-fade-up max-w-3xl">
-            <p className="ht-eyebrow mb-4">{t('eyebrow')}</p>
-            <h1 className="ht-display mb-6">{t('title')}</h1>
-            <p className="ht-lede">{t('description')}</p>
+    <section className="ht-contact relative overflow-hidden border-b border-[var(--ht-line)]">
+      <div className="ht-contact-glow pointer-events-none absolute inset-0" aria-hidden />
+      <div className="ht-contact-grid pointer-events-none absolute inset-0 opacity-35" aria-hidden />
+
+      <div className="ht-container relative grid min-h-[calc(100vh-5rem)] items-center gap-12 py-16 lg:grid-cols-[1fr_1.05fr] lg:gap-16 lg:py-24">
+        <div className="ht-fade-up max-w-xl">
+          <p className="ht-eyebrow mb-5">{t('brand')}</p>
+          <h1 className="ht-display mb-6">{t('title')}</h1>
+          <p className="ht-lede mb-10">{t('description')}</p>
+
+          <div className="space-y-8 border-t border-[var(--ht-line)] pt-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--ht-faint)]">
+              {t('direct_line')}
+            </p>
+
+            <div className="ht-contact-meta">
+              <p className="ht-eyebrow mb-2">{t('office')}</p>
+              <p className="text-lg font-semibold tracking-tight text-[var(--ht-ink)]">
+                {t('vietnam')}
+              </p>
+              <p className="mt-2 max-w-sm leading-relaxed text-[var(--ht-muted)]">
+                {t('address')}
+              </p>
+            </div>
+
+            <div className="ht-contact-meta" style={{ animationDelay: '120ms' }}>
+              <p className="ht-eyebrow mb-2">{t('email_label')}</p>
+              <a
+                href="mailto:tainguyenhuu@htaitech.net"
+                className="inline-block text-lg font-semibold tracking-tight text-[var(--ht-ink)] no-underline transition-colors duration-200 hover:text-[var(--ht-accent)]"
+              >
+                tainguyenhuu@htaitech.net
+              </a>
+            </div>
           </div>
         </div>
-      </section>
 
-      <section className="ht-section">
-        <div className="ht-container grid gap-12 lg:grid-cols-[1.3fr_0.9fr]">
-          <form onSubmit={handleSubmit} className="ht-panel space-y-5 p-6 sm:p-8">
-            <TextInput
-              label={t('name')}
-              isRequired
-              value={formData.name}
-              changeAction={value => setFormData(prev => ({ ...prev, name: value }))}
-              placeholder={t('name_placeholder')}
-              size="lg"
-            />
-            <TextInput
-              label={t('email')}
-              type="email"
-              isRequired
-              value={formData.email}
-              changeAction={value => setFormData(prev => ({ ...prev, email: value }))}
-              placeholder={t('email_placeholder')}
-              size="lg"
-            />
-            <TextInput
-              label={t('phone')}
-              isRequired
-              value={formData.phone}
-              changeAction={value => setFormData(prev => ({ ...prev, phone: value }))}
-              placeholder={t('phone_placeholder')}
-              size="lg"
-            />
-            <div>
-              <label
-                htmlFor="contact-service"
-                className="mb-2 block text-sm font-medium text-[var(--ht-ink)]"
-              >
-                {t('service')}
-              </label>
-              <select
-                id="contact-service"
+        <form
+          onSubmit={handleSubmit}
+          className="ht-contact-form ht-fade-up bg-[var(--ht-bg-elevated)]/90 relative rounded-2xl border border-[var(--ht-line)] p-6 shadow-[0_24px_60px_-36px_rgba(18,22,28,0.35)] backdrop-blur-sm sm:p-8"
+          style={{ animationDelay: '80ms' }}
+        >
+          <div className="mb-7">
+            <h2 className="ht-title text-[1.75rem] sm:text-[2rem]">{t('form_title')}</h2>
+          </div>
+
+          <div className="grid gap-5 sm:grid-cols-2">
+            <label className="ht-contact-label block sm:col-span-1">
+              <span className="mb-2 block text-sm font-medium text-[var(--ht-ink)]">
+                {t('name')}
+              </span>
+              <input
                 required
+                name="name"
+                autoComplete="name"
+                value={formData.name}
+                onChange={e => setFormData(prev => ({ ...prev, name: e.target.value }))}
+                placeholder={t('name_placeholder')}
+                className={fieldClass}
+              />
+            </label>
+
+            <label className="ht-contact-label block sm:col-span-1">
+              <span className="mb-2 block text-sm font-medium text-[var(--ht-ink)]">
+                {t('email')}
+              </span>
+              <input
+                required
+                type="email"
+                name="email"
+                autoComplete="email"
+                value={formData.email}
+                onChange={e => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                placeholder={t('email_placeholder')}
+                className={fieldClass}
+              />
+            </label>
+
+            <label className="ht-contact-label block sm:col-span-1">
+              <span className="mb-2 block text-sm font-medium text-[var(--ht-ink)]">
+                {t('phone')}
+              </span>
+              <input
+                required
+                type="tel"
+                name="phone"
+                autoComplete="tel"
+                value={formData.phone}
+                onChange={e => setFormData(prev => ({ ...prev, phone: e.target.value }))}
+                placeholder={t('phone_placeholder')}
+                className={fieldClass}
+              />
+            </label>
+
+            <label className="ht-contact-label block sm:col-span-1">
+              <span className="mb-2 block text-sm font-medium text-[var(--ht-ink)]">
+                {t('service')}
+              </span>
+              <select
+                required
+                id="contact-service"
+                name="service"
                 value={formData.service}
                 onChange={e => setFormData(prev => ({ ...prev, service: e.target.value }))}
-                className="w-full rounded-md border border-[var(--ht-line)] bg-[var(--ht-bg)] p-3 text-[var(--ht-ink)] outline-none focus:border-[var(--ht-accent)]"
+                className={`${fieldClass} appearance-none bg-[length:1rem] bg-[right_0.9rem_center] bg-no-repeat pr-10`}
+                style={{
+                  backgroundImage:
+                    'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'16\' height=\'16\' fill=\'none\' stroke=\'%236b7280\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'%3E%3Cpath d=\'m4 6 4 4 4-4\'/%3E%3C/svg%3E")',
+                }}
               >
                 <option value="">{t('service_placeholder')}</option>
                 {serviceKeys.map(key => (
@@ -124,22 +182,36 @@ export const ContactForm = () => {
                   </option>
                 ))}
               </select>
-            </div>
-            <TextArea
-              label={t('message')}
-              isRequired
-              value={formData.message}
-              changeAction={value => setFormData(prev => ({ ...prev, message: value }))}
-              placeholder={t('message_placeholder')}
-              size="lg"
-              rows={5}
-            />
+            </label>
 
-            {submitError && <p className="text-sm text-red-400">{submitError}</p>}
-            {submitSuccess && (
-              <p className="text-sm text-[var(--ht-accent)]">{t('success')}</p>
-            )}
+            <label className="ht-contact-label block sm:col-span-2">
+              <span className="mb-2 block text-sm font-medium text-[var(--ht-ink)]">
+                {t('message')}
+              </span>
+              <textarea
+                required
+                name="message"
+                rows={5}
+                value={formData.message}
+                onChange={e => setFormData(prev => ({ ...prev, message: e.target.value }))}
+                placeholder={t('message_placeholder')}
+                className={`${fieldClass} min-h-[8.5rem] resize-y`}
+              />
+            </label>
+          </div>
 
+          {submitError && (
+            <p className="mt-4 text-sm text-red-600 dark:text-red-400" role="alert">
+              {submitError}
+            </p>
+          )}
+          {submitSuccess && (
+            <p className="mt-4 text-sm font-medium text-[var(--ht-accent)]" role="status">
+              {t('success')}
+            </p>
+          )}
+
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <Button
               label={isSubmitting ? t('sending') : t('send')}
               variant="primary"
@@ -148,28 +220,12 @@ export const ContactForm = () => {
               isLoading={isSubmitting}
               isDisabled={isSubmitting}
             />
-          </form>
-
-          <aside className="space-y-8">
-            <div className="ht-panel p-6">
-              <p className="ht-eyebrow mb-3">{t('office')}</p>
-              <h2 className="mb-3 text-2xl font-semibold text-[var(--ht-ink)]">
-                {t('vietnam')}
-              </h2>
-              <p className="text-[var(--ht-muted)]">{t('address')}</p>
-            </div>
-            <div className="ht-panel p-6">
-              <p className="ht-eyebrow mb-3">{t('email_label')}</p>
-              <a
-                href="mailto:tainguyenhuu@htaitech.net"
-                className="text-lg text-[var(--ht-ink)] no-underline hover:text-[var(--ht-accent)]"
-              >
-                tainguyenhuu@htaitech.net
-              </a>
-            </div>
-          </aside>
-        </div>
-      </section>
-    </div>
+            <p className="text-sm text-[var(--ht-faint)] sm:text-right">
+              {t('response_note')}
+            </p>
+          </div>
+        </form>
+      </div>
+    </section>
   );
 };

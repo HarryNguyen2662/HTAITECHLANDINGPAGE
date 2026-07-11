@@ -1,7 +1,6 @@
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import { ContactForm } from '@/template/contactspage';
-import { CTA } from '@/template/CTA';
 
 export async function generateMetadata(props: {
   params: Promise<{ locale: string }>;
@@ -9,12 +8,12 @@ export async function generateMetadata(props: {
   const params = await props.params;
   const t = await getTranslations({
     locale: params.locale,
-    namespace: 'Index',
+    namespace: 'ContactPage',
   });
 
   return {
-    title: `Contact | ${t('meta_title')}`,
-    description: t('meta_description'),
+    title: `${t('eyebrow')} | H&T AI TECH`,
+    description: t('description'),
   };
 }
 
@@ -24,12 +23,7 @@ const ContactsPage = async (props: {
   const params = await props.params;
   unstable_setRequestLocale(params.locale);
 
-  return (
-    <>
-      <ContactForm />
-      <CTA />
-    </>
-  );
+  return <ContactForm />;
 };
 
 export default ContactsPage;
