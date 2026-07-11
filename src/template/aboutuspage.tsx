@@ -30,6 +30,10 @@ const teamMembers = [
     key: 'tam',
     image: '/assets/images/chutam.png',
   },
+  {
+    key: 'hoan',
+    image: '/assets/images/chuhoan.png',
+  },
 ] as const;
 
 export const AboutUs = () => {
