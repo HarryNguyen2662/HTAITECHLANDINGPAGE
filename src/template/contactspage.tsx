@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '@astryxdesign/core/Button';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import React, { useState } from 'react';
 
 export type ContactFormData = {
@@ -10,6 +10,7 @@ export type ContactFormData = {
   phone: string;
   service: string;
   message: string;
+  website: string;
 };
 
 const serviceKeys = ['s1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 's9'] as const;
@@ -17,15 +18,67 @@ const serviceKeys = ['s1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 's9'] as co
 const fieldClass
   = 'ht-contact-field w-full rounded-lg border border-[var(--ht-line)] bg-[var(--ht-bg)] px-4 py-3.5 text-[var(--ht-ink)] outline-none transition-[border-color,box-shadow,background-color] duration-200 placeholder:text-[var(--ht-faint)] focus:border-[var(--ht-accent)] focus:bg-[var(--ht-bg-elevated)] focus:shadow-[0_0_0_3px_rgba(15,118,110,0.12)]';
 
+const emptyForm: ContactFormData = {
+  name: '',
+  email: '',
+  phone: '',
+  service: '',
+  message: '',
+  website: '',
+};
+
+async function sendViaBrevo(formData: ContactFormData) {
+  const response = await fetch('/api/send-email', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(formData),
+  });
+
+  const contentType = response.headers.get('content-type');
+  let result: { success?: boolean; error?: string } = {};
+  if (contentType && contentType.includes('application/json')) {
+    result = await response.json();
+  } else {
+    const text = await response.text();
+    throw new Error(`Unexpected response: ${text.slice(0, 100)}`);
+  }
+
+  if (!response.ok || !result.success) {
+    throw new Error(result.error || `Server error: ${response.status}`);
+  }
+}
+
+async function sendViaNetlifyForms(
+  formData: ContactFormData,
+  locale: string,
+) {
+  const body = new URLSearchParams({
+    'form-name': 'contact',
+    'bot-field': formData.website,
+    'name': formData.name,
+    'email': formData.email,
+    'phone': formData.phone,
+    'service': formData.service,
+    'message': formData.message,
+    locale,
+  });
+
+  const response = await fetch('/__forms.html', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: body.toString(),
+  });
+
+  // Netlify returns 200 on success. Local/dev without Netlify may 404/405.
+  if (!response.ok) {
+    throw new Error(`Netlify form error: ${response.status}`);
+  }
+}
+
 export const ContactForm = () => {
   const t = useTranslations('ContactPage');
-  const [formData, setFormData] = useState<ContactFormData>({
-    name: '',
-    email: '',
-    phone: '',
-    service: '',
-    message: '',
-  });
+  const locale = useLocale();
+  const [formData, setFormData] = useState<ContactFormData>(emptyForm);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -37,28 +90,24 @@ export const ContactForm = () => {
     setSubmitSuccess(false);
 
     try {
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-      const contentType = response.headers.get('content-type');
-      let result;
-      if (contentType && contentType.includes('application/json')) {
-        result = await response.json();
-      } else {
-        const text = await response.text();
-        throw new Error(`Unexpected response: ${text.slice(0, 100)}`);
+      // Honeypot: pretend success for bots
+      if (formData.website.trim()) {
+        setSubmitSuccess(true);
+        setFormData(emptyForm);
+        return;
       }
 
-      if (!response.ok || !result.success) {
-        throw new Error(result.error || `Server error: ${response.status}`);
+      try {
+        await sendViaBrevo(formData);
+      } catch {
+        // Production on Netlify: Forms works without Brevo.
+        await sendViaNetlifyForms(formData, locale);
       }
 
       setSubmitSuccess(true);
-      setFormData({ name: '', email: '', phone: '', service: '', message: '' });
-    } catch (err) {
-      setSubmitError(err instanceof Error ? err.message : 'Failed to send message');
+      setFormData(emptyForm);
+    } catch {
+      setSubmitError(t('error'));
     } finally {
       setIsSubmitting(false);
     }
@@ -103,10 +152,28 @@ export const ContactForm = () => {
         </div>
 
         <form
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
           onSubmit={handleSubmit}
           className="ht-contact-form ht-fade-up bg-[var(--ht-bg-elevated)]/90 relative rounded-2xl border border-[var(--ht-line)] p-6 shadow-[0_24px_60px_-36px_rgba(18,22,28,0.35)] backdrop-blur-sm sm:p-8"
           style={{ animationDelay: '80ms' }}
         >
+          <input type="hidden" name="form-name" value="contact" />
+          <p className="hidden" aria-hidden>
+            <label>
+              Don’t fill this out:
+              <input
+                name="bot-field"
+                tabIndex={-1}
+                autoComplete="off"
+                value={formData.website}
+                onChange={e => setFormData(prev => ({ ...prev, website: e.target.value }))}
+              />
+            </label>
+          </p>
+
           <div className="mb-7">
             <h2 className="ht-title text-[1.75rem] sm:text-[2rem]">{t('form_title')}</h2>
           </div>

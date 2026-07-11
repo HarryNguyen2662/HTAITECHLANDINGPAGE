@@ -1,0 +1,27 @@
+<html lang="en">
+  <head>
+    <title>H&T AI TECH contact form detection</title>
+  </head>
+  <body>
+    <!--
+      Netlify detects this static form at build time.
+      The React contact page posts to this path at runtime.
+    -->
+    <form
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      netlify-honeypot="bot-field"
+      hidden
+    >
+      <input type="text" name="bot-field" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="phone" />
+      <input type="text" name="service" />
+      <textarea name="message"></textarea>
+      <input type="text" name="locale" />
+    </form>
+  </body>
+</html>
