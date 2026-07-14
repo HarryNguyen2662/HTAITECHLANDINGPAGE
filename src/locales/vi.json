@@ -220,7 +220,7 @@
       "hoan": {
         "name": "TS. Đậu Mạnh Hoàn",
         "role": "Cố vấn · AI & Chuyển đổi số",
-        "bio": "Tiến sĩ Khoa học và Công nghệ Máy tính (Trung Quốc). Chuyên môn phân tích và khai phá dữ liệu, AI và chuyển đổi số. Tập trung triển khai giải pháp chuyển đổi số trong giáo dục và đào tạo; tư vấn doanh nghiệp ứng dụng công nghệ số, AI, dữ liệu lớn, IoT và tự động hóa để tối ưu quản trị, nâng cao hiệu quả vận hành và thúc đẩy đổi mới sáng tạo."
+        "bio": "Chuyên gia về phân tích dữ liệu, AI và chuyển đổi số, với hơn 25 năm kinh nghiệm triển khai các giải pháp số trong giáo dục, đào tạo và doanh nghiệp. Tư vấn ứng dụng AI, Big Data, IoT và tự động hóa nhằm tối ưu quản trị, nâng cao hiệu quả vận hành và thúc đẩy đổi mới sáng tạo."
       }
     },
     "cta_title": "Hợp tác với H&T",
@@ -246,13 +246,14 @@
     "send": "Gửi tin nhắn",
     "sending": "Đang gửi…",
     "success": "Đã gửi. Chúng tôi sẽ phản hồi sớm.",
-    "error": "Không gửi được tin nhắn. Thử lại hoặc email trực tiếp tainguyenhuu@htaitech.net.",
+    "error": "Không gửi được tin nhắn. Thử lại hoặc email trực tiếp tainguyenhuu@htaitech.org.",
     "response_note": "Thường phản hồi trong 1–2 ngày làm việc.",
     "direct_line": "Liên hệ trực tiếp",
     "office": "Văn phòng",
     "vietnam": "Đà Nẵng, Việt Nam",
     "address": "123 Lý Đạo Thành, An Hải Bắc, Sơn Trà, Đà Nẵng",
     "email_label": "Email",
+    "phone_label": "Điện thoại",
     "s1": "Bổ sung đội kỹ sư",
     "s2": "Xây sản phẩm AI trọn gói",
     "s3": "Tự động hóa đa tác tử",

@@ -220,7 +220,7 @@
       "hoan": {
         "name": "Dr. Dau Manh Hoan",
         "role": "Advisor · AI & Digital Transformation",
-        "bio": "PhD in Computer Science and Technology (China). Expertise in data analysis and mining, AI, and digital transformation. Focuses on digital transformation in education and training, and advises enterprises on digital technology, AI, big data, IoT, and automation to optimize management, improve operations, and drive innovation."
+        "bio": "Expert in data analysis, AI, and digital transformation, with over 25 years of experience delivering digital solutions in education, training, and enterprise. Advises on AI, Big Data, IoT, and automation to optimize management, improve operational efficiency, and drive innovation."
       }
     },
     "cta_title": "Partner with H&T",
@@ -246,13 +246,14 @@
     "send": "Send message",
     "sending": "Sending…",
     "success": "Message sent. We will get back to you soon.",
-    "error": "Could not send your message. Please try again or email tainguyenhuu@htaitech.net.",
+    "error": "Could not send your message. Please try again or email tainguyenhuu@htaitech.org.",
     "response_note": "We usually reply within 1–2 business days.",
     "direct_line": "Reach us directly",
     "office": "Office",
     "vietnam": "Da Nang, Vietnam",
     "address": "123 Ly Dao Thanh, An Hai Bac, Son Tra, Da Nang",
     "email_label": "Email",
+    "phone_label": "Phone",
     "s1": "Engineering team extension",
     "s2": "End-to-end AI product build",
     "s3": "Multi-agent automation",

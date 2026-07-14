@@ -4,3 +4,8 @@ command = "npm run build"
 [build.environment]
 NODE_VERSION = "20"
 NPM_FLAGS = "--legacy-peer-deps"
+
+# Contact form: public/__forms.html (name="contact") is detected at deploy.
+# After deploy, set Form submission notification email to:
+# nguyenharry2662@gmail.com
+# Netlify UI → Project configuration → Notifications → Form submission notifications

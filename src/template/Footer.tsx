@@ -42,10 +42,16 @@ export const Footer = () => {
             <Logo />
             <p className="max-w-sm text-[var(--ht-muted)]">{t('blurb')}</p>
             <a
-              href="mailto:tainguyenhuu@htaitech.net"
+              href="mailto:tainguyenhuu@htaitech.org"
               className="block text-[var(--ht-ink)] no-underline hover:text-[var(--ht-accent)]"
             >
-              tainguyenhuu@htaitech.net
+              tainguyenhuu@htaitech.org
+            </a>
+            <a
+              href="tel:+84905103928"
+              className="block text-[var(--ht-ink)] no-underline hover:text-[var(--ht-accent)]"
+            >
+              +84 905103928
             </a>
             <p className="text-sm text-[var(--ht-faint)]">
               Đà Nẵng · Việt Nam

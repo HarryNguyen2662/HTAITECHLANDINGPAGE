@@ -33,6 +33,7 @@ async function sendViaNetlifyForms(
 ) {
   const body = new URLSearchParams({
     'form-name': 'contact',
+    'subject': 'New contact from %{formName} (%{submissionId})',
     'bot-field': formData.website,
     'name': formData.name,
     'email': formData.email,
@@ -42,6 +43,8 @@ async function sendViaNetlifyForms(
     locale,
   });
 
+  // Must POST to the static public HTML file so Netlify Forms handles it
+  // (Next.js pages are not scanned / cannot be the form target).
   const response = await fetch('/__forms.html', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -49,6 +52,7 @@ async function sendViaNetlifyForms(
   });
 
   // Netlify returns 200 on success. Local/dev without Netlify may 404/405.
+  // Production 404 usually means Form detection is off or needs a redeploy.
   if (!response.ok) {
     throw new Error(`Netlify form error: ${response.status}`);
   }
@@ -115,10 +119,20 @@ export const ContactForm = () => {
             <div className="ht-contact-meta" style={{ animationDelay: '120ms' }}>
               <p className="ht-eyebrow mb-2">{t('email_label')}</p>
               <a
-                href="mailto:tainguyenhuu@htaitech.net"
+                href="mailto:tainguyenhuu@htaitech.org"
                 className="inline-block text-lg font-semibold tracking-tight text-[var(--ht-ink)] no-underline transition-colors duration-200 hover:text-[var(--ht-accent)]"
               >
-                tainguyenhuu@htaitech.net
+                tainguyenhuu@htaitech.org
+              </a>
+            </div>
+
+            <div className="ht-contact-meta" style={{ animationDelay: '180ms' }}>
+              <p className="ht-eyebrow mb-2">{t('phone_label')}</p>
+              <a
+                href="tel:+84905103928"
+                className="inline-block text-lg font-semibold tracking-tight text-[var(--ht-ink)] no-underline transition-colors duration-200 hover:text-[var(--ht-accent)]"
+              >
+                +84 905103928
               </a>
             </div>
           </div>
@@ -127,13 +141,17 @@ export const ContactForm = () => {
         <form
           name="contact"
           method="POST"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
           onSubmit={handleSubmit}
           className="ht-contact-form ht-fade-up bg-[var(--ht-bg-elevated)]/90 relative rounded-2xl border border-[var(--ht-line)] p-6 shadow-[0_24px_60px_-36px_rgba(18,22,28,0.35)] backdrop-blur-sm sm:p-8"
           style={{ animationDelay: '80ms' }}
         >
+          {/* form-name / honeypot live in public/__forms.html for Netlify detection */}
           <input type="hidden" name="form-name" value="contact" />
+          <input
+            type="hidden"
+            name="subject"
+            value="New contact from %{formName} (%{submissionId})"
+          />
           <p className="hidden" aria-hidden>
             <label>
               Don’t fill this out:

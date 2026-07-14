@@ -4,17 +4,12 @@
   </head>
   <body>
     <!--
-      Netlify detects this static form at build time.
+      Netlify detects this static form at deploy time.
       The React contact page posts to this path at runtime.
     -->
-    <form
-      name="contact"
-      method="POST"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
-      netlify-honeypot="bot-field"
-      hidden
-    >
+    <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="contact" />
+      <input type="hidden" name="subject" value="New contact from %{formName} (%{submissionId})" />
       <input type="text" name="bot-field" />
       <input type="text" name="name" />
       <input type="email" name="email" />
